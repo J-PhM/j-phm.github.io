@@ -1,0 +1,2424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapitre 8 — Puissances · 4e · J.-Ph. Mouton</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<script src="fiche-theme.js"></script>
+<link rel="stylesheet" href="fiche-theme.css?v=1777411759831">
+<script src="fiche-pdf-viewer.js" defer></script>
+</head>
+<body>
+
+<button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
+
+<div id="sidebar">
+  <a class="sb-back" href="../../Site personnel.html#/teaching"><span class="arrow">←</span> Retour à Enseignement</a>
+  <div class="sb-header">
+    <div class="sb-eyebrow">Chapitre 8 &middot; Maths 4<sup>e</sup></div>
+    <div class="sb-title">Puissance</div>
+    <div class="sb-meta">
+      <div class="sb-author">Jean-Philippe Mouton</div>
+      <div class="sb-institution">Coll&egrave;ge Jean Rostand &ndash; Capbreton</div>
+      <div class="sb-date">Version 1.1.1 &ndash; B&ecirc;ta &ndash; Mars 2026</div>
+      <div class="sb-section-title">R&eacute;f&eacute;rences</div>
+      <span class="sb-ref">&bull; Mouton, J.-Ph. (2025&ndash;2026). <em>Puissance &ndash; Chapitre 8</em>. Fiche de cours, classe de 4<sup>e</sup>, Coll&egrave;ge Jean Rostand, Capbreton.</span>
+      <span class="sb-ref">&bull; Barbazo, E. <em>et al.</em> (2016). <em>Mission Indigo Maths Cycle 4, 4<sup>e</sup></em>. Hachette &Eacute;ducation. Ch.&nbsp;4, pp.&nbsp;70&ndash;84.</span>
+      <div class="sb-section-title">Assistance</div>
+      <div class="sb-assist">&bull; Anthropic. <em>Claude Sonnet 4.6</em> [grand mod&egrave;le de langue]. https://www.anthropic.com</div>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-label"><span>Progression</span><span id="prog-text">0 / 16</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="prog-fill" style="width:0%"></div></div>
+  </div>
+  <div style="padding:0.4rem 1.25rem 0.7rem;border-bottom:1px solid var(--border);">
+    <button onclick="resetProgress()" style="font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;color:var(--dim);background:none;border:none;cursor:pointer;padding:0;text-transform:uppercase;" title="Remettre &agrave; z&eacute;ro">&#8635; R&eacute;initialiser</button>
+  </div>
+  <button class="sb-course" type="button" onclick="openPdf('../cours/4e-ch08-puissances.pdf', 'Chapitre 8 — Puissances · Cours complet')">📄 Lire le cours complet (PDF)</button>
+  <nav>
+    <div class="nav-section">Accueil</div>
+    <div class="nav-item nav-home active" data-page="home" onclick="go(this)">&#127968; Sommaire</div>
+
+    <div class="nav-section">1. Puissances d&rsquo;un nb relatif</div>
+    <div class="nav-item" data-page="p1l1" onclick="go(this)"><span class="nav-check" id="chk-p1l1"></span>Exposant entier positif</div>
+    <div class="nav-item" data-page="p1l2" onclick="go(this)"><span class="nav-check" id="chk-p1l2"></span>Exposant entier n&eacute;gatif</div>
+    <div class="nav-item" data-page="p1l3" onclick="go(this)"><span class="nav-check" id="chk-p1l3"></span>Calculs avec puissances</div>
+    <div class="nav-item" data-page="p1l4" onclick="go(this)"><span class="nav-check" id="chk-p1l4"></span>Exercices</div>
+
+    <div class="nav-section">2. Puissances de 10</div>
+    <div class="nav-item" data-page="p2l1" onclick="go(this)"><span class="nav-check" id="chk-p2l1"></span>10<span class="sup-var">n</span> &#8594; exp. positif</div>
+    <div class="nav-item" data-page="p2l2" onclick="go(this)"><span class="nav-check" id="chk-p2l2"></span>10<span class="sup-var">&minus;n</span> &#8594; exp. n&eacute;gatif</div>
+    <div class="nav-item" data-page="p2l3" onclick="go(this)"><span class="nav-check" id="chk-p2l3"></span>Exercices</div>
+
+    <div class="nav-section">3. Pr&eacute;fixes &mdash; nano &agrave; giga</div>
+    <div class="nav-item" data-page="p3l1" onclick="go(this)"><span class="nav-check" id="chk-p3l1"></span>Le tableau des pr&eacute;fixes</div>
+    <div class="nav-item" data-page="p3l2" onclick="go(this)"><span class="nav-check" id="chk-p3l2"></span>Exercices</div>
+
+    <div class="nav-section">4. Notation scientifique</div>
+    <div class="nav-item" data-page="p4l1" onclick="go(this)"><span class="nav-check" id="chk-p4l1"></span>D&eacute;finition et &eacute;criture</div>
+    <div class="nav-item" data-page="p4l2" onclick="go(this)"><span class="nav-check" id="chk-p4l2"></span>Passer d&rsquo;une &eacute;criture &agrave; l&rsquo;autre</div>
+    <div class="nav-item" data-page="p4l3" onclick="go(this)"><span class="nav-check" id="chk-p4l3"></span>Exercices</div>
+
+    <div class="nav-section">5. Probl&egrave;mes</div>
+    <div class="nav-item" data-page="pb1" onclick="go(this)"><span class="nav-check" id="chk-pb1"></span>&#127826; &Ccedil;a butine&nbsp;!</div>
+    <div class="nav-item" data-page="pb2" onclick="go(this)"><span class="nav-check" id="chk-pb2"></span>&#10084; Du c&oelig;ur</div>
+    <div class="nav-item" data-page="pb3" onclick="go(this)"><span class="nav-check" id="chk-pb3"></span>&#127758; La Terre bleue</div>
+
+    <div class="nav-section" style="margin-top:0.8rem">M&eacute;mo</div>
+    <div class="nav-item" data-page="memo" onclick="go(this)" style="color:var(--orange)"><span class="nav-check"></span>&#9829; &Agrave; conna&icirc;tre par c&oelig;ur</div>
+  </nav>
+</div>
+
+<div id="main">
+
+<!-- ═══════════════════════════════════════════════════════ HOME ═══ -->
+<div class="page active" id="page-home">
+  <div class="home-hero">
+    <div class="home-eyebrow">Fiche de r&eacute;vision &middot; Chapitre 8</div>
+    <h1>Les <strong>Puissances</strong></h1>
+    <p>Exposants, puissances de 10, pr&eacute;fixes et notation scientifique &mdash; 8&nbsp;le&ccedil;ons interactives, 4&nbsp;s&eacute;ries d&rsquo;exercices, 3&nbsp;probl&egrave;mes concrets et un m&eacute;mo, pour r&eacute;viser seul avant l&rsquo;&eacute;valuation.</p>
+  </div>
+  <div class="objectives-box">
+    <div class="ob-label">Connaissances et comp&eacute;tences associ&eacute;es</div>
+    <ul>
+      <li>Comprendre et utiliser la notation puissance : <em class="var">a</em><span class="sup-var">n</span></li>
+      <li>Conna&icirc;tre les pr&eacute;fixes de nano &agrave; giga et les relier aux puissances de 10</li>
+      <li>&Eacute;crire un nombre en notation scientifique et passer d&rsquo;une repr&eacute;sentation &agrave; une autre</li>
+      <li>Comparer, ranger et encadrer des nombres en &eacute;criture scientifique</li>
+    </ul>
+  </div>
+  <div class="section-cards">
+    <div class="section-card sc-1" onclick="go(null,'p1l1')">
+      <div class="sc-tag">Partie 1</div>
+      <h3>Puissances d&rsquo;un nombre relatif</h3>
+      <p>D&eacute;finition, exposant positif et n&eacute;gatif, priorit&eacute; des op&eacute;rations.</p>
+      <div class="sc-count">3 le&ccedil;ons + exercices</div>
+    </div>
+    <div class="section-card sc-2" onclick="go(null,'p2l1')">
+      <div class="sc-tag">Partie 2</div>
+      <h3>Puissances de 10</h3>
+      <p>10<span class="sup-var">n</span>, 10<span class="sup-var">&minus;n</span>, op&eacute;rations sur les puissances de 10.</p>
+      <div class="sc-count">2 le&ccedil;ons + exercices</div>
+    </div>
+    <div class="section-card sc-3" onclick="go(null,'p3l1')">
+      <div class="sc-tag">Partie 3</div>
+      <h3>Pr&eacute;fixes &mdash; nano &agrave; giga</h3>
+      <p>Tableau des pr&eacute;fixes du Syst&egrave;me International, exemples concrets.</p>
+      <div class="sc-count">1 le&ccedil;on + exercices</div>
+    </div>
+    <div class="section-card sc-4" onclick="go(null,'p4l1')">
+      <div class="sc-tag">Partie 4</div>
+      <h3>Notation scientifique</h3>
+      <p>D&eacute;finition, conversion, comparaison en &eacute;criture scientifique.</p>
+      <div class="sc-count">2 le&ccedil;ons + exercices</div>
+    </div>
+    <div class="section-card" style="border-left:3px solid var(--yellow);background:var(--surface)" onclick="go(null,'pb1')">
+      <div class="sc-tag" style="color:var(--yellow)">Partie 5</div>
+      <h3>Probl&egrave;mes</h3>
+      <p>Trois probl&egrave;mes concrets pour mettre en pratique tout le chapitre.</p>
+      <div class="sc-count">3 probl&egrave;mes</div>
+    </div>
+    <div class="section-card" style="border-left:3px solid var(--orange);background:var(--surface)" onclick="go(null,'memo')">
+      <div class="sc-tag" style="color:var(--orange)">&#9829; M&eacute;mo</div>
+      <h3>&Agrave; conna&icirc;tre par c&oelig;ur</h3>
+      <p>Les d&eacute;finitions et propri&eacute;t&eacute;s essentielles &mdash; pour une r&eacute;vision rapide avant l&rsquo;&eacute;valuation.</p>
+      <div class="sc-count" style="color:var(--orange)">7 encadr&eacute;s</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ P1L1 ═══ -->
+<div class="page" id="page-p1l1">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-blue">Partie 1 &middot; Le&ccedil;on 1</div>
+    <h1>Exposant entier positif</h1>
+    <p class="lesson-intro">Un virus se reproduit en doublant de population &agrave; chaque heure&#160;: apr&egrave;s 20&nbsp;heures, on obtient 2&nbsp;&times;&nbsp;2&nbsp;&times;&nbsp;&hellip;&nbsp;&times;&nbsp;2 (20&nbsp;fois). &Eacute;crire 20&nbsp;facteurs &agrave; chaque fois devient vite &eacute;puisant. C&rsquo;est exactement pour &ccedil;a qu&rsquo;on invente une notation compacte&#160;: la <strong>puissance</strong>. Dans cette le&ccedil;on, on apprend comment &eacute;crire et lire cette notation, et ce que signifie chaque partie de l&rsquo;&eacute;criture <em class="var">a</em><span class="sup-var">n</span>.</p>
+  </div>
+
+  <div class="section-divider">D&eacute;finition</div>
+  <div class="callout c-blue">
+    <div class="c-label">D&eacute;finition &middot; Puissances d&rsquo;exposant entier positif</div>
+    <p><em class="var">a</em> d&eacute;signe un nombre relatif et <em class="var">n</em> d&eacute;signe un nombre entier positif non nul.</p>
+    <p>Le produit de <em class="var">n</em> facteurs tous &eacute;gaux &agrave; <em class="var">a</em> se note <em class="var">a</em><span class="sup-var">n</span>.</p>
+    <div class="formula"><em class="var">a</em><span class="sup-var">n</span> &nbsp;=&nbsp; <em class="var">a</em> &times; <em class="var">a</em> &times; &hellip; &times; <em class="var">a</em> &nbsp;&nbsp;(<em class="var">n</em> facteurs &eacute;gaux &agrave; <em class="var">a</em>)</div>
+    <p><em class="var">a</em><span class="sup-var">n</span> est une <strong>puissance</strong> du nombre <em class="var">a</em> et se lit &laquo;&nbsp;<em class="var">a</em> puissance <em class="var">n</em>&nbsp;&raquo; ou &laquo;&nbsp;<em class="var">a</em> exposant <em class="var">n</em>&nbsp;&raquo;.</p>
+    <p>Le nombre <em class="var">n</em> est appel&eacute; l&rsquo;<strong>exposant</strong>.</p>
+  </div>
+
+  <div class="section-divider">Remarques et cas particuliers</div>
+  <div class="example">
+    <div class="ex-label">Exemples de lecture</div>
+    <p>&bull; 3<span class="sup-exp">4</span> se lit &laquo;&nbsp;3 puissance 4&nbsp;&raquo; ou &laquo;&nbsp;3 exposant 4&nbsp;&raquo;. &nbsp;3<span class="sup-exp">4</span> = 3 &times; 3 &times; 3 &times; 3 = <strong>81</strong></p>
+    <p>&bull; (&minus;2)<span class="sup-exp">3</span> se lit &laquo;&nbsp;&minus;2 puissance 3&nbsp;&raquo; ou &laquo;&nbsp;&minus;2 au cube&nbsp;&raquo;. &nbsp;(&minus;2)<span class="sup-exp">3</span> = (&minus;2) &times; (&minus;2) &times; (&minus;2) = <strong>&minus;8</strong></p>
+  </div>
+  <div class="callout c-yellow">
+    <div class="c-label">Cas particuliers &agrave; conna&icirc;tre</div>
+    <p>&bull; Pour <em class="var">n</em> &ne; 0 : &nbsp;<strong>0<span class="sup-var">n</span> = 0</strong></p>
+    <p>&bull; Pour tout <em class="var">a</em> : &nbsp;<strong><em class="var">a</em><span class="sup-exp">1</span> = <em class="var">a</em></strong></p>
+    <p>&bull; Pour <em class="var">a</em> &ne; 0 : &nbsp;<strong><em class="var">a</em><span class="sup-exp">0</span> = 1</strong></p>
+  </div>
+
+  <div class="section-divider">Attention au r&ocirc;le des parenth&egrave;ses&#160;!</div>
+  <div class="attention">
+    <div class="a-icon">&#9888;</div>
+    <div><strong>Attention&#160;:</strong> (&minus;5)<span class="sup-exp">2</span> = (&minus;5) &times; (&minus;5) = <strong>25</strong> &nbsp;&nbsp;mais&nbsp;&nbsp; &minus;5<span class="sup-exp">2</span> = &minus;(5 &times; 5) = <strong>&minus;25</strong>. &nbsp;&nbsp;On a donc (&minus;5)<span class="sup-exp">2</span> &ne; &minus;5<span class="sup-exp">2</span>.</div>
+  </div>
+
+  <div class="tool-box" id="tool-calc-power">
+    <div class="tool-label">Outil &middot; Calculateur de puissance <em class="var">a</em><span class="sup-var">n</span></div>
+    <div class="tool-hint">Fais varier <em class="var">a</em> et <em class="var">n</em> pour observer comment la puissance &eacute;volue. Essaie les cas particuliers&nbsp;: <em class="var">n</em>&nbsp;= 0, <em class="var">n</em>&nbsp;= 1, <em class="var">a</em>&nbsp;= &minus;2 avec <em class="var">n</em> pair puis impair.</div>
+    <div class="tool-slider-row">
+      <label>Base <em class="var">a</em>&nbsp;:</label>
+      <input type="range" id="calc-a" min="-9" max="9" value="3" oninput="updateCalc()">
+      <span class="tool-val" id="calc-a-val">3</span>
+    </div>
+    <div class="tool-slider-row">
+      <label>Exposant <em class="var">n</em>&nbsp;:</label>
+      <input type="range" id="calc-n" min="0" max="8" value="2" oninput="updateCalc()">
+      <span class="tool-val" id="calc-n-val">2</span>
+    </div>
+    <div class="tool-display">
+      <div class="tool-result-mid" id="calc-decomp"></div>
+      <div style="font-size:0.75rem;color:var(--dim);margin:0.3rem 0;">=</div>
+      <div class="tool-result-big" id="calc-result"></div>
+    </div>
+    <div class="tool-info" id="calc-info"></div>
+  </div>
+
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p1l1">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l1"></div>
+    <div class="quiz-feedback" id="qfb-p1l1"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p1l1q2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l1q2"></div>
+    <div class="quiz-feedback" id="qfb-p1l1q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q">Vrai ou faux&#160;: (&minus;3)<span class="sup-exp">2</span> = &minus;9.</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p1l1q3-A')"><span class="opt-letter">A</span> Vrai</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p1l1q3-B')"><span class="opt-letter">B</span> Faux</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p1l1q3"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q">Que vaut 7<span class="sup-exp">0</span>&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p1l1q4-A')"><span class="opt-letter">A</span> 0</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p1l1q4-B')"><span class="opt-letter">B</span> 1</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p1l1q4-C')"><span class="opt-letter">C</span> 7</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p1l1q4"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'home')">&#8592; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p1l1');go(null,'p1l2')">Le&ccedil;on suivante &#8594;</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ P1L2 ═══ -->
+<div class="page" id="page-p1l2">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-blue">Partie 1 &middot; Le&ccedil;on 2</div>
+    <h1>Exposant entier n&eacute;gatif</h1>
+    <p class="lesson-intro">La taille d&rsquo;une bact&eacute;rie est d&rsquo;environ 0,000001&nbsp;m. &Eacute;crire tous ces z&eacute;ros est fastidieux&#160;; pire, on peut facilement en oublier un. Les exposants n&eacute;gatifs sont n&eacute;s de ce besoin&#160;: ils permettent d&rsquo;&eacute;crire ces infimes quantit&eacute;s de fa&ccedil;on claire et sans erreur. On verra que 10<span class="sup-exp">&minus;6</span> vaut exactement 0,000001, et pourquoi un exposant n&eacute;gatif correspond toujours &agrave; l&rsquo;<strong>inverse</strong> d&rsquo;une puissance positive.</p>
+  </div>
+
+  <div class="section-divider">D&eacute;finition</div>
+  <div class="callout c-blue">
+    <div class="c-label">D&eacute;finition &middot; Puissances d&rsquo;exposant entier n&eacute;gatif</div>
+    <p><em class="var">a</em> d&eacute;signe un nombre relatif non nul et <em class="var">n</em> d&eacute;signe un nombre entier positif non nul.</p>
+    <p>Le nombre <em class="var">a</em><span class="sup-var">&minus;n</span> est l&rsquo;<strong>inverse</strong> du nombre <em class="var">a</em><span class="sup-var">n</span>.</p>
+    <div class="formula"><em class="var">a</em><span class="sup-var">&minus;n</span> &nbsp;=&nbsp; <span class="frac"><span class="fnum">1</span><span class="fden"><em class="var">a</em><span class="sup-var">n</span></span></span></div>
+  </div>
+
+  <div class="callout c-yellow">
+    <div class="c-label">Cas particulier</div>
+    <p>Pour <em class="var">a</em> &ne; 0 : &nbsp;<strong><em class="var">a</em><span class="sup-exp">&minus;1</span> = <span class="frac"><span class="fnum">1</span><span class="fden"><em class="var">a</em><span class="sup-exp">1</span></span></span> = <span class="frac"><span class="fnum">1</span><span class="fden"><em class="var">a</em></span></span></strong></p>
+    <p>Ainsi le nombre <em class="var">a</em><span class="sup-exp">&minus;1</span> est l&rsquo;inverse du nombre <em class="var">a</em>.</p>
+  </div>
+
+  <div class="example">
+    <div class="ex-label">Exemples</div>
+    <p>&bull; 2<span class="sup-exp">&minus;3</span> = <span class="frac"><span class="fnum">1</span><span class="fden">2<span class="sup-exp">3</span></span></span> = <span class="frac"><span class="fnum">1</span><span class="fden">8</span></span></p>
+    <p>&bull; 5<span class="sup-exp">&minus;1</span> = <span class="frac"><span class="fnum">1</span><span class="fden">5</span></span></p>
+    <p>&bull; 10<span class="sup-exp">&minus;2</span> = <span class="frac"><span class="fnum">1</span><span class="fden">10<span class="sup-exp">2</span></span></span> = <span class="frac"><span class="fnum">1</span><span class="fden">100</span></span> = 0,01</p>
+  </div>
+
+  <div class="tool-box" id="tool-calc-neg">
+    <div class="tool-label">Outil &middot; Calculateur &mdash; exposant n&eacute;gatif <em class="var">a</em><span class="sup-var">&minus;n</span></div>
+    <div class="tool-hint">Fais varier la base et l&rsquo;exposant pour voir comment <em class="var">a</em><span class="sup-var">&minus;n</span> s&rsquo;&eacute;crit comme une fraction. Essaie avec une base n&eacute;gative pour observer l&rsquo;effet sur le signe.</div>
+    <div class="tool-slider-row">
+      <label>Base <em class="var">a</em>&nbsp;:</label>
+      <input type="range" id="calcneg-a" min="-9" max="9" value="2" oninput="updateCalcNeg()">
+      <span class="tool-val" id="calcneg-a-val">2</span>
+    </div>
+    <div class="tool-slider-row">
+      <label>Exposant <em class="var">n</em>&nbsp;:</label>
+      <input type="range" id="calcneg-n" min="1" max="6" value="3" oninput="updateCalcNeg()">
+      <span class="tool-val" id="calcneg-n-val">3</span>
+    </div>
+    <div class="tool-display">
+      <div class="tool-result-mid" id="calcneg-decomp"></div>
+      <div style="font-size:0.75rem;color:var(--dim);margin:0.3rem 0;">=</div>
+      <div class="tool-result-big" id="calcneg-result"></div>
+    </div>
+    <div class="tool-info" id="calcneg-info"></div>
+  </div>
+
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p1l2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l2"></div>
+    <div class="quiz-feedback" id="qfb-p1l2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p1l2q2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l2q2"></div>
+    <div class="quiz-feedback" id="qfb-p1l2q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q">Vrai ou faux&#160;: 3<span class="sup-exp">&minus;2</span> = &minus;9.</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p1l2q3-A')"><span class="opt-letter">A</span> Vrai</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p1l2q3-B')"><span class="opt-letter">B</span> Faux</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p1l2q3"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p1l2q4">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l2q4"></div>
+    <div class="quiz-feedback" id="qfb-p1l2q4"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p1l1')">&#8592; Pr&eacute;c&eacute;dent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p1l2');go(null,'p1l3')">Le&ccedil;on suivante &#8594;</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ P1L3 ═══ -->
+<div class="page" id="page-p1l3">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-blue">Partie 1 &middot; Le&ccedil;on 3</div>
+    <h1>Calculs avec les puissances</h1>
+    <p class="lesson-intro">Imagine que tu calcules 2&nbsp;+&nbsp;3<span class="sup-exp">2</span>. Est-ce (2&nbsp;+&nbsp;3)<span class="sup-exp">2</span>&nbsp;=&nbsp;25, ou bien 2&nbsp;+&nbsp;(3<span class="sup-exp">2</span>)&nbsp;=&nbsp;11&nbsp;? La r&eacute;ponse d&eacute;pend enti&egrave;rement de l&rsquo;ordre dans lequel on effectue les op&eacute;rations. Les puissances ont leur propre rang dans la hi&eacute;rarchie des calculs, et les parenth&egrave;ses permettent de tout modifier. Une erreur de priorit&eacute; peut changer compl&egrave;tement le r&eacute;sultat &mdash; cette le&ccedil;on t&rsquo;apprend &agrave; ne plus jamais te tromper.</p>
+  </div>
+
+  <div class="section-divider">Priorit&eacute; des op&eacute;rations</div>
+  <div class="callout c-orange">
+    <div class="c-label">Propri&eacute;t&eacute; &middot; Calcul d&rsquo;une expression utilisant les puissances</div>
+    <p>Pour calculer une expression num&eacute;rique &eacute;crite <strong>sans parenth&egrave;ses</strong>, on commence par calculer les <strong>puissances</strong>.</p>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemples du cours</div>
+    <p>&bull; <em>A</em> = 2 &minus; 3<span class="sup-exp">2</span> = 2 &minus; 9 = <strong>&minus;7</strong> &nbsp;&nbsp;(on calcule d&rsquo;abord 3<span class="sup-exp">2</span> = 9)</p>
+    <p>&bull; <em>B</em> = 2 &times; 3<span class="sup-exp">2</span> = 2 &times; 9 = <strong>18</strong> &nbsp;&nbsp;(on calcule d&rsquo;abord 3<span class="sup-exp">2</span> = 9)</p>
+  </div>
+
+  <div class="section-divider">Le r&ocirc;le des parenth&egrave;ses</div>
+  <div class="attention">
+    <div class="a-icon">&#9888;</div>
+    <div>
+      <strong>Attention au signe&#160;:</strong><br>
+      (&minus;5)<span class="sup-exp">2</span> = (&minus;5) &times; (&minus;5) = <strong>25</strong><br>
+      &minus;5<span class="sup-exp">2</span> = &minus;(5 &times; 5) = <strong>&minus;25</strong><br>
+      On a donc&#160;: (&minus;5)<span class="sup-exp">2</span> &ne; &minus;5<span class="sup-exp">2</span>
+    </div>
+  </div>
+  <div class="retenir">
+    <div class="r-icon">&#11088;</div>
+    <div class="r-content"><strong>&Agrave; retenir&#160;:</strong> Sans parenth&egrave;ses, l&rsquo;exposant ne s&rsquo;applique qu&rsquo;au nombre imm&eacute;diatement devant lui, pas au signe moins.</div>
+  </div>
+
+  <div class="tool-box" id="tool-sign">
+    <div class="tool-label">Outil &middot; V&eacute;rificateur de signe &mdash; parenth&egrave;ses et base n&eacute;gative</div>
+    <div class="tool-hint">Compare (&minus;<em class="var">a</em>)<span class="sup-var">n</span> et &minus;<em class="var">a</em><span class="sup-var">n</span>&nbsp;: les parenth&egrave;ses changent tout. Fais varier l&rsquo;exposant et observe quand les deux expressions sont &eacute;gales ou oppos&eacute;es.</div>
+    <div class="tool-slider-row">
+      <label>Base <em class="var">a</em>&nbsp;:</label>
+      <input type="range" id="sign-a" min="2" max="9" value="3" oninput="updateSign()">
+      <span class="tool-val" id="sign-a-val">3</span>
+    </div>
+    <div class="tool-slider-row">
+      <label>Exposant <em class="var">n</em>&nbsp;:</label>
+      <input type="range" id="sign-n" min="1" max="8" value="2" oninput="updateSign()">
+      <span class="tool-val" id="sign-n-val">2</span>
+    </div>
+    <div class="tool-display">
+      <div class="tool-result-mid" id="sign-decomp"></div>
+      <div class="tool-result-big" id="sign-result"></div>
+    </div>
+    <div class="tool-info" id="sign-info"></div>
+  </div>
+
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p1l3">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l3"></div>
+    <div class="quiz-feedback" id="qfb-p1l3"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p1l3q2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l3q2"></div>
+    <div class="quiz-feedback" id="qfb-p1l3q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q">Vrai ou faux&#160;: &minus;4<span class="sup-exp">2</span> = 16.</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p1l3q3-A')"><span class="opt-letter">A</span> Vrai</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p1l3q3-B')"><span class="opt-letter">B</span> Faux</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p1l3q3"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p1l3q4">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l3q4"></div>
+    <div class="quiz-feedback" id="qfb-p1l3q4"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p1l2')">&#8592; Pr&eacute;c&eacute;dent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p1l3');go(null,'p1l4')">Exercices &#8594;</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ P1L4 ═══ -->
+<div class="page" id="page-p1l4">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-blue">Partie 1 &middot; Le&ccedil;on 4</div>
+    <h1>Exercices &mdash; Puissances d&rsquo;un nombre relatif</h1>
+    <p class="lesson-intro">Quatre exercices pour v&eacute;rifier que tu ma&icirc;trises exposants positifs, n&eacute;gatifs et priorit&eacute;s.</p>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 1</div><div class="quiz-q" id="qq-p1l4a">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l4a"></div>
+    <div class="quiz-feedback" id="qfb-p1l4a"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 2</div><div class="quiz-q" id="qq-p1l4b">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l4b"></div>
+    <div class="quiz-feedback" id="qfb-p1l4b"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 3</div><div class="quiz-q" id="qq-p1l4c">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l4c"></div>
+    <div class="quiz-feedback" id="qfb-p1l4c"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 4</div><div class="quiz-q" id="qq-p1l4d">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l4d"></div>
+    <div class="quiz-feedback" id="qfb-p1l4d"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p1l3')">&#8592; Pr&eacute;c&eacute;dent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p1l4');go(null,'p2l1')">Partie 2 &#8594;</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ P2L1 ═══ -->
+<div class="page" id="page-p2l1">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-orange">Partie 2 &middot; Le&ccedil;on 1</div>
+    <h1>Puissances de 10 &mdash; exposant positif</h1>
+    <p class="lesson-intro">La distance de la Terre au Soleil est d&rsquo;environ 150&nbsp;000&nbsp;000&nbsp;km. Comment comparer facilement ce nombre avec la distance Terre-Lune (384&nbsp;000&nbsp;km) ? En m&eacute;decine, en astronomie, en informatique, on utilise partout les m&ecirc;mes puissances de 10 comme &eacute;chelle commune. Cette le&ccedil;on montre pourquoi 10 est la base de tout notre syst&egrave;me de num&eacute;ration, et comment ses puissances permettent de naviguer entre le nanomonde et l&rsquo;univers.</p>
+  </div>
+
+  <div class="section-divider">D&eacute;finition</div>
+  <div class="callout c-orange">
+    <div class="c-label">Propri&eacute;t&eacute; (admise) &middot; Puissances de 10 d&rsquo;exposant entier positif</div>
+    <p><em class="var">n</em> d&eacute;signe un nombre entier positif non nul.</p>
+    <p>Le produit de <em class="var">n</em> facteurs tous &eacute;gaux &agrave; 10 se note 10<span class="sup-var">n</span>.</p>
+    <div class="formula">10<span class="sup-var">n</span> &nbsp;=&nbsp; 10 &times; 10 &times; &hellip; &times; 10 &nbsp;=&nbsp; 1<u>00&hellip;0</u> &nbsp;(<em class="var">n</em> z&eacute;ros)</div>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemples</div>
+    <p>&bull; 10<span class="sup-exp">1</span> = 10 &nbsp;&nbsp;&bull;&nbsp;&nbsp; 10<span class="sup-exp">2</span> = 100 &nbsp;&nbsp;&bull;&nbsp;&nbsp; 10<span class="sup-exp">3</span> = 1&nbsp;000 &nbsp;&nbsp;&bull;&nbsp;&nbsp; 10<span class="sup-exp">6</span> = 1&nbsp;000&nbsp;000</p>
+    <p>&bull; 10<span class="sup-exp">2</span> &times; 10<span class="sup-exp">3</span> = (10 &times; 10) &times; (10 &times; 10 &times; 10) = 10<span class="sup-exp">5</span></p>
+  </div>
+
+  <div class="retenir">
+    <div class="r-icon">&#11088;</div>
+    <div class="r-content">
+      <strong>&Agrave; retenir&#160;:</strong>
+      <table style="margin:0.5rem 0 0;border-collapse:collapse;width:100%;">
+        <tr>
+          <td style="padding:0.25rem 1rem 0.25rem 0;font-family:'IBM Plex Mono',monospace;color:var(--yellow);">10<span class="sup-exp">3</span></td>
+          <td style="padding:0.25rem 0;">&nbsp;=&nbsp; 1&nbsp;000 &nbsp;<span style="color:var(--dim);">(un mille)</span></td>
+        </tr>
+        <tr>
+          <td style="padding:0.25rem 1rem 0.25rem 0;font-family:'IBM Plex Mono',monospace;color:var(--yellow);">10<span class="sup-exp">6</span></td>
+          <td style="padding:0.25rem 0;">&nbsp;=&nbsp; 1&nbsp;000&nbsp;000 &nbsp;<span style="color:var(--dim);">(un million)</span></td>
+        </tr>
+        <tr>
+          <td style="padding:0.25rem 1rem 0.25rem 0;font-family:'IBM Plex Mono',monospace;color:var(--yellow);">10<span class="sup-exp">9</span></td>
+          <td style="padding:0.25rem 0;">&nbsp;=&nbsp; 1&nbsp;000&nbsp;000&nbsp;000 &nbsp;<span style="color:var(--dim);">(un milliard)</span></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p2l1">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l1"></div>
+    <div class="quiz-feedback" id="qfb-p2l1"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p2l1q2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l1q2"></div>
+    <div class="quiz-feedback" id="qfb-p2l1q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q" id="qq-p2l1q3">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l1q3"></div>
+    <div class="quiz-feedback" id="qfb-p2l1q3"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p2l1q4">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l1q4"></div>
+    <div class="quiz-feedback" id="qfb-p2l1q4"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p1l4')">&#8592; Pr&eacute;c&eacute;dent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p2l1');go(null,'p2l2')">Le&ccedil;on suivante &#8594;</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ P2L2 ═══ -->
+<div class="page" id="page-p2l2">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-orange">Partie 2 &middot; Le&ccedil;on 2</div>
+    <h1>Puissances de 10 &mdash; exposant n&eacute;gatif</h1>
+    <p class="lesson-intro">Un &eacute;cran de smartphone a des pixels de 0,000&nbsp;26&nbsp;m de c&ocirc;t&eacute;. La longueur d&rsquo;une mol&eacute;cule d&rsquo;ADN est de 0,000&nbsp;000&nbsp;002&nbsp;m. Plut&ocirc;t que d&rsquo;aligner des z&eacute;ros apr&egrave;s la virgule &mdash; avec les risques d&rsquo;erreur que cela implique &mdash; les scientifiques utilisent les puissances de 10 &agrave; exposant n&eacute;gatif. On verra comment passer de 10<span class="sup-exp">&minus;3</span> &agrave; 0,001 et inversement, et pourquoi chaque z&eacute;ro apr&egrave;s la virgule correspond exactement &agrave; un cran d&rsquo;exposant.</p>
+  </div>
+
+  <div class="section-divider">D&eacute;finition</div>
+  <div class="callout c-orange">
+    <div class="c-label">Propri&eacute;t&eacute; (admise) &middot; Puissances de 10 d&rsquo;exposant entier n&eacute;gatif</div>
+    <p><em class="var">n</em> d&eacute;signe un nombre entier positif non nul.</p>
+    <p>Le nombre 10<span class="sup-var">&minus;n</span> est l&rsquo;inverse du nombre 10<span class="sup-var">n</span>.</p>
+    <div class="formula">10<span class="sup-var">&minus;n</span> &nbsp;=&nbsp; <span class="frac"><span class="fnum">1</span><span class="fden">10<span class="sup-var">n</span></span></span> &nbsp;=&nbsp; 0,<u>00&hellip;01</u> &nbsp;(<em class="var">n</em> chiffres apr&egrave;s la virgule)</div>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemples</div>
+    <p>&bull; 10<span class="sup-exp">&minus;1</span> = <span class="frac"><span class="fnum">1</span><span class="fden">10</span></span> = 0,1 &nbsp;&nbsp;&bull;&nbsp;&nbsp; 10<span class="sup-exp">&minus;2</span> = <span class="frac"><span class="fnum">1</span><span class="fden">100</span></span> = 0,01 &nbsp;&nbsp;&bull;&nbsp;&nbsp; 10<span class="sup-exp">&minus;3</span> = 0,001</p>
+    <p>&bull; <span class="frac"><span class="fnum">10<span class="sup-exp">5</span></span><span class="fden">10<span class="sup-exp">3</span></span></span> = <span class="frac"><span class="fnum">10&times;10&times;10&times;10&times;10</span><span class="fden">10&times;10&times;10</span></span> = 10 &times; 10 = 10<span class="sup-exp">2</span></p>
+    <p>&bull; (10<span class="sup-exp">2</span>)<span class="sup-exp">3</span> = 10<span class="sup-exp">2</span> &times; 10<span class="sup-exp">2</span> &times; 10<span class="sup-exp">2</span> = 10<span class="sup-exp">6</span></p>
+  </div>
+  <div class="retenir">
+    <div class="r-icon">&#11088;</div>
+    <div class="r-content"><strong>&Agrave; retenir&#160;:</strong> 10<span class="sup-var">&minus;n</span> s&rsquo;&eacute;crit avec un 0 en unit&eacute;, une virgule, puis (<em class="var">n</em>&minus;1) z&eacute;ros, puis un 1. Ex. : 10<span class="sup-exp">&minus;3</span> = 0,001.</div>
+  </div>
+
+  <div class="retenir">
+    <div class="r-icon">&#11088;</div>
+    <div class="r-content">
+      <strong>&Agrave; retenir&#160;:</strong>
+      <table style="margin:0.5rem 0 0;border-collapse:collapse;width:100%;">
+        <tr>
+          <td style="padding:0.25rem 1rem 0.25rem 0;font-family:'IBM Plex Mono',monospace;color:var(--yellow);">10<span class="sup-exp">&minus;3</span></td>
+          <td style="padding:0.25rem 0;">&nbsp;=&nbsp; 0,001 &nbsp;<span style="color:var(--dim);">(un milli&egrave;me)</span></td>
+        </tr>
+        <tr>
+          <td style="padding:0.25rem 1rem 0.25rem 0;font-family:'IBM Plex Mono',monospace;color:var(--yellow);">10<span class="sup-exp">&minus;6</span></td>
+          <td style="padding:0.25rem 0;">&nbsp;=&nbsp; 0,000001 &nbsp;<span style="color:var(--dim);">(un millionni&egrave;me)</span></td>
+        </tr>
+        <tr>
+          <td style="padding:0.25rem 1rem 0.25rem 0;font-family:'IBM Plex Mono',monospace;color:var(--yellow);">10<span class="sup-exp">&minus;9</span></td>
+          <td style="padding:0.25rem 0;">&nbsp;=&nbsp; 0,000000001 &nbsp;<span style="color:var(--dim);">(un milliardi&egrave;me)</span></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p2l2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l2"></div>
+    <div class="quiz-feedback" id="qfb-p2l2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p2l2q2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l2q2"></div>
+    <div class="quiz-feedback" id="qfb-p2l2q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q" id="qq-p2l2q3">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l2q3"></div>
+    <div class="quiz-feedback" id="qfb-p2l2q3"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p2l2q4">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l2q4"></div>
+    <div class="quiz-feedback" id="qfb-p2l2q4"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p2l1')">&#8592; Pr&eacute;c&eacute;dent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p2l2');go(null,'p2l3')">Exercices &#8594;</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ P2L3 ═══ -->
+<div class="page" id="page-p2l3">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-orange">Partie 2 &middot; Le&ccedil;on 3</div>
+    <h1>Exercices &mdash; Puissances de 10</h1>
+    <p class="lesson-intro">Trois exercices pour ma&icirc;triser les puissances de 10, positives et n&eacute;gatives.</p>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 1</div><div class="quiz-q" id="qq-p2l3a">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l3a"></div>
+    <div class="quiz-feedback" id="qfb-p2l3a"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 2</div><div class="quiz-q" id="qq-p2l3b">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l3b"></div>
+    <div class="quiz-feedback" id="qfb-p2l3b"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 3</div><div class="quiz-q" id="qq-p2l3c">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l3c"></div>
+    <div class="quiz-feedback" id="qfb-p2l3c"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 4</div><div class="quiz-q" id="qq-p2l3d">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l3d"></div>
+    <div class="quiz-feedback" id="qfb-p2l3d"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p2l2')">&#8592; Pr&eacute;c&eacute;dent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p2l3');go(null,'p3l1')">Partie 3 &#8594;</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ P3L1 ═══ -->
+<div class="page" id="page-p3l1">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-purple">Partie 3 &middot; Le&ccedil;on 1</div>
+    <h1>Le tableau des pr&eacute;fixes</h1>
+    <p class="lesson-intro">Ton t&eacute;l&eacute;phone stocke 128&nbsp;<strong>giga</strong>octets. Ta fr&eacute;quence cardiaque s&rsquo;affiche en <strong>milli</strong>secondes. La taille d&rsquo;un virus se mesure en <strong>nano</strong>m&egrave;tres. Ces pr&eacute;fixes ne sont pas des mots au hasard&#160;: chacun cache une puissance de 10 pr&eacute;cise, internationale et universelle. Apprendre ce tableau, c&rsquo;est &ecirc;tre capable de lire une notice technique, une fiche scientifique ou un &eacute;tiquetage pharmaceutique &mdash; partout dans le monde.</p>
+  </div>
+
+  <div class="section-divider">Tableau des pr&eacute;fixes (admis)</div>
+  <table class="prefix-table">
+    <thead>
+      <tr><th>Pr&eacute;fixe</th><th>Symbole</th><th>Puissance de 10</th><th>Valeur</th><th>Exemple</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>giga</td><td class="pt-sym">G</td><td class="pt-pow">10<span class="sup-exp">9</span></td><td>1&nbsp;000&nbsp;000&nbsp;000</td><td class="pt-ref">gigaoctet (film num&eacute;rique)</td></tr>
+      <tr><td>m&eacute;ga</td><td class="pt-sym">M</td><td class="pt-pow">10<span class="sup-exp">6</span></td><td>1&nbsp;000&nbsp;000</td><td class="pt-ref">m&eacute;gaoctet (photo num&eacute;rique)</td></tr>
+      <tr><td>kilo</td><td class="pt-sym">k</td><td class="pt-pow">10<span class="sup-exp">3</span></td><td>1&nbsp;000</td><td class="pt-ref">1&nbsp;kg = 1&nbsp;000&nbsp;g</td></tr>
+      <tr><td>hecto</td><td class="pt-sym">h</td><td class="pt-pow">10<span class="sup-exp">2</span></td><td>100</td><td class="pt-ref">1&nbsp;hL = 100&nbsp;L</td></tr>
+      <tr><td>d&eacute;ca</td><td class="pt-sym">da</td><td class="pt-pow">10<span class="sup-exp">1</span></td><td>10</td><td class="pt-ref">1&nbsp;dam = 10&nbsp;m</td></tr>
+      <tr class="unit-row"><td colspan="2">(unit&eacute;)</td><td class="pt-pow">10<span class="sup-exp">0</span></td><td>1</td><td class="pt-ref">m, g, L&hellip;</td></tr>
+      <tr><td>d&eacute;ci</td><td class="pt-sym">d</td><td class="pt-pow">10<span class="sup-exp">&minus;1</span></td><td>0,1</td><td class="pt-ref">1&nbsp;dg = 0,1&nbsp;g</td></tr>
+      <tr><td>centi</td><td class="pt-sym">c</td><td class="pt-pow">10<span class="sup-exp">&minus;2</span></td><td>0,01</td><td class="pt-ref">1&nbsp;cL = 0,01&nbsp;L</td></tr>
+      <tr><td>milli</td><td class="pt-sym">m</td><td class="pt-pow">10<span class="sup-exp">&minus;3</span></td><td>0,001</td><td class="pt-ref">1&nbsp;mm = 0,001&nbsp;m</td></tr>
+      <tr><td>micro</td><td class="pt-sym">&mu;</td><td class="pt-pow">10<span class="sup-exp">&minus;6</span></td><td>0,000001</td><td class="pt-ref">1&nbsp;&mu;m = 10<span class="sup-exp">&minus;6</span>&nbsp;m (micron)</td></tr>
+      <tr><td>nano</td><td class="pt-sym">n</td><td class="pt-pow">10<span class="sup-exp">&minus;9</span></td><td>0,000000001</td><td class="pt-ref">1&nbsp;nm = 10<span class="sup-exp">&minus;9</span>&nbsp;m (&eacute;tude des atomes)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="retenir">
+    <div class="r-icon">&#11088;</div>
+    <div class="r-content"><strong>&Agrave; retenir&#160;:</strong> nano (n) = 10<span class="sup-exp">&minus;9</span>, micro (&mu;) = 10<span class="sup-exp">&minus;6</span>, milli (m) = 10<span class="sup-exp">&minus;3</span>, kilo (k) = 10<span class="sup-exp">3</span>, m&eacute;ga (M) = 10<span class="sup-exp">6</span>, giga (G) = 10<span class="sup-exp">9</span>.</div>
+  </div>
+
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q">Quel pr&eacute;fixe correspond &agrave; 10<span class="sup-exp">3</span>&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p3l1q1-A')"><span class="opt-letter">A</span> m&eacute;ga</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p3l1q1-B')"><span class="opt-letter">B</span> kilo</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l1q1-C')"><span class="opt-letter">C</span> hecto</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l1q1-D')"><span class="opt-letter">D</span> giga</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p3l1q1"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q">1&nbsp;nm (nanom&egrave;tre) vaut&#160;:</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p3l1q2-A')"><span class="opt-letter">A</span> 10<span class="sup-exp">&minus;6</span>&nbsp;m</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p3l1q2-B')"><span class="opt-letter">B</span> 10<span class="sup-exp">&minus;9</span>&nbsp;m</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l1q2-C')"><span class="opt-letter">C</span> 10<span class="sup-exp">&minus;3</span>&nbsp;m</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l1q2-D')"><span class="opt-letter">D</span> 10<span class="sup-exp">9</span>&nbsp;m</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p3l1q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q">Le symbole du pr&eacute;fixe micro est&#160;:</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p3l1q3-A')"><span class="opt-letter">A</span> m</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l1q3-B')"><span class="opt-letter">B</span> M</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p3l1q3-C')"><span class="opt-letter">C</span> &mu;</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l1q3-D')"><span class="opt-letter">D</span> n</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p3l1q3"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p3l1q4">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p3l1q4"></div>
+    <div class="quiz-feedback" id="qfb-p3l1q4"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p2l3')">&#8592; Pr&eacute;c&eacute;dent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p3l1');go(null,'p3l2')">Exercices &#8594;</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ P3L2 ═══ -->
+<div class="page" id="page-p3l2">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-purple">Partie 3 &middot; Le&ccedil;on 2</div>
+    <h1>Exercices &mdash; Pr&eacute;fixes</h1>
+    <p class="lesson-intro">Quatre exercices pour savoir utiliser les pr&eacute;fixes dans des situations concr&egrave;tes.</p>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 1</div><div class="quiz-q">1&nbsp;km vaut&#160;:</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p3l2q1-A')"><span class="opt-letter">A</span> 10<span class="sup-exp">2</span> m</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p3l2q1-B')"><span class="opt-letter">B</span> 10<span class="sup-exp">3</span> m</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l2q1-C')"><span class="opt-letter">C</span> 10<span class="sup-exp">6</span> m</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l2q1-D')"><span class="opt-letter">D</span> 10<span class="sup-exp">&minus;3</span> m</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p3l2q1"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 2</div><div class="quiz-q">Quel pr&eacute;fixe correspond &agrave; 10<span class="sup-exp">&minus;6</span>&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p3l2q2-A')"><span class="opt-letter">A</span> nano</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p3l2q2-B')"><span class="opt-letter">B</span> micro</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l2q2-C')"><span class="opt-letter">C</span> milli</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l2q2-D')"><span class="opt-letter">D</span> centi</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p3l2q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 3</div><div class="quiz-q">Un gigaoctet (Go) correspond &agrave; combien d&rsquo;octets&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p3l2q3-A')"><span class="opt-letter">A</span> 10<span class="sup-exp">3</span> octets</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l2q3-B')"><span class="opt-letter">B</span> 10<span class="sup-exp">6</span> octets</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p3l2q3-C')"><span class="opt-letter">C</span> 10<span class="sup-exp">9</span> octets</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l2q3-D')"><span class="opt-letter">D</span> 10<span class="sup-exp">12</span> octets</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p3l2q3"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 4</div><div class="quiz-q" id="qq-p3l2q4">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p3l2q4"></div>
+    <div class="quiz-feedback" id="qfb-p3l2q4"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p3l1')">&#8592; Pr&eacute;c&eacute;dent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p3l2');go(null,'p4l1')">Partie 4 &#8594;</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ P4L1 ═══ -->
+<div class="page" id="page-p4l1">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-teal">Partie 4 &middot; Le&ccedil;on 1</div>
+    <h1>D&eacute;finition et &eacute;criture scientifique</h1>
+    <p class="lesson-intro">La masse d&rsquo;un proton est 0,000&nbsp;000&nbsp;000&nbsp;000&nbsp;000&nbsp;000&nbsp;000&nbsp;001&nbsp;67&nbsp;kg. La distance entre deux galaxies peut atteindre 40&nbsp;000&nbsp;000&nbsp;000&nbsp;000&nbsp;000&nbsp;000&nbsp;km. Impossible de travailler avec de tels chiffres sans se perdre. La notation scientifique est la solution adopt&eacute;e par tous les scientifiques du monde&#160;: un seul format, une seule convention, qui s&rsquo;applique &agrave; n&rsquo;importe quel nombre, aussi grand ou aussi petit soit-il.</p>
+  </div>
+
+  <div class="section-divider">D&eacute;finition</div>
+  <div class="callout c-teal">
+    <div class="c-label">D&eacute;finition &middot; &Eacute;criture scientifique d&rsquo;un nombre d&eacute;cimal</div>
+    <p>L&rsquo;&eacute;criture scientifique d&rsquo;un nombre d&eacute;cimal positif est l&rsquo;unique &eacute;criture de la forme <strong><em class="var">a</em> &times; 10<span class="sup-var">n</span></strong> dans laquelle&#160;:</p>
+    <p>&bull; <em class="var">a</em> est un nombre d&eacute;cimal tel que <strong>1 &le; <em class="var">a</em> &lt; 10</strong>&nbsp;;</p>
+    <p>&bull; <em class="var">n</em> est un nombre entier relatif.</p>
+  </div>
+
+  <div class="example">
+    <div class="ex-label">Exemples du cours</div>
+    <p>&bull; 12&nbsp;835&nbsp;000 = 12&nbsp;835 &times; 10<span class="sup-exp">3</span> = 12,835 &times; 10<span class="sup-exp">6</span> = <strong>1,2835 &times; 10<span class="sup-exp">7</span></strong> (notation scientifique)</p>
+    <p>&bull; 0,003125 = 3,125 &times; 10<span class="sup-exp">&minus;3</span> (notation scientifique)</p>
+  </div>
+
+  <div class="callout c-yellow">
+    <div class="c-label">Remarque &middot; Calculatrice</div>
+    <p>La plupart des calculatrices affiche&#160;:</p>
+    <p>&bull; &laquo;&nbsp;1.2835E+7&nbsp;&raquo; pour exprimer 1,2835 &times; 10<span class="sup-exp">7</span></p>
+    <p>&bull; &laquo;&nbsp;3.125E-3&nbsp;&raquo; pour exprimer 3,125 &times; 10<span class="sup-exp">&minus;3</span></p>
+  </div>
+
+  <div class="tool-box" id="tool-compare">
+    <div class="tool-label">Outil &middot; Comparateur de puissances de 10</div>
+    <div class="tool-hint">Saisis deux nombres en notation scientifique (<em class="var">a</em>&nbsp;&times;&nbsp;10<span class="sup-var">n</span>) et compare-les. Essaie d&rsquo;abord avec des exposants tr&egrave;s diff&eacute;rents, puis avec des exposants &eacute;gaux.</div>
+    <div style="display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin:0.75rem 0;">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:0.4rem;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.62rem;color:var(--dim);letter-spacing:0.1em;">NOMBRE A</span>
+        <div style="display:flex;align-items:center;gap:0.4rem;">
+          <input id="cmp-a1" type="text" value="3,2"
+            style="width:4rem;text-align:center;padding:0.3rem;border:1px solid var(--border2);border-radius:4px;background:var(--surface2);color:var(--blue);font-family:'Fraunces',serif;font-size:1rem;font-weight:600;outline:none;">
+          <span style="color:var(--dim);font-size:0.9rem;">&times;&nbsp;10</span>
+          <input id="cmp-n1" type="number" min="-12" max="12" step="1" value="5"
+            style="width:3.5rem;text-align:center;padding:0.3rem;border:1px solid var(--border2);border-radius:4px;background:var(--surface2);color:var(--orange);font-family:'IBM Plex Mono',monospace;font-size:0.9rem;outline:none;">
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;padding-top:1.2rem;">
+        <span class="tool-result-big" id="cmp-sym" style="font-size:2rem;color:var(--purple);">?</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:0.4rem;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:0.62rem;color:var(--dim);letter-spacing:0.1em;">NOMBRE B</span>
+        <div style="display:flex;align-items:center;gap:0.4rem;">
+          <input id="cmp-a2" type="text" value="7,8"
+            style="width:4rem;text-align:center;padding:0.3rem;border:1px solid var(--border2);border-radius:4px;background:var(--surface2);color:var(--blue);font-family:'Fraunces',serif;font-size:1rem;font-weight:600;outline:none;">
+          <span style="color:var(--dim);font-size:0.9rem;">&times;&nbsp;10</span>
+          <input id="cmp-n2" type="number" min="-12" max="12" step="1" value="5"
+            style="width:3.5rem;text-align:center;padding:0.3rem;border:1px solid var(--border2);border-radius:4px;background:var(--surface2);color:var(--orange);font-family:'IBM Plex Mono',monospace;font-size:0.9rem;outline:none;">
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin:0.5rem 0;">
+      <button class="tool-btn" onclick="doCompare()">Comparer</button>
+    </div>
+    <div class="tool-info" id="cmp-info" style="min-height:2.5em;line-height:1.7;"></div>
+  </div>
+
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q">Laquelle de ces &eacute;critures est une notation scientifique&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p4l1q1-A')"><span class="opt-letter">A</span> 12,5 &times; 10<span class="sup-exp">3</span></button>
+      <button class="quiz-opt" onclick="answer(this,true,'p4l1q1-B')"><span class="opt-letter">B</span> 1,25 &times; 10<span class="sup-exp">4</span></button>
+      <button class="quiz-opt" onclick="answer(this,false,'p4l1q1-C')"><span class="opt-letter">C</span> 0,125 &times; 10<span class="sup-exp">5</span></button>
+      <button class="quiz-opt" onclick="answer(this,false,'p4l1q1-D')"><span class="opt-letter">D</span> 10 &times; 10<span class="sup-exp">3</span></button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p4l1q1"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q">Que repr&eacute;sente &laquo;&nbsp;3.125E-3&nbsp;&raquo; sur une calculatrice&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p4l1q2-A')"><span class="opt-letter">A</span> 3&nbsp;125</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p4l1q2-B')"><span class="opt-letter">B</span> 31,25</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p4l1q2-C')"><span class="opt-letter">C</span> 0,003125</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p4l1q2-D')"><span class="opt-letter">D</span> &minus;3,125</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p4l1q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q" id="qq-p4l1q3">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p4l1q3"></div>
+    <div class="quiz-feedback" id="qfb-p4l1q3"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p4l1q4">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p4l1q4"></div>
+    <div class="quiz-feedback" id="qfb-p4l1q4"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p3l2')">&#8592; Pr&eacute;c&eacute;dent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p4l1');go(null,'p4l2')">Le&ccedil;on suivante &#8594;</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ P4L2 ═══ -->
+<div class="page" id="page-p4l2">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-teal">Partie 4 &middot; Le&ccedil;on 2</div>
+    <h1>Passer d&rsquo;une &eacute;criture &agrave; l&rsquo;autre</h1>
+    <p class="lesson-intro">Passer de 45&nbsp;700 &agrave; 4,57&nbsp;&times;&nbsp;10<span class="sup-exp">4</span> peut para&icirc;tre magique &mdash; mais la m&eacute;thode est purement m&eacute;canique. On d&eacute;place la virgule jusqu&rsquo;&agrave; n&rsquo;avoir qu&rsquo;un seul chiffre avant elle, et on compte les rangs parcourus&#160;: c&rsquo;est l&rsquo;exposant. Dans le sens inverse (de la notation scientifique vers l&rsquo;&eacute;criture d&eacute;cimale), on fait le chemin &agrave; l&rsquo;envers. Cette le&ccedil;on te donne la m&eacute;thode pas &agrave; pas pour ne jamais te tromper de sens ni de signe.</p>
+  </div>
+
+  <div class="section-divider">M&eacute;thode</div>
+  <div class="callout c-teal">
+    <div class="c-label">M&eacute;thode &middot; Convertir un nombre en notation scientifique</div>
+    <div class="steps">
+      <div class="step"><div class="step-num" style="background:var(--teal);color:#0d1117">1</div><div>Placer la virgule apr&egrave;s le premier chiffre significatif (non nul) pour obtenir <em class="var">a</em> avec 1 &le; <em class="var">a</em> &lt; 10.</div></div>
+      <div class="step"><div class="step-num" style="background:var(--teal);color:#0d1117">2</div><div>Compter le nombre de rangs de d&eacute;placement de la virgule&#160;: c&rsquo;est <em class="var">n</em>. Si on d&eacute;place &agrave; gauche, <em class="var">n</em> &gt; 0&nbsp;; &agrave; droite, <em class="var">n</em> &lt; 0.</div></div>
+      <div class="step"><div class="step-num" style="background:var(--teal);color:#0d1117">3</div><div>&Eacute;crire <em class="var">a</em> &times; 10<span class="sup-var">n</span>.</div></div>
+    </div>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemples</div>
+    <p>&bull; 45&nbsp;700 &rarr; virgule apr&egrave;s le 4 : 4,57. D&eacute;placement de 4 rangs vers la gauche. Donc <strong>4,57 &times; 10<span class="sup-exp">4</span></strong>.</p>
+    <p>&bull; 0,00083 &rarr; virgule apr&egrave;s le 8 : 8,3. D&eacute;placement de 4 rangs vers la droite. Donc <strong>8,3 &times; 10<span class="sup-exp">&minus;4</span></strong>.</p>
+    <p>&bull; 1,2835 &times; 10<span class="sup-exp">7</span> = <strong>12&nbsp;835&nbsp;000</strong> (virgule de 7 rangs vers la droite).</p>
+  </div>
+
+  <div class="tool-box" id="tool-virgule">
+    <div class="tool-label">Outil &middot; D&eacute;placement de la virgule</div>
+    <div class="tool-hint">Le curseur d&eacute;place la virgule dans le nombre. La <strong>mantisse</strong> (le nombre multipli&eacute; par la puissance de 10) et l&rsquo;exposant s&rsquo;ajustent automatiquement &mdash; mais le nombre reste le m&ecirc;me&nbsp;!</div>
+
+    <div style="text-align:center;margin:0.6rem 0 0.3rem;">
+      <select id="vir-select" onchange="initVirgule()" style="padding:0.35rem 0.7rem;border:1px solid var(--border2);border-radius:6px;background:var(--surface2);color:var(--fg);font-family:'IBM Plex Mono',monospace;font-size:0.9rem;cursor:pointer;">
+        <option value="421000">421&nbsp;000</option>
+        <option value="36800">36&nbsp;800</option>
+        <option value="5070000">5&nbsp;070&nbsp;000</option>
+        <option value="0.00083">0,00083</option>
+        <option value="0.0057">0,0057</option>
+        <option value="29400">29&nbsp;400</option>
+      </select>
+    </div>
+
+    <div style="text-align:center;margin:0.5rem 0 0.2rem;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--dim);letter-spacing:0.08em;">POSITION DE LA VIRGULE</span>
+    </div>
+    <div class="tool-slider-row" style="justify-content:center;">
+      <input type="range" id="vir-pos" min="0" max="6" value="0" oninput="updateVirgule()" style="width:min(320px,80%)">
+    </div>
+
+    <div class="tool-display" style="margin-top:0.8rem;">
+      <div style="font-size:0.72rem;color:var(--dim);letter-spacing:0.08em;margin-bottom:0.5rem;font-family:'IBM Plex Mono',monospace;">LE NOMBRE</div>
+      <div id="vir-number" style="font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;color:var(--fg);letter-spacing:0.04em;min-height:2.2rem;"></div>
+      <div style="font-size:1.3rem;color:var(--dim);margin:0.3rem 0;">=</div>
+      <div id="vir-result" style="font-family:'Fraunces',serif;font-size:1.6rem;font-weight:700;min-height:2.4rem;display:flex;align-items:center;justify-content:center;gap:0.5rem;"></div>
+    </div>
+    <div class="tool-info" id="vir-info" style="min-height:2em;"></div>
+  </div>
+
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p4l2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p4l2"></div>
+    <div class="quiz-feedback" id="qfb-p4l2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p4l2q2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p4l2q2"></div>
+    <div class="quiz-feedback" id="qfb-p4l2q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q">3,7 &times; 10<span class="sup-exp">&minus;3</span> correspond &agrave; quel nombre d&eacute;cimal&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p4l2q3-A')"><span class="opt-letter">A</span> 3&nbsp;700</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p4l2q3-B')"><span class="opt-letter">B</span> 0,037</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p4l2q3-C')"><span class="opt-letter">C</span> 0,0037</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p4l2q3-D')"><span class="opt-letter">D</span> 37&nbsp;000</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p4l2q3"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p4l2q4">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p4l2q4"></div>
+    <div class="quiz-feedback" id="qfb-p4l2q4"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p4l1')">&#8592; Pr&eacute;c&eacute;dent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p4l2');go(null,'p4l3')">Exercices &#8594;</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ P4L3 ═══ -->
+<div class="page" id="page-p4l3">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-teal">Partie 4 &middot; Le&ccedil;on 3</div>
+    <h1>Exercices &mdash; Notation scientifique</h1>
+    <p class="lesson-intro">Trois exercices pour ma&icirc;triser la conversion et la comparaison en notation scientifique.</p>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 1</div><div class="quiz-q" id="qq-p4l3a">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p4l3a"></div>
+    <div class="quiz-feedback" id="qfb-p4l3a"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 2</div><div class="quiz-q" id="qq-p4l3b">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p4l3b"></div>
+    <div class="quiz-feedback" id="qfb-p4l3b"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 3</div><div class="quiz-q" id="qq-p4l3c">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p4l3c"></div>
+    <div class="quiz-feedback" id="qfb-p4l3c"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 4</div><div class="quiz-q" id="qq-p4l3d">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p4l3d"></div>
+    <div class="quiz-feedback" id="qfb-p4l3d"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p4l2')">&#8592; Pr&eacute;c&eacute;dent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p4l3');go(null,'pb1')">Partie 5 &#8594;</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ PB1 ═══ -->
+<div class="page" id="page-pb1">
+  <div class="lesson-header">
+    <div class="lesson-tag" style="color:var(--yellow)">Probl&egrave;mes &middot; Probl&egrave;me 1</div>
+    <h1>&#127826; &Ccedil;a butine&nbsp;!</h1>
+    <p class="lesson-intro">Un probl&egrave;me sur la production de miel et l&rsquo;&eacute;criture scientifique &mdash; des nombres astronomiques dans une ruche.</p>
+  </div>
+  <div class="callout c-yellow">
+    <div class="c-label">&Eacute;nonc&eacute;</div>
+    <p>Sur une dur&eacute;e de 1 ou 2 mois, une ruche peut produire jusqu&rsquo;&agrave; <strong>50&nbsp;kg de miel</strong>.</p>
+    <p>Pour produire <strong>1&nbsp;kg de miel</strong>, les abeilles d&rsquo;une ruche butinent au total <strong>5&nbsp;500&nbsp;000 fleurs</strong>.</p>
+    <p><strong>Question&nbsp;:</strong> D&eacute;terminer le nombre total de fleurs butin&eacute;es pour fabriquer le miel d&rsquo;une ruche. Donner le r&eacute;sultat en &eacute;criture scientifique.</p>
+  </div>
+
+  <div class="section-divider">Question 1 &mdash; &Eacute;criture scientifique de 5&nbsp;500&nbsp;000</div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question 1</div><div class="quiz-q">5&nbsp;500&nbsp;000 fleurs pour 1&nbsp;kg de miel : comment s&rsquo;&eacute;crit ce nombre en notation scientifique&nbsp;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb1q1-A')"><span class="opt-letter">A</span> 55 &times; 10<span class="sup-exp">5</span></button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb1q1-B')"><span class="opt-letter">B</span> 5,5 &times; 10<span class="sup-exp">6</span></button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb1q1-C')"><span class="opt-letter">C</span> 5,5 &times; 10<span class="sup-exp">5</span></button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb1q1-D')"><span class="opt-letter">D</span> 5,5 &times; 10<span class="sup-exp">7</span></button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb1q1"></div>
+  </div>
+
+  <div class="section-divider">Question 2 &mdash; Nombre de fleurs pour 50&nbsp;kg de miel</div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question 2</div><div class="quiz-q">Pour 50&nbsp;kg de miel, combien de fleurs ont &eacute;t&eacute; butin&eacute;es au total ? Donner le r&eacute;sultat en &eacute;criture scientifique.</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb1q2-A')"><span class="opt-letter">A</span> 2,75 &times; 10<span class="sup-exp">7</span></button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb1q2-B')"><span class="opt-letter">B</span> 2,75 &times; 10<span class="sup-exp">9</span></button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb1q2-C')"><span class="opt-letter">C</span> 2,75 &times; 10<span class="sup-exp">8</span></button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb1q2-D')"><span class="opt-letter">D</span> 2,75 &times; 10<span class="sup-exp">6</span></button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb1q2"></div>
+  </div>
+
+  <div class="section-divider">Question 3 &mdash; V&eacute;rifier l&rsquo;&eacute;criture scientifique</div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question 3</div><div class="quiz-q">Le r&eacute;sultat 275&nbsp;000&nbsp;000 est-il bien &eacute;gal &agrave; 2,75 &times; 10<span class="sup-exp">8</span>&nbsp;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,true,'pb1q3-A')"><span class="opt-letter">A</span> Oui</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb1q3-B')"><span class="opt-letter">B</span> Non</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb1q3"></div>
+  </div>
+
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p4l3')">&#8592; Pr&eacute;c&eacute;dent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('pb1');go(null,'pb2')">Probl&egrave;me suivant &#8594;</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ PB2 ═══ -->
+<div class="page" id="page-pb2">
+  <div class="lesson-header">
+    <div class="lesson-tag" style="color:var(--yellow)">Probl&egrave;mes &middot; Probl&egrave;me 2</div>
+    <h1>&#10084; Du c&oelig;ur</h1>
+    <p class="lesson-intro">Un probl&egrave;me sur les battements du c&oelig;ur et l&rsquo;&eacute;criture scientifique &mdash; des puissances au service de la biologie.</p>
+  </div>
+  <div class="callout c-yellow">
+    <div class="c-label">&Eacute;nonc&eacute;</div>
+    <p>Le c&oelig;ur humain effectue environ <strong>75 battements par minute</strong>.</p>
+    <p>La dur&eacute;e de vie moyenne est de <strong>80 ans</strong>.</p>
+    <p><strong>Question&nbsp;:</strong> Combien de fois le c&oelig;ur d&rsquo;une personne bat-il durant sa vie&nbsp;? Donner le r&eacute;sultat &agrave; l&rsquo;aide de l&rsquo;&eacute;criture scientifique.</p>
+  </div>
+
+  <div class="section-divider">Question 1 &mdash; Nombre de minutes dans une vie</div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question 1</div><div class="quiz-q">Combien y a-t-il de minutes dans 80 ans ? (1 an = 365 jours, 1 jour = 24 h, 1 h = 60 min)</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb2q1-A')"><span class="opt-letter">A</span> 4,208 &times; 10<span class="sup-exp">6</span> minutes</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb2q1-B')"><span class="opt-letter">B</span> 4,208 &times; 10<span class="sup-exp">5</span> minutes</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb2q1-C')"><span class="opt-letter">C</span> 4,208 &times; 10<span class="sup-exp">7</span> minutes</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb2q1-D')"><span class="opt-letter">D</span> 4,208 &times; 10<span class="sup-exp">8</span> minutes</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb2q1"></div>
+  </div>
+
+  <div class="section-divider">Question 2 &mdash; Nombre total de battements</div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question 2</div><div class="quiz-q">En multipliant le nombre de minutes par 75 battements/minute, quel est le nombre total de battements en &eacute;criture scientifique&nbsp;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb2q2-A')"><span class="opt-letter">A</span> 3,156 &times; 10<span class="sup-exp">8</span></button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb2q2-B')"><span class="opt-letter">B</span> 3,156 &times; 10<span class="sup-exp">9</span></button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb2q2-C')"><span class="opt-letter">C</span> 3,156 &times; 10<span class="sup-exp">10</span></button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb2q2-D')"><span class="opt-letter">D</span> 3,156 &times; 10<span class="sup-exp">7</span></button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb2q2"></div>
+  </div>
+
+  <div class="section-divider">Question 3 &mdash; Ordre de grandeur</div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question 3</div><div class="quiz-q">L&rsquo;ordre de grandeur du nombre de battements est la puissance de 10 la plus proche. Laquelle est-ce&nbsp;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb2q3-A')"><span class="opt-letter">A</span> 10<span class="sup-exp">8</span></button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb2q3-B')"><span class="opt-letter">B</span> 10<span class="sup-exp">9</span></button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb2q3-C')"><span class="opt-letter">C</span> 10<span class="sup-exp">10</span></button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb2q3"></div>
+  </div>
+
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'pb1')">&#8592; Pr&eacute;c&eacute;dent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('pb2');go(null,'pb3')">Probl&egrave;me suivant &#8594;</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ PB3 ═══ -->
+<div class="page" id="page-pb3">
+  <div class="lesson-header">
+    <div class="lesson-tag" style="color:var(--yellow)">Probl&egrave;mes &middot; Probl&egrave;me 3</div>
+    <h1>&#127758; La Terre, plan&egrave;te bleue</h1>
+    <p class="lesson-intro">Un probl&egrave;me sur les aires en &eacute;criture scientifique &mdash; pourquoi notre plan&egrave;te est surnomm&eacute;e &laquo;&nbsp;plan&egrave;te bleue&nbsp;&raquo;&nbsp;?</p>
+  </div>
+  <div class="callout c-yellow">
+    <div class="c-label">&Eacute;nonc&eacute;</div>
+    <p>L&rsquo;aire du globe terrestre est d&rsquo;environ <strong>5 &times; 10<span class="sup-exp">8</span>&nbsp;km&sup2;</strong>.</p>
+    <p>L&rsquo;aire des oc&eacute;ans est d&rsquo;environ <strong>35 &times; 10<span class="sup-exp">7</span>&nbsp;km&sup2;</strong>.</p>
+    <p>L&rsquo;aire des terres &eacute;merg&eacute;es est d&rsquo;environ <strong>150 &times; 10<span class="sup-exp">6</span>&nbsp;km&sup2;</strong>.</p>
+    <p><strong>Questions&nbsp;:</strong></p>
+    <p>1. Quel pourcentage de l&rsquo;aire du globe repr&eacute;sentent les oc&eacute;ans&nbsp;? Et les terres &eacute;merg&eacute;es&nbsp;?</p>
+    <p>2. Expliquer pourquoi la plan&egrave;te Terre est surnomm&eacute;e &laquo;&nbsp;plan&egrave;te bleue&nbsp;&raquo;.</p>
+  </div>
+
+  <div class="section-divider">Question 1a &mdash; &Eacute;criture scientifique des aires</div>
+
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question 1a</div><div class="quiz-q">Quelle est l&rsquo;aire des oc&eacute;ans en &eacute;criture scientifique&nbsp;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb3q1-A')"><span class="opt-letter">A</span> 35 &times; 10<span class="sup-exp">7</span>&nbsp;km&sup2;</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb3q1-B')"><span class="opt-letter">B</span> 3,5 &times; 10<span class="sup-exp">8</span>&nbsp;km&sup2;</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb3q1-C')"><span class="opt-letter">C</span> 3,5 &times; 10<span class="sup-exp">7</span>&nbsp;km&sup2;</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb3q1"></div>
+  </div>
+
+  <div class="section-divider">Question 1b &mdash; Pourcentage des oc&eacute;ans</div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question 1b</div><div class="quiz-q">Quel pourcentage de l&rsquo;aire du globe repr&eacute;sentent les oc&eacute;ans&nbsp;?<br><em style="font-size:0.82rem;color:var(--dim)">Aide&nbsp;: <span class="frac" style="font-size:0.9em"><span class="fnum">3,5 &times; 10<span class="sup-exp">8</span></span><span class="fden">5 &times; 10<span class="sup-exp">8</span></span></span> = ?</em></div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb3q2-A')"><span class="opt-letter">A</span> 60&nbsp;%</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb3q2-B')"><span class="opt-letter">B</span> 70&nbsp;%</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb3q2-C')"><span class="opt-letter">C</span> 75&nbsp;%</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb3q2-D')"><span class="opt-letter">D</span> 30&nbsp;%</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb3q2"></div>
+  </div>
+
+  <div class="section-divider">Question 1c &mdash; Pourcentage des terres &eacute;merg&eacute;es</div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question 1c</div><div class="quiz-q">Quel pourcentage de l&rsquo;aire du globe repr&eacute;sentent les terres &eacute;merg&eacute;es&nbsp;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb3q3-A')"><span class="opt-letter">A</span> 20&nbsp;%</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb3q3-B')"><span class="opt-letter">B</span> 30&nbsp;%</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb3q3-C')"><span class="opt-letter">C</span> 40&nbsp;%</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb3q3-D')"><span class="opt-letter">D</span> 50&nbsp;%</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb3q3"></div>
+  </div>
+
+  <div class="section-divider">Question 2 &mdash; La plan&egrave;te bleue</div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question 2</div><div class="quiz-q">Pourquoi la Terre est-elle surnomm&eacute;e &laquo;&nbsp;plan&egrave;te bleue&nbsp;&raquo;&nbsp;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb3q4-A')"><span class="opt-letter">A</span> Parce que son atmosph&egrave;re est bleue vue de l&rsquo;espace.</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb3q4-B')"><span class="opt-letter">B</span> Parce que les oc&eacute;ans couvrent 70&nbsp;% de la surface, dominant la couleur vue de l&rsquo;espace.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb3q4-C')"><span class="opt-letter">C</span> Parce que les terres &eacute;merg&eacute;es r&eacute;fl&eacute;chissent la lumi&egrave;re bleue.</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb3q4"></div>
+  </div>
+
+  <div class="completion-box" style="margin-top:2rem">
+    <div class="co-label">&#127881; Chapitre complet&nbsp;!</div>
+    <p>&#10003; Puissances d&rsquo;un nombre relatif (exposants positifs et n&eacute;gatifs)</p>
+    <p>&#10003; Puissances de 10 et leurs propri&eacute;t&eacute;s</p>
+    <p>&#10003; Pr&eacute;fixes du Syst&egrave;me International, de nano &agrave; giga</p>
+    <p>&#10003; Notation scientifique et conversions</p>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'pb2')">&#8592; Pr&eacute;c&eacute;dent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('pb3');go(null,'memo')">&#9829; M&eacute;mo &#8594;</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ MEMO ═══ -->
+<div class="page" id="page-memo">
+  <div class="lesson-header">
+    <div class="lesson-tag" style="color:var(--orange)">&#9829; M&eacute;mo</div>
+    <h1>&Agrave; conna&icirc;tre par c&oelig;ur</h1>
+    <p class="lesson-intro">Les 7 encadr&eacute;s &#9829; de la fiche de cours &mdash; les d&eacute;finitions et propri&eacute;t&eacute;s fondamentales du chapitre.</p>
+  </div>
+
+  <div class="section-divider">1 &mdash; Puissances d&rsquo;exposant entier positif</div>
+  <div class="callout c-blue">
+    <div class="c-label">D&eacute;finition</div>
+    <p><em class="var">a</em> d&eacute;signe un nombre relatif, <em class="var">n</em> un entier positif non nul.</p>
+    <div class="formula"><em class="var">a</em><span class="sup-var">n</span> &nbsp;=&nbsp; <em class="var">a</em> &times; <em class="var">a</em> &times; &hellip; &times; <em class="var">a</em> &nbsp;(<em class="var">n</em> facteurs)</div>
+    <p><strong>Cas particuliers&#160;:</strong> &nbsp; 0<span class="sup-var">n</span> = 0 &nbsp;;&nbsp; <em class="var">a</em><span class="sup-exp">1</span> = <em class="var">a</em> &nbsp;;&nbsp; <em class="var">a</em><span class="sup-exp">0</span> = 1 (pour <em class="var">a</em> &ne; 0)</p>
+  </div>
+
+  <div class="section-divider">2 &mdash; Puissances d&rsquo;exposant entier n&eacute;gatif</div>
+  <div class="callout c-blue">
+    <div class="c-label">D&eacute;finition</div>
+    <p><em class="var">a</em> &ne; 0, <em class="var">n</em> entier positif non nul.</p>
+    <div class="formula"><em class="var">a</em><span class="sup-var">&minus;n</span> &nbsp;=&nbsp; <span class="frac"><span class="fnum">1</span><span class="fden"><em class="var">a</em><span class="sup-var">n</span></span></span></div>
+    <p><strong>Cas particulier&#160;:</strong> &nbsp; <em class="var">a</em><span class="sup-exp">&minus;1</span> = <span class="frac"><span class="fnum">1</span><span class="fden"><em class="var">a</em></span></span> &nbsp; (inverse de <em class="var">a</em>)</p>
+  </div>
+
+  <div class="section-divider">3 &mdash; Priorit&eacute; des puissances</div>
+  <div class="callout c-orange">
+    <div class="c-label">Propri&eacute;t&eacute;</div>
+    <p>Dans un calcul sans parenth&egrave;ses, on calcule d&rsquo;abord les <strong>puissances</strong>.</p>
+  </div>
+
+  <div class="section-divider">4 &mdash; Puissances de 10 d&rsquo;exposant positif</div>
+  <div class="callout c-orange">
+    <div class="c-label">Propri&eacute;t&eacute; (admise)</div>
+    <p><em class="var">n</em> d&eacute;signe un entier strictement positif.</p>
+    <div class="formula">10<span class="sup-var">n</span> = 10 &times; 10 &times; &hellip; &times; 10 = 1<u>00&hellip;0</u> &nbsp;(<em class="var">n</em> z&eacute;ros)</div>
+  </div>
+
+  <div class="section-divider">5 &mdash; Puissances de 10 d&rsquo;exposant n&eacute;gatif</div>
+  <div class="callout c-orange">
+    <div class="c-label">Propri&eacute;t&eacute; (admise)</div>
+    <p><em class="var">n</em> d&eacute;signe un entier strictement positif.</p>
+    <div class="formula">10<span class="sup-var">&minus;n</span> &nbsp;=&nbsp; <span class="frac"><span class="fnum">1</span><span class="fden">10<span class="sup-var">n</span></span></span> &nbsp;=&nbsp; 0,<u>00&hellip;01</u> &nbsp;(<em class="var">n</em> chiffres apr&egrave;s la virgule)</div>
+  </div>
+
+  <div class="section-divider">6 &mdash; Pr&eacute;fixes (admis)</div>
+  <div class="callout c-purple">
+    <div class="c-label">D&eacute;finition &middot; Pr&eacute;fixes</div>
+    <p>nano (n) = 10<span class="sup-exp">&minus;9</span> &nbsp;&bull;&nbsp; micro (&mu;) = 10<span class="sup-exp">&minus;6</span> &nbsp;&bull;&nbsp; milli (m) = 10<span class="sup-exp">&minus;3</span></p>
+    <p>kilo (k) = 10<span class="sup-exp">3</span> &nbsp;&bull;&nbsp; m&eacute;ga (M) = 10<span class="sup-exp">6</span> &nbsp;&bull;&nbsp; giga (G) = 10<span class="sup-exp">9</span></p>
+  </div>
+
+  <div class="section-divider">7 &mdash; &Eacute;criture scientifique</div>
+  <div class="callout c-teal">
+    <div class="c-label">D&eacute;finition</div>
+    <p>L&rsquo;&eacute;criture scientifique est l&rsquo;unique &eacute;criture <strong><em class="var">a</em> &times; 10<span class="sup-var">n</span></strong> avec <strong>1 &le; <em class="var">a</em> &lt; 10</strong> et <em class="var">n</em> entier relatif.</p>
+  </div>
+
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'pb3')">&#8592; Retour</button>
+    <button class="nav-btn primary" onclick="go(null,'home')">&#127968; Sommaire</button>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<script>
+const TOTAL = 16;
+let done = {};
+
+function saveProgress() {
+  try { localStorage.setItem('puissance4e_done', JSON.stringify(done)); } catch(e) {}
+}
+function loadProgress() {
+  try { const s = localStorage.getItem('puissance4e_done'); if(s) done = JSON.parse(s); } catch(e) {}
+}
+function updateProgress() {
+  const ids = ['p1l1','p1l2','p1l3','p1l4','p2l1','p2l2','p2l3','p3l1','p3l2','p4l1','p4l2','p4l3','pb1','pb2','pb3'];
+  const n = Object.keys(done).length;
+  document.getElementById('prog-text').textContent = n + ' / ' + TOTAL;
+  document.getElementById('prog-fill').style.width = (n / TOTAL * 100) + '%';
+  ids.forEach(id => {
+    const el = document.getElementById('chk-' + id);
+    if(el) el.textContent = done[id] ? '✓' : '';
+    const nav = document.querySelector('[data-page="' + id + '"]');
+    if(nav) { done[id] ? nav.classList.add('done') : nav.classList.remove('done'); }
+  });
+}
+function markDone(id) { done[id] = true; updateProgress(); saveProgress(); }
+function resetProgress() {
+  if(!confirm('Remettre la progression à zéro ?')) return;
+  done = {};
+  try { localStorage.removeItem('puissance4e_done'); } catch(e) {}
+  updateProgress();
+}
+function go(el, target) {
+  const t = el ? el.dataset.page : target;
+  if(!t) return;
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const page = document.getElementById('page-' + t);
+  if(page) {
+    page.classList.add('active');
+    setTimeout(() => {
+      const main = document.getElementById('main');
+      main.scrollTop = 0; window.scrollTo(0,0);
+      document.documentElement.scrollTop = 0; document.body.scrollTop = 0;
+    }, 20);
+  }
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  const nav = document.querySelector('[data-page="' + t + '"]');
+  if(nav) nav.classList.add('active');
+  if(window.innerWidth < 720) document.getElementById('sidebar').classList.remove('open');
+}
+function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
+
+// ══════════════════ FEEDBACKS STATIQUES ══════════════════
+const FB = {
+  // P1L1
+  "p1l1q3-A": "Non. (−3)² = (−3) × (−3) = +9, pas −9. Les parenth&egrave;ses font que le signe participe au carr&eacute;.",
+  "p1l1q3-B": "Exact&nbsp;! (−3)² = (−3) × (−3) = 9 &gt; 0. Sans parenth&egrave;ses, −3² = −9.",
+  "p1l1q4-A": "Non. a⁰ = 1 pour tout a ≠ 0 — c\'\1st une convention importante.",
+  "p1l1q4-B": "Exact&nbsp;! Pour tout nombre non nul, a⁰ = 1. Donc 7⁰ = 1.",
+  "p1l1q4-C": "Non. a⁰ = 1, pas a. a¹ = a, mais l'exposant ici est 0.",
+  // P1L2
+  "p1l2q3-A": "Non. 3⁻² = 1/3² = 1/9. Un exposant n&eacute;gatif donne un inverse, jamais un nombre n&eacute;gatif.",
+  "p1l2q3-B": "Exact&nbsp;! 3⁻² = 1/3² = 1/9. Un exposant n&eacute;gatif n\'\1nverse pas le signe, il inverse le nombre.",
+  // P1L3
+  "p1l3q3-A": "Non. Sans parenth&egrave;ses, l'exposant ne s'applique qu\'\1u 4, pas au signe : −4² = −(4²) = −16.",
+  "p1l3q3-B": "Exact&nbsp;! −4² = −(4 × 4) = −16. Pour obtenir 16, il faudrait (−4)².",
+  // P3L1
+  "p3l1q1-A": "Non. M&eacute;ga correspond &agrave; 10⁶ (un million).",
+  "p3l1q1-B": "Exact&nbsp;! kilo = 10³ = 1&nbsp;000. Par exemple 1&nbsp;kg = 10³ g.",
+  "p3l1q1-C": "Non. hecto correspond &agrave; 10² = 100.",
+  "p3l1q1-D": "Non. giga correspond &agrave; 10⁹ (un milliard).",
+  "p3l1q2-A": "Non. 10⁻⁶ correspond au pr&eacute;fixe micro (μ).",
+  "p3l1q2-B": "Exact&nbsp;! nano = 10⁻⁹. 1 nm = 10⁻⁹ m, utilis&eacute; pour l'&eacute;tude des atomes.",
+  "p3l1q2-C": "Non. 10⁻³ correspond au pr&eacute;fixe milli (m). 1 mm = 10⁻³ m.",
+  "p3l1q2-D": "Non. 10⁹ est l'exposant de giga, et ce serait un tr&egrave;s grand nombre de m&egrave;tres.",
+  "p3l1q3-A": "Non. m minuscule est le symbole de milli (10⁻³). Attention : M majuscule = m&eacute;ga.",
+  "p3l1q3-B": "Non. M majuscule est le symbole de m&eacute;ga (10⁶).",
+  "p3l1q3-C": "Exact&nbsp;! μ (lettre grecque mu) est le symbole de micro = 10⁻⁶.",
+  "p3l1q3-D": "Non. n minuscule est le symbole de nano (10⁻⁹).",
+  // P3L2
+  "p3l2q1-A": "Non. hecto = 10² donc 1 hm = 10² m, pas 1 km.",
+  "p3l2q1-B": "Exact&nbsp;! kilo = 10³ donc 1 km = 10³ m = 1&nbsp;000 m.",
+  "p3l2q1-C": "Non. 10⁶ correspond &agrave; m&eacute;ga, pas kilo.",
+  "p3l2q1-D": "Non. 10⁻³ correspond &agrave; milli — ce serait 1 mm = 10⁻³ m.",
+  "p3l2q2-A": "Non. nano correspond &agrave; 10⁻⁹ (encore plus petit).",
+  "p3l2q2-B": "Exact&nbsp;! micro (μ) = 10⁻⁶. Exemple : 1 μm = 10⁻⁶ m.",
+  "p3l2q2-C": "Non. milli correspond &agrave; 10⁻³.",
+  "p3l2q2-D": "Non. centi correspond &agrave; 10⁻² = 0,01.",
+  "p3l2q3-A": "Non. 10³ octets = 1 kilooctet (ko).",
+  "p3l2q3-B": "Non. 10⁶ octets = 1 m&eacute;gaoctet (Mo), la taille d\'\1ne photo num&eacute;rique.",
+  "p3l2q3-C": "Exact&nbsp;! giga = 10⁹. 1 Go = 10⁹ octets, la taille typique d\'\1n film.",
+  "p3l2q3-D": "Non. 10¹² est le pr&eacute;fixe t&eacute;ra (T), qui n\'\1st pas dans le cours.",
+  // P4L1
+  "p4l1q1-A": "Non. 12,5 &ge; 10, donc ce n\'\1st pas une notation scientifique (on veut 1 &le; a &lt; 10).",
+  "p4l1q1-B": "Exact&nbsp;! 1,25 est bien compris entre 1 et 10. C'est la seule &eacute;criture correcte.",
+  "p4l1q1-C": "Non. 0,125 &lt; 1 donc ce n\'\1st pas une notation scientifique.",
+  "p4l1q1-D": "Non. 10 &ge; 10 donc ce n\'\1st pas une notation scientifique.",
+  "p4l1q2-A": "Non. 3 125 serait 3,125 × 10³, pas 3,125 × 10⁻³.",
+  "p4l1q2-B": "Non. 31,25 serait 3,125 × 10¹.",
+  "p4l1q2-C": "Exact&nbsp;! 3,125E-3 = 3,125 × 10⁻³ = 0,003125.",
+  "p4l1q2-D": "Non. L'exposant indique une puissance de 10, pas un signe pour le nombre entier.",
+  // P4L2
+  "p4l2q3-A": "Non. 3,7 × 10³ = 3&nbsp;700. Ici l'exposant est −3.",
+  "p4l2q3-B": "Non. 3,7 × 10⁻² = 0,037. Ici l'exposant est −3.",
+  "p4l2q3-C": "Exact&nbsp;! 10⁻³ = 0,001 donc 3,7 × 10⁻³ = 0,0037.",
+  "p4l2q3-D": "Non. 37&nbsp;000 = 3,7 × 10⁴.",
+  // PROBLÈMES
+  // Pb1 — Ça butine
+  "pb1q1-A": "Non. 55 &times; 10<span class='sup-exp'>5</span> = 5&nbsp;500&nbsp;000, c\'\1st vrai, mais ce n\'\1st pas une notation scientifique car 55 &ge; 10. Il faut que le coefficient soit entre 1 et 10.",
+  "pb1q1-B": "Exact&nbsp;! 5&nbsp;500&nbsp;000 = 5,5 &times; 1&nbsp;000&nbsp;000 = 5,5 &times; 10<span class='sup-exp'>6</span>.",
+  "pb1q1-C": "Non. 5,5 &times; 10<span class='sup-exp'>5</span> = 550&nbsp;000, pas 5&nbsp;500&nbsp;000. Compte les z&eacute;ros.",
+  "pb1q1-D": "Non. 5,5 &times; 10<span class='sup-exp'>7</span> = 55&nbsp;000&nbsp;000. Recompte : 5&nbsp;500&nbsp;000 = 5,5 &times; 10<span class='sup-exp'>?</span>",
+  "pb1q2-A": "Non. V&eacute;rifie : 50 &times; 5,5 &times; 10<span class='sup-exp'>6</span> = 275 &times; 10<span class='sup-exp'>6</span>. Convertis 275 en notation scientifique.",
+  "pb1q2-B": "Non. 275 &times; 10<span class='sup-exp'>6</span> = 2,75 &times; 10<span class='sup-exp'>2</span> &times; 10<span class='sup-exp'>6</span>. Calcule 2 + 6.",
+  "pb1q2-C": "Exact&nbsp;! 50 &times; 5,5 &times; 10<span class='sup-exp'>6</span> = 275 &times; 10<span class='sup-exp'>6</span> = 2,75 &times; 10<span class='sup-exp'>8</span>.",
+  "pb1q2-D": "Non. On multiplie par 50, donc l'exposant doit augmenter, pas rester &agrave; 6.",
+  "pb1q3-A": "Exact&nbsp;! 2,75 &times; 10<span class='sup-exp'>8</span> = 2,75 &times; 100&nbsp;000&nbsp;000 = 275&nbsp;000&nbsp;000. C'est bien 8 chiffres apr&egrave;s le 2.",
+  "pb1q3-B": "Non. Compte : 2,75 &times; 10<span class='sup-exp'>8</span> = 275&nbsp;000&nbsp;000 (on d&eacute;place la virgule de 8 rangs vers la droite).",
+  // Pb2 — Du cœur
+  "pb2q1-A": "Non. V&eacute;rifie : 80 &times; 365 &times; 24 &times; 60 = ? Calcule &eacute;tape par &eacute;tape.",
+  "pb2q1-B": "Non. V&eacute;rifie : 80 &times; 365 = 29&nbsp;200 jours. Puis &times; 24 &times; 60 = &times; 1440 minutes/jour.",
+  "pb2q1-C": "Exact&nbsp;! 80 &times; 365 &times; 24 &times; 60 = 42&nbsp;048&nbsp;000 &asymp; 4,208 &times; 10<span class='sup-exp'>7</span> minutes.",
+  "pb2q1-D": "Non. L'exposant est trop grand. 42&nbsp;millions s'&eacute;crit 4,2 &times; 10<span class='sup-exp'>?</span>",
+  "pb2q2-A": "Non. 4,208 &times; 10<span class='sup-exp'>7</span> &times; 75 = 315,6 &times; 10<span class='sup-exp'>7</span> = 3,156 &times; 10<span class='sup-exp'>?</span>. Calcule l'exposant.",
+  "pb2q2-B": "Exact&nbsp;! 4,208 &times; 10<span class='sup-exp'>7</span> &times; 75 = 315,6 &times; 10<span class='sup-exp'>7</span> = 3,156 &times; 10<span class='sup-exp'>9</span>.",
+  "pb2q2-C": "Non. V&eacute;rifie l'exposant : 315,6 &times; 10<span class='sup-exp'>7</span> = 3,156 &times; 10<span class='sup-exp'>?</span>",
+  "pb2q2-D": "Non. Le r&eacute;sultat est environ 3 milliards. Quel exposant correspond &agrave; 3 milliards ?",
+  "pb2q3-A": "Non. 3,156 &times; 10<span class='sup-exp'>9</span> est plus proche de 10<span class='sup-exp'>9</span> que de 10<span class='sup-exp'>8</span> : compare 3,156 &agrave; &radic;10 &asymp; 3,16.",
+  "pb2q3-B": "Exact&nbsp;! 3,156 &times; 10<span class='sup-exp'>9</span> est tr&egrave;s proche de 10<span class='sup-exp'>9</span> (le coefficient 3,156 est proche de 1 &agrave; l'&eacute;chelle logarithmique).",
+  "pb2q3-C": "Non. 3,156 &times; 10<span class='sup-exp'>9</span> est bien inf&eacute;rieur &agrave; 10<span class='sup-exp'>10</span>.",
+  // Pb4 — Du nano au giga
+  "pb4q1-A": "Non. 1&nbsp;pm = 10<span class='sup-exp'>&minus;12</span>&nbsp;m, donc 126&nbsp;pm = 126 &times; 10<span class='sup-exp'>&minus;12</span>&nbsp;m. Convertis 126 en notation scientifique.",
+  "pb4q1-B": "Exact&nbsp;! 126 &times; 10<span class='sup-exp'>&minus;12</span> = 1,26 &times; 10<span class='sup-exp'>2</span> &times; 10<span class='sup-exp'>&minus;12</span> = 1,26 &times; 10<span class='sup-exp'>&minus;10</span>&nbsp;m.",
+  "pb4q1-C": "Non. L&rsquo;exposant &minus;9 correspond au nano (nm), pas au pico. 1&nbsp;pm = 10<span class='sup-exp'>&minus;12</span>&nbsp;m.",
+  "pb4q1-D": "Non. Recalcule : 126 = 1,26 &times; 10<span class='sup-exp'>2</span>, donc 126 &times; 10<span class='sup-exp'>&minus;12</span> = 1,26 &times; 10<span class='sup-exp'>?</span>",
+  "pb4q2-A": "Non. 10<span class='sup-exp'>9</span> correspond au giga, pas au t&eacute;ra. 1&nbsp;T = 10<span class='sup-exp'>12</span>.",
+  "pb4q2-B": "Non. V&eacute;rifie : 1&nbsp;To = 10<span class='sup-exp'>12</span> octets, donc 2&nbsp;To = ?",
+  "pb4q2-C": "Exact&nbsp;! 1&nbsp;T = 10<span class='sup-exp'>12</span>, donc 2&nbsp;To = 2 &times; 10<span class='sup-exp'>12</span>&nbsp;octets.",
+  "pb4q2-D": "Non. 10<span class='sup-exp'>6</span> correspond au m&eacute;ga. 1&nbsp;T = 10<span class='sup-exp'>12</span>.",
+  "pb4q3-A": "Non. 500&nbsp;nm = 500 &times; 10<span class='sup-exp'>&minus;9</span> = 5 &times; 10<span class='sup-exp'>2</span> &times; 10<span class='sup-exp'>&minus;9</span>. Calcule 2 + (&minus;9).",
+  "pb4q3-B": "Exact&nbsp;! 500 &times; 10<span class='sup-exp'>&minus;9</span> = 5 &times; 10<span class='sup-exp'>2</span> &times; 10<span class='sup-exp'>&minus;9</span> = 5 &times; 10<span class='sup-exp'>&minus;7</span>&nbsp;m.",
+  "pb4q3-C": "Non. 500 = 5 &times; 10<span class='sup-exp'>2</span>, donc 500 &times; 10<span class='sup-exp'>&minus;9</span> = 5 &times; 10<span class='sup-exp'>2+(−9)</span> = 5 &times; 10<span class='sup-exp'>?</span>",
+  "pb4q3-D": "Non. 10<span class='sup-exp'>&minus;9</span> correspond &agrave; 1&nbsp;nm, pas &agrave; 500&nbsp;nm.",
+  // Pb5 — Distances dans l'Univers
+  "pb5q1-A": "Non. Compare les exposants : 10<span class='sup-exp'>5</span>, 10<span class='sup-exp'>8</span>, 10<span class='sup-exp'>13</span>, 10<span class='sup-exp'>4</span>. Lequel est le plus grand ?",
+  "pb5q1-B": "Non. 10<span class='sup-exp'>8</span> &lt; 10<span class='sup-exp'>13</span>. Compare bien tous les exposants.",
+  "pb5q1-C": "Exact&nbsp;! 4 &times; 10<span class='sup-exp'>13</span> est la plus grande : 10<span class='sup-exp'>13</span> &gt; 10<span class='sup-exp'>8</span> &gt; 10<span class='sup-exp'>5</span> &gt; 10<span class='sup-exp'>4</span>.",
+  "pb5q1-D": "Non. 10<span class='sup-exp'>4</span> est en fait la plus petite valeur. Compare les exposants.",
+  "pb5q2-A": "Exact&nbsp;! 4&times;10<span class='sup-exp'>4</span> &lt; 3,84&times;10<span class='sup-exp'>5</span> &lt; 1,5&times;10<span class='sup-exp'>8</span> &lt; 4&times;10<span class='sup-exp'>13</span>.",
+  "pb5q2-B": "Non. Compare 4&times;10<span class='sup-exp'>4</span> et 3,84&times;10<span class='sup-exp'>5</span> : 10<span class='sup-exp'>4</span> &lt; 10<span class='sup-exp'>5</span>, donc le tour de la Terre est plus petit que la distance Terre&ndash;Lune.",
+  "pb5q2-C": "Non. Compare 10<span class='sup-exp'>8</span> et 10<span class='sup-exp'>13</span> : lequel est le plus grand ?",
+  "pb5q3-A": "Non. <span class='frac'><span class='fnum'>1,5&times;10<span class='sup-exp'>8</span></span><span class='fden'>3,84&times;10<span class='sup-exp'>5</span></span></span> = <span class='frac'><span class='fnum'>1,5</span><span class='fden'>3,84</span></span> &times; 10<span class='sup-exp'>3</span>. Calcule le rapport des coefficients.",
+  "pb5q3-B": "Non. Le rapport des exposants seul donne 10<span class='sup-exp'>3</span>=1000, mais le rapport des coefficients 1,5/3,84 &asymp; 0,39, ce qui fait &asymp; 390 fois.",
+  "pb5q3-C": "Exact&nbsp;! <span class='frac'><span class='fnum'>1,5&times;10<span class='sup-exp'>8</span></span><span class='fden'>3,84&times;10<span class='sup-exp'>5</span></span></span> &asymp; 0,39 &times; 10<span class='sup-exp'>3</span> &asymp; 390 fois.",
+  "pb5q3-D": "Non. 10<span class='sup-exp'>8&minus;5</span> = 10<span class='sup-exp'>3</span> = 1&nbsp;000, et le rapport des coefficients est &lt; 1, donc moins de 1&nbsp;000 fois.",
+  "pb3q1-A": "Non. 35 &times; 10<span class='sup-exp'>7</span> n\'\1st pas une &eacute;criture scientifique car 35 &ge; 10. D&eacute;place la virgule.",
+  "pb3q1-B": "Exact&nbsp;! 35 &times; 10<span class='sup-exp'>7</span> = 3,5 &times; 10<span class='sup-exp'>8</span>&nbsp;km&sup2;.",
+  "pb3q1-C": "Non. 35 &times; 10<span class='sup-exp'>7</span> : si on divise 35 par 10 pour obtenir 3,5, il faut multiplier 10<span class='sup-exp'>7</span> par 10 pour compenser.",
+  "pb3q2-A": "Non. Calcule : 3,5 &divide; 5 = ? Ce n\'\1st pas 0,6.",
+  "pb3q2-B": "Exact&nbsp;! <span class='frac'><span class='fnum'>3,5 &times; 10<span class='sup-exp'>8</span></span><span class='fden'>5 &times; 10<span class='sup-exp'>8</span></span></span> = <span class='frac'><span class='fnum'>3,5</span><span class='fden'>5</span></span> = 0,7 = 70&nbsp;%.",
+  "pb3q2-C": "Non. 3,5 &divide; 5 = 0,7 = 70&nbsp;%, pas 75&nbsp;%.",
+  "pb3q2-D": "Non. 30&nbsp;% correspond aux terres &eacute;merg&eacute;es. Les oc&eacute;ans, c\'\1st le compl&eacute;ment.",
+  "pb3q3-A": "Non. Calcule : 1,5 &divide; 5 = ? Ce n\'\1st pas 0,2.",
+  "pb3q3-B": "Exact&nbsp;! <span class='frac'><span class='fnum'>1,5 &times; 10<span class='sup-exp'>8</span></span><span class='fden'>5 &times; 10<span class='sup-exp'>8</span></span></span> = <span class='frac'><span class='fnum'>1,5</span><span class='fden'>5</span></span> = 0,3 = 30&nbsp;%. V&eacute;rification : 70&nbsp;% + 30&nbsp;% = 100&nbsp;% ✓",
+  "pb3q3-C": "Non. 1,5 &divide; 5 = 0,3 = 30&nbsp;%, pas 40&nbsp;%.",
+  "pb3q3-D": "Non. 50&nbsp;% aurait donn&eacute; autant de terres que d\'\1c&eacute;ans. Calcule 1,5 &divide; 5.",
+  "pb3q4-A": "Non. Si l'atmosph&egrave;re &eacute;tait la raison, toutes les plan&egrave;tes &agrave; atmosph&egrave;re seraient bleues. Pense &agrave; ce que l'on voit depuis l'espace.",
+  "pb3q4-B": "Exact&nbsp;! Les oc&eacute;ans couvrent 70&nbsp;% de la surface. Vus de l'espace, ils donnent &agrave; la Terre sa couleur bleue dominante.",
+  "pb3q4-C": "Non. Ce sont les oc&eacute;ans, pas les terres, qui donnent la couleur bleue vue depuis l'espace.",
+};
+
+// ══════════════════ MOTEUR QUIZ ══════════════════
+function answer(btn, correct, fbKey) {
+  const quiz = btn.closest('.quiz');
+  quiz.querySelectorAll('.quiz-opt').forEach(o => { o.disabled = true; o.style.cursor = 'default'; });
+  btn.classList.add(correct ? 'correct' : 'wrong');
+  const fb = quiz.querySelector('[id^="qfb-"]');
+  if(fb) {
+    const text = FB[fbKey] || fbKey;
+    fb.className = 'quiz-feedback show ' + (correct ? 'ok' : 'ko');
+    fb.innerHTML = (correct ? '✓ ' : '✗ ') + text
+      + (correct ? '' : '<button class="retry-btn" onclick="retryQuiz(this)">↺ Réessayer</button>');
+  }
+}
+function retryQuiz(btn) {
+  const quiz = btn.closest('.quiz');
+  quiz.querySelectorAll('.quiz-opt').forEach(o => {
+    o.disabled = false; o.style.cursor = 'pointer';
+    o.classList.remove('correct','wrong');
+  });
+  const fb = quiz.querySelector('[id^="qfb-"]');
+  if(fb) { fb.className = 'quiz-feedback'; fb.innerHTML = ''; }
+}
+
+// ══════════════════ MOTEUR RANDOMISATION ══════════════════
+function rInt(min,max){return Math.floor(Math.random()*(max-min+1))+min;}
+function shuffle(arr){let a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function pw(base,exp){
+  const b = exp<0 ? '('+base+')' : String(base);
+  const e = exp<0 ? String(exp) : String(exp);
+  return b+'<span class="sup-exp">'+(exp<0?'&minus;'+Math.abs(exp):e)+'</span>';
+}
+function pwVal(base,exp){return Math.pow(base,exp);}
+
+// Garantit que les distracteurs sont tous distincts entre eux et distincts de la bonne réponse
+function uniqueOpts(correct, candidates, fallbackStart){
+  const used = new Set([correct]);
+  const result = [];
+  for(const c of candidates){
+    if(!used.has(c)){ used.add(c); result.push(c); }
+  }
+  let fb = fallbackStart !== undefined ? fallbackStart : correct + 10;
+  while(result.length < 3){
+    if(!used.has(fb)){ used.add(fb); result.push(fb); }
+    fb++;
+  }
+  return result;
+}
+
+function placeQuiz(qid, qHtml, opts){
+  const qq=document.getElementById('qq-'+qid);
+  const qo=document.getElementById('qo-'+qid);
+  if(!qq||!qo) return;
+  qq.innerHTML=qHtml;
+  qo.innerHTML='';
+  'ABCDE'.split('').slice(0,opts.length).forEach((l,i)=>{
+    const btn=document.createElement('button');
+    btn.className='quiz-opt';
+    btn.innerHTML='<span class="opt-letter">'+l+'</span> '+opts[i].html;
+    const key='rq-'+qid+'-'+l;
+    FB[key]=opts[i].fb;
+    btn.onclick=function(){answer(this,opts[i].correct,key);};
+    qo.appendChild(btn);
+  });
+}
+
+// ══════════════════ P1L1 — exposant positif ══════════════════
+function initP1L1(){
+  // Quiz 1 : calculer a^n
+  (function(){
+    const bases=[2,3,4,5,2,3];
+    const exps=[2,2,2,2,3,3];
+    const i=rInt(0,5);
+    const a=bases[i],n=exps[i],res=pwVal(a,n);
+    const [w1,w2,w3]=uniqueOpts(res,[res+1,res-1,a*n],res+2);
+    const _fbs1={[w1]:'Non. Rappelle-toi&nbsp;: '+pw(a,n)+' signifie '+Array(n).fill(a).join(' &times; ')+'. Recalcule.',[w2]:'Non. D&eacute;taille le calcul&nbsp;: '+pw(a,n)+' = '+Array(n).fill(a).join(' &times; ')+'. Recalcule.',[w3]:'Non. On ne multiplie pas la base par l\'exposant&nbsp;: '+pw(a,n)+' signifie '+n+' facteurs &eacute;gaux &agrave; '+a+'. Recalcule.'};
+    placeQuiz('p1l1','Calcule&nbsp;: '+pw(a,n)+' = ?', shuffle([
+      {html:String(res), correct:true,  fb:'Exact&nbsp;! '+pw(a,n)+' = '+Array(n).fill(a).join(' &times; ')+' = '+res+'.'},
+      {html:String(w1),  correct:false, fb:_fbs1[''+w1]},
+      {html:String(w2),  correct:false, fb:_fbs1[''+w2]},
+      {html:String(w3),  correct:false, fb:_fbs1[''+w3]},
+    ]));
+  })();
+  // Quiz 2 : combien de facteurs
+  (function(){
+    const a=rInt(2,9),n=rInt(2,5);
+    // Garantir que le 4e distracteur (base a) ne coïncide pas avec n, n+1 ou n-1
+    const d4 = (a===n||a===n+1||a===n-1) ? n+3 : a;
+    const d4fb = (a===n||a===n+1||a===n-1)
+      ? 'Non. L\'exposant est '+n+' : regarde l\'exposant dans '+pw(a,n)+', pas la base.'
+      : 'Non. L\'exposant est '+n+', pas la base '+a+'.';
+    placeQuiz('p1l1q2',pw(a,n)+' est le produit de combien de facteurs &eacute;gaux &agrave; '+a+' ?', shuffle([
+      {html:String(n),   correct:true,  fb:'Exact&nbsp;! '+pw(a,n)+' = '+Array(n).fill(a).join(' × ')+'.'},
+      {html:String(n+1), correct:false, fb:'Non. L\'exposant indique le nombre exact de facteurs. Lis-le bien dans '+pw(a,n)+'.'},
+      {html:String(n-1), correct:false, fb:'Non. Lis l\'exposant dans '+pw(a,n)+' : c\'est lui qui donne le nombre de facteurs.'},
+      {html:String(d4),  correct:false, fb:d4fb},
+    ]));
+  })();
+}
+
+// ══════════════════ P1L2 — exposant négatif ══════════════════
+function initP1L2(){
+  // Quiz 1 : a^-n = 1/a^n
+  (function(){
+    const a=rInt(2,6),n=rInt(2,3);
+    const an=pwVal(a,n);
+    placeQuiz('p1l2',pw(a,-n)+' est &eacute;gal &agrave; :', shuffle([
+      {html:'<span class="frac"><span class="fnum">1</span><span class="fden">'+an+'</span></span>', correct:true,
+       fb:'Exact&nbsp;! '+pw(a,-n)+' = 1/'+pw(a,n)+' = 1/'+an+'.'},
+      {html:String(-an), correct:false,
+       fb:'Non. Un exposant n&eacute;gatif donne un inverse (une fraction), pas un nombre n&eacute;gatif.'},
+      {html:String(an),  correct:false,
+       fb:'Non. Un exposant n&eacute;gatif donne l\'inverse. &Eacute;cris '+pw(a,-n)+' comme une fraction avec 1 au num&eacute;rateur.'},
+      {html:'<span class="frac"><span class="fnum">1</span><span class="fden">'+(an+1)+'</span></span>', correct:false,
+       fb:'Non. Calcule d\'abord '+pw(a,n)+', puis &eacute;cris son inverse sous forme de fraction.'},
+    ]));
+  })();
+  // Quiz 2 : identifier la valeur décimale de 10^-n
+  (function(){
+    const n=rInt(1,4);
+    const decimals=['0,1','0,01','0,001','0,0001'];
+    const inv=['10','100','1&nbsp;000','10&nbsp;000'];
+    const val=decimals[n-1];
+    placeQuiz('p1l2q2','Quelle est la valeur d&eacute;cimale de 10<span class="sup-exp">&minus;'+n+'</span>&nbsp;?', shuffle([
+      {html:val,              correct:true, fb:'Exact&nbsp;! 10<span class="sup-exp">&minus;'+n+'</span> = 1/'+inv[n-1]+' = '+val+'.'},
+      {html:decimals[(n%4)],  correct:false,fb:'Non. 10<span class="sup-exp">&minus;'+n+'</span> = 1/'+inv[n-1]+'. Quelle est la valeur d&eacute;cimale de cette fraction ?'},
+      {html:String(pwVal(10,n)),correct:false,fb:'Non. '+pwVal(10,n)+' = 10'+n+'. L\'exposant est ici n&eacute;gatif.'},
+      {html:'&minus;'+String(n),correct:false,fb:'Non. L\'exposant n&eacute;gatif indique un inverse, pas un nombre n&eacute;gatif.'},
+    ]));
+  })();
+  // Quiz 4 : comparer a^-n et a^-m
+  (function(){
+    const a=rInt(2,6), n=rInt(1,3), m=n+rInt(1,2);
+    const vn=pwVal(a,n), vm=pwVal(a,m);
+    placeQuiz('p1l2q4',
+      'Compare '+pw(a,-n)+' et '+pw(a,-m)+' (sans calculatrice).',
+      shuffle([
+        {html:pw(a,-n)+' &gt; '+pw(a,-m), correct:true,
+         fb:'Exact&nbsp;! Plus l\'exposant n&eacute;gatif est grand en valeur absolue, plus la fraction est petite. '
+           +pw(a,-n)+' = 1/'+vn+' et '+pw(a,-m)+' = 1/'+vm+'.'},
+        {html:pw(a,-n)+' &lt; '+pw(a,-m), correct:false,
+         fb:'Non. '+pw(a,-n)+' = 1/'+vn+' et '+pw(a,-m)+' = 1/'+vm+'. Or 1/'+vn+' > 1/'+vm+'.'},
+        {html:pw(a,-n)+' = '+pw(a,-m), correct:false,
+         fb:'Non. Les exposants sont diff&eacute;rents&nbsp;: '+(-n)+' ≠ '+(-m)+'.'},
+        {html:'Impossible &agrave; d&eacute;terminer', correct:false,
+         fb:'Non. On peut comparer : '+pw(a,-n)+' = 1/'+vn+' > 1/'+vm+' = '+pw(a,-m)+'.'},
+      ])
+    );
+  })();
+}
+
+// ══════════════════ P1L3 — calculs et priorités ══════════════════
+function initP1L3(){
+  // Quiz 1 : A = c - a^2
+  (function(){
+    const a=rInt(2,6),c=rInt(2,8);
+    const res=c-a*a;
+    // (c-a)*2 peut coïncider avec c+a*a → décaler si nécessaire
+    const w1_raw=(c-a)*2;
+    const w3=c+a*a;
+    const w1=(w1_raw===w3||w1_raw===res) ? res-2 : w1_raw;
+    placeQuiz('p1l3','Calcule : <em>A</em> = '+c+' &minus; '+pw(a,2), shuffle([
+      {html:String(res), correct:true,  fb:'Exact&nbsp;! On calcule d\'abord '+pw(a,2)+' = '+a*a+', puis '+c+' &minus; '+a*a+' = '+res+'.'},
+      {html:String(w1),  correct:false, fb:'Non. Calcule d\'abord '+pw(a,2)+', puis soustrait de '+c+'.'},
+      {html:String(c*a*a),correct:false,fb:'Non. Il faut d\'abord calculer '+pw(a,2)+', puis soustraire de '+c+'.'},
+      {html:String(w3),  correct:false, fb:'Non. Attention au signe : c\'est &minus;'+pw(a,2)+', pas +'+pw(a,2)+'.'},
+    ]));
+  })();
+  // Quiz 2 : B = c × a^2
+  (function(){
+    const a=rInt(2,5),c=rInt(2,6);
+    const res=c*a*a;
+    // c*2*a = res quand a=2 → remplacer par c*(a*a+1) dans ce cas
+    const w1_raw=c*2*a;
+    const w1=(w1_raw===res) ? c*(a*a+1) : w1_raw;
+    const w1fb=(w1_raw===res)
+      ? 'Non. '+pw(a,2)+' = '+a*a+', donc '+c+' &times; '+a*a+' = '+res+'.'
+      : 'Non. '+pw(a,2)+' = '+a*a+', pas 2&times;'+a+' = '+(2*a)+'.';
+    placeQuiz('p1l3q2','Calcule : <em>B</em> = '+c+' &times; '+pw(a,2), shuffle([
+      {html:String(res),         correct:true,  fb:'Parfait&nbsp;! On calcule d\'abord '+pw(a,2)+' = '+a*a+', puis '+c+' &times; '+a*a+' = '+res+'.'},
+      {html:String(w1),          correct:false, fb:w1fb},
+      {html:String((c*a)*(c*a)), correct:false, fb:'Non. On ne multiplie pas c par la base. Calcule d\'abord '+pw(a,2)+', puis multiplie par '+c+'.'},
+      {html:String(c+a*a),       correct:false, fb:'Non. C\'est une multiplication. Calcule d\'abord '+pw(a,2)+'&nbsp;, puis multiplie par '+c+'.'},
+    ]));
+  })();
+  // Quiz 4 : (−a)^n vs −a^n avec n pair
+  (function(){
+    const a=rInt(2,5), n=2*rInt(1,3);
+    const posRes=pwVal(a,n);
+    placeQuiz('p1l3q4',
+      'Vrai ou faux : (&minus;'+a+')<span class="sup-exp">'+n+'</span> = &minus;'+a+'<span class="sup-exp">'+n+'</span>.',
+      shuffle([
+        {html:'Faux', correct:true,
+         fb:'Exact ! (&minus;'+a+')<span class="sup-exp">'+n+'</span> = +'+posRes
+           +' (exposant pair, les − s\'annulent), mais −'+a+'<span class="sup-exp">'+n+'</span> = −'+posRes+'.'},
+        {html:'Vrai', correct:false,
+         fb:'Non. (&minus;'+a+')<span class="sup-exp">'+n+'</span> = +'+posRes
+           +' (positif), alors que −'+a+'<span class="sup-exp">'+n+'</span> = −'+posRes+' (négatif).'},
+      ])
+    );
+  })();
+}
+
+// ══════════════════ P1L4 — exercices ══════════════════
+function initP1L4(){
+  // Exo 1 : (-a)^2 vs -a^2
+  (function(){
+    const a=rInt(2,8);
+    const pos=a*a,neg=-(a*a);
+    placeQuiz('p1l4a','Que vaut (&minus;'+a+')<span class="sup-exp">2</span>&nbsp;?', shuffle([
+      {html:String(pos), correct:true,  fb:'Exact&nbsp;! (&minus;'+a+')&sup2; = (&minus;'+a+') &times; (&minus;'+a+') = +'+pos+'.'},
+      {html:String(neg), correct:false, fb:'Non. Attention : (&minus;'+a+')&sup2; = (&minus;'+a+') &times; (&minus;'+a+'). Quel signe obtient-on quand on multiplie deux nombres n&eacute;gatifs ?'},
+      {html:String(2*a), correct:false, fb:'Non. On ne multiplie pas la base par l\'exposant.'},
+      {html:String(-2*a),correct:false, fb:'Non. (&minus;'+a+')&sup2; est toujours positif : (&minus;) &times; (&minus;) = (+).'},
+    ]));
+  })();
+  // Exo 2 : -a^2
+  (function(){
+    const a=rInt(2,8);
+    const neg=-(a*a),pos=a*a;
+    placeQuiz('p1l4b','Que vaut &minus;'+a+'<span class="sup-exp">2</span>&nbsp;?', shuffle([
+      {html:String(neg), correct:true,  fb:'Exact&nbsp;! &minus;'+a+'&sup2; = &minus;('+a+'&times;'+a+') = &minus;'+pos+'.'},
+      {html:String(pos), correct:false, fb:'Non. Sans parenth&egrave;ses, l\'exposant ne s\'applique pas au signe moins.'},
+      {html:String(2*a), correct:false, fb:'Non. Il faut d\'abord calculer '+a+'&sup2;, puis prendre l\'oppos&eacute;.'},
+      {html:'0',         correct:false, fb:'Non. Sans parenth&egrave;ses, l\'exposant ne porte que sur '+a+', pas sur le signe &minus;.'},
+    ]));
+  })();
+  // Exo 3 : a^-n sous forme fraction
+  (function(){
+    const a=rInt(2,5),n=rInt(2,3);
+    const an=pwVal(a,n);
+    const [d1,d2]=uniqueOpts(an,[a*n,an-1,an+1],an+2);
+    const _fbC={};
+    _fbC[d1]='Non. On ne multiplie pas la base par l\'exposant. '+pw(a,n)+' = '+an+'.';
+    _fbC[d2]='Non. '+pw(a,n)+' = '+an+', donc '+pw(a,-n)+' = 1/'+an+'.';
+    placeQuiz('p1l4c','&Eacute;cris '+pw(a,-n)+' sous la forme d\'une fraction.', shuffle([
+      {html:'<span class="frac"><span class="fnum">1</span><span class="fden">'+an+'</span></span>', correct:true,
+       fb:'Exact&nbsp;! '+pw(a,-n)+' = 1/'+pw(a,n)+' = 1/'+an+'.'},
+      {html:'<span class="frac"><span class="fnum">1</span><span class="fden">'+d1+'</span></span>', correct:false,
+       fb:_fbC[d1]},
+      {html:String(-an), correct:false,
+       fb:'Non. Un exposant n&eacute;gatif donne un inverse, pas un nombre n&eacute;gatif.'},
+      {html:'<span class="frac"><span class="fnum">1</span><span class="fden">'+d2+'</span></span>', correct:false,
+       fb:_fbC[d2]},
+    ]));
+  })();
+  // Exo 4 : vrai/faux a^0 = 0 pour a≠0
+  (function(){
+    const a=rInt(2,12);
+    placeQuiz('p1l4d','Vrai ou faux&nbsp;: '+a+'<span class="sup-exp">0</span> = 0.',[
+      {html:'Vrai', correct:false, fb:'Non. Pour tout <em class="var">a</em> &ne; 0, <em class="var">a</em>&sup0; = 1 (convention). Donc '+a+'&sup0; = 1, pas 0.'},
+      {html:'Faux', correct:true,  fb:'Exact&nbsp;! '+a+'&sup0; = 1. Pour tout <em class="var">a</em> non nul, <em class="var">a</em>&sup0; = 1 par convention.'},
+    ]);
+  })();
+}
+
+// ══════════════════ P2L1 — puissances de 10 positif ══════════════════
+function initP2L1(){
+  // Quiz 1 : valeur de 10^n
+  (function(){
+    const n=rInt(1,6);
+    const val=pwVal(10,n);
+    const vals=[10,100,1000,10000,100000,1000000];
+    const fmt=['10','100','1&nbsp;000','10&nbsp;000','100&nbsp;000','1&nbsp;000&nbsp;000'];
+    // Choisir 3 indices distincts de n-1 dans [0..5]
+    const all6=[0,1,2,3,4,5].filter(i=>i!==n-1);
+    const idxA=all6[0], idxB=all6[1];  // toujours différents entre eux et de n-1
+    // Distracteur numérique : n*10, mais si n=1 → n*10=10=fmt[0]=bonne réponse → utiliser 1
+    const numW = (n*10 === val) ? val+1 : n*10;
+    placeQuiz('p2l1','Que vaut 10<span class="sup-exp">'+n+'</span>&nbsp;?', shuffle([
+      {html:fmt[n-1],     correct:true,  fb:'Exact&nbsp;! 10<span class="sup-exp">'+n+'</span> = 1 suivi de '+n+' z&eacute;ro(s) = '+fmt[n-1]+'.'},
+      {html:fmt[idxA],    correct:false, fb:'Non. 10<span class="sup-exp">'+n+'</span> = 1 suivi de '+n+' z&eacute;ro(s). Recompte.'},
+      {html:String(numW), correct:false, fb:'Non. On n\'effectue pas n&times;10. 10<span class="sup-exp">'+n+'</span>, c\'est 1 suivi de '+n+' z&eacute;ro(s).'},
+      {html:fmt[idxB],    correct:false, fb:'Non. 10<span class="sup-exp">'+n+'</span> = 1 suivi de combien de z&eacute;ros ?'},
+    ]));
+  })();
+  // Quiz 2 : 10^a × 10^b = 10^?
+  (function(){
+    const a=rInt(1,5),b=rInt(1,5);
+    const sum=a+b, prod=a*b, diff=a-b;
+    // w1 (produit) ne doit pas coïncider avec sum, sum+1
+    const w1 = (prod===sum||prod===sum+1) ? sum-1 : prod;
+    // w2 (différence) ne doit pas coïncider avec sum, w1, sum+1
+    let w2 = diff;
+    if(w2===sum||w2===w1||w2===sum+1) w2=sum+2;
+    if(w2===sum||w2===w1||w2===sum+1) w2=sum-2;
+    placeQuiz('p2l1q2','10<span class="sup-exp">'+a+'</span> &times; 10<span class="sup-exp">'+b+'</span> = 10<span class="sup-exp">?</span>', shuffle([
+      {html:String(sum),  correct:true,  fb:'Exact&nbsp;! On additionne les exposants : '+a+'+'+b+' = '+sum+'.'},
+      {html:String(w1),   correct:false, fb:'Non. Pour multiplier des puissances de m&ecirc;me base, on additionne (pas multiplie) les exposants.'},
+      {html:String(w2),   correct:false, fb:'Non. La soustraction correspond &agrave; la division. Pour une multiplication, quelle op&eacute;ration fait-on sur les exposants ?'},
+      {html:String(sum+1),correct:false, fb:'Non. Recompte : '+a+' + '+b+' = ?'},
+    ]));
+  })();
+  // Quiz 3 : 10^n / 10^m = 10^?
+  (function(){
+    const a=rInt(3,7),b=rInt(1,a-2);
+    const diff=a-b;
+    const w1=(a*b===diff||a*b===diff+1)?diff+3:a*b;
+    const w2=(a+b===diff||a+b===w1)?diff-1:a+b;
+    placeQuiz('p2l1q3','<span class="frac"><span class="fnum">10<span class="sup-exp">'+a+'</span></span><span class="fden">10<span class="sup-exp">'+b+'</span></span></span> = 10<span class="sup-exp">?</span>', shuffle([
+      {html:String(diff),  correct:true,  fb:'Exact&nbsp;! Pour diviser des puissances de m&ecirc;me base, on soustrait les exposants : '+a+'&minus;'+b+' = '+diff+'.'},
+      {html:String(w1),    correct:false, fb:'Non. La division correspond &agrave; la soustraction des exposants, pas leur produit.'},
+      {html:String(w2),    correct:false, fb:'Non. La multiplication additionne les exposants ; la division les soustrait.'},
+      {html:String(diff+1),correct:false, fb:'Non. Recompte : '+a+' &minus; '+b+' = ?'},
+    ]));
+  })();
+  // Quiz 4 : produit de puissances de 10
+  (function(){
+    const a=rInt(2,5), b=rInt(1,3);
+    const sum=a+b;
+    placeQuiz('p2l1q4',
+      '10<span class="sup-exp">'+a+'</span> &times; 10<span class="sup-exp">'+b+'</span> = ?',
+      shuffle([
+        {html:'10<span class="sup-exp">'+sum+'</span>', correct:true,
+         fb:'Exact ! Pour multiplier des puissances de même base, on additionne les exposants : '+a+' + '+b+' = '+sum+'.'},
+        {html:'10<span class="sup-exp">'+(a*b)+'</span>', correct:false,
+         fb:'Non. On additionne les exposants, on ne les multiplie pas : '+a+' + '+b+' = '+sum+'.'},
+        {html:'10<span class="sup-exp">'+(a-b)+'</span>', correct:false,
+         fb:'Non. La multiplication correspond à l\'addition des exposants : '+a+' + '+b+' = '+sum+'.'},
+        {html:'(10×10)<span class="sup-exp">'+(a+b)+'</span>', correct:false,
+         fb:'Non. La base reste 10. 10<span class="sup-exp">'+a+'</span> × 10<span class="sup-exp">'+b+'</span> = 10<span class="sup-exp">'+sum+'</span>.'},
+      ])
+    );
+  })();
+}
+
+// ══════════════════ P2L2 — puissances de 10 négatif ══════════════════
+function initP2L2(){
+  // Quiz 1 : valeur décimale de 10^-n
+  (function(){
+    const n=rInt(1,4);
+    const decimals=['0,1','0,01','0,001','0,0001'];
+    const inv=['10','100','1&nbsp;000','10&nbsp;000'];
+    placeQuiz('p2l2','Quelle est la valeur de 10<span class="sup-exp">&minus;'+n+'</span>&nbsp;?', shuffle([
+      {html:decimals[n-1], correct:true,  fb:'Exact&nbsp;! 10⁻'+n+' = 1/'+inv[n-1]+' = '+decimals[n-1]+'.'},
+      {html:decimals[(n%4)],correct:false,fb:'Non. 10<span class="sup-exp">&minus;'+n+'</span> = 1/'+inv[n-1]+'. Convertis cette fraction en d&eacute;cimal.'},
+      {html:String(pwVal(10,n)),correct:false,fb:'Non. '+pwVal(10,n)+' = 10'+n+'. L\'exposant ici est &minus;'+n+'.'},
+      {html:'&minus;'+n,   correct:false, fb:'Non. Un exposant n&eacute;gatif donne un inverse, pas un nombre n&eacute;gatif.'},
+    ]));
+  })();
+  // Quiz 2 : (10^a)^b = 10^?
+  (function(){
+    const a=rInt(2,4),b=rInt(2,3);
+    const prod=a*b;
+    // a+b = prod quand a=b=2 → +1 ; prod+1 peut égaler sum_v → ajuster
+    const sum_v = (a+b===prod) ? a+b+2 : a+b;
+    const w3 = (prod+1===sum_v) ? prod+2 : prod+1;
+    placeQuiz('p2l2q2','(10<span class="sup-exp">'+a+'</span>)<span class="sup-exp">'+b+'</span> = 10<span class="sup-exp">?</span>', shuffle([
+      {html:String(prod),  correct:true,  fb:'Exact&nbsp;! On multiplie les exposants : '+a+' &times; '+b+' = '+prod+'.'},
+      {html:String(sum_v), correct:false, fb:'Non. Pour une puissance de puissance, on multiplie les exposants (pas additionne).'},
+      {html:String(w3),    correct:false, fb:'Non. Recompte : '+a+' &times; '+b+' = ?'},
+      {html:String(a),     correct:false, fb:'Non. Pour (10<span class="sup-exp">'+a+'</span>)<span class="sup-exp">'+b+'</span>, on multiplie les exposants : '+a+' &times; '+b+' = ?'},
+    ]));
+  })();
+  // Quiz 3 : 10^-a × 10^-b = 10^?
+  (function(){
+    const a=rInt(1,4),b=rInt(1,4);
+    const sum=-(a+b);
+    const w1=-(a*b), w2=a+b, w3=-(a+b+1);
+    placeQuiz('p2l2q3','10<span class="sup-exp">&minus;'+a+'</span> &times; 10<span class="sup-exp">&minus;'+b+'</span> = 10<span class="sup-exp">?</span>', shuffle([
+      {html:'&minus;'+(a+b),  correct:true,  fb:'Exact&nbsp;! On additionne les exposants : (&minus;'+a+') + (&minus;'+b+') = &minus;'+(a+b)+'.'},
+      {html:String(a+b),     correct:false, fb:'Non. Les deux exposants sont n&eacute;gatifs. Additionne (&minus;'+a+') et (&minus;'+b+').'},
+      {html:'&minus;'+(a+b+1),correct:false, fb:'Non. Additionne les deux exposants : (&minus;'+a+') + (&minus;'+b+'). Attention aux signes.'},
+      {html:'&minus;'+(a+b-1>=1?a+b-1:a+b+2),correct:false, fb:'Non. Repose-toi sur la d&eacute;finition : &minus;'+a+' + (&minus;'+b+') = ?'},
+    ]));
+  })();
+  // Quiz 4 : 10^-n × 10^-m = 10^?
+  (function(){
+    const n=rInt(1,3), m=rInt(1,3);
+    const sum=n+m;
+    placeQuiz('p2l2q4',
+      '10<span class="sup-exp">&minus;'+n+'</span> &times; 10<span class="sup-exp">&minus;'+m+'</span> = ?',
+      shuffle([
+        {html:'10<span class="sup-exp">&minus;'+sum+'</span>', correct:true,
+         fb:'Exact ! (−'+n+') + (−'+m+') = −'+sum+'.'},
+        {html:'10<span class="sup-exp">'+sum+'</span>', correct:false,
+         fb:'Non. Les deux exposants sont négatifs : (−'+n+') + (−'+m+') = −'+sum+'.'},
+        {html:'10<span class="sup-exp">'+(n-m)+'</span>', correct:false,
+         fb:'Non. Pour une multiplication on additionne les exposants : (−'+n+') + (−'+m+') = −'+sum+'.'},
+        {html:'10<span class="sup-exp">&minus;'+(sum-1)+'</span>', correct:false,
+         fb:'Non. (−'+n+') + (−'+m+') = −'+sum+', pas −'+(sum-1)+'.'},
+      ])
+    );
+  })();
+}
+
+// ══════════════════ P2L3 — exercices puissances 10 ══════════════════
+function initP2L3(){
+  // Exo 1 : 10^n/10^m = 10^?
+  (function(){
+    const a=rInt(3,8),b=rInt(1,a-1);
+    placeQuiz('p2l3a','<span class="frac"><span class="fnum">10<span class="sup-exp">'+a+'</span></span><span class="fden">10<span class="sup-exp">'+b+'</span></span></span> = 10<span class="sup-exp">?</span>', shuffle([
+      {html:String(a-b), correct:true,  fb:'Exact&nbsp;! Pour diviser des puissances de m&ecirc;me base, on soustrait les exposants : '+a+' &minus; '+b+' = '+(a-b)+'.'},
+      {html:String(a+b), correct:false, fb:'Non. La division correspond &agrave; la soustraction des exposants.'},
+      {html:String(a*b), correct:false, fb:'Non. Pour diviser des puissances de m&ecirc;me base, on soustrait les exposants.'},
+      {html:String(a-b-1),correct:false,fb:'Non. La division soustrait les exposants. Calcule '+a+' &minus; '+b+'.'},
+    ]));
+  })();
+  // Exo 2 : convertir décimal → écriture 10^n
+  (function(){
+    const n=rInt(1,5);
+    const val=pwVal(10,n);
+    const fmt=['10','100','1&nbsp;000','10&nbsp;000','100&nbsp;000'];
+    placeQuiz('p2l3b',fmt[n-1]+' s\'&eacute;crit 10<span class="sup-exp">?</span>', shuffle([
+      {html:String(n),   correct:true,  fb:'Exact&nbsp;! '+fmt[n-1]+' = 10<span class="sup-exp">'+n+'</span>.'},
+      {html:String(n+1), correct:false, fb:'Non. Compte les z&eacute;ros : '+fmt[n-1]+' a '+n+' z&eacute;ro(s).'},
+      {html:String(n-1), correct:false, fb:'Non. Compte pr&eacute;cis&eacute;ment les z&eacute;ros dans '+fmt[n-1]+'.'},
+      {html:String(n*10),correct:false, fb:'Non. Compte les z&eacute;ros dans '+fmt[n-1]+' pour trouver l\'exposant.'},
+    ]));
+  })();
+  // Exo 3 : 10^-n décimal
+  (function(){
+    const n=rInt(2,5);
+    const zeros='0'.repeat(n-1);
+    const dec='0,'+zeros+'1';
+    placeQuiz('p2l3c','10<span class="sup-exp">&minus;'+n+'</span> correspond au nombre d&eacute;cimal :', shuffle([
+      {html:dec,           correct:true,  fb:'Exact&nbsp;! 10⁻'+n+' = 0,'+zeros+'1 ('+n+' chiffres apr&egrave;s la virgule).'},
+      {html:'0,'+'0'.repeat(n)+'1', correct:false,fb:'Non. 10⁻'+n+' a '+n+' chiffres apr&egrave;s la virgule en tout.'},
+      {html:'0,'+'0'.repeat(n-2)+'1',correct:false,fb:'Non. Compte les chiffres apr&egrave;s la virgule : il en faut '+n+'.'},
+      {html:String(pwVal(10,n)),correct:false,fb:'Non. '+pwVal(10,n)+' = 10⁺'+n+'. Ici l\'exposant est n&eacute;gatif.'},
+    ]));
+  })();
+  // Exo 4 : 10^a × 10^b = 10^?
+  (function(){
+    const a=rInt(2,6), b=rInt(1,4);
+    const sum=a+b;
+    placeQuiz('p2l3d',
+      '10<span class="sup-exp">'+a+'</span> &times; 10<span class="sup-exp">'+b+'</span> = 10<span class="sup-exp">?</span>',
+      shuffle([
+        {html:String(sum), correct:true,
+         fb:'Exact\u00a0! Pour multiplier des puissances de m\u00eame base, on additionne les exposants\u00a0: '+a+' + '+b+' = '+sum+'.'},
+        {html:String(a*b===sum ? sum+2 : a*b), correct:false,
+         fb:'Non. On additionne les exposants, on ne les multiplie pas\u00a0: '+a+' + '+b+' = '+sum+'.'},
+        {html:String(a-b===sum||a-b===a*b ? sum-2 : a-b), correct:false,
+         fb:'Non. La soustraction des exposants correspond \u00e0 une division. Ici c\u2019est une multiplication\u00a0: '+a+' + '+b+' = '+sum+'.'},
+        {html:String(sum+1), correct:false,
+         fb:'Non. Calcule soigneusement\u00a0: '+a+' + '+b+' = '+sum+', pas '+(sum+1)+'.'},
+      ])
+    );
+  })();
+}
+
+// ══════════════════ P3L2 — exercices préfixes (quiz randomisé) ══════════════════
+function initP3L2(){
+  const prefixes=[
+    {name:'kilo',sym:'k',pow:3,ex:'1 kg = 10³ g'},
+    {name:'m&eacute;ga',sym:'M',pow:6,ex:'1 Mo = 10⁶ octets'},
+    {name:'milli',sym:'m',pow:-3,ex:'1 mm = 10⁻³ m'},
+    {name:'micro',sym:'&mu;',pow:-6,ex:'1 &mu;m = 10⁻⁶ m'},
+    {name:'nano',sym:'n',pow:-9,ex:'1 nm = 10⁻⁹ m'},
+    {name:'hecto',sym:'h',pow:2,ex:'1 hL = 10² L'},
+    {name:'giga',sym:'G',pow:9,ex:'1 Go = 10⁹ octets'},
+  ];
+  const idx=shuffle([0,1,2,3,4,5,6]);
+  const p=prefixes[idx[0]];
+  // Garantit exactement 3 mauvaises réponses (idx a toujours 7 éléments)
+  const wrongs=[prefixes[idx[1]],prefixes[idx[2]],prefixes[idx[3]]];
+  const sign=p.pow<0?'&minus;':'+';
+  const expStr=p.pow<0?'&minus;'+Math.abs(p.pow):String(p.pow);
+  placeQuiz('p3l2q4','Quel pr&eacute;fixe correspond &agrave; 10<span class="sup-exp">'+expStr+'</span>&nbsp;?', shuffle([
+    {html:p.name+'&nbsp;('+p.sym+')', correct:true,
+     fb:'Exact&nbsp;! '+p.name+' ('+p.sym+') = 10<span class="sup-exp">'+expStr+'</span>. Exemple&nbsp;: '+p.ex+'.'},
+    {html:wrongs[0].name+'&nbsp;('+wrongs[0].sym+')', correct:false,
+     fb:'Non. '+wrongs[0].name+' correspond &agrave; 10<span class="sup-exp">'+(wrongs[0].pow<0?'&minus;'+Math.abs(wrongs[0].pow):wrongs[0].pow)+'</span>.'},
+    {html:wrongs[1].name+'&nbsp;('+wrongs[1].sym+')', correct:false,
+     fb:'Non. '+wrongs[1].name+' correspond &agrave; 10<span class="sup-exp">'+(wrongs[1].pow<0?'&minus;'+Math.abs(wrongs[1].pow):wrongs[1].pow)+'</span>.'},
+    {html:wrongs[2].name+'&nbsp;('+wrongs[2].sym+')', correct:false,
+     fb:'Non. '+wrongs[2].name+' correspond &agrave; 10<span class="sup-exp">'+(wrongs[2].pow<0?'&minus;'+Math.abs(wrongs[2].pow):wrongs[2].pow)+'</span>.'},
+  ]));
+}
+
+// ══════════════════ P4L1 — définition notation scientifique (quiz 3 randomisé) ══════════════════
+function initP4L1(){
+  // Quiz 3 : convertir un nombre en notation scientifique
+  (function(){
+    // Choisir parmi grands nombres et petits nombres
+    const cases=[
+      {val:45700,    mant:'4,57', exp:4,  neg:false},
+      {val:830000,   mant:'8,3',  exp:5,  neg:false},
+      {val:1250,     mant:'1,25', exp:3,  neg:false},
+      {val:96000000, mant:'9,6',  exp:7,  neg:false},
+      {val:3200,     mant:'3,2',  exp:3,  neg:false},
+      {val:0.00057,  mant:'5,7',  exp:4,  neg:true},
+      {val:0.0083,   mant:'8,3',  exp:3,  neg:true},
+      {val:0.000012, mant:'1,2',  exp:5,  neg:true},
+    ];
+    const c=cases[rInt(0,cases.length-1)];
+    const expStr=c.neg?'&minus;'+c.exp:String(c.exp);
+    const correct=c.mant+' &times; 10<span class="sup-exp">'+expStr+'</span>';
+    // Distracteurs : exposant ±1, et mantisse incorrecte
+    const expPlus=c.neg?'&minus;'+(c.exp-1):String(c.exp+1);
+    const expMinus=c.neg?'&minus;'+(c.exp+1):String(c.exp-1);
+    const wrongSign=c.neg?String(c.exp):'&minus;'+c.exp;
+    const valStr=c.neg?String(c.val):c.val.toLocaleString('fr-FR');
+    placeQuiz('p4l1q3','&Eacute;cris '+valStr+' en notation scientifique.', shuffle([
+      {html:correct, correct:true,
+       fb:'Exact&nbsp;! On place la virgule apr&egrave;s le '+c.mant[0]+' : '+c.mant+', d&eacute;placement de '+c.exp+' rangs.'},
+      {html:c.mant+' &times; 10<span class="sup-exp">'+expPlus+'</span>', correct:false,
+       fb:'Non. Compte le d&eacute;placement de la virgule : c\'est '+c.exp+' rangs, pas '+(c.neg?c.exp-1:c.exp+1)+'.'},
+      {html:c.mant+' &times; 10<span class="sup-exp">'+expMinus+'</span>', correct:false,
+       fb:'Non. Compte le d&eacute;placement de la virgule : c\'est '+c.exp+' rangs, pas '+(c.neg?c.exp+1:c.exp-1)+'.'},
+      {html:c.mant+' &times; 10<span class="sup-exp">'+wrongSign+'</span>', correct:false,
+       fb:'Non. '+(c.neg?'Pour un nombre &lt; 1, l\'exposant est n&eacute;gatif.':'Pour un nombre &gt; 1, l\'exposant est positif.')},
+    ]));
+  })();
+  // Quiz 4 : notation scientifique → écriture décimale (distracteurs même mantisse, exposants différents)
+  (function(){
+    const cases=[
+      {mant:3.2,  exp:4,  dec:'32\u202f000',   alts:['3\u202f200','320','320\u202f000']},
+      {mant:5.6,  exp:3,  dec:'5\u202f600',     alts:['56','56\u202f000','560\u202f000']},
+      {mant:1.25, exp:5,  dec:'125\u202f000',   alts:['1\u202f250','12\u202f500','1\u202f250\u202f000']},
+      {mant:7.4,  exp:2,  dec:'740',            alts:['7,4','74','7\u202f400']},
+      {mant:4.8,  exp:-2, dec:'0,048',          alts:['0,48','0,0048','0,00048']},
+      {mant:9.1,  exp:-3, dec:'0,0091',         alts:['0,091','0,00091','0,000091']},
+      {mant:2.3,  exp:4,  dec:'23\u202f000',    alts:['2\u202f300','230','230\u202f000']},
+      {mant:6.5,  exp:-2, dec:'0,065',          alts:['0,65','0,0065','0,00065']},
+    ];
+    const c=cases[rInt(0,cases.length-1)];
+    const expHTML=c.exp<0
+      ?'<span class="sup-exp">&minus;'+Math.abs(c.exp)+'</span>'
+      :'<span class="sup-exp">'+c.exp+'</span>';
+    const mantStr=String(c.mant).replace('.',',');
+    placeQuiz('p4l1q4',
+      mantStr+' &times; 10'+expHTML+' vaut\u00a0:',
+      shuffle([
+        {html:c.dec,     correct:true,  fb:'Exact\u00a0! On d\u00e9place la virgule de '+Math.abs(c.exp)+' rang'+(Math.abs(c.exp)>1?'s':'')+' vers la '+(c.exp>0?'droite':'gauche')+'.'},
+        {html:c.alts[0], correct:false, fb:'Non. Compte bien le nombre de rangs\u00a0: '+(c.exp>0?'droite, ':'gauche, ')+Math.abs(c.exp)+' rang'+(Math.abs(c.exp)>1?'s':'')+'.'},
+        {html:c.alts[1], correct:false, fb:'Non. Compte bien le nombre de rangs\u00a0: '+(c.exp>0?'droite, ':'gauche, ')+Math.abs(c.exp)+' rang'+(Math.abs(c.exp)>1?'s':'')+'.'},
+        {html:c.alts[2], correct:false, fb:'Non. Compte bien le nombre de rangs\u00a0: '+(c.exp>0?'droite, ':'gauche, ')+Math.abs(c.exp)+' rang'+(Math.abs(c.exp)>1?'s':'')+'.'},
+      ])
+    );
+  })();
+}
+
+
+function initP4L2(){
+  // Quiz 1 : grand nombre → notation scientifique
+  (function(){
+    const mants=[1.2,2.5,3.7,4.8,5.6,7.3,8.1,9.4];
+    const m=mants[rInt(0,7)];
+    const n=rInt(3,7);
+    const val=m*pwVal(10,n);
+    const mStr=String(m).replace('.',',');
+    placeQuiz('p4l2','Quelle est la notation scientifique de '+val.toLocaleString('fr-FR')+'&nbsp;?', shuffle([
+      {html:mStr+' &times; 10<span class="sup-exp">'+n+'</span>', correct:true,
+       fb:'Exact&nbsp;! On place la virgule apr&egrave;s le premier chiffre pour obtenir '+mStr+', on d&eacute;place de '+n+' rangs.'},
+      {html:mStr+' &times; 10<span class="sup-exp">'+(n+1)+'</span>', correct:false,
+       fb:'Non. Le d&eacute;placement est de '+n+' rangs, pas '+(n+1)+'.'},
+      {html:mStr+' &times; 10<span class="sup-exp">&minus;'+n+'</span>', correct:false,
+       fb:'Non. Pour un grand nombre (&gt;1), l\'exposant est positif.'},
+      {html:(m*10).toString().replace('.',',')+' &times; 10<span class="sup-exp">'+(n-1)+'</span>', correct:false,
+       fb:'Non. Ce n\'est pas une notation scientifique car '+(m*10)+' &ge; 10.'},
+    ]));
+  })();
+  // Quiz 2 : petit nombre → notation scientifique
+  (function(){
+    const mants=[1.5,2.3,3.8,4.1,5.7,6.2,7.9,8.4];
+    const m=mants[rInt(0,7)];
+    const n=rInt(2,5);
+    const mStr=String(m).replace('.',',');
+    const dec='0,'+'0'.repeat(n-1)+String(m).replace('.','');
+    placeQuiz('p4l2q2','Quelle est la notation scientifique de 0,'+'0'.repeat(n-1)+String(m).replace('.','')+'&nbsp;?', shuffle([
+      {html:mStr+' &times; 10<span class="sup-exp">&minus;'+n+'</span>', correct:true,
+       fb:'Exact&nbsp;! On place la virgule apr&egrave;s le '+m.toString()[0]+', on d&eacute;place de '+n+' rangs vers la droite &rarr; exposant &minus;'+n+'.'},
+      {html:mStr+' &times; 10<span class="sup-exp">'+n+'</span>', correct:false,
+       fb:'Non. Pour un nombre &lt; 1, l\'exposant est n&eacute;gatif.'},
+      {html:mStr+' &times; 10<span class="sup-exp">&minus;'+(n+1)+'</span>', correct:false,
+       fb:'Non. Le d&eacute;placement est de '+n+' rangs, pas '+(n+1)+'.'},
+      {html:mStr+' &times; 10<span class="sup-exp">&minus;'+(n-1)+'</span>', correct:false,
+       fb:'Non. Le d&eacute;placement est de '+n+' rangs, pas '+(n-1)+'.'},
+    ]));
+  })();
+  // Quiz 4 : comparer deux notations scientifiques
+  (function(){
+    const n1=rInt(3,7), n2=n1+rInt(-2,2);
+    const a1=(rInt(11,99)/10), a2=(rInt(11,99)/10);
+    const v1=a1*Math.pow(10,n1), v2=a2*Math.pow(10,n2);
+    const a1s=String(a1).replace('.',','), a2s=String(a2).replace('.',',');
+    const A='<em>A</em> = '+a1s+' × 10<span class="sup-exp">'+n1+'</span>';
+    const B='<em>B</em> = '+a2s+' × 10<span class="sup-exp">'+n2+'</span>';
+    let correct, fb;
+    if(v1>v2){correct='A &gt; B'; fb='Les exposants '+n1+' et '+n2+(n1!==n2?' sont différents : '+n1+' > '+n2+' donc A > B.':' sont égaux : on compare les mantisses '+a1s+' > '+a2s+'.');}
+    else if(v1<v2){correct='A &lt; B'; fb='Les exposants '+n1+' et '+n2+(n1!==n2?' sont différents : '+n1+' < '+n2+' donc A < B.':' sont égaux : '+a1s+' < '+a2s+'.');}
+    else{correct='A = B'; fb='Les deux nombres sont égaux.';}
+    const wrongs=['A &gt; B','A &lt; B','A = B'].filter(x=>x!==correct);
+    const opts=[{html:correct,correct:true,fb:'Exact ! '+fb}];
+    wrongs.forEach(w=>opts.push({html:w,correct:false,fb:'Non. '+fb}));
+    placeQuiz('p4l2q4', 'Compare '+A+' et '+B, shuffle(opts));
+  })();
+}
+
+// ══════════════════ P4L3 — exercices notation scientifique ══════════════════
+function initP4L3(){
+  // Exo 1 : vérifier si notation scientifique
+  (function(){
+    const candidates=[
+      {html:'0,5 &times; 10<span class="sup-exp">4</span>',correct:false,reason:'0,5 &lt; 1 — pas une notation scientifique.'},
+      {html:'1,5 &times; 10<span class="sup-exp">&minus;3</span>',correct:true, reason:'1 &le; 1,5 &lt; 10 ✓'},
+      {html:'11 &times; 10<span class="sup-exp">2</span>',correct:false,reason:'11 &ge; 10 — pas une notation scientifique.'},
+      {html:'9,9 &times; 10<span class="sup-exp">5</span>',correct:true, reason:'1 &le; 9,9 &lt; 10 ✓'},
+    ];
+    const good=candidates.filter(c=>c.correct);
+    const bad=candidates.filter(c=>!c.correct);
+    const chosen=good[rInt(0,good.length-1)];
+    // bad a exactement 2 éléments — quiz à 3 options
+    const wrongs=shuffle(bad);
+    placeQuiz('p4l3a','Parmi ces &eacute;critures, laquelle est une notation scientifique&nbsp;?', shuffle([
+      {html:chosen.html, correct:true,  fb:'Exact&nbsp;! '+chosen.reason},
+      {html:wrongs[0].html,correct:false,fb:'Non. '+wrongs[0].reason},
+      {html:wrongs[1].html,correct:false,fb:'Non. '+wrongs[1].reason},
+    ]));
+  })();
+  // Exo 2 : notation scientifique → valeur
+  (function(){
+    const mants=[1.2,2.5,3.0,4.8,6.7,8.1];
+    const m=mants[rInt(0,5)];
+    const n=rInt(3,6);
+    const val=m*pwVal(10,n);
+    const mStr=String(m).replace('.',',');
+    const fmtVal=(v)=>{
+      if(v>=1000) return v.toLocaleString('fr-FR');
+      return String(v).replace('.',',');
+    };
+    placeQuiz('p4l3b',mStr+' &times; 10<span class="sup-exp">'+n+'</span> vaut :', shuffle([
+      {html:fmtVal(val),   correct:true,  fb:'Exact&nbsp;! On d&eacute;place la virgule de '+n+' rangs vers la droite.'},
+      {html:fmtVal(val*10),correct:false, fb:'Non. Le d&eacute;placement est de '+n+' rangs, pas '+(n+1)+'.'},
+      {html:fmtVal(val/10),correct:false, fb:'Non. L\'exposant est +'+n+', on d&eacute;place vers la droite.'},
+      {html:fmtVal(Math.round(m*n*100)/100), correct:false, fb:'Non. On ne multiplie pas le coefficient par l\'exposant.'},
+    ]));
+  })();
+  // Exo 3 : comparer deux nombres en écriture scientifique
+  (function(){
+    const n1=rInt(2,6),n2=rInt(2,6);
+    const m1=[1.2,3.5,7.8,2.4,5.1][rInt(0,4)];
+    const m2=[1.2,3.5,7.8,2.4,5.1][rInt(0,4)];
+    const v1=m1*pwVal(10,n1),v2=m2*pwVal(10,n2);
+    const s1=String(m1).replace('.',','),s2=String(m2).replace('.',',');
+    const sym=v1>v2?'>':v1<v2?'<':'=';
+    const A=s1+' &times; 10<span class="sup-exp">'+n1+'</span>';
+    const B=s2+' &times; 10<span class="sup-exp">'+n2+'</span>';
+    const Adec=(m1*pwVal(10,n1)).toLocaleString('fr-FR');
+    const Bdec=(m2*pwVal(10,n2)).toLocaleString('fr-FR');
+    placeQuiz('p4l3c','Compare '+A+' et '+B+'.', shuffle([
+      {html:A+' '+sym+' '+B, correct:true,
+       fb:'Exact&nbsp;! '+A+' = '+Adec+' et '+B+' = '+Bdec+'.'},
+      {html:A+' '+(sym==='>'?'<':sym==='<'?'>':'&ne;')+' '+B, correct:false,
+       fb:'Non. '+A+' = '+Adec+' et '+B+' = '+Bdec+'. Compare d\'abord les exposants.'},
+      {html:A+' = '+B, correct:v1===v2,
+       fb:v1===v2?'Exact&nbsp;!':'Non. Les deux valeurs sont diff&eacute;rentes.'},
+    ]));
+  })();
+  // Exo 4 : petit nombre décimal → notation scientifique
+  (function(){
+    const cases=[
+      {val:0.00057,  mant:'5,7',  exp:-4},
+      {val:0.0083,   mant:'8,3',  exp:-3},
+      {val:0.000012, mant:'1,2',  exp:-5},
+      {val:0.094,    mant:'9,4',  exp:-2},
+      {val:0.00306,  mant:'3,06', exp:-3},
+    ];
+    const c=cases[rInt(0,cases.length-1)];
+    const valStr=String(c.val).replace('.',',');
+    const correct=c.mant+' &times; 10<span class="sup-exp">&minus;'+Math.abs(c.exp)+'</span>';
+    const w1=c.mant+' &times; 10<span class="sup-exp">'+Math.abs(c.exp)+'</span>';
+    const w2=c.mant+' &times; 10<span class="sup-exp">&minus;'+(Math.abs(c.exp)+1)+'</span>';
+    const w3=c.mant+' &times; 10<span class="sup-exp">&minus;'+(Math.abs(c.exp)-1)+'</span>';
+    placeQuiz('p4l3d',
+      'Quelle est la notation scientifique de '+valStr+'\u00a0?',
+      shuffle([
+        {html:correct, correct:true,
+         fb:'Exact\u00a0! On place la virgule apr\u00e8s le premier chiffre non nul et on compte les rangs vers la droite\u00a0: exposant '+c.exp+'.'},
+        {html:w1, correct:false,
+         fb:'Non. Le nombre est inf\u00e9rieur \u00e0 1, donc l\u2019exposant est n\u00e9gatif.'},
+        {html:w2, correct:false,
+         fb:'Non. Compte soigneusement les rangs\u00a0: l\u2019exposant est '+c.exp+', pas '+(c.exp-1)+'.'},
+        {html:w3, correct:false,
+         fb:'Non. Compte soigneusement les rangs\u00a0: l\u2019exposant est '+c.exp+', pas '+(c.exp+1)+'.'},
+      ])
+    );
+  })();
+}
+
+// ══════════════════ INIT ══════════════════
+// ══════════════════════════════════════════════════════════════
+// OUTIL 1 — CALCULATEUR DE PUISSANCE a^n
+// ══════════════════════════════════════════════════════════════
+function updateCalc() {
+  const a = parseInt(document.getElementById('calc-a').value);
+  const n = parseInt(document.getElementById('calc-n').value);
+  document.getElementById('calc-a-val').textContent = a;
+  document.getElementById('calc-n-val').textContent = n;
+
+  const aStr = a < 0 ? '(&minus;' + Math.abs(a) + ')' : String(a);
+
+  function product(s, k) {
+    const parts = [];
+    for (let i = 0; i < Math.min(k, 5); i++) parts.push(s);
+    return parts.join(' &times; ') + (k > 5 ? ' &times; &hellip; (' + k + '&nbsp;facteurs)' : '');
+  }
+
+  let decomp, resultHTML, info = '';
+
+  if (n === 0 && a === 0) {
+    decomp = '0<span class="sup-var">0</span>';
+    resultHTML = '<span style="color:var(--red)">ind&eacute;fini</span>';
+    info = '0⁰ n’est pas défini.';
+  } else if (n === 0) {
+    decomp = aStr + '<span class="sup-var">0</span>';
+    resultHTML = '<span class="tool-sign-pos">1</span>';
+    info = 'Cas particulier : tout nombre non nul puissance 0 vaut 1.';
+  } else if (n === 1) {
+    decomp = aStr + '<span class="sup-var">1</span> = ' + aStr;
+    resultHTML = '<span class="' + (a >= 0 ? 'tool-sign-pos' : 'tool-sign-neg') + '">' + a + '</span>';
+    info = 'Cas particulier : tout nombre puissance 1 vaut lui-même.';
+  } else {
+    const val = Math.pow(a, n);
+    decomp = aStr + '<span class="sup-var">' + n + '</span> = ' + product(aStr, n);
+    const cls = val > 0 ? 'tool-sign-pos' : val < 0 ? 'tool-sign-neg' : '';
+    resultHTML = '<span class="' + cls + '">' + val + '</span>';
+    if (a < 0) {
+      if (n % 2 === 0) info = 'Exposant pair → résultat <strong>positif</strong> (les − s’annulent deux à deux).';
+      else info = 'Exposant impair → résultat <strong>négatif</strong> (il reste un facteur − seul).';
+    } else {
+      info = val > 999 ? 'Les puissances grandissent très vite !' : '';
+    }
+  }
+
+  document.getElementById('calc-decomp').innerHTML = decomp;
+  document.getElementById('calc-result').innerHTML = resultHTML;
+  document.getElementById('calc-info').innerHTML = info;
+}
+
+// ══════════════════════════════════════════════════════════════
+// OUTIL 1b — CALCULATEUR EXPOSANT NÉGATIF (p1l2)
+// ══════════════════════════════════════════════════════════════
+function updateCalcNeg() {
+  const a = parseInt(document.getElementById('calcneg-a').value);
+  const n = parseInt(document.getElementById('calcneg-n').value); // n > 0 ici
+  document.getElementById('calcneg-a-val').textContent = a;
+  document.getElementById('calcneg-n-val').textContent = n;
+
+  const aStr = a < 0 ? '(&minus;' + Math.abs(a) + ')' : String(a);
+
+  function fracH(num, den) {
+    return '<span class="frac"><span class="fnum">' + num + '</span><span class="fden">' + den + '</span></span>';
+  }
+  function product(s, k) {
+    const parts = [];
+    for (let i = 0; i < Math.min(k, 5); i++) parts.push(s);
+    return parts.join(' &times; ') + (k > 5 ? ' &times; &hellip;' : '');
+  }
+
+  const posVal = Math.pow(a, n);   // a^n (positif)
+  const absPosVal = Math.abs(posVal);
+  const numSign = posVal < 0 ? '&minus;' : '';
+  const posNStr = '<span class="sup-var">' + n + '</span>';
+  const negNStr = '<span class="sup-var">&minus;' + n + '</span>';
+
+  // Decomp: a^(-n) = 1/a^n = 1/(a×…×a)
+  const decomp = aStr + negNStr
+    + ' = ' + fracH('1', aStr + posNStr)
+    + ' = ' + fracH('1', product(aStr, n));
+
+  const cls = posVal > 0 ? 'tool-sign-pos' : 'tool-sign-neg';
+  let resultHTML;
+  if (absPosVal === 1) {
+    resultHTML = '<span class="' + cls + '">' + numSign + '1</span>';
+  } else {
+    resultHTML = '<span class="' + cls + '">' + fracH(numSign + '1', absPosVal) + '</span>';
+  }
+
+  let info = '';
+  if (a < 0) {
+    if (n % 2 === 0) info = 'Exposant négatif pair → résultat <strong>positif</strong>.';
+    else info = 'Exposant négatif impair → résultat <strong>négatif</strong>.';
+  } else {
+    info = aStr + negNStr + ' = ' + fracH('1', aStr + posNStr) + '. Plus l’exposant est grand, plus la fraction est petite.';
+  }
+
+  document.getElementById('calcneg-decomp').innerHTML = decomp;
+  document.getElementById('calcneg-result').innerHTML = resultHTML;
+  document.getElementById('calcneg-info').innerHTML = info;
+}
+
+// ══════════════════════════════════════════════════════════════
+// OUTIL 2 — VÉRIFICATEUR DE SIGNE : (−a)ⁿ vs −aⁿ  (p1l3)
+// ══════════════════════════════════════════════════════════════
+function updateSign() {
+  const a = parseInt(document.getElementById('sign-a').value);
+  const n = parseInt(document.getElementById('sign-n').value);
+  document.getElementById('sign-a-val').textContent = a;
+  document.getElementById('sign-n-val').textContent = n;
+
+  const withParen  = Math.pow(-a, n);   // (−a)^n
+  const withoutParen = -Math.pow(a, n); // −a^n = −(a^n)
+
+  const aStr = String(a);
+  const negAStr = '(&minus;' + aStr + ')';
+  const factors = Math.min(n, 5);
+  const parParts = [], noParParts = [];
+  for (let i = 0; i < factors; i++) { parParts.push(negAStr); noParParts.push(aStr); }
+  const ellipsis = n > 5 ? ' &times; &hellip;' : '';
+
+  const col1 = negAStr + '<span class="sup-var">' + n + '</span>'
+    + ' = ' + parParts.join(' &times;') + ellipsis
+    + ' = <span class="' + (withParen > 0 ? 'tool-sign-pos' : 'tool-sign-neg') + '"><strong>' + withParen + '</strong></span>';
+
+  const col2 = '&minus;' + aStr + '<span class="sup-var">' + n + '</span>'
+    + ' = &minus;(' + noParParts.join(' &times;') + ellipsis + ')'
+    + ' = <span class="' + (withoutParen > 0 ? 'tool-sign-pos' : 'tool-sign-neg') + '"><strong>' + withoutParen + '</strong></span>';
+
+  document.getElementById('sign-decomp').innerHTML = col1 + '<br>' + col2;
+  document.getElementById('sign-result').innerHTML = '';
+
+  const equal = withParen === withoutParen;
+  const parityWord = n % 2 === 0 ? 'pair' : 'impair';
+  let info;
+  if (equal) {
+    info = 'Exposant ' + parityWord + '\u00a0: ici (&minus;' + a + ')\u207f = \u2212' + a + '\u207f \u2014 les deux expressions co\u00efncident.';
+  } else {
+    info = 'Exposant ' + parityWord + '\u00a0: (&minus;' + a + ')\u207f \u2260 \u2212' + a + '\u207f \u2014 les parenth\u00e8ses <strong>changent le signe</strong> du r\u00e9sultat\u00a0!';
+  }
+  document.getElementById('sign-info').innerHTML = info;
+}
+
+// ══════════════════════════════════════════════════════════════
+// OUTIL VIRGULE — déplacement de la virgule (p4l2)
+// ══════════════════════════════════════════════════════════════
+function initVirgule() {
+  const selectStr = document.getElementById('vir-select').value;
+  const val = parseFloat(selectStr);
+  const absVal = Math.abs(val);
+  const natExp = Math.floor(Math.log10(absVal));
+
+  // sigStr = significant digits only (no trailing/leading zeros)
+  let sigStr;
+  if (absVal >= 1) {
+    sigStr = String(Math.round(absVal)).replace(/0+$/, '') || '1';
+  } else {
+    sigStr = String(absVal).replace('0.', '').replace(/^0+/, '').replace(/0+$/, '');
+  }
+
+  const slider = document.getElementById('vir-pos');
+
+  if (natExp >= 0) {
+    // Integer: fullDigits = sigStr padded right with zeros to length natExp+1
+    // e.g. 421000 → sigStr="421", natExp=5 → fullDigits="421000"
+    const fullDigits = (sigStr + '000000').slice(0, natExp + 1);
+    slider.dataset.digits  = fullDigits;
+    slider.dataset.natExp  = natExp;
+    slider.dataset.offset  = 0;
+    slider.min   = 0;
+    slider.max   = natExp;          // pos=natExp → exp=0 → e.g. 421000 × 10^0
+    slider.value = 0;               // start at standard sci notation
+  } else {
+    // Small number: slider 0 = 10^0 (leftmost), slider |natExp| = standard sci notation
+    // e.g. 0.00083: natExp=-4, sigStr="83"
+    // sliderValue 0 → actualPos = -|natExp| = -(-4)= needs 4 leading zeros before comma
+    // sliderValue 4 → actualPos = 0 → "8,3" × 10^-4
+    // sliderValue 5 → actualPos = 1 → "83" × 10^-5
+    const offset   = -natExp;                    // e.g. 4
+    const maxSlider = offset + sigStr.length - 1; // e.g. 4+2-1=5
+    slider.dataset.digits  = sigStr;
+    slider.dataset.natExp  = natExp;
+    slider.dataset.offset  = offset;
+    slider.min   = 0;
+    slider.max   = maxSlider;
+    slider.value = offset;   // start at standard sci notation
+  }
+
+  // Store label
+  slider.dataset.label = document.getElementById('vir-select').selectedOptions[0].textContent.trim();
+  updateVirgule();
+}
+
+function updateVirgule() {
+  const slider     = document.getElementById('vir-pos');
+  const digits     = slider.dataset.digits;
+  const natExp     = parseInt(slider.dataset.natExp);
+  const offset     = parseInt(slider.dataset.offset) || 0;
+  const sliderVal  = parseInt(slider.value);
+  const origLabel  = slider.dataset.label || digits;
+
+  if (!digits) return;
+
+  // actualPos = sliderVal - offset (can be negative for small numbers)
+  const actualPos = sliderVal - offset;
+  // exp = natExp - actualPos
+  const exp = natExp - actualPos;
+
+  // Build mantisse string
+  let mantStr;
+  if (actualPos < 0) {
+    // Mantisse has leading "0," + zeros + sigFigs
+    // e.g. actualPos=-3 → "0,000" + sigFigs
+    const leadingZeros = -actualPos - 1;  // zeros after comma
+    mantStr = '0,' + '0'.repeat(leadingZeros) + digits;
+  } else {
+    // Normal: intPart = digits[0..actualPos], decPart = digits[actualPos+1..]
+    const intRaw  = digits.slice(0, actualPos + 1);
+    const decRaw  = digits.slice(actualPos + 1);
+    const intNorm = intRaw.replace(/^0+/, '') || '0';
+    const decClean = decRaw.replace(/0+$/, '');
+    mantStr = decClean.length > 0 ? intNorm + ',' + decClean : intNorm;
+  }
+
+  // Show original number (fixed)
+  document.getElementById('vir-number').innerHTML =
+    '<span style="color:var(--fg)">' + origLabel + '</span>';
+
+  // Build result: animated mantisse + exponent
+  // For the mantisse display, show digits with orange comma
+  let mantDisplay = '';
+  if (actualPos < 0) {
+    // "0,000...sigFigs" — show leading zeros in dim, sig figs in blue
+    const leadingZeros = -actualPos - 1;
+    mantDisplay += '<span style="color:var(--blue);font-size:1.6rem;font-weight:700">0</span>';
+    mantDisplay += '<span style="color:var(--orange);font-weight:900;font-size:1.8rem;line-height:0">,</span>';
+    for (let i = 0; i < leadingZeros; i++) {
+      mantDisplay += '<span style="color:var(--blue);font-size:1.6rem;font-weight:700">0</span>';
+    }
+    for (let i = 0; i < digits.length; i++) {
+      mantDisplay += '<span style="color:var(--blue);font-size:1.6rem;font-weight:700">' + digits[i] + '</span>';
+    }
+  } else {
+    for (let i = 0; i < digits.length; i++) {
+      mantDisplay += '<span style="color:var(--blue);font-size:1.6rem;font-weight:700">' + digits[i] + '</span>';
+      if (i === actualPos && i < digits.length - 1) {
+        mantDisplay += '<span style="color:var(--orange);font-weight:900;font-size:1.8rem;line-height:0">,</span>';
+      }
+    }
+  }
+
+  const expSign = exp < 0 ? '&minus;' : '';
+  const expAbs  = Math.abs(exp);
+  const expHTML = '<span style="position:relative;top:-0.7em;font-size:0.7em;color:var(--orange);font-weight:700;font-family:\'IBM Plex Mono\',monospace">'
+    + expSign + expAbs + '</span>';
+
+  document.getElementById('vir-result').innerHTML =
+    mantDisplay
+    + '<span style="color:var(--dim);font-size:1.2rem">&nbsp;&times;&nbsp;10</span>'
+    + expHTML;
+
+  // Info line
+  let info = '';
+  if (exp === 0) {
+    info = 'Exposant 0\u00a0: le nombre s\u2019\u00e9crit sans puissance de 10.';
+  } else if (actualPos === 0) {
+    info = 'Position standard\u00a0: 1 chiffre avant la virgule, c\u2019est la notation scientifique.';
+  } else if (actualPos > 0) {
+    info = 'Virgule d\u00e9plac\u00e9e de <strong>' + actualPos + '</strong> rang'
+      + (actualPos > 1 ? 's' : '') + ' vers la droite \u2192 exposant\u00a0'
+      + natExp + '\u00a0\u2212\u00a0' + actualPos + '\u00a0=\u00a0<strong>' + exp + '</strong>.';
+  } else {
+    const leftSteps = -actualPos;
+    info = 'Virgule d\u00e9plac\u00e9e de <strong>' + leftSteps + '</strong> rang'
+      + (leftSteps > 1 ? 's' : '') + ' vers la gauche \u2192 exposant\u00a0'
+      + natExp + '\u00a0+\u00a0' + leftSteps + '\u00a0=\u00a0<strong>' + exp + '</strong>.';
+  }
+  document.getElementById('vir-info').innerHTML = info;
+}
+
+
+function doCompare() {
+  // Parse comma or dot as decimal separator
+  function parseMant(id) {
+    return parseFloat(document.getElementById(id).value.replace(',', '.'));
+  }
+  function displayMant(x) {
+    return String(x).replace('.', ',');
+  }
+
+  const a1 = parseMant('cmp-a1');
+  const n1 = parseInt(document.getElementById('cmp-n1').value);
+  const a2 = parseMant('cmp-a2');
+  const n2 = parseInt(document.getElementById('cmp-n2').value);
+
+  // Validate: mantissa must be in [1, 10)
+  function valid(x) { return !isNaN(x) && x >= 1 && x < 10; }
+  if (!valid(a1) || !valid(a2)) {
+    document.getElementById('cmp-sym').textContent = '?';
+    document.getElementById('cmp-info').innerHTML =
+      '<span style="color:var(--red)">La mantisse doit \u00eatre comprise entre 1 (inclus) et 10 (exclu).</span>';
+    return;
+  }
+
+  function sciStr(a, n) {
+    const nStr = n < 0
+      ? '<span class="sup-exp">&minus;' + Math.abs(n) + '</span>'
+      : '<span class="sup-exp">' + n + '</span>';
+    return displayMant(a) + '&nbsp;&times;&nbsp;10' + nStr;
+  }
+
+  const val1 = a1 * Math.pow(10, n1);
+  const val2 = a2 * Math.pow(10, n2);
+  let sym, expl;
+
+  if (n1 !== n2) {
+    // Different exponents: exponent decides
+    sym = n1 > n2 ? '&gt;' : '&lt;';
+    const bigger = n1 > n2 ? 'A' : 'B';
+    expl = 'Les exposants sont diff&eacute;rents&nbsp;: '
+      + n1 + ' ' + (n1 > n2 ? '&gt;' : '&lt;') + ' ' + n2
+      + '&nbsp;&mdash;&nbsp;donc ' + sciStr(a1, n1)
+      + ' <strong>' + sym + '</strong> ' + sciStr(a2, n2)
+      + '.&ensp;Le nombre <strong>' + bigger + '</strong> est plus grand.';
+  } else {
+    // Same exponent: mantissa decides
+    sym = a1 > a2 ? '&gt;' : a1 < a2 ? '&lt;' : '=';
+    const bigger = a1 > a2 ? 'A' : a1 < a2 ? 'B' : null;
+    expl = 'M&ecirc;me exposant (' + n1 + ')&nbsp;: on compare les mantisses&nbsp;: '
+      + a1 + ' ' + sym.replace('&gt;','>').replace('&lt;','<') + ' ' + a2
+      + '&nbsp;&mdash;&nbsp;donc ' + sciStr(a1, n1)
+      + ' <strong>' + sym + '</strong> ' + sciStr(a2, n2)
+      + (bigger ? '.&ensp;Le nombre <strong>' + bigger + '</strong> est plus grand.' : '.&ensp;Les deux nombres sont &eacute;gaux.');
+  }
+
+  document.getElementById('cmp-sym').innerHTML = sym;
+  document.getElementById('cmp-info').innerHTML = expl;
+}
+
+// ══════════════════════════════════════════════════════════════
+// P3L1 — préfixes (quiz 4 seulement, les 3 premiers sont statiques)
+// ══════════════════════════════════════════════════════════════
+function initP3L1(){
+  // Quiz 4 : conversion avec préfixe
+  (function(){
+    const cases=[
+      {q:'Exprime 5 km en mètres.',        correct:'5 000 m',  w:['5 m','500 m','50 000 m'],   fb:'1 km = 1 000 m, donc 5 km = 5 000 m.'},
+      {q:'Exprime 3 cm en mètres.',        correct:'0,03 m',       w:['3 m','0,3 m','0,003 m'],         fb:'1 cm = 10⁻² m = 0,01 m, donc 3 cm = 0,03 m.'},
+      {q:'Exprime 2 000 m en kilomètres.', correct:'2 km',   w:['200 km','0,2 km','20 km'],       fb:'1 km = 1 000 m, donc 2 000 m = 2 km.'},
+      {q:'Exprime 7 ms (millisecondes) en secondes.', correct:'0,007 s', w:['7 s','0,07 s','70 s'],        fb:'1 ms = 10⁻³ s = 0,001 s, donc 7 ms = 0,007 s.'},
+    ];
+    const c=cases[rInt(0,3)];
+    const opts=[{html:c.correct,correct:true,fb:'Exact ! '+c.fb}];
+    c.w.forEach(w=>opts.push({html:w,correct:false,fb:'Non. '+c.fb}));
+    placeQuiz('p3l1q4', c.q, shuffle(opts));
+  })();
+}
+
+function initAllQuizzes(){
+  initP1L1(); initP1L2(); initP1L3(); initP1L4();
+  initP2L1(); initP2L2(); initP2L3();
+  initP3L1();
+  initP3L2();
+  initP4L1(); initP4L2(); initP4L3();
+}
+
+loadProgress();
+updateProgress();
+initAllQuizzes();
+updateCalc();
+updateCalcNeg();
+updateSign();
+initVirgule();
+</script>
+</body>
+</html>

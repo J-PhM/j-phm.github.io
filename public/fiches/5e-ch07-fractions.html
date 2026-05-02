@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapitre 7 — Fractions · 5e · J.-Ph. Mouton</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<script src="fiche-theme.js"></script>
+<link rel="stylesheet" href="fiche-theme.css?v=1777411759831">
+<script src="fiche-pdf-viewer.js" defer></script>
+</head>
+<body>
+
+<button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+<div id="sidebar">
+  <a class="sb-back" href="../../Site personnel.html#/teaching"><span class="arrow">←</span> Retour à Enseignement</a>
+  <div class="sb-header">
+    <div class="sb-eyebrow">Chapitre 7 · Maths 5<sup>e</sup></div>
+    <div class="sb-title">Les Fractions</div>
+    <div class="sb-meta">
+      <div class="sb-author">Jean-Philippe Mouton</div>
+      <div class="sb-institution">Collège Jean Rostand – Capbreton</div>
+      <div class="sb-date">Mars 2026</div>
+      <div class="sb-section-title">Références</div>
+      <span class="sb-ref">• Mouton, J.-Ph. (2025–2026). <em>Fractions – Chapitre 7</em>. Fiche de cours, classe de 5<sup>e</sup>, Collège Jean Rostand, Capbreton.</span>
+      <span class="sb-ref">• Barnet, C., <em>et al.</em> (2016). <em>Mathématiques Cycle 4 – 5<sup>e</sup></em>. Coll. « Mission Indigo ». Hachette Éducation. ISBN 978-2-01-395366-5.</span>
+      <div class="sb-section-title">Assistance</div>
+      <div class="sb-assist">• Anthropic (2025). <em>Claude Sonnet 4.6</em> [grand modèle de langue]. https://www.anthropic.com</div>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-label"><span>Progression</span><span id="prog-text">0 / 9</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="prog-fill" style="width:0%"></div></div>
+  </div>
+  <div style="padding:0.4rem 1.25rem 0.7rem;border-bottom:1px solid var(--border);">
+    <button onclick="resetProgress()" style="font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;color:var(--dim);background:none;border:none;cursor:pointer;padding:0;text-transform:uppercase;" title="Remettre à zéro">↺ Réinitialiser</button>
+  </div>
+  <button class="sb-course" type="button" onclick="openPdf('../cours/5e-ch07-fractions.pdf', 'Chapitre 7 — Fractions · Cours complet')">📄 Lire le cours complet (PDF)</button>
+  <nav>
+    <div class="nav-section">Accueil</div>
+    <div class="nav-item nav-home active" data-page="home" onclick="go(this)">🏠 Sommaire</div>
+    <div class="nav-section">1. Définition du quotient</div>
+    <div class="nav-item" data-page="p1l1" onclick="go(this)"><span class="nav-check" id="chk-p1l1"></span>L'inverse d'un nombre</div>
+    <div class="nav-item" data-page="p1l2" onclick="go(this)"><span class="nav-check" id="chk-p1l2"></span>Le quotient et la fraction</div>
+    <div class="nav-item" data-page="p1l3" onclick="go(this)"><span class="nav-check" id="chk-p1l3"></span>Types de fractions</div>
+    <div class="nav-section">2. Quotients égaux</div>
+    <div class="nav-item" data-page="p2l1" onclick="go(this)"><span class="nav-check" id="chk-p2l1"></span>Égalité de quotients</div>
+    <div class="nav-item" data-page="p2l2" onclick="go(this)"><span class="nav-check" id="chk-p2l2"></span>Simplifier une fraction</div>
+    <div class="nav-item" data-page="p2l3" onclick="go(this)"><span class="nav-check" id="chk-p2l3"></span>Exercices</div>
+    <div class="nav-section">3. Comparer des quotients</div>
+    <div class="nav-item" data-page="p3l1" onclick="go(this)"><span class="nav-check" id="chk-p3l1"></span>Les trois cas</div>
+    <div class="nav-item" data-page="p3l2" onclick="go(this)"><span class="nav-check" id="chk-p3l2"></span>Même dénominateur</div>
+    <div class="nav-item" data-page="p3l4" onclick="go(this)"><span class="nav-check" id="chk-p3l4"></span>Comparer à 1</div>
+    <div class="nav-item" data-page="p3l3" onclick="go(this)"><span class="nav-check" id="chk-p3l3"></span>Exercices</div>
+    <div class="nav-section">4. Problèmes</div>
+    <div class="nav-item" data-page="p4l1" onclick="go(this)"><span class="nav-check" id="chk-p4l1"></span>Jeu de cartes</div>
+    <div class="nav-item" data-page="p4l2" onclick="go(this)"><span class="nav-check" id="chk-p4l2"></span>Part de gâteau</div>
+    <div class="nav-item" data-page="p4l3" onclick="go(this)"><span class="nav-check" id="chk-p4l3"></span>Tableau d&#8217;honneur</div>
+    <div class="nav-section" style="margin-top:0.8rem">Mémo</div>
+    <div class="nav-item" data-page="memo" onclick="go(this)" style="color:var(--orange)"><span class="nav-check"></span>♥ À connaître par cœur</div>
+  </nav>
+</div>
+
+<div id="main">
+
+<!-- HOME -->
+<div class="page active" id="page-home">
+  <div class="home-hero">
+    <div class="home-eyebrow">Fiche de révision · Chapitre 7</div>
+    <h1>Les <strong>Fractions</strong></h1>
+    <p>Comprendre, simplifier et comparer — tout le chapitre en dix leçons interactives et trois problèmes, pour réviser seul avant l’évaluation.</p>
+  </div>
+  <div class="objectives-box">
+    <div class="ob-label">Connaissances et compétences</div>
+    <ul>
+      <li>Utiliser diverses représentations d'un même nombre : écriture fractionnaire</li>
+      <li>Reconnaître l'égalité de fractions</li>
+      <li>Comparer des nombres rationnels en écriture fractionnaire</li>
+    </ul>
+  </div>
+  <div class="section-cards">
+    <div class="section-card sc-1" onclick="go(null,'p1l1')">
+      <div class="sc-tag">Partie 1</div>
+      <h3>Définition du quotient</h3>
+      <p>Inverse, quotient, fraction, numérateur, dénominateur.</p>
+      <div class="sc-count">3 leçons</div>
+    </div>
+    <div class="section-card sc-2" onclick="go(null,'p2l1')">
+      <div class="sc-tag">Partie 2</div>
+      <h3>Quotients égaux</h3>
+      <p>Simplifier, réduire, trouver des fractions égales.</p>
+      <div class="sc-count">3 leçons</div>
+    </div>
+    <div class="section-card sc-3" onclick="go(null,'p3l1')">
+      <div class="sc-tag">Partie 3</div>
+      <h3>Comparer des quotients</h3>
+      <p>Même dénominateur, même numérateur, mise au même dénominateur, comparaison à 1.</p>
+      <div class="sc-count">4 leçons</div>
+    </div>
+  <div class="section-card" style="border-left:3px solid var(--yellow);background:var(--surface)" onclick="go(null,'p4l1')">
+      <div class="sc-tag" style="color:var(--yellow)">Partie 4</div>
+      <h3>Problèmes</h3>
+      <p>Trois problèmes concrets tirés du manuel pour mettre en pratique tout le chapitre.</p>
+      <div class="sc-count">3 problèmes</div>
+    </div>
+  <div class="section-card" style="border-left:3px solid var(--orange);background:var(--surface)" onclick="go(null,'memo')">
+      <div class="sc-tag" style="color:var(--orange)">♥ Mémo</div>
+      <h3>À connaître par cœur</h3>
+      <p>Les définitions et propriétés essentielles — pour une révision rapide avant l'évaluation.</p>
+      <div class="sc-count" style="color:var(--orange)">7 encadrés</div>
+    </div>
+  </div>
+</div>
+
+<!-- P1L1 -->
+<div class="page" id="page-p1l1">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-blue">Partie 1 · Leçon 1</div>
+    <h1>L'inverse d'un nombre</h1>
+    <p class="lesson-intro">Avant de parler de fractions, comprenons d'où vient l'idée d'inverser un nombre. Tout part d'une construction géométrique simple.</p>
+  </div>
+  <div class="section-divider">L'idée de départ</div>
+  <p>Prenons le nombre <strong>7</strong>. Existe-t-il un nombre qui, multiplié par 7, donne 1 ?</p>
+  <p>Pour le trouver, plaçons sept segments égaux sur une droite. L'unité est la longueur totale OA₇.</p>
+  <div class="number-line">
+    <svg width="500" height="58" viewBox="0 0 500 58">
+      <line x1="20" y1="33" x2="480" y2="33" stroke="#30363d" stroke-width="2"/>
+      <polygon points="480,28 490,33 480,38" fill="#30363d"/>
+      <line x1="20" y1="26" x2="20" y2="40" stroke="#4d5562" stroke-width="2"/>
+      <line x1="77" y1="28" x2="77" y2="38" stroke="#79c0ff" stroke-width="1.5"/>
+      <line x1="134" y1="28" x2="134" y2="38" stroke="#79c0ff" stroke-width="1.5"/>
+      <line x1="191" y1="28" x2="191" y2="38" stroke="#79c0ff" stroke-width="1.5"/>
+      <line x1="248" y1="28" x2="248" y2="38" stroke="#79c0ff" stroke-width="1.5"/>
+      <line x1="305" y1="28" x2="305" y2="38" stroke="#79c0ff" stroke-width="1.5"/>
+      <line x1="362" y1="28" x2="362" y2="38" stroke="#79c0ff" stroke-width="1.5"/>
+      <line x1="419" y1="26" x2="419" y2="40" stroke="#56d364" stroke-width="2.5"/>
+      <text x="18" y="52" text-anchor="middle" font-family="IBM Plex Mono" font-size="11" fill="#7d8590">O</text>
+      <text x="18" y="20" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#7d8590">0</text>
+      <text x="77" y="20" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#79c0ff">A₁</text>
+      <text x="134" y="20" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#79c0ff">A₂</text>
+      <text x="191" y="20" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#79c0ff">A₃</text>
+      <text x="248" y="20" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#79c0ff">A₄</text>
+      <text x="305" y="20" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#79c0ff">A₅</text>
+      <text x="362" y="20" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#79c0ff">A₆</text>
+      <text x="419" y="20" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#56d364">A₇</text>
+      <text x="419" y="52" text-anchor="middle" font-family="IBM Plex Mono" font-size="11" fill="#56d364">1</text>
+      <text x="48" y="52" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#79c0ff">OA₁</text>
+    </svg>
+  </div>
+  <p>On a : <strong>7 × OA₁ = 1</strong>. Donc <strong>OA₁ est le nombre cherché</strong> — c'est l'inverse de 7, noté <strong><span class="frac"><span class="fnum">1</span><span class="fden">7</span></span></strong>.</p>
+  <div class="section-divider">Définition</div>
+  <div class="callout c-blue">
+    <div class="c-label">Définition · Inverse d'un nombre non nul</div>
+    <p>Pour tout nombre non nul <strong><em class="var">n</em></strong>, il existe un nombre (unique) <strong><em class="var">m</em></strong> non nul tel que :</p>
+    <div class="formula"><em class="var">n</em> × <em class="var">m</em> = 1</div>
+    <p>Ce nombre est appelé <strong>inverse de <em class="var">n</em></strong> et est noté <strong><span class="frac"><span class="fnum">1</span><span class="fden"><em class="var">n</em></span></span></strong> (ou 1 ÷ <em class="var">n</em>).</p>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemples</div>
+    <p>• L'inverse de 7 est <strong><span class="frac"><span class="fnum">1</span><span class="fden">7</span></span></strong>, car 7 × <span class="frac"><span class="fnum">1</span><span class="fden">7</span></span> = 1</p>
+    <p>• L'inverse de 3 est <strong><span class="frac"><span class="fnum">1</span><span class="fden">3</span></span></strong>, car 3 × <span class="frac"><span class="fnum">1</span><span class="fden">3</span></span> = 1</p>
+    <p>• L'inverse de 100 est <strong><span class="frac"><span class="fnum">1</span><span class="fden">100</span></span></strong>, car 100 × <span class="frac"><span class="fnum">1</span><span class="fden">100</span></span> = 1</p>
+  </div>
+  <div class="quiz" id="quiz-p1l1">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p1l1">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l1"></div>
+    <div class="quiz-feedback" id="qfb-p1l1"></div>
+  </div>
+
+    <div class="quiz" id="quiz-p1l1q2">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p1l1q2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l1q2"></div>
+    <div class="quiz-feedback" id="qfb-p1l1q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q">Vrai ou faux : l'inverse de 14 est 4.</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p1l1q3-A')"><span class="opt-letter">A</span> Vrai</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p1l1q3-B')"><span class="opt-letter">B</span> Faux</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p1l1q3"></div>
+  </div>
+  <div class="quiz" id="quiz-p1l1q4">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p1l1q4">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l1q4"></div>
+    <div class="quiz-feedback" id="qfb-p1l1q4"></div>
+  </div>
+<div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'home')">← Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p1l1');go(null,'p1l2')">Leçon suivante →</button>
+  </div>
+</div>
+<div class="page" id="page-p1l2">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-blue">Partie 1 · Leçon 2</div>
+    <h1>Le quotient et la fraction</h1>
+    <p class="lesson-intro">De l'inverse, on passe au quotient — puis à la fraction. Voici les définitions fondamentales du chapitre.</p>
+  </div>
+  <div class="section-divider">Du quotient à la fraction</div>
+  <p>Remarquons que :</p>
+  <div class="formula">(3 × <span class="frac"><span class="fnum">1</span><span class="fden">7</span></span>) × 7 = 3 × (<span class="frac"><span class="fnum">1</span><span class="fden">7</span></span> × 7) = 3 × 1 = 3</div>
+  <p>Donc <strong>3 × <span class="frac"><span class="fnum">1</span><span class="fden">7</span></span></strong> est le nombre qui, multiplié par 7, donne 3. Ce nombre s'appelle le <strong>quotient de 3 par 7</strong> et se note <strong><span class="frac"><span class="fnum">3</span><span class="fden">7</span></span></strong> (ou 3 ÷ 7).</p>
+  <div class="callout c-blue">
+    <div class="c-label">Définition · Quotient et écriture fractionnaire</div>
+    <p><em class="var">a</em> et <em class="var">b</em> désignent deux nombres avec <em class="var">b</em> ≠ 0.</p>
+    <p>• Le <strong>quotient de <em class="var">a</em> par <em class="var">b</em></strong> est le nombre (unique) qui, multiplié par <em class="var">b</em>, donne <em class="var">a</em>.</p>
+    <p>• Il se note <strong><em class="var">a</em> ÷ <em class="var">b</em></strong>, ou <strong><span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span></strong> en écriture fractionnaire. Ainsi : <span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span> × <em class="var">b</em> = <em class="var">a</em></p>
+    <p>• Dans <span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span>, <em class="var">a</em> s'appelle le <strong>numérateur</strong> et <em class="var">b</em> s'appelle le <strong>dénominateur</strong>.</p>
+    <p>• Si <em class="var">a</em> et <em class="var">b</em> sont deux <strong>entiers</strong>, avec <em class="var">b</em> ≠ 0, alors <span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span> est appelée une <strong>fraction</strong>.</p>
+  </div>
+  <div class="section-divider">Cas particuliers</div>
+  <div class="callout c-yellow">
+    <div class="c-label">Remarques</div>
+    <p>Pour tous nombres <em class="var">a</em> et <em class="var">b</em> ≠ 0 :</p>
+    <div class="formula"><span class="frac"><span class="fnum"><em class="var">b</em></span><span class="fden"><em class="var">b</em></span></span> = 1 &nbsp;&nbsp;;&nbsp;&nbsp; <span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden">1</span></span> = <em class="var">a</em> &nbsp;&nbsp;;&nbsp;&nbsp; <span class="frac"><span class="fnum">0</span><span class="fden"><em class="var">b</em></span></span> = 0</div>
+  </div>
+  <div class="example">
+    <div class="ex-label">Identifier numérateur et dénominateur</div>
+    <p>Dans la fraction <strong><span class="frac"><span class="fnum">5</span><span class="fden">8</span></span></strong> : le numérateur est <strong>5</strong>, le dénominateur est <strong>8</strong>. On lit : « cinq huitièmes ».</p>
+  </div>
+  <div class="fraction-builder">
+    <div class="tool-label">Outil · vérifie que <span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span> × <em class="var">b</em> = <em class="var">a</em></div>
+  <div class="tool-hint">Essaie avec <em class="var">a</em> = 5 et <em class="var">b</em> = 3. Que remarques-tu quand tu changes <em class="var">b</em> ?</div>
+    <div class="fb-display">
+      <div class="fb-fraction"><div class="fb-num" id="fb-a">3</div><div class="fb-den" id="fb-b">7</div></div>
+      <span class="fb-eq">×</span>
+      <div id="fb-b2" style="font-size:2rem;font-weight:600;color:var(--blue)">7</div>
+      <span class="fb-eq">=</span>
+      <div class="fb-result" id="fb-res">3</div>
+    </div>
+    <div class="fb-controls">
+      <button class="tool-btn" onclick="fbChange(-1,0)"><em class="var">a</em> −</button>
+      <button class="tool-btn" onclick="fbChange(1,0)"><em class="var">a</em> +</button>
+      <button class="tool-btn" onclick="fbChange(0,-1)"><em class="var">b</em> −</button>
+      <button class="tool-btn" onclick="fbChange(0,1)"><em class="var">b</em> +</button>
+    </div>
+    <div class="fb-info" id="fb-info"><em class="var">a</em>/<em class="var">b</em> × <em class="var">b</em> = <em class="var">a</em> ✓</div>
+  </div>
+  <div class="quiz" id="quiz-p1l2">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p1l2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l2"></div>
+    <div class="quiz-feedback" id="qfb-p1l2"></div>
+  </div>
+
+    <div class="quiz" id="quiz-p1l2q2">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p1l2q2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l2q2"></div>
+    <div class="quiz-feedback" id="qfb-p1l2q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q">Vrai ou faux : <span class="frac"><span class="fnum">7</span><span class="fden">7</span></span> = 1.</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,true,'p1l2q3-A')"><span class="opt-letter">A</span> Vrai</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p1l2q3-B')"><span class="opt-letter">B</span> Faux</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p1l2q3"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q">Que vaut <span class="frac"><span class="fnum">0</span><span class="fden">5</span></span> ?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,true,'p1l2q4-A')"><span class="opt-letter">A</span> 0</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p1l2q4-B')"><span class="opt-letter">B</span> 5</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p1l2q4-C')"><span class="opt-letter">C</span> 1</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p1l2q4-D')"><span class="opt-letter">D</span> Impossible</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p1l2q4"></div>
+  </div>
+<div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p1l1')">← Précédent</button>
+    <button class="nav-btn primary" onclick="markDone('p1l2');go(null,'p1l3')">Leçon suivante →</button>
+  </div>
+</div>
+<div class="page" id="page-p1l3">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-blue">Partie 1 · Leçon 3</div>
+    <h1>Types de fractions</h1>
+    <p class="lesson-intro">Fraction décimale, nombre décimal, pourcentage, proportion — du vocabulaire précis pour des situations concrètes.</p>
+  </div>
+  <div class="section-divider">Définitions</div>
+  <div class="callout c-blue">
+    <div class="c-label">Définitions à connaître</div>
+    <ul class="vocab-list">
+      <li><span class="vterm">Nombre rationnel</span> nombre qui peut s'écrire comme une fraction (ex : <span class="frac"><span class="fnum">3</span><span class="fden">4</span></span>, 7, <span class="frac"><span class="fnum">2</span><span class="fden">5</span></span>…)</li>
+      <li><span class="vterm">Fraction décimale</span> fraction dont le dénominateur est 1, 10, 100… (ex : <span class="frac"><span class="fnum">3</span><span class="fden">10</span></span>, <span class="frac"><span class="fnum">7</span><span class="fden">100</span></span>)</li>
+      <li><span class="vterm">Nombre décimal</span> nombre s'écrivant comme une fraction décimale (ex : 0,3 = <span class="frac"><span class="fnum">3</span><span class="fden">10</span></span>)</li>
+      <li><span class="vterm">Pourcentage</span> quotient dont le dénominateur est 100 (ex : 25% = <span class="frac"><span class="fnum">25</span><span class="fden">100</span></span>)</li>
+    </ul>
+  </div>
+  <div class="section-divider">La proportion</div>
+  <div class="callout c-orange">
+    <div class="c-label">Définition · Proportion</div>
+    <p>La <strong>proportion</strong> d'une quantité <em class="var">a</em> par rapport à une quantité <em class="var">b</em> (non nulle) est égale au quotient <span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span>.</p>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemple</div>
+    <p>Dans une classe de <strong>30 élèves</strong>, il y a <strong>12 filles</strong>.</p>
+    <p>Proportion de filles : <strong><span class="frac"><span class="fnum">12</span><span class="fden">30</span></span> = <span class="frac"><span class="fnum">2</span><span class="fden">5</span></span></strong>  ·  En pourcentage : <strong><span class="frac"><span class="fnum">12</span><span class="fden">30</span></span> = 0,4 = <span class="frac"><span class="fnum">40</span><span class="fden">100</span></span> = 40 %</strong></p>
+  </div>
+  <div class="section-divider">Prendre la fraction d'un nombre</div>
+  <div class="callout c-teal">
+    <div class="c-label">Propriété</div>
+    <p>Prendre une fraction d'un nombre revient à <strong>multiplier cette fraction par ce nombre</strong>.</p>
+    <div class="formula"><span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span> × <em class="var">k</em> = <span class="frac"><span class="fnum"><em class="var">a</em> × <em class="var">k</em></span><span class="fden"><em class="var">b</em></span></span> = <em class="var">a</em> × <span class="frac"><span class="fnum"><em class="var">k</em></span><span class="fden"><em class="var">b</em></span></span></div>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemple</div>
+    <p>Prendre <strong><span class="frac"><span class="fnum">3</span><span class="fden">4</span></span></strong> de <strong>20</strong> : &nbsp;<span class="frac"><span class="fnum">3</span><span class="fden">4</span></span> × 20 = <span class="frac"><span class="fnum">3 × 20</span><span class="fden">4</span></span> = <span class="frac"><span class="fnum">60</span><span class="fden">4</span></span> = <strong>15</strong></p>
+  </div>
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content"><strong>À retenir :</strong> « <span class="frac"><span class="fnum">3</span><span class="fden">4</span></span> de 20 » se calcule en multipliant — c'est <span class="frac"><span class="fnum">3</span><span class="fden">4</span></span> × 20 = 15. On dit qu'on prend <em>les trois quarts</em> de 20.</div>
+  </div>
+  <div class="quiz" id="quiz-p1l3">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p1l3">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l3"></div>
+    <div class="quiz-feedback" id="qfb-p1l3"></div>
+  </div>
+
+    <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q">Parmi ces fractions, laquelle est une fraction décimale ?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p1l3q2-A')"><span class="opt-letter">A</span> <span class="frac"><span class="fnum">3</span><span class="fden">7</span></span></button>
+      <button class="quiz-opt" onclick="answer(this,true,'p1l3q2-B')"><span class="opt-letter">B</span> <span class="frac"><span class="fnum">3</span><span class="fden">100</span></span></button>
+      <button class="quiz-opt" onclick="answer(this,false,'p1l3q2-C')"><span class="opt-letter">C</span> <span class="frac"><span class="fnum">3</span><span class="fden">8</span></span></button>
+      <button class="quiz-opt" onclick="answer(this,false,'p1l3q2-D')"><span class="opt-letter">D</span> <span class="frac"><span class="fnum">3</span><span class="fden">6</span></span></button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p1l3q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q">25 % s’écrit comme fraction décimale :</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p1l3q3-A')"><span class="opt-letter">A</span> <span class="frac"><span class="fnum">25</span><span class="fden">10</span></span></button>
+      <button class="quiz-opt" onclick="answer(this,false,'p1l3q3-B')"><span class="opt-letter">B</span> <span class="frac"><span class="fnum">25</span><span class="fden">1000</span></span></button>
+      <button class="quiz-opt" onclick="answer(this,true,'p1l3q3-C')"><span class="opt-letter">C</span> <span class="frac"><span class="fnum">25</span><span class="fden">100</span></span></button>
+      <button class="quiz-opt" onclick="answer(this,false,'p1l3q3-D')"><span class="opt-letter">D</span> <span class="frac"><span class="fnum">1</span><span class="fden">4</span></span></button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p1l3q3"></div>
+  </div>
+  <div class="quiz" id="quiz-p1l3q4">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p1l3q4">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l3q4"></div>
+    <div class="quiz-feedback" id="qfb-p1l3q4"></div>
+  </div>
+<div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p1l2')">← Précédent</button>
+    <button class="nav-btn primary" onclick="markDone('p1l3');go(null,'p2l1')">Partie 2 →</button>
+  </div>
+</div>
+<div class="page" id="page-p2l1">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-orange">Partie 2 · Leçon 1</div>
+    <h1>Égalité de quotients</h1>
+    <p class="lesson-intro">On peut multiplier ou diviser le numérateur et le dénominateur par un même nombre sans changer la valeur de la fraction.</p>
+  </div>
+  <div class="section-divider">La propriété centrale</div>
+  <div class="callout c-orange">
+    <div class="c-label">Propriété · Égalité de quotients</div>
+    <p><strong>On ne change pas un quotient en multipliant ou en divisant son numérateur et son dénominateur par un même nombre non nul.</strong></p>
+    <p><em class="var">a</em>, <em class="var">b</em> et <em class="var">k</em> désignent trois nombres avec <em class="var">b</em> ≠ 0 et <em class="var">k</em> ≠ 0 :</p>
+    <div class="formula"><span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span> = <span class="frac"><span class="fnum"><em class="var">a</em> × <em class="var">k</em></span><span class="fden"><em class="var">b</em> × <em class="var">k</em></span></span> &nbsp;&nbsp; et &nbsp;&nbsp; <span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span> = <span class="frac"><span class="fnum"><em class="var">a</em> ÷ <em class="var">k</em></span><span class="fden"><em class="var">b</em> ÷ <em class="var">k</em></span></span></div>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemples du cours</div>
+    <p>• <span class="frac"><span class="fnum">1,5</span><span class="fden">2,5</span></span> = <span class="frac"><span class="fnum">1,5 × 2</span><span class="fden">2,5 × 2</span></span> = <strong><span class="frac"><span class="fnum">3</span><span class="fden">5</span></span></strong></p>
+    <p>• <span class="frac"><span class="fnum">24</span><span class="fden">56</span></span> = <span class="frac"><span class="fnum">24 ÷ 8</span><span class="fden">56 ÷ 8</span></span> = <strong><span class="frac"><span class="fnum">3</span><span class="fden">7</span></span></strong></p>
+  </div>
+  <div class="section-divider">Pourquoi ça marche ?</div>
+  <p>Multiplier le numérateur et le dénominateur par <em class="var">k</em>, c'est multiplier la fraction par <span class="frac"><span class="fnum"><em class="var">k</em></span><span class="fden"><em class="var">k</em></span></span> = 1. Multiplier par 1 ne change rien !</p>
+  <div class="formula"><span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span> × <span class="frac"><span class="fnum"><em class="var">k</em></span><span class="fden"><em class="var">k</em></span></span> = <span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span> × 1 = <span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span></div>
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content">C'est cette propriété qui permet de <strong>simplifier</strong> ou de <strong>mettre au même dénominateur</strong>.</div>
+  </div>
+  <div class="quiz" id="quiz-p2l1">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p2l1">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l1"></div>
+    <div class="quiz-feedback" id="qfb-p2l1"></div>
+  </div>
+
+    <div class="quiz" id="quiz-p2l1q2">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p2l1q2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l1q2"></div>
+    <div class="quiz-feedback" id="qfb-p2l1q2"></div>
+  </div>
+  <div class="quiz" id="quiz-p2l1q3">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q" id="qq-p2l1q3">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l1q3"></div>
+    <div class="quiz-feedback" id="qfb-p2l1q3"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q">Complète : <span class="frac"><span class="fnum">1,5</span><span class="fden">2,5</span></span> = <span class="frac"><span class="fnum">?</span><span class="fden">5</span></span> (en multipliant par 2).</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p2l1q4-A')"><span class="opt-letter">A</span> <span class="frac"><span class="fnum">2</span><span class="fden">5</span></span></button>
+      <button class="quiz-opt" onclick="answer(this,true,'p2l1q4-B')"><span class="opt-letter">B</span> <span class="frac"><span class="fnum">3</span><span class="fden">5</span></span></button>
+      <button class="quiz-opt" onclick="answer(this,false,'p2l1q4-C')"><span class="opt-letter">C</span> <span class="frac"><span class="fnum">4</span><span class="fden">5</span></span></button>
+      <button class="quiz-opt" onclick="answer(this,false,'p2l1q4-D')"><span class="opt-letter">D</span> <span class="frac"><span class="fnum">5</span><span class="fden">5</span></span></button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p2l1q4"></div>
+  </div>
+<div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p1l3')">← Précédent</button>
+    <button class="nav-btn primary" onclick="markDone('p2l1');go(null,'p2l2')">Leçon suivante →</button>
+  </div>
+</div>
+<div class="page" id="page-p2l2">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-orange">Partie 2 · Leçon 2</div>
+    <h1>Simplifier une fraction</h1>
+    <p class="lesson-intro">Simplifier, c'est trouver une fraction plus simple qui a la même valeur. On s'arrête quand la fraction est irréductible.</p>
+  </div>
+  <div class="section-divider">Vocabulaire</div>
+  <ul class="vocab-list">
+    <li><span class="vterm">Simplifier</span> diviser le numérateur et le dénominateur par un diviseur commun (autre que 1)</li>
+    <li><span class="vterm">Réduire</span> autre mot pour simplifier</li>
+    <li><span class="vterm">Irréductible</span> fraction qu'on ne peut plus simplifier</li>
+    <li><span class="vterm">Même dénominateur</span> trouver deux fractions égales avec le même dénominateur</li>
+  </ul>
+  <div class="section-divider">Méthode pas à pas</div>
+  <div class="example">
+    <div class="ex-label">Exemple du cours : simplifier <span class="frac"><span class="fnum">18</span><span class="fden">30</span></span></div>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div>Chercher un diviseur commun à 18 et 30. Ici : <strong>6</strong> (car 18 = 6 × 3 et 30 = 6 × 5).</div></div>
+      <div class="step"><div class="step-num">2</div><div>Diviser les deux par 6 : <span class="frac"><span class="fnum">18</span><span class="fden">30</span></span> = <span class="frac"><span class="fnum">18 ÷ 6</span><span class="fden">30 ÷ 6</span></span> = <strong><span class="frac"><span class="fnum">3</span><span class="fden">5</span></span></strong></div></div>
+      <div class="step"><div class="step-num">3</div><div>Vérifier : 3 et 5 n'ont pas de diviseur commun autre que 1. Donc <strong><span class="frac"><span class="fnum">3</span><span class="fden">5</span></span> est irréductible</strong>. ✓</div></div>
+    </div>
+  </div>
+  <div class="simplif">
+    <div class="tool-label">Simplificateur interactif</div>
+    <div class="tool-hint">Essaie avec 18 et 30 (exemple du cours), puis avec 12 et 16.</div>
+    <div class="simplif-row">
+      <div class="simplif-fraction">
+        <input type="number" id="snum" value="18" min="1" oninput="updateSimplif()">
+        <div class="s-bar"></div>
+        <input type="number" id="sden" value="30" min="1" oninput="updateSimplif()">
+      </div>
+      <div class="simplif-arrow">→</div>
+      <div class="simplif-result" id="s-result"><span class="frac"><span class="fnum">3</span><span class="fden">5</span></span></div>
+    </div>
+    <button class="simplif-action" onclick="doSimplif()">Simplifier</button>
+    <div class="simplif-info" id="s-info">18 et 30 → diviseur commun = 6</div>
+  </div>
+  <div class="quiz" id="quiz-p2l2">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p2l2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l2"></div>
+    <div class="quiz-feedback" id="qfb-p2l2"></div>
+  </div>
+
+    <div class="quiz" id="quiz-p2l2q2">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p2l2q2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l2q2"></div>
+    <div class="quiz-feedback" id="qfb-p2l2q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q">Laquelle de ces fractions est irréductible ?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p2l2q3-A')"><span class="opt-letter">A</span> <span class="frac"><span class="fnum">6</span><span class="fden">9</span></span></button>
+      <button class="quiz-opt" onclick="answer(this,false,'p2l2q3-B')"><span class="opt-letter">B</span> <span class="frac"><span class="fnum">10</span><span class="fden">15</span></span></button>
+      <button class="quiz-opt" onclick="answer(this,true,'p2l2q3-C')"><span class="opt-letter">C</span> <span class="frac"><span class="fnum">7</span><span class="fden">11</span></span></button>
+      <button class="quiz-opt" onclick="answer(this,false,'p2l2q3-D')"><span class="opt-letter">D</span> <span class="frac"><span class="fnum">8</span><span class="fden">12</span></span></button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p2l2q3"></div>
+  </div>
+  <div class="quiz" id="quiz-p2l2q4">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p2l2q4">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l2q4"></div>
+    <div class="quiz-feedback" id="qfb-p2l2q4"></div>
+  </div>
+<div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p2l1')">← Précédent</button>
+    <button class="nav-btn primary" onclick="markDone('p2l2');go(null,'p2l3')">Leçon suivante →</button>
+  </div>
+</div>
+<div class="page" id="page-p2l3">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-orange">Partie 2 · Leçon 3</div>
+    <h1>Exercices — Fractions égales</h1>
+    <p class="lesson-intro">Trois exercices pour consolider la partie 2.</p>
+  </div>
+  <div class="quiz" id="quiz-p2l3a">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 1</div><div class="quiz-q" id="qq-p2l3a">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l3a"></div>
+    <div class="quiz-feedback" id="qfb-p2l3a"></div>
+  </div>
+  <div class="quiz" id="quiz-p2l3c">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 3</div><div class="quiz-q" id="qq-p2l3c">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l3c"></div>
+    <div class="quiz-feedback" id="qfb-p2l3c"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p2l2')">← Précédent</button>
+    <button class="nav-btn primary" onclick="markDone('p2l3');go(null,'p3l1')">Partie 3 →</button>
+  </div>
+</div>
+<div class="page" id="page-p3l1">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-purple">Partie 3 · Leçon 1</div>
+    <h1>Les trois cas de comparaison</h1>
+    <p class="lesson-intro">Pour comparer deux fractions, il y a trois situations possibles. Chacune a sa méthode.</p>
+  </div>
+  <div class="section-divider">Méthode</div>
+  <div class="callout c-purple">
+    <div class="c-label">Méthode · Comparer deux quotients</div>
+    <div class="steps" style="margin-top:0.5rem">
+      <div class="step"><div class="step-num" style="background:var(--purple);color:#0d1117">1</div><div><strong>Même dénominateur (positif)</strong> → le plus grand est celui qui a le plus grand <em>numérateur</em>.</div></div>
+      <div class="step"><div class="step-num" style="background:var(--purple);color:#0d1117">2</div><div><strong>Même numérateur (positif)</strong> → le plus grand est celui qui a le plus <em>petit dénominateur</em>.</div></div>
+      <div class="step"><div class="step-num" style="background:var(--purple);color:#0d1117">3</div><div><strong>Ni même numérateur ni même dénominateur</strong> → il faut d'abord <em>réduire au même dénominateur</em>.</div></div>
+    </div>
+  </div>
+  <div class="section-divider">Exemples — cas 1 et 2</div>
+  <div class="example">
+    <div class="ex-label">Cas 1 — même dénominateur</div>
+    <p>Comparer <span class="frac"><span class="fnum">5</span><span class="fden">9</span></span> et <span class="frac"><span class="fnum">7</span><span class="fden">9</span></span> : même dénominateur (9), on compare les numérateurs : 5 &lt; 7, donc <strong><span class="frac"><span class="fnum">5</span><span class="fden">9</span></span> &lt; <span class="frac"><span class="fnum">7</span><span class="fden">9</span></span></strong>.</p>
+  </div>
+  <div class="example">
+    <div class="ex-label">Cas 2 — même numérateur</div>
+    <p>Comparer <span class="frac"><span class="fnum">3</span><span class="fden">5</span></span> et <span class="frac"><span class="fnum">3</span><span class="fden">8</span></span> : même numérateur (3), 5 &lt; 8, donc <strong><span class="frac"><span class="fnum">3</span><span class="fden">5</span></span> &gt; <span class="frac"><span class="fnum">3</span><span class="fden">8</span></span></strong>.</p>
+    <p><em>Intuition : si on partage la même quantité en plus de morceaux, chaque morceau est plus petit.</em></p>
+  </div>
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content">Même numérateur : <strong>plus le dénominateur est grand, plus la fraction est petite</strong>. C'est l'inverse de ce qu'on pourrait croire !</div>
+  </div>
+  <div class="quiz" id="quiz-p3l1">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p3l1">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p3l1"></div>
+    <div class="quiz-feedback" id="qfb-p3l1"></div>
+  </div>
+
+    <div class="quiz" id="quiz-p3l1q2">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p3l1q2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p3l1q2"></div>
+    <div class="quiz-feedback" id="qfb-p3l1q2"></div>
+  </div>
+  <div class="quiz" id="quiz-p3l1q3">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q" id="qq-p3l1q3">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p3l1q3"></div>
+    <div class="quiz-feedback" id="qfb-p3l1q3"></div>
+  </div>
+  <div class="quiz" id="quiz-p3l1q4">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p3l1q4">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p3l1q4"></div>
+    <div class="quiz-feedback" id="qfb-p3l1q4"></div>
+  </div>
+<div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p2l3')">← Précédent</button>
+    <button class="nav-btn primary" onclick="markDone('p3l1');go(null,'p3l2')">Leçon suivante →</button>
+  </div>
+</div>
+<div class="page" id="page-p3l2">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-purple">Partie 3 · Leçon 2</div>
+    <h1>Réduire au même dénominateur</h1>
+    <p class="lesson-intro">Quand deux fractions n'ont ni le même numérateur ni le même dénominateur, on les transforme pour qu'elles aient le même dénominateur — puis on compare les numérateurs.</p>
+  </div>
+  <div class="section-divider">La méthode</div>
+  <div class="steps">
+    <div class="step"><div class="step-num" style="background:var(--purple);color:#0d1117">1</div><div>Trouver un multiple commun aux deux dénominateurs.</div></div>
+    <div class="step"><div class="step-num" style="background:var(--purple);color:#0d1117">2</div><div>Transformer chaque fraction pour obtenir ce dénominateur commun.</div></div>
+    <div class="step"><div class="step-num" style="background:var(--purple);color:#0d1117">3</div><div>Comparer les numérateurs.</div></div>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemple : comparer <span class="frac"><span class="fnum">3</span><span class="fden">4</span></span> et <span class="frac"><span class="fnum">5</span><span class="fden">6</span></span></div>
+    <div class="steps">
+      <div class="step"><div class="step-num" style="background:var(--purple);color:#0d1117">1</div><div>Multiple commun de 4 et 6 : <strong>12</strong></div></div>
+      <div class="step"><div class="step-num" style="background:var(--purple);color:#0d1117">2</div><div><span class="frac"><span class="fnum">3</span><span class="fden">4</span></span> = <span class="frac"><span class="fnum">3 × 3</span><span class="fden">4 × 3</span></span> = <strong><span class="frac"><span class="fnum">9</span><span class="fden">12</span></span></strong> &nbsp;;&nbsp; <span class="frac"><span class="fnum">5</span><span class="fden">6</span></span> = <span class="frac"><span class="fnum">5 × 2</span><span class="fden">6 × 2</span></span> = <strong><span class="frac"><span class="fnum">10</span><span class="fden">12</span></span></strong></div></div>
+      <div class="step"><div class="step-num" style="background:var(--purple);color:#0d1117">3</div><div>9 &lt; 10, donc <span class="frac"><span class="fnum">9</span><span class="fden">12</span></span> &lt; <span class="frac"><span class="fnum">10</span><span class="fden">12</span></span>, donc <strong><span class="frac"><span class="fnum">3</span><span class="fden">4</span></span> &lt; <span class="frac"><span class="fnum">5</span><span class="fden">6</span></span></strong></div></div>
+    </div>
+  </div>
+  <div class="comparator">
+    <div class="tool-label">Comparateur de fractions</div>
+    <div class="tool-hint">Essaie d'abord avec 3/4 et 5/6 (exemple du cours), puis invente tes propres fractions.</div>
+    <div class="comp-row">
+      <div class="comp-fraction">
+        <label>Fraction A</label>
+        <div class="comp-inputs">
+          <input type="number" id="c-a1" value="3" min="1">
+          <div class="comp-bar"></div>
+          <input type="number" id="c-b1" value="4" min="1">
+        </div>
+      </div>
+      <div class="comp-symbol" id="comp-sym">?</div>
+      <div class="comp-fraction">
+        <label>Fraction B</label>
+        <div class="comp-inputs">
+          <input type="number" id="c-a2" value="5" min="1">
+          <div class="comp-bar"></div>
+          <input type="number" id="c-b2" value="6" min="1">
+        </div>
+      </div>
+    </div>
+    <button class="comp-action" onclick="doCompare()">Comparer</button>
+    <div class="comp-result" id="comp-result"></div>
+  </div>
+  <div class="quiz" id="quiz-p3l2">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p3l2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p3l2"></div>
+    <div class="quiz-feedback" id="qfb-p3l2"></div>
+  </div>
+
+    <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q">Pour comparer <span class="frac"><span class="fnum">3</span><span class="fden">4</span></span> et <span class="frac"><span class="fnum">5</span><span class="fden">6</span></span>, quel est le plus petit dénominateur commun ?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p3l2q2-A')"><span class="opt-letter">A</span> 8</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l2q2-B')"><span class="opt-letter">B</span> 24</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p3l2q2-C')"><span class="opt-letter">C</span> 12</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l2q2-D')"><span class="opt-letter">D</span> 10</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p3l2q2"></div>
+  </div>
+  <div class="quiz" id="quiz-p3l2q3">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q" id="qq-p3l2q3">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p3l2q3"></div>
+    <div class="quiz-feedback" id="qfb-p3l2q3"></div>
+  </div>
+  <div class="quiz" id="quiz-p3l2q4">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p3l2q4">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p3l2q4"></div>
+    <div class="quiz-feedback" id="qfb-p3l2q4"></div>
+  </div>
+<div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p3l1')">← Précédent</button>
+    <button class="nav-btn primary" onclick="markDone('p3l2');go(null,'p3l4')">Leçon suivante →</button>
+  </div>
+</div>
+
+<div class="page" id="page-p3l4">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-purple">Partie 3 · Leçon 3</div>
+    <h1>Comparer une fraction à 1</h1>
+    <p class="lesson-intro">Avant de comparer deux fractions entre elles, on peut souvent gagner du temps en les comparant d&#8217;abord à 1. Une règle simple, directement lisible sur la fraction.</p>
+  </div>
+  <div class="section-divider">La règle</div>
+  <div class="callout c-purple">
+    <div class="c-label">Propriété · Comparer à 1</div>
+    <p>Pour une fraction <span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span> avec <em class="var">b</em> &gt; 0 :</p>
+    <div class="formula">
+      si <em class="var">a</em> &lt; <em class="var">b</em> &nbsp;&#8594;&nbsp; <span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span> &lt; 1
+      &nbsp;&nbsp;;&nbsp;&nbsp;
+      si <em class="var">a</em> = <em class="var">b</em> &nbsp;&#8594;&nbsp; <span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span> = 1
+      &nbsp;&nbsp;;&nbsp;&nbsp;
+      si <em class="var">a</em> &gt; <em class="var">b</em> &nbsp;&#8594;&nbsp; <span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span> &gt; 1
+    </div>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemple du manuel</div>
+    <p><span class="frac"><span class="fnum">3</span><span class="fden">4</span></span> &lt; 1 car 3 &lt; 4 &nbsp;;&nbsp; <span class="frac"><span class="fnum">15</span><span class="fden">12</span></span> &gt; 1 car 15 &gt; 12 &nbsp;;&nbsp; <span class="frac"><span class="fnum">7</span><span class="fden">7</span></span> = 1 car 7 = 7.</p>
+    <p>Donc : <strong><span class="frac"><span class="fnum">3</span><span class="fden">4</span></span> &lt; 1 &lt; <span class="frac"><span class="fnum">15</span><span class="fden">12</span></span></strong></p>
+  </div>
+  <div class="retenir">
+    <div class="r-icon">&#11088;</div>
+    <div class="r-content"><strong>&#192; retenir&nbsp;:</strong> il suffit de comparer numérateur et dénominateur &#8212; <strong>pas besoin de calculer</strong> la valeur décimale.</div>
+  </div>
+  <div class="callout c-teal">
+    <div class="c-label">Astuce</div>
+    <p>Si une fraction est &lt; 1 et l&#8217;autre &gt; 1, on conclut directement sans calcul.</p>
+    <p>Exemple&nbsp;: <span class="frac"><span class="fnum">5</span><span class="fden">7</span></span> &lt; 1 &lt; <span class="frac"><span class="fnum">9</span><span class="fden">8</span></span>, donc <span class="frac"><span class="fnum">5</span><span class="fden">7</span></span> &lt; <span class="frac"><span class="fnum">9</span><span class="fden">8</span></span> sans aucun calcul.</p>
+  </div>
+  <div class="section-divider">Quiz</div>
+  <div class="quiz" id="quiz-p3l4">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p3l4">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p3l4"></div>
+    <div class="quiz-feedback" id="qfb-p3l4"></div>
+  </div>
+  <div class="quiz" id="quiz-p3l4q2">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p3l4q2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p3l4q2"></div>
+    <div class="quiz-feedback" id="qfb-p3l4q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q">Vrai ou faux&#160;: on peut conclure sans calcul que <span class="frac"><span class="fnum">3</span><span class="fden">5</span></span> &lt; <span class="frac"><span class="fnum">7</span><span class="fden">4</span></span>.</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,true,'p3l4q3-A')"><span class="opt-letter">A</span> Vrai</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l4q3-B')"><span class="opt-letter">B</span> Faux</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p3l4q3"></div>
+  </div>
+  <div class="quiz" id="quiz-p3l4q4">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p3l4q4">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p3l4q4"></div>
+    <div class="quiz-feedback" id="qfb-p3l4q4"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p3l2')">&#8592; Précédent</button>
+    <button class="nav-btn primary" onclick="markDone('p3l4');go(null,'p3l3')">Leçon suivante &#8594;</button>
+  </div>
+</div>
+<div class="page" id="page-p3l3">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-purple">Partie 3 · Leçon 4</div>
+    <h1>Exercices — Comparaison</h1>
+    <p class="lesson-intro">Trois exercices pour maîtriser la comparaison. Lis bien les fractions avant de choisir ta méthode !</p>
+  </div>
+  <div class="quiz" id="quiz-p3l3a">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 1</div><div class="quiz-q" id="qq-p3l3a">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p3l3a"></div>
+    <div class="quiz-feedback" id="qfb-p3l3a"></div>
+  </div>
+  <div class="quiz" id="quiz-p3l3b">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 2</div><div class="quiz-q" id="qq-p3l3b">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p3l3b"></div>
+    <div class="quiz-feedback" id="qfb-p3l3b"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 3</div><div class="quiz-q">Compare <span class="frac"><span class="fnum">3</span><span class="fden">4</span></span> et <span class="frac"><span class="fnum">7</span><span class="fden">10</span></span> en réduisant au même dénominateur.</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,true,'p3l3c-A')"><span class="opt-letter">A</span> <span class="frac"><span class="fnum">3</span><span class="fden">4</span></span> &gt; <span class="frac"><span class="fnum">7</span><span class="fden">10</span></span></button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l3c-B')"><span class="opt-letter">B</span> <span class="frac"><span class="fnum">3</span><span class="fden">4</span></span> &lt; <span class="frac"><span class="fnum">7</span><span class="fden">10</span></span></button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l3c-C')"><span class="opt-letter">C</span> <span class="frac"><span class="fnum">3</span><span class="fden">4</span></span> = <span class="frac"><span class="fnum">7</span><span class="fden">10</span></span></button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p3l3c"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p3l4')">← Précédent</button>
+    <button class="nav-btn primary" onclick="markDone('p3l3');go(null,'p4l1')">Partie 4 &#8594;</button>
+  </div>
+</div>
+
+<div class="page" id="page-p4l1">
+  <div class="lesson-header">
+    <div class="lesson-tag" style="color:var(--yellow)">Partie 4 · Problème 1</div>
+    <h1>Jeu de cartes</h1>
+    <p class="lesson-intro">Un problème sur les proportions et les fractions irréductibles.</p>
+  </div>
+  <div class="callout c-yellow">
+    <div class="c-label">Énoncé</div>
+    <p>Dans un jeu de <strong>32 cartes</strong>, il y a <strong>4 rois</strong>.</p>
+    <p>1. Quelle est la proportion de rois&#160;? Donner la réponse sous forme de fraction irréductible.</p>
+    <p>2. Exprimer cette proportion en nombre décimal, puis en pourcentage.</p>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question 1</div><div class="quiz-q">Quelle fraction irréductible représente la proportion de rois ?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p4l1a-A')"><span class="opt-letter">A</span> <span class="frac"><span class="fnum">4</span><span class="fden">32</span></span></button>
+      <button class="quiz-opt" onclick="answer(this,true,'p4l1a-B')"><span class="opt-letter">B</span> <span class="frac"><span class="fnum">1</span><span class="fden">8</span></span></button>
+      <button class="quiz-opt" onclick="answer(this,false,'p4l1a-C')"><span class="opt-letter">C</span> <span class="frac"><span class="fnum">1</span><span class="fden">4</span></span></button>
+      <button class="quiz-opt" onclick="answer(this,false,'p4l1a-D')"><span class="opt-letter">D</span> <span class="frac"><span class="fnum">4</span><span class="fden">8</span></span></button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p4l1a"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question 2</div><div class="quiz-q">La proportion de rois en pourcentage est :</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p4l1b-A')"><span class="opt-letter">A</span> 4&#160;%</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p4l1b-B')"><span class="opt-letter">B</span> 8&#160;%</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p4l1b-C')"><span class="opt-letter">C</span> 12,5&#160;%</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p4l1b-D')"><span class="opt-letter">D</span> 25&#160;%</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p4l1b"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p3l3')">&#8592; Précédent</button>
+    <button class="nav-btn primary" onclick="markDone('p4l1');go(null,'p4l2')">Problème suivant &#8594;</button>
+  </div>
+</div>
+<div class="page" id="page-p4l2">
+  <div class="lesson-header">
+    <div class="lesson-tag" style="color:var(--yellow)">Partie 4 · Problème 2</div>
+    <h1>Part de gâteau</h1>
+    <p class="lesson-intro">Un problème sur les proportions et les pourcentages.</p>
+  </div>
+  <div class="callout c-yellow">
+    <div class="c-label">Énoncé</div>
+    <p>Une part de gâteau de <strong>125&#160;g</strong> contient <strong>30&#160;g de sucre</strong>.</p>
+    <p>Quel est le pourcentage de sucre dans cette part&#160;?</p>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question</div><div class="quiz-q">Le pourcentage de sucre dans cette part est :</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p4l1c-A')"><span class="opt-letter">A</span> 20&#160;%</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p4l1c-B')"><span class="opt-letter">B</span> 30&#160;%</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p4l1c-C')"><span class="opt-letter">C</span> 24&#160;%</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p4l1c-D')"><span class="opt-letter">D</span> 4,2&#160;%</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p4l1c"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p4l1')">&#8592; Précédent</button>
+    <button class="nav-btn primary" onclick="markDone('p4l2');go(null,'p4l3')">Problème suivant &#8594;</button>
+  </div>
+</div>
+<div class="page" id="page-p4l3">
+  <div class="lesson-header">
+    <div class="lesson-tag" style="color:var(--yellow)">Partie 4 · Problème 3</div>
+    <h1>Tableau d&#8217;honneur</h1>
+    <p class="lesson-intro">Un problème de comparaison de fractions dans une situation réelle.</p>
+  </div>
+  <div class="callout c-yellow">
+    <div class="c-label">Énoncé</div>
+    <p>Dans un club de badminton, trois membres ont tous disputé le même nombre de matchs.</p>
+    <p>Claire a gagné les <span class="frac"><span class="fnum">3</span><span class="fden">5</span></span> des matchs, Karim les <span class="frac"><span class="fnum">2</span><span class="fden">3</span></span> et Christopher les <span class="frac"><span class="fnum">17</span><span class="fden">30</span></span>.</p>
+    <p>Classe ces trois membres du meilleur au moins bon.</p>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question</div><div class="quiz-q">Quel est le classement du meilleur au moins bon ?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p4l1d-A')"><span class="opt-letter">A</span> Claire &gt; Christopher &gt; Karim</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p4l1d-B')"><span class="opt-letter">B</span> Karim &gt; Claire &gt; Christopher</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p4l1d-C')"><span class="opt-letter">C</span> Christopher &gt; Claire &gt; Karim</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p4l1d-D')"><span class="opt-letter">D</span> Karim &gt; Christopher &gt; Claire</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p4l1d"></div>
+  </div>
+  <div class="completion-box">
+    <div class="co-label">&#127881; Chapitre complet&#160;!</div>
+    <p>&#10003; Définition du quotient, de l&#8217;inverse et de la fraction</p>
+    <p>&#10003; Égalité de quotients et simplification</p>
+    <p>&#10003; Comparaison de fractions&#160;— y compris par rapport à 1</p>
+    <p>&#10003; Application dans des problèmes concrets</p>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p4l2')">&#8592; Précédent</button>
+    <button class="nav-btn primary" onclick="markDone('p4l3');go(null,'home')">&#127968; Retour au sommaire</button>
+  </div>
+</div>
+
+
+
+<div class="page" id="page-memo">
+  <div class="lesson-header">
+    <div class="lesson-tag" style="color:var(--orange)">♥ Mémo</div>
+    <h1>À connaître par cœur</h1>
+    <p class="lesson-intro">Les 7 encadrés ♥ de la fiche de cours — les définitions et propriétés fondamentales du chapitre.</p>
+  </div>
+
+  <div class="section-divider">1 — Définition du quotient</div>
+  <div class="callout c-blue">
+    <div class="c-label">Définition · Quotient et écriture fractionnaire</div>
+    <p><em class="var">a</em> et <em class="var">b</em> désignent deux nombres avec <em class="var">b</em> ≠ 0.</p>
+    <p>• Le <strong>quotient de <em class="var">a</em> par <em class="var">b</em></strong> est le nombre (unique) qui, multiplié par <em class="var">b</em>, donne <em class="var">a</em>.</p>
+    <p>• Il se note <em class="var">a</em> ÷ <em class="var">b</em>, ou <span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span> en écriture fractionnaire. Ainsi&nbsp;:</p>
+    <div class="formula"><span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span> × <em class="var">b</em> = <em class="var">a</em></div>
+    <p>• Dans <span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span>, <em class="var">a</em> s’appelle le <strong>numérateur</strong> et <em class="var">b</em> le <strong>dénominateur</strong>.</p>
+    <p>• Si <em class="var">a</em> et <em class="var">b</em> sont deux <strong>entiers</strong> avec <em class="var">b</em> ≠ 0, alors <span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span> est une <strong>fraction</strong>.</p>
+  </div>
+
+  <div class="callout c-yellow">
+    <div class="c-label">Remarques</div>
+    <div class="formula"><span class="frac"><span class="fnum"><em class="var">b</em></span><span class="fden"><em class="var">b</em></span></span> = 1 &nbsp;&nbsp;;&nbsp;&nbsp; <span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden">1</span></span> = <em class="var">a</em> &nbsp;&nbsp;;&nbsp;&nbsp; <span class="frac"><span class="fnum">0</span><span class="fden"><em class="var">b</em></span></span> = 0</div>
+  </div>
+
+  <div class="section-divider">2 — Types de fractions</div>
+  <div class="callout c-blue">
+    <div class="c-label">Définitions</div>
+    <ul class="vocab-list">
+      <li><span class="vterm">Nombre rationnel</span> nombre qui peut s’écrire comme une fraction</li>
+      <li><span class="vterm">Fraction décimale</span> fraction dont le dénominateur est 1, 10, 100, etc.</li>
+      <li><span class="vterm">Nombre décimal</span> nombre qui peut s’écrire comme une fraction décimale</li>
+      <li><span class="vterm">Pourcentage</span> quotient dont le dénominateur est 100</li>
+    </ul>
+  </div>
+
+  <div class="callout c-orange">
+    <div class="c-label">Définition · Proportion</div>
+    <p>La <strong>proportion</strong> d’une quantité <em class="var">a</em> par rapport à une quantité <em class="var">b</em> non nulle est égale au quotient <span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span>.</p>
+  </div>
+
+  <div class="callout c-teal">
+    <div class="c-label">Propriété · Prendre la fraction d’un nombre</div>
+    <p>Prendre une fraction d’un nombre revient à <strong>multiplier</strong> cette fraction par ce nombre.</p>
+    <div class="formula"><span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span> × <em class="var">k</em> = <span class="frac"><span class="fnum"><em class="var">a</em> × <em class="var">k</em></span><span class="fden"><em class="var">b</em></span></span> = <em class="var">a</em> × <span class="frac"><span class="fnum"><em class="var">k</em></span><span class="fden"><em class="var">b</em></span></span></div>
+  </div>
+
+  <div class="section-divider">3 — Quotients égaux</div>
+  <div class="callout c-orange">
+    <div class="c-label">Propriété · Égalité de quotients</div>
+    <p><strong>On ne change pas un quotient en multipliant ou en divisant son numérateur et son dénominateur par un même nombre non nul.</strong></p>
+    <p><em class="var">a</em>, <em class="var">b</em> et <em class="var">k</em> désignent trois nombres avec <em class="var">b</em> ≠ 0 et <em class="var">k</em> ≠ 0 :</p>
+    <div class="formula"><span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span> = <span class="frac"><span class="fnum"><em class="var">a</em> × <em class="var">k</em></span><span class="fden"><em class="var">b</em> × <em class="var">k</em></span></span> &nbsp;&nbsp; et &nbsp;&nbsp; <span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">b</em></span></span> = <span class="frac"><span class="fnum"><em class="var">a</em> ÷ <em class="var">k</em></span><span class="fden"><em class="var">b</em> ÷ <em class="var">k</em></span></span></div>
+  </div>
+
+  <div class="section-divider">4 — Comparer des quotients</div>
+  <div class="callout c-purple">
+    <div class="c-label">Méthode · Comparaison de quotients</div>
+    <div class="steps" style="margin-top:0.5rem">
+      <div class="step"><div class="step-num" style="background:var(--purple);color:#0d1117">1</div><div><strong>Même dénominateur (positif)</strong> → le plus grand est celui qui a le plus grand <em>numérateur</em>.</div></div>
+      <div class="step"><div class="step-num" style="background:var(--purple);color:#0d1117">2</div><div><strong>Même numérateur (positif)</strong> → le plus grand est celui qui a le plus <em>petit dénominateur</em>.</div></div>
+      <div class="step"><div class="step-num" style="background:var(--purple);color:#0d1117">3</div><div><strong>Ni même numérateur ni même dénominateur</strong> → réduire au même dénominateur, puis comparer les numérateurs.</div></div>
+    </div>
+  </div>
+
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p4l3')">&#8592; Retour</button>
+    <button class="nav-btn primary" onclick="go(null,'home')">&#127968; Sommaire</button>
+  </div>
+</div>
+</div><!-- /main -->
+
+<script>
+const TOTAL = 13;
+let done = {};
+
+function saveProgress() {
+  try { localStorage.setItem('fractions5e_done', JSON.stringify(done)); } catch(e) {}
+}
+
+function loadProgress() {
+  try {
+    const saved = localStorage.getItem('fractions5e_done');
+    if (saved) done = JSON.parse(saved);
+  } catch(e) {}
+}
+
+function updateProgress() {
+  const n = Object.keys(done).length;
+  document.getElementById('prog-text').textContent = n + ' / ' + TOTAL;
+  document.getElementById('prog-fill').style.width = (n / TOTAL * 100) + '%';
+  ['p1l1','p1l2','p1l3','p2l1','p2l2','p2l3','p3l1','p3l2','p3l4','p3l3','p4l1'].forEach(id => {
+    const el = document.getElementById('chk-' + id);
+    if (el) el.textContent = done[id] ? '✓' : '';
+    const navEl = document.querySelector('[data-page="' + id + '"]');
+    if (navEl) { done[id] ? navEl.classList.add('done') : navEl.classList.remove('done'); }
+  });
+}
+
+function markDone(id) { done[id] = true; updateProgress(); saveProgress(); }
+
+function resetProgress() {
+  if (!confirm('Remettre la progression à zéro ?')) return;
+  done = {};
+  try { localStorage.removeItem('fractions5e_done'); } catch(e) {}
+  updateProgress();
+}
+
+function go(el, target) {
+  const t = el ? el.dataset.page : target;
+  if (!t) return;
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const page = document.getElementById('page-' + t);
+  if (page) {
+    page.classList.add('active');
+    setTimeout(() => {
+      const main = document.getElementById('main');
+      main.scrollTop = 0;
+      window.scrollTo(0,0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }, 20);
+  }
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  const nav = document.querySelector('[data-page="' + t + '"]');
+  if (nav) nav.classList.add('active');
+  if (window.innerWidth < 720) document.getElementById('sidebar').classList.remove('open');
+}
+
+function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
+
+const FB = {
+  "p1l1-A": `Non. 5 × 5 = 25, pas 1.`,
+  "p1l1-B": `Bravo ! 5 × <span class="frac"><span class="fnum">1</span><span class="fden">5</span></span> = 1.`,
+  "p1l1-C": `Non. L'inverse d'un nombre est toujours non nul.`,
+  "p1l1-D": `Non. 5 × <span class="frac"><span class="fnum">1</span><span class="fden">10</span></span> = <span class="frac"><span class="fnum">1</span><span class="fden">2</span></span>, pas 1.`,
+  "p1l2-A": `Non. 7 est le numérateur — le nombre en haut.`,
+  "p1l2-B": `Excellent ! Le dénominateur est le nombre en bas. Ici c'est 12.`,
+  "p1l2-C": `Non. <span class="frac"><span class="fnum">7</span><span class="fden">12</span></span> est la fraction entière, pas le dénominateur seul.`,
+  "p1l2-D": `Non. Le quotient c'est la valeur de 7 ÷ 12 ≈ 0,58.`,
+  "p1l3-A": `Non. <span class="frac"><span class="fnum">2</span><span class="fden">5</span></span> × 30 = <span class="frac"><span class="fnum">60</span><span class="fden">5</span></span> = 12, pas 6.`,
+  "p1l3-B": `Parfait ! <span class="frac"><span class="fnum">2</span><span class="fden">5</span></span> × 30 = <span class="frac"><span class="fnum">2 × 30</span><span class="fden">5</span></span> = <span class="frac"><span class="fnum">60</span><span class="fden">5</span></span> = 12.`,
+  "p1l3-C": `Non. <span class="frac"><span class="fnum">2</span><span class="fden">5</span></span> × 30 = 12, pas 15.`,
+  "p1l3-D": `Non. <span class="frac"><span class="fnum">2</span><span class="fden">5</span></span> × 30 = 12, pas 32.`,
+  "p2l1-A": `Non. On ne peut pas additionner le même nombre : <span class="frac"><span class="fnum">7</span><span class="fden">8</span></span> ≠ <span class="frac"><span class="fnum">2</span><span class="fden">3</span></span>.`,
+  "p2l1-B": `Bravo ! 2×4=8 et 3×4=12, donc <span class="frac"><span class="fnum">8</span><span class="fden">12</span></span> = <span class="frac"><span class="fnum">2</span><span class="fden">3</span></span>.`,
+  "p2l1-C": `Non. On ne peut pas soustraire le même nombre : <span class="frac"><span class="fnum">1</span><span class="fden">2</span></span> ≠ <span class="frac"><span class="fnum">2</span><span class="fden">3</span></span>.`,
+  "p2l1-D": `Non. <span class="frac"><span class="fnum">4</span><span class="fden">9</span></span> ≠ <span class="frac"><span class="fnum">2</span><span class="fden">3</span></span>.`,
+  "p2l2-A": `Non. <span class="frac"><span class="fnum">6</span><span class="fden">8</span></span> n'est pas la forme irréductible de <span class="frac"><span class="fnum">12</span><span class="fden">16</span></span> — cherche le plus grand diviseur commun.`,
+  "p2l2-B": `Parfait ! 12÷4=3 et 16÷4=4. Et <span class="frac"><span class="fnum">3</span><span class="fden">4</span></span> est irréductible.`,
+  "p2l2-C": `Non. <span class="frac"><span class="fnum">24</span><span class="fden">32</span></span> est une fraction plus grande, pas simplifiée.`,
+  "p2l2-D": `Non. <span class="frac"><span class="fnum">1</span><span class="fden">4</span></span> serait <span class="frac"><span class="fnum">4</span><span class="fden">16</span></span>, pas <span class="frac"><span class="fnum">12</span><span class="fden">16</span></span>.`,
+  "p2l3a-A": `Non. Trouve par quel nombre on multiplie 5 pour obtenir 20, puis applique ce même facteur au numérateur.`,
+  "p2l3a-B": `Exact ! 5×4=20, donc on multiplie le numérateur par 4 aussi : 3×4=12.`,
+  "p2l3a-C": `Non. <span class="frac"><span class="fnum">15</span><span class="fden">20</span></span> = <span class="frac"><span class="fnum">3</span><span class="fden">4</span></span>, ce n'est pas la même fraction que <span class="frac"><span class="fnum">3</span><span class="fden">5</span></span>.`,
+  "p2l3a-D": `Non. Pour passer de 5 à 20, on multiplie par 4, pas par 5.`,
+  "p2l3b-A": `Non. <span class="frac"><span class="fnum">6</span><span class="fden">9</span></span> = <span class="frac"><span class="fnum">2</span><span class="fden">3</span></span> (diviseur commun : 3).`,
+  "p2l3b-B": `Non. <span class="frac"><span class="fnum">10</span><span class="fden">15</span></span> = <span class="frac"><span class="fnum">2</span><span class="fden">3</span></span> (diviseur commun : 5).`,
+  "p2l3b-C": `Bravo ! 7 et 11 sont tous deux premiers. Aucun diviseur commun autre que 1.`,
+  "p2l3b-D": `Non. <span class="frac"><span class="fnum">8</span><span class="fden">12</span></span> = <span class="frac"><span class="fnum">2</span><span class="fden">3</span></span> (diviseur commun : 4).`,
+  "p2l3c-A": `Non. <span class="frac"><span class="fnum">21</span><span class="fden">28</span></span> peut être simplifiée : 21=7×3 et 28=7×4.`,
+  "p2l3c-B": `Parfait ! 21÷7=3 et 28÷7=4. Donc <span class="frac"><span class="fnum">21</span><span class="fden">28</span></span> = <span class="frac"><span class="fnum">3</span><span class="fden">4</span></span>, irréductible.`,
+  "p2l3c-C": `Non. <span class="frac"><span class="fnum">3</span><span class="fden">5</span></span> = 0,6 mais <span class="frac"><span class="fnum">21</span><span class="fden">28</span></span> = 0,75.`,
+  "p2l3c-D": `Non. <span class="frac"><span class="fnum">7</span><span class="fden">4</span></span> > 1 : ici le nombre de devoirs faits ne peut pas dépasser le nombre d’élèves.`,
+  "p3l1-A": `Bravo ! Même numérateur (4). 7 < 11, donc <span class="frac"><span class="fnum">4</span><span class="fden">7</span></span> est plus grand.`,
+  "p3l1-B": `Non. Même numérateur : plus le dénominateur est grand, plus la fraction est petite.`,
+  "p3l1-C": `Non. <span class="frac"><span class="fnum">4</span><span class="fden">7</span></span> ≈ 0,57 et <span class="frac"><span class="fnum">4</span><span class="fden">11</span></span> ≈ 0,36 : elles sont différentes.`,
+  "p3l1-D": `On peut les comparer grâce à leur numérateur commun !`,
+  "p3l2-A": `Non. Pour passer de 3 à 15, on multiplie par 5. Donc 2×5=10, pas 6.`,
+  "p3l2-B": `Exactement ! 3×5=15, donc 2×5=10. On obtient <span class="frac"><span class="fnum">10</span><span class="fden">15</span></span>.`,
+  "p3l2-C": `Non. <span class="frac"><span class="fnum">15</span><span class="fden">15</span></span> = 1, ce n'est pas égal à <span class="frac"><span class="fnum">2</span><span class="fden">3</span></span>.`,
+  "p3l2-D": `Non. Le multiplicateur est 5, pas 3.`,
+  "p3l3a-A": `Non. Même dénominateur : on compare les numérateurs. 7 > 5.`,
+  "p3l3a-B": `Exact ! Même dénominateur (12) : 7 > 5.`,
+  "p3l3a-C": `Non. 7 ≠ 5.`,
+  "p3l3b-A": `Parfait ! Même numérateur (5). 8 < 13, donc <span class="frac"><span class="fnum">5</span><span class="fden">8</span></span> > <span class="frac"><span class="fnum">5</span><span class="fden">13</span></span>.`,
+  "p3l3b-B": `Non. Même numérateur : plus le dénominateur est grand, plus la fraction est petite.`,
+  "p3l3b-C": `Non. 8 ≠ 13 donc elles sont différentes.`,
+  "p3l3c-A": `Excellent ! <span class="frac"><span class="fnum">3</span><span class="fden">4</span></span> = <span class="frac"><span class="fnum">15</span><span class="fden">20</span></span> et <span class="frac"><span class="fnum">7</span><span class="fden">10</span></span> = <span class="frac"><span class="fnum">14</span><span class="fden">20</span></span>. Comme 15 > 14, on a <span class="frac"><span class="fnum">3</span><span class="fden">4</span></span> > <span class="frac"><span class="fnum">7</span><span class="fden">10</span></span>.`,
+  "p3l3c-B": `Non. <span class="frac"><span class="fnum">3</span><span class="fden">4</span></span> = <span class="frac"><span class="fnum">15</span><span class="fden">20</span></span> et <span class="frac"><span class="fnum">7</span><span class="fden">10</span></span> = <span class="frac"><span class="fnum">14</span><span class="fden">20</span></span>. Comme 15 > 14, c'est <span class="frac"><span class="fnum">3</span><span class="fden">4</span></span> qui est plus grand.`,
+  "p3l3c-C": `Non. <span class="frac"><span class="fnum">3</span><span class="fden">4</span></span> = 0,75 et <span class="frac"><span class="fnum">7</span><span class="fden">10</span></span> = 0,70 : elles sont différentes.`,
+  "p1l1q3-A": `Non. L'inverse de 14 est <span class="frac"><span class="fnum">1</span><span class="fden">14</span></span>, pas 4.`,
+  "p1l1q3-B": `Exact ! L'inverse de 14 est <span class="frac"><span class="fnum">1</span><span class="fden">14</span></span> (on échange num et dén). <span class="frac"><span class="fnum">1</span><span class="fden">4</span></span> est l'inverse de 4.`,
+  "p1l2q3-A": `Exact ! <span class="frac"><span class="fnum">7</span><span class="fden">7</span></span> = 7 ÷ 7 = 1.`,
+  "p1l2q3-B": `Non. <span class="frac"><span class="fnum">7</span><span class="fden">7</span></span> = 1 car numérateur = dénominateur.`,
+  "p1l2q4-A": `Exact ! <span class="frac"><span class="fnum">0</span><span class="fden">5</span></span> = 0 ÷ 5 = 0.`,
+  "p1l2q4-B": `Non. <span class="frac"><span class="fnum">0</span><span class="fden">5</span></span> = 0 ÷ 5 = 0, pas 5.`,
+  "p1l2q4-C": `Non. 1 serait <span class="frac"><span class="fnum">5</span><span class="fden">5</span></span>, pas <span class="frac"><span class="fnum">0</span><span class="fden">5</span></span>.`,
+  "p1l2q4-D": `Non. <span class="frac"><span class="fnum">0</span><span class="fden">5</span></span> est parfaitement défini et vaut 0.`,
+  "p1l3q2-A": `Non. Le dénominateur 7 n'est pas une puissance de 10.`,
+  "p1l3q2-B": `Exact ! 100 est une puissance de 10, donc <span class="frac"><span class="fnum">3</span><span class="fden">100</span></span> est une fraction décimale.`,
+  "p1l3q2-C": `Non. 8 n'est pas une puissance de 10.`,
+  "p1l3q2-D": `Non. 6 n'est pas une puissance de 10 (même si <span class="frac"><span class="fnum">3</span><span class="fden">6</span></span> = <span class="frac"><span class="fnum">1</span><span class="fden">2</span></span>).`,
+  "p1l3q3-A": `Non. 10 n'est pas 100.`,
+  "p1l3q3-B": `Non. 1000 n'est pas 100.`,
+  "p1l3q3-C": `Exact ! 25% = 25 pour 100 = <span class="frac"><span class="fnum">25</span><span class="fden">100</span></span>.`,
+  "p1l3q3-D": `Non. <span class="frac"><span class="fnum">1</span><span class="fden">4</span></span> = 25 % (c'est équivalent), mais ce n'est pas une fraction décimale — son dénominateur n'est pas 100.`,
+  "p2l1q4-A": `Non. 1,5 × 2 = 3, pas 2.`,
+  "p2l1q4-B": `Exact ! 1,5 × 2 = 3 et 2,5 × 2 = 5 → <span class="frac"><span class="fnum">3</span><span class="fden">5</span></span>.`,
+  "p2l1q4-C": `Non. 1,5 × 2 = 3, pas 4.`,
+  "p2l1q4-D": `Non. 2,5 × 2 = 5, pas 10.`,
+  "p2l2q3-A": `On peut diviser par 3 : <span class="frac"><span class="fnum">6</span><span class="fden">9</span></span> = <span class="frac"><span class="fnum">2</span><span class="fden">3</span></span>, pas irréductible.`,
+  "p2l2q3-B": `On peut diviser par 5 : <span class="frac"><span class="fnum">10</span><span class="fden">15</span></span> = <span class="frac"><span class="fnum">2</span><span class="fden">3</span></span>, pas irréductible.`,
+  "p2l2q3-C": `Exact ! 7 et 11 n’ont aucun diviseur commun : <span class="frac"><span class="fnum">7</span><span class="fden">11</span></span> est irréductible.`,
+  "p2l2q3-D": `On peut diviser par 4 : <span class="frac"><span class="fnum">8</span><span class="fden">12</span></span> = <span class="frac"><span class="fnum">2</span><span class="fden">3</span></span>, pas irréductible.`,
+  "p3l2q2-A": `Non. 8 n'est pas un multiple commun de 4 et 6.`,
+  "p3l2q2-B": `Non. 24 est bien un multiple commun, mais pas le plus petit.`,
+  "p3l2q2-C": `Exact ! 12 est le plus petit multiple commun à 4 et 6 : 4×3=12 et 6×2=12.`,
+  "p3l2q2-D": `Non. 10 n'est divisible ni par 4 ni par 6.`,
+  "p3l4q3-A": `Vrai ! <span class="frac"><span class="fnum">3</span><span class="fden">5</span></span> < 1 (car 3 < 5) et <span class="frac"><span class="fnum">7</span><span class="fden">4</span></span> > 1 (car 7 > 4). Donc <span class="frac"><span class="fnum">3</span><span class="fden">5</span></span> < 1 < <span class="frac"><span class="fnum">7</span><span class="fden">4</span></span> : conclusion immédiate.`,
+  "p3l4q3-B": `Non. <span class="frac"><span class="fnum">3</span><span class="fden">5</span></span> < 1 et <span class="frac"><span class="fnum">7</span><span class="fden">4</span></span> > 1, donc <span class="frac"><span class="fnum">3</span><span class="fden">5</span></span> < <span class="frac"><span class="fnum">7</span><span class="fden">4</span></span> sans aucun calcul.`,
+  "p4l1a-A": `Non. <span class="frac"><span class="fnum">4</span><span class="fden">32</span></span> est juste mais pas encore irréductible.`,
+  "p4l1a-B": `Parfait ! <span class="frac"><span class="fnum">4 ÷ 4</span><span class="fden">32 ÷ 4</span></span> = <span class="frac"><span class="fnum">1</span><span class="fden">8</span></span>.`,
+  "p4l1a-C": `Non. <span class="frac"><span class="fnum">1</span><span class="fden">4</span></span> correspondrait à 8 rois sur 32.`,
+  "p4l1a-D": `Non. <span class="frac"><span class="fnum">4</span><span class="fden">8</span></span> = <span class="frac"><span class="fnum">1</span><span class="fden">2</span></span>, ce serait 50 % des cartes.`,
+  "p4l1b-A": `Non. 4 % = <span class="frac"><span class="fnum">1</span><span class="fden">25</span></span>, pas <span class="frac"><span class="fnum">1</span><span class="fden">8</span></span>.`,
+  "p4l1b-B": `Non. <span class="frac"><span class="fnum">1</span><span class="fden">8</span></span> = 0,125 = 12,5 %, pas 8 %.`,
+  "p4l1b-C": `Exact ! <span class="frac"><span class="fnum">1</span><span class="fden">8</span></span> = 0,125 = 12,5 %.`,
+  "p4l1b-D": `Non. 25 % = <span class="frac"><span class="fnum">1</span><span class="fden">4</span></span>, soit 8 rois sur 32.`,
+  "p4l1c-A": `Non. Calcule 30 ÷ 125 pour obtenir la valeur décimale, puis convertis en fraction sur 100.`,
+  "p4l1c-B": `Non. 30 g c'est la masse de sucre, pas le pourcentage.`,
+  "p4l1c-C": `Exact ! <span class="frac"><span class="fnum">30</span><span class="fden">125</span></span> = 30 ÷ 125 = 0,24 = 24 %.`,
+  "p4l1c-D": `Non. 4,2 % serait <span class="frac"><span class="fnum">5,25</span><span class="fden">125</span></span>, pas 30 g.`,
+  "p4l1d-A": `Non. Réduis les trois fractions au dénominateur commun 30, puis compare les numérateurs.`,
+  "p4l1d-B": `Parfait ! <span class="frac"><span class="fnum">2</span><span class="fden">3</span></span>=<span class="frac"><span class="fnum">20</span><span class="fden">30</span></span>, <span class="frac"><span class="fnum">3</span><span class="fden">5</span></span>=<span class="frac"><span class="fnum">18</span><span class="fden">30</span></span>, <span class="frac"><span class="fnum">17</span><span class="fden">30</span></span>. Donc Karim > Claire > Christopher.`,
+  "p4l1d-C": `Non. Réduis les trois fractions au dénominateur commun 30, puis compare les numérateurs.`,
+  "p4l1d-D": `Non. Réduis les trois fractions au dénominateur commun 30, puis compare les numérateurs.`,
+};
+
+function answer(btn, correct, fbKey) {
+  const quiz = btn.closest('.quiz');
+  quiz.querySelectorAll('.quiz-opt').forEach(o => { o.disabled = true; o.style.cursor = 'default'; });
+  btn.classList.add(correct ? 'correct' : 'wrong');
+  const fb = quiz.querySelector('[id^="qfb-"]');
+  if (fb) {
+    const text = FB[fbKey] || fbKey;
+    fb.className = 'quiz-feedback show ' + (correct ? 'ok' : 'ko');
+    fb.innerHTML = (correct ? '✓ ' : '✗ ') + text
+      + (correct ? '' : '<button class="retry-btn" onclick="retryQuiz(this)">↺ Réessayer</button>');
+  }
+}
+
+function retryQuiz(btn) {
+  const quiz = btn.closest('.quiz');
+  quiz.querySelectorAll('.quiz-opt').forEach(o => {
+    o.disabled = false;
+    o.style.cursor = 'pointer';
+    o.classList.remove('correct', 'wrong');
+  });
+  const fb = quiz.querySelector('[id^="qfb-"]');
+  if (fb) { fb.className = 'quiz-feedback'; fb.innerHTML = ''; }
+}
+
+let fbA = 3, fbB = 7;
+function fbChange(da, db) {
+  fbA = Math.max(1, fbA + da);
+  fbB = Math.max(1, fbB + db);
+  document.getElementById('fb-a').textContent = fbA;
+  document.getElementById('fb-b').textContent = fbB;
+  document.getElementById('fb-b2').textContent = fbB;
+  document.getElementById('fb-res').textContent = fbA;
+  document.getElementById('fb-info').textContent = fbA + '/' + fbB + ' × ' + fbB + ' = ' + fbA + ' ✓';
+}
+
+function gcd(a, b) { return b === 0 ? a : gcd(b, a % b); }
+
+function doSimplif() {
+  const n = parseInt(document.getElementById('snum').value) || 1;
+  const d = parseInt(document.getElementById('sden').value) || 1;
+  const g = gcd(Math.abs(n), Math.abs(d));
+  const sn = n / g, sd = d / g;
+  const res = document.getElementById('s-result');
+  if (g === 1) {
+    res.textContent = n + '/' + d + ' (irréductible)';
+    res.style.fontSize = '1rem';
+  } else {
+    res.innerHTML = '<span class="frac"><span class="fnum">' + sn + '</span><span class="fden">' + sd + '</span></span>';
+    res.style.fontSize = '1.7rem';
+  }
+  document.getElementById('s-info').textContent = g === 1
+    ? n + ' et ' + d + ' → pas de diviseur commun'
+    : n + ' et ' + d + ' → diviseur commun = ' + g + ' → on divise par ' + g;
+}
+
+function updateSimplif() {
+  const n = parseInt(document.getElementById('snum').value) || 1;
+  const d = parseInt(document.getElementById('sden').value) || 1;
+  document.getElementById('s-info').textContent = n + ' et ' + d + ' → diviseur commun = ' + gcd(Math.abs(n), Math.abs(d));
+}
+
+function doCompare() {
+  const a1 = parseInt(document.getElementById('c-a1').value) || 1;
+  const b1 = parseInt(document.getElementById('c-b1').value) || 1;
+  const a2 = parseInt(document.getElementById('c-a2').value) || 1;
+  const b2 = parseInt(document.getElementById('c-b2').value) || 1;
+  const lcd = (b1 * b2) / gcd(b1, b2);
+  const n1 = a1 * (lcd / b1), n2 = a2 * (lcd / b2);
+  const sym = n1 > n2 ? '>' : n1 < n2 ? '<' : '=';
+  document.getElementById('comp-sym').textContent = sym;
+  function fr(n,d){return '<span class="frac" style="color:var(--teal)"><span class="fnum">'+n+'</span><span class="fden">'+d+'</span></span>';}
+  let html;
+  if (b1 === b2) {
+    html = 'Même dénominateur<br>→ ' + fr(a1,b1) + ' ' + sym + ' ' + fr(a2,b2);
+  } else {
+    html = 'Dénominateur commun : ' + lcd
+      + '<br>→ ' + fr(n1,lcd) + ' ' + sym + ' ' + fr(n2,lcd)
+      + '<br>→ ' + fr(a1,b1) + ' ' + sym + ' ' + fr(a2,b2);
+  }
+  document.getElementById('comp-result').innerHTML = html;
+}
+
+loadProgress();
+updateProgress();
+doSimplif();
+initAllQuizzes();
+
+// ══════════════════════════════════════════════════════════════
+// MOTEUR DE RANDOMISATION
+// ══════════════════════════════════════════════════════════════
+function gcdR(a,b){return b===0?a:gcdR(b,a%b);}
+function lcmR(a,b){return a*b/gcdR(a,b);}
+function rInt(min,max){return Math.floor(Math.random()*(max-min+1))+min;}
+function shuffle(arr){let a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function fH(n,d){return '<span class="frac"><span class="fnum">'+n+'</span><span class="fden">'+d+'</span></span>';}
+
+function placeQuiz(qid, qHtml, opts){
+  const qq=document.getElementById('qq-'+qid);
+  const qo=document.getElementById('qo-'+qid);
+  if(!qq||!qo)return;
+  qq.innerHTML=qHtml;
+  qo.innerHTML='';
+  'ABCDE'.split('').slice(0,opts.length).forEach((l,i)=>{
+    const btn=document.createElement('button');
+    btn.className='quiz-opt';
+    btn.innerHTML='<span class="opt-letter">'+l+'</span> '+opts[i].html;
+    const key='rq-'+qid+'-'+l;
+    FB[key]=opts[i].fb;
+    btn.onclick=function(){answer(this,opts[i].correct,key);};
+    qo.appendChild(btn);
+  });
+}
+
+function rIrred(minN,maxN,minD,maxD,excl){
+  excl=excl||[];let a,b,t=0;
+  do{a=rInt(minN,maxN);b=rInt(minD,maxD);t++;}
+  while((gcdR(a,b)!==1||a===b||excl.some(e=>e[0]===a&&e[1]===b))&&t<300);
+  return [a,b];
+}
+
+// ── P1L1 ──
+function initP1L1(){
+  (function(){
+    const n=rInt(2,15);
+    placeQuiz('p1l1','Quel est l\'inverse de '+n+' ?', shuffle([
+      {html:fH(1,n),   correct:true,  fb:'Bravo ! '+fH(1,n)+' × '+n+' = 1.'},
+      {html:fH(1,n+1), correct:false, fb:'Non. '+fH(1,n+1)+' × '+n+' ≠ 1.'},
+      {html:fH(n,1),   correct:false, fb:'Non. '+fH(n,1)+' = '+n+', ce n\'est pas l\'inverse.'},
+    ]));
+  })();
+  (function(){
+    const n=rInt(2,15);
+    placeQuiz('p1l1q2','Quel nombre multiplié par '+n+' donne 1 ?', shuffle([
+      {html:fH(1,n),   correct:true,  fb:'Exact ! '+n+' × '+fH(1,n)+' = 1.'},
+      {html:fH(1,n+2), correct:false, fb:'Non. '+n+' × '+fH(1,n+2)+' = '+fH(n,n+2)+' ≠ 1.'},
+      {html:fH(n+1,1), correct:false, fb:'Non. '+n+' × '+(n+1)+' = '+(n*(n+1))+' ≠ 1.'},
+    ]));
+  })();
+  (function(){
+    const a=rInt(2,12);
+    placeQuiz('p1l1q4','Calcule : '+a+' × '+fH(1,a), shuffle([
+      {html:'1',       correct:true,  fb:'Exact ! '+a+' × '+fH(1,a)+' = 1.'},
+      {html:String(a), correct:false, fb:'Non. '+a+' × '+fH(1,a)+' = 1, pas '+a+'.'},
+      {html:fH(1,a),   correct:false, fb:'Non. Le résultat est le nombre entier 1.'},
+      {html:'0',       correct:false, fb:'Non. '+a+' × '+fH(1,a)+' = 1, pas 0.'},
+    ]));
+  })();
+}
+
+// ── P1L2 ──
+function initP1L2(){
+  (function(){
+    const [a,b]=rIrred(2,15,2,15);
+    placeQuiz('p1l2','Dans la fraction '+fH(a,b)+', quel est le dénominateur ?', shuffle([
+      {html:String(b),   correct:true,  fb:'Exact ! '+b+' est le <strong>dénominateur</strong> (en bas).'},
+      {html:String(a),   correct:false, fb:'Non. '+a+' est le <strong>numérateur</strong> (en haut).'},
+      {html:String(a+b), correct:false, fb:'Non. '+a+'+'+b+'='+(a+b)+' n\'apparaît pas dans la fraction.'},
+    ]));
+  })();
+  (function(){
+    const [a,b]=rIrred(2,15,2,15);
+    placeQuiz('p1l2q2','Dans '+fH(a,b)+', quel est le numérateur ?', shuffle([
+      {html:String(a),   correct:true,  fb:'Parfait ! '+a+' est le <strong>numérateur</strong> (en haut).'},
+      {html:String(b),   correct:false, fb:'Non. '+b+' est le <strong>dénominateur</strong> (en bas).'},
+      {html:String(a+b), correct:false, fb:'Non. Le numérateur est '+a+'.'},
+    ]));
+  })();
+}
+
+// ── P1L3 ──
+function initP1L3(){
+  (function(){
+    const denoms=[2,3,4,5];
+    const b=denoms[rInt(0,3)];
+    const a=rInt(1,b-1);
+    const k=b*rInt(2,6);
+    const res=a*k/b;
+    placeQuiz('p1l3','Combien vaut '+fH(a,b)+' de '+k+' ?', shuffle([
+      {html:String(res),   correct:true,  fb:'Parfait ! '+fH(a,b)+' × '+k+' = '+fH(a*k,b)+' = '+res+'.'},
+      {html:String(res+b), correct:false, fb:'Non. '+fH(a,b)+' × '+k+' = '+res+', pas '+(res+b)+'.'},
+      {html:String(a+k),   correct:false, fb:'Non. On multiplie la fraction : '+fH(a,b)+' × '+k+' = '+res+'.'},
+      {html:String(k/b|0), correct:false, fb:'Non. Ce serait '+fH(1,b)+' × '+k+'. Ici le numérateur est '+a+'.'},
+    ]));
+  })();
+  (function(){
+    const totals=[20,25,30,40,50];
+    const total=totals[rInt(0,4)];
+    let part;
+    do{part=rInt(Math.ceil(total*0.3),Math.floor(total*0.85));}
+    while(gcdR(part,total)===1);
+    const g=gcdR(part,total);
+    const sn=part/g,sd=total/g;
+    placeQuiz('p1l3q4','Dans un groupe de '+total+' élèves, '+part+' ont un animal de compagnie. Quelle est la proportion (fraction irréductible) ?', shuffle([
+      {html:fH(sn,sd),     correct:true,  fb:'Exact ! '+fH(part,total)+' ÷ '+g+' = '+fH(sn,sd)+'.'},
+      {html:fH(part,total),correct:false, fb:'Non. Pas encore simplifiée (on peut encore diviser par '+g+').'},
+      {html:fH(sn+1,sd),   correct:false, fb:'Non. Divise le numérateur et le dénominateur par leur diviseur commun.'},
+      {html:fH(part,total-part),correct:false,fb:'Non. La proportion = partie/total = '+fH(part,total)+'.'},
+    ]));
+  })();
+}
+
+// ── P2L1 ──
+function initP2L1(){
+  (function(){
+    const [a,b]=rIrred(2,7,2,9);
+    const k=rInt(2,5);
+    placeQuiz('p2l1','Laquelle de ces fractions est égale à '+fH(a,b)+' ?', shuffle([
+      {html:fH(a*k,b*k),   correct:true,  fb:'Bravo ! '+fH(a,b)+' × '+fH(k,k)+' = '+fH(a*k,b*k)+'.'},
+      {html:fH(a*k+1,b*k), correct:false, fb:'Non. Le numérateur est '+a+'×'+k+'='+(a*k)+', pas '+(a*k+1)+'.'},
+      {html:fH(a+k,b+k),   correct:false, fb:'Non. On multiplie les deux termes, on ne les additionne pas.'},
+      {html:fH(a*(k+1),b*k),correct:false,fb:'Non. Il faut multiplier numérateur ET dénominateur par le même nombre.'},
+    ]));
+  })();
+  (function(){
+    const [a,b]=rIrred(1,6,2,8);
+    const k=rInt(2,6);
+    placeQuiz('p2l1q2','Par quel nombre a-t-on multiplié pour passer de '+fH(a,b)+' à '+fH(a*k,b*k)+' ?', shuffle([
+      {html:String(k),   correct:true,  fb:'Exact ! '+a+' × '+k+' = '+(a*k)+' et '+b+' × '+k+' = '+(b*k)+'.'},
+      {html:String(k+1), correct:false, fb:'Non. '+a+' × '+(k+1)+' = '+(a*(k+1))+' ≠ '+(a*k)+'.'},
+      {html:String(Math.max(2,k-1)),correct:false,fb:'Non. Vérifie : '+a+' × ? = '+(a*k)+'.'},
+    ]));
+  })();
+  (function(){
+    const [a,b]=rIrred(2,7,2,9);
+    const k=rInt(2,4);
+    const isEq=Math.random()>0.5;
+    const c=isEq?a*k:a*k+1,d=b*k;
+    placeQuiz('p2l1q3','Vrai ou faux : '+fH(a,b)+' = '+fH(c,d),[
+      {html:'Vrai',correct:isEq, fb:isEq
+        ?'Vrai ! '+fH(a,b)+' × '+fH(k,k)+' = '+fH(c,d)+'.'
+        :'Non. '+fH(a,b)+' = '+fH(a*k,d)+' ≠ '+fH(c,d)+'.'},
+      {html:'Faux',correct:!isEq,fb:isEq
+        ?'Non. '+fH(a,b)+' × '+fH(k,k)+' = '+fH(c,d)+', c\'est vrai.'
+        :'Exact ! '+fH(a,b)+' = '+fH(a*k,d)+' ≠ '+fH(c,d)+'.'},
+    ]);
+  })();
+}
+
+// ── P2L2 ──
+function initP2L2(){
+  (function(){
+    const gs=[2,3,4,5,6];
+    const g=gs[rInt(0,4)];
+    const [sn,sd]=rIrred(2,8,2,8);
+    const n=sn*g,d=sd*g;
+    placeQuiz('p2l2','La fraction '+fH(n,d)+' simplifiée donne :', shuffle([
+      {html:fH(sn,sd),   correct:true,  fb:'Parfait ! On divise par '+g+' : '+fH(sn,sd)+'.'},
+      {html:fH(n-1,d-1), correct:false, fb:'Non. On divise par un diviseur commun, on ne soustrait pas.'},
+      {html:fH(sn+1,sd), correct:false, fb:'Non. Vérifie : '+n+' ÷ '+g+' = '+sn+' et '+d+' ÷ '+g+' = '+sd+'.'},
+      {html:fH(sn,sd+1), correct:false, fb:'Non. Vérifie : '+sn+' × '+g+' = '+(sn*g)+' = '+n+' ✓.'},
+    ]));
+  })();
+  (function(){
+    const gs=[2,3,4,6];
+    const g=gs[rInt(0,3)];
+    const [sn,sd]=rIrred(2,8,2,8);
+    const n=sn*g,d=sd*g;
+    placeQuiz('p2l2q2','Par quel nombre divise-t-on pour simplifier '+fH(n,d)+' en '+fH(sn,sd)+' ?', shuffle([
+      {html:String(g),              correct:true,  fb:'Exact ! '+n+' ÷ '+g+' = '+sn+' et '+d+' ÷ '+g+' = '+sd+'.'},
+      {html:String(g+1),            correct:false, fb:'Non. '+n+' n\'est pas divisible par '+(g+1)+'.'},
+      {html:String(Math.max(2,g-1)),correct:false, fb:'Non. Le diviseur commun de '+n+' et '+d+' est '+g+'.'},
+    ]));
+  })();
+  (function(){
+    const gs=[6,8,9,10,12];
+    const g=gs[rInt(0,4)];
+    const [sn,sd]=rIrred(2,7,2,7);
+    const n=sn*g,d=sd*g;
+    placeQuiz('p2l2q4','Simplifie '+fH(n,d)+' sous forme irréductible.', shuffle([
+      {html:fH(sn,sd),     correct:true,  fb:'Parfait ! On divise par '+g+' : '+fH(sn,sd)+'.'},
+      {html:fH(sn*2,sd*2), correct:false, fb:'Non. '+fH(sn*2,sd*2)+' est égale mais pas irréductible.'},
+      {html:fH(sn+1,sd),   correct:false, fb:'Non. Cherche le diviseur commun à '+n+' et '+d+'.'},
+      {html:fH(sn,sd+1),   correct:false, fb:'Non. Vérifie : '+sd+' × '+g+' = '+(sd*g)+' = '+d+' ✓.'},
+    ]));
+  })();
+}
+
+// ── P2L3 ──
+function initP2L3(){
+  (function(){
+    const [a,b]=rIrred(2,6,2,7);
+    const k=rInt(2,5);
+    const n=b*k,res=a*k;
+    placeQuiz('p2l3a','Complète : '+fH(a,b)+' = '+fH('?',n), shuffle([
+      {html:fH(res,n),   correct:true,  fb:'Exact ! '+fH(a,b)+' × '+fH(k,k)+' = '+fH(res,n)+'.'},
+      {html:fH(res+1,n), correct:false, fb:'Non. '+a+' × '+k+' = '+res+', pas '+(res+1)+'.'},
+      {html:fH(res-1,n), correct:false, fb:'Non. '+a+' × '+k+' = '+res+', pas '+(res-1)+'.'},
+      {html:fH(a+k,n),   correct:false, fb:'Non. On multiplie le numérateur, on ne l\'additionne pas.'},
+    ]));
+  })();
+  (function(){
+    const totals=[20,25,28,30,36];
+    const total=totals[rInt(0,4)];
+    let part;
+    do{part=rInt(Math.ceil(total*0.4),Math.floor(total*0.85));}
+    while(gcdR(part,total)===1);
+    const g=gcdR(part,total);
+    const sn=part/g,sd=total/g;
+    placeQuiz('p2l3c','Dans une classe de '+total+' élèves, '+part+' ont fait leurs devoirs. Quelle fraction irréductible représente cette proportion ?', shuffle([
+      {html:fH(sn,sd),     correct:true,  fb:'Parfait ! '+fH(part+' ÷ '+g, total+' ÷ '+g)+' = '+fH(sn,sd)+'.'},
+      {html:fH(part,total),correct:false, fb:'Non. Pas encore simplifiée (on peut encore diviser par '+g+').'},
+      {html:fH(sn+1,sd),   correct:false, fb:'Non. Divise le numérateur et le dénominateur par leur diviseur commun.'},
+      {html:fH(sn,sd+1),   correct:false, fb:'Non. Vérifie : '+sd+' × '+g+' = '+(sd*g)+' = '+total+' ✓.'},
+    ]));
+  })();
+}
+
+// ── P3L1 ──
+function initP3L1(){
+  (function(){
+    const a=rInt(2,8);
+    let b,c;do{b=rInt(3,12);c=rInt(3,12);}while(b===c||b===a||c===a);
+    const sym=b<c?'>':'<';
+    placeQuiz('p3l1','Sans calculer, compare '+fH(a,b)+' et '+fH(a,c)+'.', shuffle([
+      {html:fH(a,b)+' '+sym+' '+fH(a,c), correct:true,
+       fb:'Exact ! Même numérateur ('+a+') : '+b+(b<c?' < ':' > ')+c+' donc '+fH(a,b)+' '+sym+' '+fH(a,c)+'.'},
+      {html:fH(a,b)+' '+(sym==='>'?'<':'>')+' '+fH(a,c),correct:false,
+       fb:'Non. Même numérateur : le plus petit dénominateur donne la plus grande fraction.'},
+      {html:fH(a,b)+' = '+fH(a,c),correct:false,
+       fb:'Non. '+b+' ≠ '+c+', donc les fractions sont différentes.'},
+    ]));
+  })();
+  (function(){
+    const c=rInt(5,15);
+    let a,b;do{a=rInt(2,c-1);b=rInt(2,c-1);}while(a===b);
+    const sym=a<b?'<':'>';
+    placeQuiz('p3l1q2','Compare '+fH(a,c)+' et '+fH(b,c)+'.', shuffle([
+      {html:fH(a,c)+' '+sym+' '+fH(b,c),correct:true,
+       fb:'Exact ! Même dénominateur ('+c+') : '+a+' '+sym+' '+b+'.'},
+      {html:fH(a,c)+' '+(sym==='<'?'>':'<')+' '+fH(b,c),correct:false,
+       fb:'Non. Même dénominateur : on compare les numérateurs.'},
+      {html:fH(a,c)+' = '+fH(b,c),correct:false,
+       fb:'Non. '+a+' ≠ '+b+'.'},
+    ]));
+  })();
+  (function(){
+    const a=rInt(2,7);
+    let b,c;do{b=rInt(4,13);c=rInt(4,13);}while(b===c||b===a||c===a);
+    const sym=b<c?'>':'<';
+    placeQuiz('p3l1q3','Compare '+fH(a,b)+' et '+fH(a,c)+'. Lequel est le plus grand ?', shuffle([
+      {html:fH(a,b)+' '+sym+' '+fH(a,c),correct:true,
+       fb:'Exact ! Même numérateur ('+a+') : '+b+(b<c?' < ':' > ')+c+' donc '+fH(a,b)+' '+sym+' '+fH(a,c)+'.'},
+      {html:fH(a,b)+' '+(sym==='>'?'<':'>')+' '+fH(a,c),correct:false,
+       fb:'Non. Même numérateur : plus le dénominateur est petit, plus la fraction est grande.'},
+      {html:fH(a,b)+' = '+fH(a,c),correct:false,
+       fb:'Non. '+b+' ≠ '+c+'.'},
+    ]));
+  })();
+  (function(){
+    const a=rInt(2,6);
+    let ds;
+    do{ds=[rInt(3,14),rInt(3,14),rInt(3,14)];}
+    while(new Set(ds).size<3||ds.some(d=>d===a));
+    const asc=[...ds].sort((x,y)=>y-x).map(d=>fH(a,d)).join(' &lt; ');
+    const desc=[...ds].sort((x,y)=>x-y).map(d=>fH(a,d)).join(' &lt; ');
+    placeQuiz('p3l1q4','Range dans l\'ordre croissant : '+ds.map(d=>fH(a,d)).join(', ')+'.', shuffle([
+      {html:asc, correct:true,  fb:'Bravo ! Même numérateur ('+a+') : grand dénominateur = petite fraction.'},
+      {html:desc,correct:false, fb:'Non. C\'est l\'ordre décroissant.'},
+      {html:ds.map(d=>fH(a,d)).join(' &lt; '),correct:false,
+       fb:'Non. Il faut classer les dénominateurs : grand dén. = petite fraction.'},
+    ]));
+  })();
+}
+
+// ── P3L2 ──
+function initP3L2(){
+  (function(){
+    const [a,b]=rIrred(2,6,3,8);
+    const [c,d]=rIrred(2,6,3,8,[[a,b]]);
+    const l=lcmR(b,d),na=a*(l/b);
+    placeQuiz('p3l2','Pour comparer '+fH(a,b)+' et '+fH(c,d)+', on réduit au dénominateur '+l+'. Que devient '+fH(a,b)+' ?', shuffle([
+      {html:fH(na,l),   correct:true,  fb:'Exact ! '+fH(a,b)+' × '+fH(l/b,l/b)+' = '+fH(na,l)+'.'},
+      {html:fH(na+1,l), correct:false, fb:'Non. '+a+' × '+(l/b)+' = '+na+', pas '+(na+1)+'.'},
+      {html:fH(a,l),    correct:false, fb:'Non. Il faut aussi multiplier le numérateur.'},
+      {html:fH(na,l+1), correct:false, fb:'Non. Le dénominateur commun de '+b+' et '+d+' est '+l+'.'},
+    ]));
+  })();
+  (function(){
+    const [a,b]=rIrred(2,6,3,8);
+    const [c,d]=rIrred(2,6,3,8,[[a,b]]);
+    const l=lcmR(b,d),na=a*(l/b),nc=c*(l/d);
+    const sym=na<nc?'<':na>nc?'>':'=';
+    placeQuiz('p3l2q3','Compare '+fH(a,b)+' et '+fH(c,d)+' après réduction au même dénominateur.', shuffle([
+      {html:fH(a,b)+' '+sym+' '+fH(c,d),correct:true,
+       fb:'Exact ! '+fH(a,b)+'='+fH(na,l)+' et '+fH(c,d)+'='+fH(nc,l)+'. Comme '+na+' '+sym+' '+nc+', on conclut.'},
+      {html:fH(a,b)+' '+(sym==='<'?'>':'<')+' '+fH(c,d),correct:false,
+       fb:'Non. '+fH(na,l)+' '+sym+' '+fH(nc,l)+' donc '+fH(a,b)+' '+sym+' '+fH(c,d)+'.'},
+      {html:fH(a,b)+' = '+fH(c,d),correct:false,
+       fb:'Non. '+na+' ≠ '+nc+'.'},
+    ]));
+  })();
+  (function(){
+    const pool=[[1,2],[2,3],[3,4],[1,3],[3,5],[2,5],[4,5],[1,4],[5,6]];
+    const idx=shuffle([0,1,2,3,4,5,6,7,8]).slice(0,3);
+    const fracs=idx.map(i=>pool[i]);
+    const l=fracs.reduce((acc,[,d])=>lcmR(acc,d),1);
+    const sorted=[...fracs].sort((x,y)=>x[0]*(l/x[1])-y[0]*(l/y[1]));
+    const correct_html=sorted.map(([n,d])=>fH(n,d)).join(' &lt; ');
+    const wrong_html=[...fracs].sort((x,y)=>y[0]*(l/y[1])-x[0]*(l/x[1])).map(([n,d])=>fH(n,d)).join(' &lt; ');
+    const expl=sorted.map(([n,d])=>fH(n,d)+'='+fH(n*(l/d),l)).join(', ');
+    placeQuiz('p3l2q4','Range dans l\'ordre croissant : '+fracs.map(([n,d])=>fH(n,d)).join(', ')+'.', shuffle([
+      {html:correct_html,correct:true, fb:'Parfait ! Au dénominateur '+l+' : '+expl+'.'},
+      {html:wrong_html,  correct:false,fb:'Non, c\'est l\'ordre décroissant. L\'ordre croissant est : '+correct_html+'.'},
+    ]));
+  })();
+}
+
+// ── P3L4 (Comparer à 1) ──
+function initP3L4(){
+  (function(){
+    const type=rInt(0,2);
+    let a,b;
+    if(type===0){b=rInt(4,12);a=rInt(2,b-1);}
+    else if(type===1){a=rInt(4,12);b=rInt(2,a-1);}
+    else{a=rInt(2,12);b=a;}
+    const sym=type===0?'<':type===1?'>':'=';
+    placeQuiz('p3l4','La fraction '+fH(a,b)+' est :',[
+      {html:'inférieure à 1',correct:type===0,
+       fb:type===0?'Exact ! '+a+' < '+b+', donc le numérateur est plus petit que le dénominateur.':'Non. Compare le numérateur et le dénominateur.'},
+      {html:'égale à 1',     correct:type===2,
+       fb:type===2?'Exact ! '+a+' = '+b+', donc numérateur = dénominateur.':'Non. Compare le numérateur et le dénominateur.'},
+      {html:'supérieure à 1',correct:type===1,
+       fb:type===1?'Exact ! '+a+' > '+b+', donc le numérateur est plus grand que le dénominateur.':'Non. Compare le numérateur et le dénominateur.'},
+    ]);
+  })();
+  (function(){
+    let an,bn;do{[an,bn]=rIrred(2,8,3,12);}while(an>=bn);
+    const b2=rInt(5,12);
+    placeQuiz('p3l4q2','Parmi ces fractions, laquelle est inférieure à 1 ?', shuffle([
+      {html:fH(an,bn),   correct:true, fb:'Exact ! '+an+' < '+bn+' donc '+fH(an,bn)+' < 1.'},
+      {html:fH(bn+1,bn), correct:false,fb:'Non. '+(bn+1)+' > '+bn+' donc '+fH(bn+1,bn)+' > 1.'},
+      {html:fH(b2,b2),   correct:false,fb:'Non. '+fH(b2,b2)+' = 1.'},
+      {html:fH(bn+3,b2), correct:false,fb:'Non. Le numérateur est plus grand que le dénominateur.'},
+    ]));
+  })();
+  (function(){
+    let f1n,f1d;do{[f1n,f1d]=rIrred(2,5,6,12);}while(f1n>=f1d);
+    const f2n=rInt(3,6),f2d=rInt(f2n+1,f2n+3);
+    const f3n=rInt(5,10),f3d=f3n;
+    let f4n,f4d;do{[f4n,f4d]=rIrred(5,14,3,8);}while(f4n<=f4d);
+    const fracs=[[f1n,f1d],[f2n,f2d],[f3n,f3d],[f4n,f4d]];
+    const sorted=[...fracs].sort((x,y)=>x[0]/x[1]-y[0]/y[1]);
+    const correct_html=sorted.map(([n,d])=>fH(n,d)).join(' &lt; ');
+    const wrong_html=[...fracs].sort((x,y)=>y[0]/y[1]-x[0]/x[1]).map(([n,d])=>fH(n,d)).join(' &lt; ');
+    const expl=sorted.map(([n,d])=>fH(n,d)+(n===d?' = 1':n<d?' < 1':' > 1')).join(' ; ');
+    placeQuiz('p3l4q4','Range dans l\'ordre croissant : '+fracs.map(([n,d])=>fH(n,d)).join(', ')+'.', shuffle([
+      {html:correct_html,correct:true, fb:'Parfait ! '+expl+'.'},
+      {html:wrong_html,  correct:false,fb:'Non, c\'est l\'ordre décroissant.'},
+      {html:shuffle(fracs).map(([n,d])=>fH(n,d)).join(' &lt; '),correct:false,
+       fb:'Non. Compare d\'abord chaque fraction à 1 : '+expl+'.'},
+    ]));
+  })();
+}
+
+// ── P3L3 (Exercices) ──
+function initP3L3(){
+  (function(){
+    const d=rInt(6,16);
+    let a,b;do{a=rInt(2,d-1);b=rInt(2,d-1);}while(a===b);
+    const sym=a>b?'>':'<';
+    placeQuiz('p3l3a','Compare '+fH(a,d)+' et '+fH(b,d)+'.', shuffle([
+      {html:fH(a,d)+' '+sym+' '+fH(b,d),correct:true,
+       fb:'Exact ! Même dénominateur ('+d+') : '+a+' '+sym+' '+b+'.'},
+      {html:fH(a,d)+' '+(sym==='>'?'<':'>')+' '+fH(b,d),correct:false,
+       fb:'Non. Même dénominateur : on compare les numérateurs.'},
+      {html:fH(a,d)+' = '+fH(b,d),correct:false,
+       fb:'Non. '+a+' ≠ '+b+'.'},
+    ]));
+  })();
+  (function(){
+    const a=rInt(2,7);
+    let b,c;do{b=rInt(4,14);c=rInt(4,14);}while(b===c||b===a||c===a);
+    const sym=b<c?'>':'<';
+    placeQuiz('p3l3b','Compare '+fH(a,b)+' et '+fH(a,c)+'.', shuffle([
+      {html:fH(a,b)+' '+sym+' '+fH(a,c),correct:true,
+       fb:'Parfait ! Même numérateur ('+a+') : '+b+(b<c?' < ':' > ')+c+' donc '+fH(a,b)+' '+sym+' '+fH(a,c)+'.'},
+      {html:fH(a,b)+' '+(sym==='>'?'<':'>')+' '+fH(a,c),correct:false,
+       fb:'Non. Même numérateur : plus le dénominateur est petit, plus la fraction est grande.'},
+      {html:fH(a,b)+' = '+fH(a,c),correct:false,
+       fb:'Non. '+b+' ≠ '+c+'.'},
+    ]));
+  })();
+}
+
+function initAllQuizzes(){
+  initP1L1(); initP1L2(); initP1L3();
+  initP2L1(); initP2L2(); initP2L3();
+  initP3L1(); initP3L2(); initP3L4(); initP3L3();
+}
+
+</script>
+</body>
+</html>

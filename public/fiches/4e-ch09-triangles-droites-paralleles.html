@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapitre 9 — Triangles et droites parallèles · 4e · J.-Ph. Mouton</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<script src="fiche-theme.js"></script>
+<link rel="stylesheet" href="fiche-theme.css?v=1777411759831">
+<script src="fiche-pdf-viewer.js" defer></script>
+</head>
+<body>
+<button class="hamburger" onclick="toggleSidebar()">☰</button>
+<div id="sidebar">
+  <a class="sb-back" href="../../Site personnel.html#/teaching"><span class="arrow">←</span> Retour à Enseignement</a>
+  <div class="sb-header">
+    <div class="sb-eyebrow">Chapitre 9 · Maths 4<sup>e</sup></div>
+    <div class="sb-title">Triangles&nbsp;: Droites parallèles</div>
+    <div class="sb-meta">
+      <div class="sb-author">Jean-Philippe Mouton</div>
+      <div class="sb-institution">Collège Jean Rostand – Capbreton</div>
+      <div class="sb-date">Version 1.0.0 – Bêta – Mars 2026</div>
+      <div class="sb-section-title">Références</div>
+      <span class="sb-ref">• Mouton, J.-Ph. (2025–2026). <em>Triangles&nbsp;: Droites parallèles – Chap.&nbsp;9</em>. Fiche de cours, 4<sup>e</sup>, Coll. Jean Rostand, Capbreton.</span>
+      <span class="sb-ref">• Sésamath (2016). <em>Manuel Cycle&nbsp;4</em>, chap.&nbsp;12. CC BY-SA.</span>
+      <span class="sb-ref">• Sésamath (2017). <em>Cahier Cycle&nbsp;4 – 4<sup>e</sup></em>. G2 séries&nbsp;2&nbsp;&amp;&nbsp;3&nbsp;; Grandeurs C série&nbsp;3. CC BY-SA.</span>
+      <div class="sb-section-title">Assistance</div>
+      <div class="sb-assist">• Anthropic. <em>Claude Sonnet&nbsp;4.6</em>. https://www.anthropic.com</div>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-label"><span>Progression</span><span id="prog-text">0&nbsp;/ 14</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="prog-fill" style="width:0%"></div></div>
+  </div>
+  <div style="padding:0.4rem 1.25rem 0.7rem;border-bottom:1px solid var(--border);">
+    <button onclick="resetProgress()" style="font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;color:var(--dim);background:none;border:none;cursor:pointer;padding:0;text-transform:uppercase;">↺ Réinitialiser</button>
+  </div>
+  <button class="sb-course" type="button" onclick="openPdf('../cours/4e-ch09-triangles-droites-paralleles.pdf', 'Chapitre 9 — Triangles et droites parallèles · Cours complet')">📄 Lire le cours complet (PDF)</button>
+  <nav>
+    <div class="nav-section">Accueil</div>
+    <div class="nav-item nav-home active" data-page="home" onclick="go(this)">🏠 Sommaire</div>
+    <div class="nav-section" style="color:var(--yellow)">Rappels – 5<sup>e</sup></div>
+    <div class="nav-item" data-page="p0l1" onclick="go(this)"><span class="nav-check" id="chk-p0l1"></span>Triangles égaux</div>
+    <div class="nav-item" data-page="p0l2" onclick="go(this)"><span class="nav-check" id="chk-p0l2"></span>Exercices</div>
+    <div class="nav-section">1. Agrandissement – Réduction</div>
+    <div class="nav-item" data-page="p1l1" onclick="go(this)"><span class="nav-check" id="chk-p1l1"></span>Rapport <em style="font-style:italic;color:var(--orange)">k</em> – définition</div>
+    <div class="nav-item" data-page="p1l2" onclick="go(this)"><span class="nav-check" id="chk-p1l2"></span>Aires et volumes</div>
+    <div class="nav-item" data-page="p1l3" onclick="go(this)"><span class="nav-check" id="chk-p1l3"></span>Exercices</div>
+    <div class="nav-section">2. Similitude de triangles</div>
+    <div class="nav-item" data-page="p2l1" onclick="go(this)"><span class="nav-check" id="chk-p2l1"></span>Triangles semblables</div>
+    <div class="nav-item" data-page="p2l2" onclick="go(this)"><span class="nav-check" id="chk-p2l2"></span>Proportionnalité des côtés</div>
+    <div class="nav-item" data-page="p2l3" onclick="go(this)"><span class="nav-check" id="chk-p2l3"></span>Exercices</div>
+    <div class="nav-section">3. Théorème de Thalès</div>
+    <div class="nav-item" data-page="p3l1" onclick="go(this)"><span class="nav-check" id="chk-p3l1"></span>Théorème de Thalès</div>
+    <div class="nav-item" data-page="p3l2" onclick="go(this)"><span class="nav-check" id="chk-p3l2"></span>Réciproque</div>
+    <div class="nav-item" data-page="p3l3" onclick="go(this)"><span class="nav-check" id="chk-p3l3"></span>Exercices</div>
+    <div class="nav-section" style="color:var(--yellow)">Problèmes</div>
+    <div class="nav-item" data-page="pb1" onclick="go(this)"><span class="nav-check" id="chk-pb1"></span>🏗️ Le bassin de retenue</div>
+    <div class="nav-item" data-page="pb2" onclick="go(this)"><span class="nav-check" id="chk-pb2"></span>▷ Quadrilatère MNOP</div>
+    <div class="nav-item" data-page="pb3" onclick="go(this)"><span class="nav-check" id="chk-pb3"></span>📐 Thalès en pratique</div>
+    <div class="nav-section" style="margin-top:0.8rem">Mémo</div>
+    <div class="nav-item" data-page="memo" onclick="go(this)" style="color:var(--orange)"><span class="nav-check"></span>♥ À connaître par cœur</div>
+  </nav>
+</div>
+<div id="main">
+
+<!-- HOME -->
+<div class="page active" id="page-home">
+  <div class="home-hero">
+    <div class="home-eyebrow">Fiche de révision · Chapitre 9</div>
+    <h1>Triangles&nbsp;: <strong>Droites parallèles</strong></h1>
+    <p>Agrandissement, similitude et théorème de Thalès — sept leçons et quatre pages d'exercices, et trois problèmes, pour réviser seul avant l'évaluation.</p>
+  </div>
+  <div class="objectives-box">
+    <div class="ob-label">Connaissances et compétences</div>
+    <ul>
+      <li>Utiliser un rapport d'agrandissement ou de réduction pour calculer des longueurs, des aires, des volumes</li>
+      <li>Construire un agrandissement ou une réduction d'une figure donnée</li>
+      <li>Théorème de Thalès et sa réciproque dans la configuration des triangles emboîtés</li>
+    </ul>
+  </div>
+  <div class="section-cards">
+    <div class="section-card sc-0" onclick="go(null,'p0l1')">
+      <div class="sc-tag">Rappels – 5e</div>
+      <h3>Triangles égaux</h3>
+      <p>Critères CCC, CAC, ACA. Triangles isométriques et superposables.</p>
+      <div class="sc-count">1 leçon + exercices</div>
+    </div>
+    <div class="section-card sc-1" onclick="go(null,'p1l1')">
+      <div class="sc-tag">Partie 1</div>
+      <h3>Agrandissement – Réduction</h3>
+      <p>Rapport <em class="var">k</em>, angles conservés, effets sur les aires et les volumes.</p>
+      <div class="sc-count">2 leçons + exercices</div>
+    </div>
+    <div class="section-card sc-2" onclick="go(null,'p2l1')">
+      <div class="sc-tag">Partie 2</div>
+      <h3>Similitude de triangles</h3>
+      <p>Triangles semblables, angles deux à deux égaux, côtés proportionnels.</p>
+      <div class="sc-count">2 leçons + exercices</div>
+    </div>
+    <div class="section-card sc-3" onclick="go(null,'p3l1')">
+      <div class="sc-tag">Partie 3</div>
+      <h3>Théorème de Thalès</h3>
+      <p>Configuration emboîtée, égalité de rapports, réciproque.</p>
+      <div class="sc-count">2 leçons + exercices</div>
+    </div>
+    <div class="section-card" style="border-left:3px solid var(--yellow);background:var(--surface)" onclick="go(null,'pb1')">
+      <div class="sc-tag" style="color:var(--yellow)">Problèmes</div>
+      <h3>Mise en pratique</h3>
+      <p>Trois problèmes concrets tirés des cahiers Sésamath pour mobiliser tout le chapitre.</p>
+      <div class="sc-count">3 problèmes</div>
+    </div>
+    <div class="section-card" style="border-left:3px solid var(--orange);background:var(--surface)" onclick="go(null,'memo')">
+      <div class="sc-tag" style="color:var(--orange)">♥ Mémo</div>
+      <h3>À connaître par cœur</h3>
+      <p>Les définitions, propriétés et théorèmes essentiels — pour une révision rapide.</p>
+      <div class="sc-count" style="color:var(--orange)">7 encadrés</div>
+    </div>
+  </div>
+</div>
+
+<!-- P0L1 : Rappels — Triangles égaux -->
+<div class="page" id="page-p0l1">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-yellow">Rappels · Leçon 1</div>
+    <h1>Triangles égaux</h1>
+    <p class="lesson-intro">En 5e, tu as travaillé sur les triangles égaux. Ces notions sont le point de départ de la similitude — prends deux minutes pour les vérifier avant d'aller plus loin.</p>
+  </div>
+  <div class="section-divider">Définition</div>
+  <div class="callout c-yellow">
+    <div class="c-label">Définition · Triangles égaux</div>
+    <p>Deux triangles sont <strong>égaux</strong> lorsque leurs côtés sont deux à deux de même longueur. On dit aussi qu'ils sont <strong>isométriques</strong>.</p>
+    <p>Deux triangles égaux sont <strong>superposables</strong>.</p>
+  </div>
+  <div class="callout c-yellow">
+    <div class="c-label">Propriété</div>
+    <p>Si deux triangles sont égaux, alors leurs angles sont deux à deux de même mesure.</p>
+  </div>
+  <div class="section-divider">Critères d'égalité</div>
+  <div class="callout c-yellow">
+    <div class="c-label">Critère CCC (3 côtés)</div>
+    <p>Si deux triangles ont leurs <strong>trois côtés deux à deux de même longueur</strong>, alors ils sont égaux.</p>
+  </div>
+  <div class="callout c-yellow">
+    <div class="c-label">Critère CAC (côté-angle-côté)</div>
+    <p>Si deux triangles ont, deux à deux, <strong>un angle de même mesure compris entre deux côtés de même longueur</strong>, alors ils sont égaux.</p>
+  </div>
+  <div class="callout c-yellow">
+    <div class="c-label">Critère ACA (angle-côté-angle)</div>
+    <p>Si deux triangles ont, deux à deux, <strong>un côté de même longueur compris entre deux angles de même mesure</strong>, alors ils sont égaux.</p>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemple – critère ACA</div>
+    <p>Les triangles ABC et RST ont BC = ST = 3,4 cm, <span class='ang'>ABC</span> = <span class='ang'>RST</span> = 96° et <span class='ang'>ACB</span> = <span class='ang'>RTS</span> = 35°.</p>
+    <p>Le côté [BC] est compris entre deux angles de même mesure dans chaque triangle. Par le critère ACA, les triangles ABC et RST sont égaux.</p>
+  </div>
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content"><strong>À retenir :</strong> Deux triangles sont égaux si leurs côtés sont deux à deux de même longueur (isométriques, superposables). Il suffit parfois de deux conditions pour conclure : critère CAC ou ACA.</div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p0l1">…</div></div>
+    <div class="quiz-options" id="qo-p0l1"></div>
+    <div class="quiz-feedback" id="qfb-p0l1"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q">Si deux triangles ABC et DEF sont égaux, laquelle de ces affirmations est vraie&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,true,'p0l1q2-A')"><span class="opt-letter">A</span> Leurs angles sont deux à deux de même mesure.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p0l1q2-B')"><span class="opt-letter">B</span> L'un est nécessairement un agrandissement de l'autre.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p0l1q2-C')"><span class="opt-letter">C</span> Leurs côtés sont proportionnels mais pas nécessairement égaux.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p0l1q2-D')"><span class="opt-letter">D</span> Ils peuvent avoir des aires différentes.</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p0l1q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q">Deux triangles ont AB = A'B' = 5 cm, <span class='ang'>ABC</span> = <span class='ang'>A'B'</span>C' = 65° et BC = B'C' = 4 cm. Peut-on conclure qu'ils sont égaux&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p0l1q3-A')"><span class="opt-letter">A</span> Non, il faut les trois côtés égaux pour conclure.</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p0l1q3-B')"><span class="opt-letter">B</span> Oui, critère CAC : deux côtés égaux encadrent un angle de même mesure.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p0l1q3-C')"><span class="opt-letter">C</span> Non, le critère CAC demande angle-côté-angle, pas côté-angle-côté.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p0l1q3-D')"><span class="opt-letter">D</span> On ne peut pas conclure sans le troisième côté.</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p0l1q3"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q">Vrai ou faux : deux triangles semblables sont toujours égaux.</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p0l1q4-A')"><span class="opt-letter">A</span> Vrai — mêmes angles impliquent même taille.</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p0l1q4-B')"><span class="opt-letter">B</span> Faux — ils ont les mêmes angles mais peuvent avoir des côtés de longueurs différentes.</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p0l1q4"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'home')">← Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p0l1');go(null,'p0l2')">Leçon suivante →</button>
+  </div>
+</div>
+
+<!-- P0L2 : Rappels — Exercices -->
+<div class="page" id="page-p0l2">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-yellow">Rappels · Exercices</div>
+    <h1>Exercices – Triangles égaux</h1>
+    <p class="lesson-intro">Entraîne-toi sur les propriétés des triangles égaux avant d'aborder les triangles semblables.</p>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 1</div><div class="quiz-q" id="qq-p0l2a">…</div></div>
+    <div class="quiz-options" id="qo-p0l2a"></div>
+    <div class="quiz-feedback" id="qfb-p0l2a"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 2</div><div class="quiz-q">Le triangle ABC est isocèle en <em class="var">A</em> avec <span class='ang'>ABC</span> = 35°. Quelle est la mesure de <span class='ang'>BAC</span>&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p0l2b-A')"><span class="opt-letter">A</span> 35°</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p0l2b-B')"><span class="opt-letter">B</span> 70°</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p0l2b-C')"><span class="opt-letter">C</span> 110°</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p0l2b-D')"><span class="opt-letter">D</span> 145°</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p0l2b"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 3</div><div class="quiz-q" id="qq-p0l2c">…</div></div>
+    <div class="quiz-options" id="qo-p0l2c"></div>
+    <div class="quiz-feedback" id="qfb-p0l2c"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 4</div><div class="quiz-q">Un triangle ABC a AB = 7 cm, BC = 9 cm, AC = 11 cm. Un triangle DEF a DE = 7 cm, EF = 11 cm, DF = 9 cm. Ces triangles sont-ils égaux&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p0l2d-A')"><span class="opt-letter">A</span> Non, les noms des côtés ne correspondent pas dans le même ordre.</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p0l2d-B')"><span class="opt-letter">B</span> Oui, leurs trois côtés sont deux à deux de même longueur : AB = DE, BC = DF, AC = EF.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p0l2d-C')"><span class="opt-letter">C</span> Non, il faut que les côtés soient dans le même ordre dès la définition.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p0l2d-D')"><span class="opt-letter">D</span> On ne peut pas conclure sans connaître les angles.</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p0l2d"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p0l1')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p0l2');go(null,'p1l1')">Partie 1 →</button>
+  </div>
+</div>
+
+<!-- P1L1 : Rapport k -->
+<div class="page" id="page-p1l1">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-blue">Partie 1 · Leçon 1</div>
+    <h1>Rapport <em class="var">k</em> — définition et propriétés</h1>
+    <p class="lesson-intro">Comment passer du plan d'une maison à la maison elle-même ? Tout repose sur un seul nombre : le rapport <em class="var">k</em>.</p>
+  </div>
+  <div class="section-divider">Définition</div>
+  <div class="callout c-blue">
+    <div class="c-label">Définition · Agrandissement et réduction</div>
+    <p>On appelle <strong>agrandissement ou réduction</strong> d'une figure, la figure obtenue en multipliant toutes les longueurs de la figure initiale par un nombre strictement positif <em class="var">k</em>.</p>
+    <p>Le nombre <em class="var">k</em> est appelé <strong>rapport d'agrandissement</strong> ou <strong>rapport de réduction</strong>.</p>
+    <p>• Si <em class="var">k</em> &gt; 1, il s'agit d'un <strong>agrandissement</strong>.</p>
+    <p>• Si 0 &lt; <em class="var">k</em> &lt; 1, il s'agit d'une <strong>réduction</strong>.</p>
+  </div>
+  <div class="section-divider">Remarques</div>
+  <p>Le rapport d'agrandissement ou de réduction s'appelle aussi <strong>coefficient d'agrandissement ou de réduction</strong>, ou <strong>facteur d'agrandissement ou de réduction</strong>.</p>
+  <p>Lorsque l'on multiplie toutes les longueurs d'une figure par 1, c'est-à-dire lorsque <em class="var">k</em> = 1, la figure obtenue est de la même grandeur que la figure initiale.</p>
+  <p>Pour agrandir ou réduire une figure, on multiplie par <em class="var">k</em> toutes ses longueurs : celles de ses côtés, mais aussi celles de ses diagonales, et celle de son périmètre.</p>
+  <div class="section-divider">Propriété admise</div>
+  <div class="callout c-blue">
+    <div class="c-label">Propriété (admise) · Angles conservés</div>
+    <p>Dans un agrandissement ou une réduction, les mesures des angles sont conservées.</p>
+  </div>
+  <p>Dans un agrandissement ou une réduction de rapport <em class="var">k</em>, la figure obtenue est une figure à l'échelle <em class="var">k</em> de la figure de départ. Ainsi les longueurs de la figure obtenue sont <strong>proportionnelles</strong> aux longueurs correspondantes de la figure de départ. Le coefficient de proportionnalité est égal à <em class="var">k</em>.</p>
+  <div class="example">
+    <div class="ex-label">Exemple</div>
+    <p>Un triangle ABC a AB = 4 cm, BC = 6 cm et <span class='ang'>ABC</span> = 50°. On effectue un agrandissement de rapport <em class="var">k</em> = 2.</p>
+    <p>• A'B' = 2 × 4 = <strong>8 cm</strong></p>
+    <p>• B'C' = 2 × 6 = <strong>12 cm</strong></p>
+    <p>• <span class='ang'>A'B'</span>C' = <strong>50°</strong> (conservé)</p>
+  <div class="section-divider">Calculer k à partir de deux figures</div>
+  <p>Lorsqu'on dispose de la figure de départ et de la figure image, on retrouve le rapport <em class="var">k</em> en divisant une longueur image par la longueur correspondante de départ.</p>
+  <div class="example">
+    <div class="ex-label">Exemple 2 — trouver k</div>
+    <p>Le quadrilatère IJKL a IJ = 2 cm. Son image MNOP a MN = 4,5 cm.</p>
+    <p><em class="var">k</em> = <span class="frac"><span class="fnum">MN</span><span class="fden">IJ</span></span> = <span class="frac"><span class="fnum">4,5</span><span class="fden">2</span></span> = <strong>2,25</strong></p>
+    <p>Comme 2,25 &gt; 1, c'est un <strong>agrandissement</strong>.</p>
+  </div>
+  <div class="callout c-blue">
+    <div class="c-label">⚠ Erreur fréquente</div>
+    <p>Pour agrandir une figure de rapport <em class="var">k</em> = 3, on <strong>multiplie</strong> chaque longueur par 3. On n'ajoute pas 3 cm à chaque côté — une addition déforme la figure.</p>
+  </div>
+  </div>
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content"><strong>À retenir :</strong> Un rapport <em class="var">k</em> transforme toutes les longueurs en les multipliant par <em class="var">k</em>. Si <em class="var">k</em> &gt; 1 : agrandissement ; si 0 &lt; <em class="var">k</em> &lt; 1 : réduction. Les angles sont toujours conservés.</div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p1l1">…</div></div>
+    <div class="quiz-options" id="qo-p1l1"></div>
+    <div class="quiz-feedback" id="qfb-p1l1"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p1l1q2">…</div></div>
+    <div class="quiz-options" id="qo-p1l1q2"></div>
+    <div class="quiz-feedback" id="qfb-p1l1q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q">Dans un agrandissement ou une réduction, que devient la mesure des angles&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p1l1q3-A')"><span class="opt-letter">A</span> Elle est multipliée par <em class="var">k</em>.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p1l1q3-B')"><span class="opt-letter">B</span> Elle est divisée par <em class="var">k</em>.</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p1l1q3-C')"><span class="opt-letter">C</span> Elle reste inchangée.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p1l1q3-D')"><span class="opt-letter">D</span> Elle est multipliée par <em class="var">k</em>².</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p1l1q3"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p1l1q4">…</div></div>
+    <div class="quiz-options" id="qo-p1l1q4"></div>
+    <div class="quiz-feedback" id="qfb-p1l1q4"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p0l2')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p1l1');go(null,'p1l2')">Leçon suivante →</button>
+  </div>
+</div>
+
+<!-- P1L2 : Aires et volumes -->
+<div class="page" id="page-p1l2">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-blue">Partie 1 · Leçon 2</div>
+    <h1>Aires et volumes</h1>
+    <p class="lesson-intro">Agrandir un carré double son périmètre — mais que devient son aire ? Et le volume d'un cube agrandi ? La règle surprend souvent.</p>
+  </div>
+  <div class="section-divider">Propriété admise</div>
+  <div class="callout c-blue">
+    <div class="c-label">Propriété (admise) · Aires et volumes</div>
+    <p>Dans un agrandissement ou une réduction de rapport <em class="var">k</em>, l'aire d'une surface est multipliée par <strong><em class="var">k</em>²</strong>, et le volume d'un solide est multiplié par <strong><em class="var">k</em>³</strong>.</p>
+  </div>
+  <p>Attention : le rapport sur les longueurs est <em class="var">k</em>, mais le rapport sur les aires est <em class="var">k</em>² et le rapport sur les volumes est <em class="var">k</em>³. Ces trois rapports sont différents dès que <em class="var">k</em> ≠ 1.</p>
+  <div class="section-divider">Pourquoi k² pour les aires ?</div>
+  <p>Imagine un carré de côté <em class="var">a</em>. Son aire est <em class="var">a</em>². Après un agrandissement de rapport <em class="var">k</em>, le côté devient <em class="var">k</em> × <em class="var">a</em>, donc la nouvelle aire est (<em class="var">k</em> × <em class="var">a</em>)² = <em class="var">k</em>² × <em class="var">a</em>². L'aire a bien été multipliée par <em class="var">k</em>². Le même raisonnement s'applique à toute figure — un agrandissement dans les deux dimensions multiplie l'aire par <em class="var">k</em>².</p>
+  <div class="callout c-blue">
+    <div class="c-label">⚠ Erreur fréquente</div>
+    <p>Si <em class="var">k</em> = 2, l'aire n'est <strong>pas doublée</strong> — elle est multipliée par 2² = <strong>4</strong>. De même, le volume est multiplié par 2³ = <strong>8</strong>, pas par 2.</p>
+    <p>Exemple : un terrain de 100 m² agrandi d'un rapport 3 donne un terrain de 3² × 100 = 900 m², pas 300 m².</p>
+  </div>
+  <div class="section-divider">Exemple du cube</div>
+  <div class="example">
+    <div class="ex-label">Exemple – cours</div>
+    <p>Considérons un cube d'arête 3 cm. Son volume est égal à (3 cm)³ = 3³ cm³ = <strong>27 cm³</strong>.</p>
+    <p>Son agrandissement de rapport <em class="var">k</em> = 2 est un cube d'arête 6 cm.</p>
+    <p>Le volume de ce second cube est égal à :</p>
+    <p>(6 cm)³ = 6³ cm³ = 216 cm³ = 8 × 27 cm³ = 2³ × 27 cm³ = <em class="var">k</em>³ × 27 cm³</p>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemple – aire</div>
+    <p>Un carré a un côté de 4 cm et une aire de 16 cm². Après un agrandissement de rapport <em class="var">k</em> = 3 :</p>
+    <p>• Nouveau côté : 3 × 4 = 12 cm</p>
+    <p>• Nouvelle aire : 3² × 16 = 9 × 16 = <strong>144 cm²</strong></p>
+  </div>
+  <div class="example">
+    <div class="ex-label">Tableau récapitulatif</div>
+    <p>Pour un rapport <em class="var">k</em> quelconque :</p>
+    <p>• Longueurs (côtés, périmètre, diagonales) → multipliées par <strong><em class="var">k</em></strong></p>
+    <p>• Aires (surfaces) → multipliées par <strong><em class="var">k</em>²</strong></p>
+    <p>• Volumes (solides) → multipliés par <strong><em class="var">k</em>³</strong></p>
+    <p><em>Si k = 0,5 : longueurs divisées par 2 ; aires divisées par 4 ; volumes divisés par 8.</em></p>
+  </div>
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content"><strong>À retenir :</strong> Dans un agrandissement ou une réduction de rapport <em class="var">k</em>, l'aire est multipliée par <em class="var">k</em>² et le volume par <em class="var">k</em>³. Le rapport sur les longueurs n'est pas le même que sur les aires ou les volumes.</div>
+  </div>
+  <div class="tool-box">
+    <div class="tool-lbl">📐 Effet de k sur l'aire et le volume</div>
+    <p style="text-align:center;font-size:0.82rem;color:var(--dim);margin-bottom:0.9rem;">Choisis un rapport <em class="var">k</em> au dixième pour voir l'effet sur les longueurs, les aires et les volumes.</p>
+    <div class="tool-row" style="gap:0.5rem;flex-wrap:wrap;">
+      <div>
+        <div class="tool-lbl-sm">k (rapport)</div>
+        <input class="tool-input" type="number" id="kv-k" value="2" min="0.1" max="10" step="0.1"
+               oninput="this.value=Math.round(parseFloat(this.value)*10)/10;doKViz()">
+      </div>
+    </div>
+    <button class="tool-action" onclick="doKViz()">Calculer</button>
+    <div id="kv-result" style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p1l2">…</div></div>
+    <div class="quiz-options" id="qo-p1l2"></div>
+    <div class="quiz-feedback" id="qfb-p1l2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p1l2q2">…</div></div>
+    <div class="quiz-options" id="qo-p1l2q2"></div>
+    <div class="quiz-feedback" id="qfb-p1l2q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q">Une figure a une aire de 36 cm². Après une réduction de rapport <em class="var">k</em> = 0,5, par quoi l'aire est-elle multipliée&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p1l2q3-A')"><span class="opt-letter">A</span> 0,5</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p1l2q3-B')"><span class="opt-letter">B</span> 0,25</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p1l2q3-C')"><span class="opt-letter">C</span> 0,125</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p1l2q3-D')"><span class="opt-letter">D</span> 2</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p1l2q3"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q">Un cube a un volume de 8 cm³. Après un agrandissement de rapport <em class="var">k</em> = 3, son volume vaut&#160;:</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p1l2q4-A')"><span class="opt-letter">A</span> 24 cm³</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p1l2q4-B')"><span class="opt-letter">B</span> 72 cm³</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p1l2q4-C')"><span class="opt-letter">C</span> 216 cm³</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p1l2q4-D')"><span class="opt-letter">D</span> 512 cm³</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p1l2q4"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p1l1')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p1l2');go(null,'p1l3')">Leçon suivante →</button>
+  </div>
+</div>
+
+<!-- P1L3 : Exercices Partie 1 -->
+<div class="page" id="page-p1l3">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-blue">Partie 1 · Exercices</div>
+    <h1>Exercices – Agrandissement – Réduction</h1>
+    <p class="lesson-intro">Applique les propriétés du rapport <em class="var">k</em> sur des longueurs, des aires et des volumes.</p>
+  </div>
+  <div class="tool-box">
+    <div class="tool-lbl">🎯 Calculateur de rapport <em style="font-style:italic">k</em></div>
+    <p style="text-align:center;font-size:0.82rem;color:var(--dim);margin-bottom:0.8rem;">Entre une longueur d'origine et la longueur image pour trouver <em class="var">k</em>.</p>
+    <div class="tool-row">
+      <div>
+        <div class="tool-lbl-sm">Longueur d'origine (cm)</div>
+        <input class="tool-input" type="number" id="k-orig" value="4" min="0.1" step="0.1" oninput="this.value=Math.round(parseFloat(this.value)*10)/10">
+      </div>
+      <div style="font-size:1.4rem;color:var(--dim);padding-top:1.1rem;">→</div>
+      <div>
+        <div class="tool-lbl-sm">Longueur image (cm)</div>
+        <input class="tool-input" type="number" id="k-image" value="10" min="0.1" step="0.1" oninput="this.value=Math.round(parseFloat(this.value)*10)/10">
+      </div>
+    </div>
+    <button class="tool-action" onclick="doRapportK()">Calculer k</button>
+    <div class="tool-result" id="k-result">…</div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 1</div><div class="quiz-q" id="qq-p1l3a">…</div></div>
+    <div class="quiz-options" id="qo-p1l3a"></div>
+    <div class="quiz-feedback" id="qfb-p1l3a"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 2</div><div class="quiz-q" id="qq-p1l3b">…</div></div>
+    <div class="quiz-options" id="qo-p1l3b"></div>
+    <div class="quiz-feedback" id="qfb-p1l3b"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 3</div><div class="quiz-q" id="qq-p1l3c">…</div></div>
+    <div class="quiz-options" id="qo-p1l3c"></div>
+    <div class="quiz-feedback" id="qfb-p1l3c"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 4</div><div class="quiz-q">On effectue une réduction de rapport <em class="var">k</em> = <span class="frac"><span class="fnum">1</span><span class="fden">3</span></span> d'une figure. L'angle <span class='ang'>ACB</span> de la figure initiale mesure 47°. Quelle est la mesure de l'angle correspondant dans la figure réduite&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p1l3d-A')"><span class="opt-letter">A</span> <span class="frac"><span class="fnum">47</span><span class="fden">3</span></span> ≈ 15,7°</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p1l3d-B')"><span class="opt-letter">B</span> 47°</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p1l3d-C')"><span class="opt-letter">C</span> 47 × 3 = 141°</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p1l3d-D')"><span class="opt-letter">D</span> 90°</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p1l3d"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p1l2')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p1l3');go(null,'p2l1')">Partie 2 →</button>
+  </div>
+</div>
+
+<!-- P2L1 : Triangles semblables -->
+<div class="page" id="page-p2l1">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-orange">Partie 2 · Leçon 1</div>
+    <h1>Triangles semblables</h1>
+    <p class="lesson-intro">Deux triangles peuvent avoir la même forme sans avoir la même taille. On dit alors qu'ils sont semblables — une notion au cœur de la géométrie et de la cartographie.</p>
+  </div>
+  <div class="section-divider">Définition</div>
+  <div class="callout c-orange">
+    <div class="c-label">Définition · Triangles semblables</div>
+    <p>Deux triangles qui ont des <strong>angles deux à deux égaux</strong> sont dits <strong>semblables</strong>.</p>
+  </div>
+  <div class="section-divider">Remarque pratique</div>
+  <p>La somme des angles d'un triangle étant égale à 180°, pour prouver que deux triangles sont semblables il suffit de s'assurer que <strong>deux couples d'angles sont égaux deux à deux</strong>. Le troisième sera automatiquement égal.</p>
+  <div class="callout c-orange">
+    <div class="c-label">Méthode · Démontrer que deux triangles sont semblables</div>
+    <p>1. Repérer <strong>deux paires d'angles</strong> de même mesure dans les deux triangles.</p>
+    <p>2. Sources d'angles égaux à chercher : angle commun aux deux triangles, angles correspondants (droites parallèles), angles droits, angles opposés par le sommet.</p>
+    <p>3. Conclure : « Les triangles ABC et DEF ont deux paires d'angles deux à deux de même mesure, donc ils sont <strong>semblables</strong>. »</p>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemple</div>
+    <p>Les triangles ABC et A'B'C' ont <span class='ang'>A</span> = <span class='ang'>A'</span> = 40° et <span class='ang'>B</span> = <span class='ang'>B'</span> = 70°.</p>
+    <p>On en déduit : <span class='ang'>C</span> = 180° − 40° − 70° = 70° et de même <span class='ang'>C'</span> = 70°.</p>
+    <p>Tous les angles sont deux à deux égaux, donc les triangles ABC et A'B'C' sont <strong>semblables</strong>.</p>
+  </div>
+  <div class="section-divider">Similitude et égalité</div>
+  <p>Si deux triangles sont égaux (mêmes côtés), alors ils sont aussi semblables — mais l'inverse n'est pas vrai. Deux triangles semblables ont <strong>la même forme</strong> mais peuvent avoir des tailles différentes.</p>
+  <p>La similitude généralise l'égalité : un agrandissement ou une réduction produit des triangles semblables au triangle de départ.</p>
+  <div class="example">
+    <div class="ex-label">Exemple — situation fréquente</div>
+    <p>Dans un triangle ABC, soit H le pied de la hauteur issue de A. Les triangles ABH et CAH sont semblables car :</p>
+    <p>• <span class='ang'>AHB</span> = <span class='ang'>AHC</span> = 90° (H est le pied de la hauteur)</p>
+    <p>• <span class='ang'>ABH</span> = <span class='ang'>CAH</span> (angles d'un même triangle se complétant à 90°)</p>
+    <p>C'est une configuration très courante dans les problèmes.</p>
+  </div>
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content"><strong>À retenir :</strong> Pour montrer que deux triangles sont semblables, il suffit de trouver deux paires d'angles égaux — le troisième est automatiquement égal (somme des angles = 180°).</div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p2l1">…</div></div>
+    <div class="quiz-options" id="qo-p2l1"></div>
+    <div class="quiz-feedback" id="qfb-p2l1"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q">Pour démontrer que deux triangles sont semblables, combien de paires d'angles faut-il vérifier&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p2l1q2-A')"><span class="opt-letter">A</span> Les trois paires — tous les angles doivent être égaux.</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p2l1q2-B')"><span class="opt-letter">B</span> Deux paires suffisent — la troisième est automatiquement égale.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p2l1q2-C')"><span class="opt-letter">C</span> Une seule paire suffit.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p2l1q2-D')"><span class="opt-letter">D</span> Il faut les angles et au moins un côté.</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p2l1q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q" id="qq-p2l1q3">…</div></div>
+    <div class="quiz-options" id="qo-p2l1q3"></div>
+    <div class="quiz-feedback" id="qfb-p2l1q3"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q">Vrai ou faux : deux triangles égaux sont nécessairement semblables.</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,true,'p2l1q4-A')"><span class="opt-letter">A</span> Vrai — triangles égaux ⟹ mêmes angles ⟹ semblables.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p2l1q4-B')"><span class="opt-letter">B</span> Faux — égalité et similitude sont des notions différentes.</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p2l1q4"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p1l3')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p2l1');go(null,'p2l2')">Leçon suivante →</button>
+  </div>
+</div>
+
+<!-- P2L2 : Proportionnalité des côtés -->
+<div class="page" id="page-p2l2">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-orange">Partie 2 · Leçon 2</div>
+    <h1>Proportionnalité des côtés</h1>
+    <p class="lesson-intro">Si deux triangles sont semblables, leurs côtés ne sont pas égaux — mais ils sont proportionnels. Ce coefficient de proportionnalité relie les deux triangles.</p>
+  </div>
+  <div class="section-divider">Propriétés admises</div>
+  <div class="callout c-orange">
+    <div class="c-label">Propriétés (admises) · Similitude et proportionnalité</div>
+    <p>• Si deux triangles sont semblables, alors les longueurs des côtés de ces triangles sont <strong>proportionnelles</strong>.</p>
+    <p>• Si les longueurs des côtés de deux triangles sont proportionnelles, alors ces triangles sont <strong>semblables</strong>.</p>
+  </div>
+  <div class="section-divider">Rapport de similitude</div>
+  <p>Si deux triangles ABC et A'B'C' sont semblables, alors les longueurs des côtés opposés aux angles égaux sont proportionnelles :</p>
+  <div class="formula">
+    <span class="frac"><span class="fnum">A'B'</span><span class="fden">AB</span></span> = <span class="frac"><span class="fnum">A'C'</span><span class="fden">AC</span></span> = <span class="frac"><span class="fnum">B'C'</span><span class="fden">BC</span></span> = <em class="var">k</em>
+  </div>
+  <p>• Si <em class="var">k</em> &gt; 1, alors A'B'C' est un agrandissement de ABC.</p>
+  <p>• Si 0 &lt; <em class="var">k</em> &lt; 1, alors A'B'C' est une réduction de ABC.</p>
+  <div class="callout c-orange">
+    <div class="c-label">Méthode · Vérifier la proportionnalité des côtés</div>
+    <p>1. Ranger les côtés de chaque triangle <strong>du plus petit au plus grand</strong>.</p>
+    <p>2. Calculer les rapports des côtés correspondants (petit/petit, moyen/moyen, grand/grand).</p>
+    <p>3. Si tous les rapports sont égaux, les côtés sont proportionnels et les triangles sont semblables.</p>
+    <p>⚠ Attention à bien associer les côtés <em>correspondants</em> (opposés aux mêmes angles), pas dans n'importe quel ordre.</p>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemple – Sésamath Cycle 4, chap. 12</div>
+    <p>Le triangle ABC a AB = 5,1 cm, AC = 6,6 cm, BC = 7,8 cm.</p>
+    <p>Le triangle A'B'C' a A'B' = 1,7 cm, A'C' = 2,2 cm, B'C' = 2,6 cm.</p>
+    <p>Calcul des rapports : <span class="frac"><span class="fnum">5,1</span><span class="fden">1,7</span></span> = <span class="frac"><span class="fnum">6,6</span><span class="fden">2,2</span></span> = <span class="frac"><span class="fnum">7,8</span><span class="fden">2,6</span></span> = <strong>3</strong></p>
+    <p>Les rapports sont égaux, donc les côtés sont proportionnels : les triangles sont <strong>semblables</strong> avec <em class="var">k</em> = 3. Le triangle ABC est un agrandissement de A'B'C' de rapport 3.</p>
+  </div>
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content"><strong>À retenir :</strong> Si ABC et A'B'C' sont semblables, A'B'/AB = A'C'/AC = B'C'/BC = <em class="var">k</em>. Ce rapport <em class="var">k</em> est le coefficient de proportionnalité entre les côtés.</div>
+  </div>
+  <div class="tool-box">
+    <div class="tool-lbl">🔍 Vérificateur de similitude</div>
+    <p style="text-align:center;font-size:0.82rem;color:var(--dim);margin-bottom:0.9rem;">Entre les 3 côtés du petit triangle et les 3 côtés du grand triangle (triés du plus petit au plus grand) pour vérifier si les côtés sont proportionnels.</p>
+    <div class="tool-row" style="gap:0.4rem;flex-wrap:wrap;align-items:flex-end;">
+      <div>
+        <div class="tool-lbl-sm">Triangle 1</div>
+        <div style="display:flex;gap:0.3rem;">
+          <input class="tool-input" style="width:3.8rem" type="number" id="sim-a1" value="3" min="0.1" step="0.1" oninput="this.value=Math.round(parseFloat(this.value)*10)/10">
+          <input class="tool-input" style="width:3.8rem" type="number" id="sim-b1" value="4" min="0.1" step="0.1" oninput="this.value=Math.round(parseFloat(this.value)*10)/10">
+          <input class="tool-input" style="width:3.8rem" type="number" id="sim-c1" value="5" min="0.1" step="0.1" oninput="this.value=Math.round(parseFloat(this.value)*10)/10">
+        </div>
+      </div>
+      <div>
+        <div class="tool-lbl-sm">Triangle 2</div>
+        <div style="display:flex;gap:0.3rem;">
+          <input class="tool-input" style="width:3.8rem" type="number" id="sim-a2" value="6" min="0.1" step="0.1" oninput="this.value=Math.round(parseFloat(this.value)*10)/10">
+          <input class="tool-input" style="width:3.8rem" type="number" id="sim-b2" value="8" min="0.1" step="0.1" oninput="this.value=Math.round(parseFloat(this.value)*10)/10">
+          <input class="tool-input" style="width:3.8rem" type="number" id="sim-c2" value="10" min="0.1" step="0.1" oninput="this.value=Math.round(parseFloat(this.value)*10)/10">
+        </div>
+      </div>
+    </div>
+    <button class="tool-action" onclick="doSimilitude()">Vérifier</button>
+    <div class="tool-result" id="sim-result">…</div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p2l2">…</div></div>
+    <div class="quiz-options" id="qo-p2l2"></div>
+    <div class="quiz-feedback" id="qfb-p2l2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q">Les triangles ABC et DEF sont semblables avec <em class="var">k</em> = DE/AB = 2. Si AB = 5 cm, quelle est la longueur DE&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p2l2q2-A')"><span class="opt-letter">A</span> 2,5 cm</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p2l2q2-B')"><span class="opt-letter">B</span> 10 cm</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p2l2q2-C')"><span class="opt-letter">C</span> 7 cm</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p2l2q2-D')"><span class="opt-letter">D</span> 25 cm</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p2l2q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q">Un triangle ABC a les côtés 3, 4 et 5 cm. Un triangle DEF a les côtés 6, 8 et 10 cm. Ces triangles sont-ils semblables&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,true,'p2l2q3-A')"><span class="opt-letter">A</span> Oui : 6/3 = 8/4 = 10/5 = 2. Les côtés sont proportionnels.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p2l2q3-B')"><span class="opt-letter">B</span> Non : leurs côtés ne sont pas égaux deux à deux.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p2l2q3-C')"><span class="opt-letter">C</span> Non : il faut d'abord vérifier les angles.</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p2l2q3"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p2l2q4">…</div></div>
+    <div class="quiz-options" id="qo-p2l2q4"></div>
+    <div class="quiz-feedback" id="qfb-p2l2q4"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p2l1')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p2l2');go(null,'p2l3')">Leçon suivante →</button>
+  </div>
+</div>
+
+<!-- P2L3 : Exercices Partie 2 -->
+<div class="page" id="page-p2l3">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-orange">Partie 2 · Exercices</div>
+    <h1>Exercices – Similitude de triangles</h1>
+    <p class="lesson-intro">Identifie des triangles semblables, calcule des côtés et des rapports dans des figures variées.</p>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 1</div><div class="quiz-q" id="qq-p2l3a">…</div></div>
+    <div class="quiz-options" id="qo-p2l3a"></div>
+    <div class="quiz-feedback" id="qfb-p2l3a"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 2</div><div class="quiz-q">Les triangles ABC et ABH sont rectangles respectivement en A et en H. Quelle propriété permet de conclure qu'ils sont semblables&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,true,'p2l3b-A')"><span class="opt-letter">A</span> Ils ont deux paires d'angles égaux : <span class='ang'>BAC</span> = <span class='ang'>AHB</span> = 90° et <span class='ang'>ABC</span> commun.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p2l3b-B')"><span class="opt-letter">B</span> Ils partagent le côté [AB], donc leurs côtés sont proportionnels.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p2l3b-C')"><span class="opt-letter">C</span> Deux triangles rectangles sont toujours semblables.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p2l3b-D')"><span class="opt-letter">D</span> Ils ont le même périmètre.</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p2l3b"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 3</div><div class="quiz-q" id="qq-p2l3c">…</div></div>
+    <div class="quiz-options" id="qo-p2l3c"></div>
+    <div class="quiz-feedback" id="qfb-p2l3c"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 4</div><div class="quiz-q">Les triangles MON et LES sont semblables avec <em class="var">k</em> = MO/LE = <span class="frac"><span class="fnum">1</span><span class="fden">4</span></span>. Si LE = 8,4 cm, quelle est la longueur MO&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p2l3d-A')"><span class="opt-letter">A</span> 33,6 cm</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p2l3d-B')"><span class="opt-letter">B</span> 2,1 cm</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p2l3d-C')"><span class="opt-letter">C</span> 4,2 cm</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p2l3d-D')"><span class="opt-letter">D</span> 8,4 cm</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p2l3d"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p2l2')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p2l3');go(null,'p3l1')">Partie 3 →</button>
+  </div>
+</div>
+
+<!-- P3L1 : Théorème de Thalès -->
+<div class="page" id="page-p3l1">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-purple">Partie 3 · Leçon 1</div>
+    <h1>Théorème de Thalès</h1>
+    <p class="lesson-intro">Comment mesurer la hauteur d'une pyramide sans la gravir ? Thalès l'a fait avec son ombre. La configuration emboîtée que tu vas étudier est l'outil de base pour calculer des longueurs inaccessibles.</p>
+  </div>
+  <div class="section-divider">Configuration emboîtée</div>
+  <p>La configuration emboîtée de Thalès est la suivante : un triangle ABC avec <em class="var">M</em> un point de [AB] et <em class="var">N</em> un point de [AC] tels que (MN) // (BC).</p>
+  <div class="callout c-purple">
+    <div class="c-label">Théorème de Thalès (configuration emboîtée)</div>
+    <p>Soient un triangle ABC, <em class="var">M</em> un point de [AB] et <em class="var">N</em> un point de [AC].</p>
+    <p>Si les droites (BC) et (MN) sont parallèles, alors</p>
+    <div class="formula" style="font-size:1.1rem;">
+      <span class="frac"><span class="fnum">AM</span><span class="fden">AB</span></span> = <span class="frac"><span class="fnum">AN</span><span class="fden">AC</span></span> = <span class="frac"><span class="fnum">MN</span><span class="fden">BC</span></span>
+    </div>
+  </div>
+  <div class="section-divider">Pourquoi ça marche ?</div>
+  <p>Remarquons que <span class='ang'>MAN</span> = <span class='ang'>BAC</span> (angle commun). De plus, (MN) // (BC) donc les angles <span class='ang'>AMN</span> et <span class='ang'>ABC</span> sont des angles correspondants : ils sont égaux. Ainsi les triangles AMN et ABC ont deux paires d'angles égaux, ils sont donc <strong>semblables</strong>. L'égalité des rapports découle alors de la proportionnalité des côtés.</p>
+  <button class="demo-toggle" onclick="toggleDemo(this)">
+    <span class="demo-arrow">&#9654;</span>
+    <span class="demo-label">Cliquer ici pour voir la démonstration</span>
+  </button>
+  <div class="demo-body">
+    <p><strong>Objectif :</strong> montrer que AM/AB = AN/AC = MN/BC lorsque (MN) // (BC).</p>
+    <div class="demo-step"><span class="demo-num">1.</span><span><strong>Angle commun :</strong> <span class='ang'>MAN</span> = <span class='ang'>BAC</span> (c'est le même angle, au sommet A).</span></div>
+    <div class="demo-step"><span class="demo-num">2.</span><span><strong>Angles correspondants :</strong> (MN) // (BC) et la droite (AB) est une sécante, donc <span class='ang'>AMN</span> = <span class='ang'>ABC</span>.</span></div>
+    <div class="demo-step"><span class="demo-num">3.</span><span><strong>Triangles semblables :</strong> les triangles AMN et ABC ont deux paires d'angles deux à deux de même mesure, donc ils sont <strong>semblables</strong> (propriété admise).</span></div>
+    <div class="demo-step"><span class="demo-num">4.</span><span><strong>Côtés proportionnels :</strong> des triangles semblables ont leurs côtés proportionnels (propriété admise), donc AM/AB = AN/AC = MN/BC. <em>C.Q.F.D.</em></span></div>
+    <p style="font-size:0.8rem;color:var(--dim);margin-top:0.5rem;">⚠ Cette démonstration s'appuie elle-même sur deux propriétés <em>admises</em> : « similitude ↔ côtés proportionnels » et « angles correspondants ». Elle est donc conditionnelle à ces deux résultats.</p>
+  </div>
+  <div class="callout c-purple">
+    <div class="c-label">Méthode · Rédiger un calcul par Thalès</div>
+    <p>1. <strong>Vérifier la configuration</strong> : triangle ABC, M ∈ [AB], N ∈ [AC], (MN) // (BC).</p>
+    <p>2. <strong>Écrire l'égalité des rapports</strong> : AM/AB = AN/AC = MN/BC.</p>
+    <p>3. <strong>Identifier l'inconnue</strong> et isoler la fraction qui la contient.</p>
+    <p>4. <strong>Substituer et calculer</strong> : multiplier en croix ou isoler l'inconnue.</p>
+    <p>5. <strong>Conclure</strong> : « Donc [longueur] = … »</p>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemple – feuille Sésamath G2 série 2</div>
+    <p>Dans le triangle ARS, la droite (CT) est parallèle à (RS) avec <em class="var">T</em> sur [AR] et <em class="var">C</em> sur [AS]. On a AT = 3 cm, AR = 4 cm et AC = 6 cm.</p>
+    <p>Par le théorème de Thalès : <span class="frac"><span class="fnum">AT</span><span class="fden">AR</span></span> = <span class="frac"><span class="fnum">AC</span><span class="fden">AS</span></span></p>
+    <p>Donc : <span class="frac"><span class="fnum">3</span><span class="fden">4</span></span> = <span class="frac"><span class="fnum">6</span><span class="fden">AS</span></span></p>
+    <p>D'où AS = 6 × <span class="frac"><span class="fnum">4</span><span class="fden">3</span></span> = <strong>8 cm</strong>.</p>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemple — rédaction complète</div>
+    <p>Dans le triangle ABC, M ∈ [AB] et N ∈ [AC] avec (MN) // (BC). On donne AM = 5 cm, AB = 8 cm, AN = 6 cm. Calculer AC.</p>
+    <p><strong>Les droites (BC) et (MN) sont parallèles</strong> et M ∈ [AB], N ∈ [AC], donc par le théorème de Thalès :</p>
+    <div class="formula" style="font-size:1rem;">AM/AB = AN/AC &nbsp; soit &nbsp; 5/8 = 6/AC</div>
+    <p>D'où : AC = 6 × 8 ÷ 5 = 48 ÷ 5 = <strong>9,6 cm</strong>.</p>
+    <p><em>Vérification : 5/8 = 0,625 et 6/9,6 = 0,625. ✓</em></p>
+  </div>
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content"><strong>À retenir :</strong> Soient un triangle ABC, <em class="var">M</em> un point de [AB] et <em class="var">N</em> un point de [AC]. Si les droites (BC) et (MN) sont parallèles, alors AM/AB = AN/AC = MN/BC.</div>
+  </div>
+  <div class="tool-box">
+    <div class="tool-lbl">📏 Calculateur Thalès</div>
+    <p style="text-align:center;font-size:0.82rem;color:var(--dim);margin-bottom:0.9rem;">Dans le triangle ABC, (MN) // (BC) avec M ∈ [AB] et N ∈ [AC]. Entre trois longueurs connues pour trouver la quatrième.</p>
+    <div class="tool-row" style="gap:0.4rem;flex-wrap:wrap;align-items:flex-end;">
+      <div style="text-align:center;">
+        <div class="tool-lbl-sm">AM</div>
+        <input class="tool-input" style="width:4rem" type="number" id="th-am" value="5" min="0.1" step="0.1" oninput="this.value=Math.round(parseFloat(this.value)*10)/10">
+      </div>
+      <div style="text-align:center;">
+        <div class="tool-lbl-sm">AB</div>
+        <input class="tool-input" style="width:4rem" type="number" id="th-ab" value="8" min="0.1" step="0.1" oninput="this.value=Math.round(parseFloat(this.value)*10)/10">
+      </div>
+      <div style="text-align:center;">
+        <div class="tool-lbl-sm">AN</div>
+        <input class="tool-input" style="width:4rem" type="number" id="th-an" value="6" min="0.1" step="0.1" oninput="this.value=Math.round(parseFloat(this.value)*10)/10">
+      </div>
+      <div style="text-align:center;font-size:1.2rem;color:var(--dim);padding-top:1.2rem;">→</div>
+      <div style="text-align:center;">
+        <div class="tool-lbl-sm">AC = ?</div>
+        <div id="th-ac" style="width:4rem;padding:0.4rem;border:1px solid var(--teal-border);border-radius:4px;background:var(--teal-dim);color:var(--teal);font-family:'IBM Plex Mono',monospace;font-size:1rem;font-weight:600;text-align:center;">…</div>
+      </div>
+    </div>
+    <button class="tool-action" onclick="doThales()">Calculer AC</button>
+    <div class="tool-result" id="th-result">…</div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p3l1">…</div></div>
+    <div class="quiz-options" id="qo-p3l1"></div>
+    <div class="quiz-feedback" id="qfb-p3l1"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p3l1q2">…</div></div>
+    <div class="quiz-options" id="qo-p3l1q2"></div>
+    <div class="quiz-feedback" id="qfb-p3l1q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q">Dans la configuration de Thalès, si AM = 6, AB = 9 et AN = 8, que vaut AC&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p3l1q3-A')"><span class="opt-letter">A</span> 10</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p3l1q3-B')"><span class="opt-letter">B</span> 12</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l1q3-C')"><span class="opt-letter">C</span> 11</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l1q3-D')"><span class="opt-letter">D</span> 6</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p3l1q3"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p3l1q4">…</div></div>
+    <div class="quiz-options" id="qo-p3l1q4"></div>
+    <div class="quiz-feedback" id="qfb-p3l1q4"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p2l3')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p3l1');go(null,'p3l2')">Leçon suivante →</button>
+  </div>
+</div>
+
+<!-- P3L2 : Réciproque -->
+<div class="page" id="page-p3l2">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-purple">Partie 3 · Leçon 2</div>
+    <h1>Réciproque du théorème de Thalès</h1>
+    <p class="lesson-intro">Le théorème de Thalès permet de calculer des longueurs quand on sait que des droites sont parallèles. Sa réciproque permet l'inverse : prouver que des droites sont parallèles à partir de rapports égaux.</p>
+  </div>
+  <div class="section-divider">Énoncé</div>
+  <div class="callout c-purple">
+    <div class="c-label">Réciproque du théorème de Thalès (configuration emboîtée)</div>
+    <p>Soient un triangle ABC, <em class="var">M</em> un point de [AB] et <em class="var">N</em> un point de [AC].</p>
+    <p>Si <span class="frac"><span class="fnum">AM</span><span class="fden">AB</span></span> = <span class="frac"><span class="fnum">AN</span><span class="fden">AC</span></span></p>
+    <p>alors les droites (BC) et (MN) sont parallèles.</p>
+  </div>
+  <div class="section-divider">Méthode de rédaction</div>
+  <button class="demo-toggle" onclick="toggleDemo(this)">
+    <span class="demo-arrow">&#9654;</span>
+    <span class="demo-label">Cliquer ici pour voir la démonstration</span>
+  </button>
+  <div class="demo-body">
+    <p><strong>Objectif :</strong> montrer que AM/AB = AN/AC implique (MN) // (BC).</p>
+    <div class="demo-step"><span class="demo-num">1.</span><span><strong>Angle commun :</strong> <span class='ang'>MAN</span> = <span class='ang'>BAC</span> (même sommet A).</span></div>
+    <div class="demo-step"><span class="demo-num">2.</span><span><strong>Côtés proportionnels + angle commun :</strong> AM/AB = AN/AC et l'angle entre ces côtés est commun. D'après la propriété « Côté–Angle–Côté » des triangles isométriques (admise), le triangle AMN est semblable au triangle ABC avec le rapport k = AM/AB.</span></div>
+    <div class="demo-step"><span class="demo-num">3.</span><span><strong>Angles égaux :</strong> comme AMN et ABC sont semblables, leurs angles sont deux à deux égaux, donc en particulier <span class='ang'>AMN</span> = <span class='ang'>ABC</span>.</span></div>
+    <div class="demo-step"><span class="demo-num">4.</span><span><strong>Droites parallèles :</strong> <span class='ang'>AMN</span> et <span class='ang'>ABC</span> sont des angles correspondants formés par les droites (MN) et (BC) coupées par la sécante (AB). Des angles correspondants égaux impliquent des droites parallèles. Donc (MN) // (BC). <em>C.Q.F.D.</em></span></div>
+    <p style="font-size:0.8rem;color:var(--dim);margin-top:0.5rem;">⚠ Cette démonstration utilise le critère « Côté–Angle–Côté » des triangles semblables, résultat hors programme strict de 4e. Elle est présentée ici pour les élèves qui souhaitent comprendre <em>pourquoi</em> la réciproque est vraie.</p>
+  </div>
+  <div class="callout c-purple">
+    <div class="c-label">Méthode · Utiliser la réciproque de Thalès</div>
+    <p>1. <strong>Identifier</strong> le triangle, les points M ∈ [AB] et N ∈ [AC].</p>
+    <p>2. <strong>Calculer AB et AC</strong> (si nécessaire) en ajoutant les segments : AB = AM + MB.</p>
+    <p>3. <strong>Calculer les deux rapports</strong> AM/AB et AN/AC.</p>
+    <p>4. <strong>Comparer</strong> : si AM/AB = AN/AC → (MN) // (BC) ; sinon → pas parallèles.</p>
+    <p>⚠ Bien prendre les rapports AM/AB et AN/AC, pas AM/MB ni AN/NC.</p>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemple 1 — droites parallèles</div>
+    <p>Dans le triangle SAB, C ∈ [SA] et D ∈ [SB]. On donne SA = 3 cm, AB = 4 cm, CD = 5,5 cm et SC = 3 cm. (Les données de l'ex. 3 Sésamath G2.)</p>
+    <p>SC/SA = 3/3 = 1 — ce cas est dégénéré, cherchons avec SC = 2,25 :</p>
+    <p>SC/SA = 2,25/3 = 0,75 et SD/SB = calculé de même.</p>
+    <p>Si les rapports sont égaux → (CD) // (AB).</p>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemple 2 – feuille Sésamath G2 série 2, ex. 5</div>
+    <p>Dans le triangle EHG avec <em class="var">L</em> sur [EH] et <em class="var">F</em> sur [EG], on donne EL = 7,5, LH = 7,5, EF = 10, FG = 2.</p>
+    <p><strong>Étape 1</strong> — Calcul de EH et EG :</p>
+    <p>EH = EL + LH = 7,5 + 7,5 = <strong>15</strong> &nbsp;; &nbsp; EG = EF + FG = 10 + 2 = <strong>12</strong></p>
+    <p><strong>Étape 2</strong> — Calcul des rapports :</p>
+    <p><span class="frac"><span class="fnum">EL</span><span class="fden">EH</span></span> = <span class="frac"><span class="fnum">7,5</span><span class="fden">15</span></span> = <strong>0,5</strong> &nbsp;&nbsp; et &nbsp;&nbsp; <span class="frac"><span class="fnum">EF</span><span class="fden">EG</span></span> = <span class="frac"><span class="fnum">10</span><span class="fden">12</span></span> ≈ <strong>0,83</strong></p>
+    <p><strong>Conclusion</strong> — Les rapports sont différents (0,5 ≠ 0,83), donc les droites (LF) et (HG) <strong>ne sont pas parallèles</strong>.</p>
+  </div>
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content"><strong>À retenir :</strong> Soient un triangle ABC, <em class="var">M</em> un point de [AB] et <em class="var">N</em> un point de [AC]. Si AM/AB = AN/AC, alors les droites (BC) et (MN) sont parallèles.</div>
+  </div>
+  <div class="tool-box">
+    <div class="tool-lbl">⚖️ Testeur de parallélisme</div>
+    <p style="text-align:center;font-size:0.82rem;color:var(--dim);margin-bottom:0.9rem;">Dans le triangle ABC, M ∈ [AB] et N ∈ [AC]. Entre AM, AB, AN, AC pour savoir si (MN) // (BC).</p>
+    <div class="tool-row" style="gap:0.4rem;flex-wrap:wrap;align-items:flex-end;">
+      <div style="text-align:center;">
+        <div class="tool-lbl-sm">AM</div>
+        <input class="tool-input" style="width:3.8rem" type="number" id="rec-am" value="4" min="0.1" step="0.1" oninput="this.value=Math.round(parseFloat(this.value)*10)/10">
+      </div>
+      <div style="text-align:center;">
+        <div class="tool-lbl-sm">AB</div>
+        <input class="tool-input" style="width:3.8rem" type="number" id="rec-ab" value="6" min="0.1" step="0.1" oninput="this.value=Math.round(parseFloat(this.value)*10)/10">
+      </div>
+      <div style="text-align:center;font-size:1.2rem;color:var(--dim);padding-top:1.2rem;">et</div>
+      <div style="text-align:center;">
+        <div class="tool-lbl-sm">AN</div>
+        <input class="tool-input" style="width:3.8rem" type="number" id="rec-an" value="6" min="0.1" step="0.1" oninput="this.value=Math.round(parseFloat(this.value)*10)/10">
+      </div>
+      <div style="text-align:center;">
+        <div class="tool-lbl-sm">AC</div>
+        <input class="tool-input" style="width:3.8rem" type="number" id="rec-ac" value="9" min="0.1" step="0.1" oninput="this.value=Math.round(parseFloat(this.value)*10)/10">
+      </div>
+    </div>
+    <button class="tool-action" onclick="doReciproque()">Tester</button>
+    <div class="tool-result" id="rec-result">…</div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p3l2">…</div></div>
+    <div class="quiz-options" id="qo-p3l2"></div>
+    <div class="quiz-feedback" id="qfb-p3l2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q">Dans le triangle ABC, <em class="var">M</em> ∈ [AB] et <em class="var">N</em> ∈ [AC]. AM = 4, AB = 6, AN = 6, AC = 9. Les droites (MN) et (BC) sont-elles parallèles&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,true,'p3l2q2-A')"><span class="opt-letter">A</span> Oui : AM/AB = 4/6 = 2/3 et AN/AC = 6/9 = 2/3. Les rapports sont égaux.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l2q2-B')"><span class="opt-letter">B</span> Non : AM ≠ AN donc les droites ne sont pas parallèles.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l2q2-C')"><span class="opt-letter">C</span> On ne peut pas conclure sans connaître MN.</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p3l2q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q" id="qq-p3l2q3">…</div></div>
+    <div class="quiz-options" id="qo-p3l2q3"></div>
+    <div class="quiz-feedback" id="qfb-p3l2q3"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q">Pour utiliser la réciproque du théorème de Thalès et conclure que (MN) // (BC), quels rapports faut-il calculer et comparer&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'p3l2q4-A')"><span class="opt-letter">A</span> MN/BC et AB/AC</button>
+      <button class="quiz-opt" onclick="answer(this,true,'p3l2q4-B')"><span class="opt-letter">B</span> AM/AB et AN/AC</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l2q4-C')"><span class="opt-letter">C</span> AM/MN et AN/BC</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l2q4-D')"><span class="opt-letter">D</span> MB/AB et NC/AC</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p3l2q4"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p3l1')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p3l2');go(null,'p3l3')">Leçon suivante →</button>
+  </div>
+</div>
+
+<!-- P3L3 : Exercices Partie 3 -->
+<div class="page" id="page-p3l3">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-purple">Partie 3 · Exercices</div>
+    <h1>Exercices – Théorème de Thalès et réciproque</h1>
+    <p class="lesson-intro">Applique le théorème pour calculer des longueurs, et la réciproque pour démontrer que des droites sont parallèles.</p>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 1</div><div class="quiz-q" id="qq-p3l3a">…</div></div>
+    <div class="quiz-options" id="qo-p3l3a"></div>
+    <div class="quiz-feedback" id="qfb-p3l3a"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 2</div><div class="quiz-q" id="qq-p3l3b">…</div></div>
+    <div class="quiz-options" id="qo-p3l3b"></div>
+    <div class="quiz-feedback" id="qfb-p3l3b"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 3</div><div class="quiz-q" id="qq-p3l3c">…</div></div>
+    <div class="quiz-options" id="qo-p3l3c"></div>
+    <div class="quiz-feedback" id="qfb-p3l3c"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 4</div><div class="quiz-q">Dans le triangle ABC, <em class="var">M</em> ∈ [AB] et <em class="var">N</em> ∈ [AC]. On donne AM = 3, AB = 5, AN = 4,8, AC = 8. Peut-on conclure que (MN) // (BC)&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,true,'p3l3d-A')"><span class="opt-letter">A</span> Oui : AM/AB = 3/5 = 0,6 et AN/AC = 4,8/8 = 0,6. Les rapports sont égaux.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l3d-B')"><span class="opt-letter">B</span> Non : AM ≠ AN donc les droites ne sont pas parallèles.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'p3l3d-C')"><span class="opt-letter">C</span> Non : il faut d'abord connaître MN pour conclure.</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-p3l3d"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p3l2')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p3l3');go(null,'pb1')">Problèmes →</button>
+  </div>
+</div>
+
+<!-- PB1 : Le bassin de retenue -->
+<div class="page" id="page-pb1">
+  <div class="lesson-header">
+    <div class="lesson-tag" style="color:var(--yellow)">Problèmes · Problème 1</div>
+    <h1>🏗️ Le bassin de retenue</h1>
+    <p class="lesson-intro">Un problème sur les agrandissements, les aires et les volumes.</p>
+  </div>
+  <div class="callout c-yellow">
+    <div class="c-label">Énoncé – Sésamath Cahier Cycle 4, Grandeurs C, Série 3</div>
+    <p>Des ingénieurs ont construit une maquette au 1/5 000 d'un bassin de retenue. La maquette mesure 1,60 m de long et contient 5 L d'eau. La surface du lac artificiel sur la maquette est 80 dm².</p>
+    <p>1. Quelle sera, en km, la longueur du futur lac artificiel ?</p>
+    <p>2. Quelle sera, en km², sa surface ?</p>
+    <p>3. Quel sera, en m³, le volume d'eau contenu dans le lac ?</p>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question 1</div><div class="quiz-q">Le coefficient d'agrandissement est k = 5 000. Si la maquette mesure 1,60 m de long, quelle est la longueur réelle du lac&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb1q1-A')"><span class="opt-letter">A</span> 5 km</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb1q1-B')"><span class="opt-letter">B</span> 8 km</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb1q1-C')"><span class="opt-letter">C</span> 800 m</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb1q1-D')"><span class="opt-letter">D</span> 0,8 km</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb1q1"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question 2</div><div class="quiz-q">La surface de la maquette est 80 dm². Par quel facteur faut-il multiplier pour obtenir la surface réelle, et quel est le résultat en km²&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb1q2-A')"><span class="opt-letter">A</span> On multiplie par k = 5 000, ce qui donne 400 000 dm² = 0,004 km².</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb1q2-B')"><span class="opt-letter">B</span> On multiplie par k² = 25 000 000, ce qui donne 2 000 000 000 dm² = 20 km².</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb1q2-C')"><span class="opt-letter">C</span> On multiplie par k² = 25 000 000, ce qui donne 2 km².</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb1q2-D')"><span class="opt-letter">D</span> On multiplie par k³ = 125 000 000 000, ce qui donne 10 km².</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb1q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question 3</div><div class="quiz-q">La maquette contient 5 L d'eau. Le volume réel est multiplié par k³ = (5 000)³. Sachant que 1 m³ = 1 000 L, quel est le volume d'eau du lac en m³&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb1q3-A')"><span class="opt-letter">A</span> 625 000 m³</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb1q3-B')"><span class="opt-letter">B</span> 625 000 000 m³</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb1q3-C')"><span class="opt-letter">C</span> 62 500 000 m³</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb1q3-D')"><span class="opt-letter">D</span> 5 000 000 m³</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb1q3"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p3l3')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('pb1');go(null,'pb2')">Problème suivant →</button>
+  </div>
+</div>
+
+<!-- PB2 : Quadrilatère MNOP -->
+<div class="page" id="page-pb2">
+  <div class="lesson-header">
+    <div class="lesson-tag" style="color:var(--yellow)">Problèmes · Problème 2</div>
+    <h1>▷ Quadrilatère MNOP</h1>
+    <p class="lesson-intro">Un problème sur les agrandissements et la reconnaissance de droites parallèles.</p>
+  </div>
+  <div class="callout c-yellow">
+    <div class="c-label">Énoncé – Sésamath Cahier Cycle 4, G2, Agrandissements ex. 5</div>
+    <p>Le quadrilatère MNOP est un agrandissement du quadrilatère IJKL.</p>
+    <p>On donne : IJ = 2 cm, IN = 3 cm et MP = 4,5 cm.</p>
+    <p>1. Sachant que IJ = 2 cm, quel est le rapport de cet agrandissement ?</p>
+    <p>2. Que peut-on dire des droites (PO) et (NO) ?</p>
+    <p>3. Quelle est la longueur IL ?</p>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question 1</div><div class="quiz-q">Sachant que IJ = 2 cm et que MN = 4,5 cm (côté correspondant à IJ), quel est le rapport k de cet agrandissement&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb2q1-A')"><span class="opt-letter">A</span> k = 2</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb2q1-B')"><span class="opt-letter">B</span> k = 2,25</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb2q1-C')"><span class="opt-letter">C</span> k = 3</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb2q1-D')"><span class="opt-letter">D</span> k = 1,5</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb2q1"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question 2</div><div class="quiz-q">Dans un agrandissement, que peut-on dire des droites (PO) et (NO)&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb2q2-A')"><span class="opt-letter">A</span> Elles sont perpendiculaires.</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb2q2-B')"><span class="opt-letter">B</span> Les droites correspondantes dans les deux figures sont parallèles, car les angles sont conservés.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb2q2-C')"><span class="opt-letter">C</span> Elles ont la même longueur.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb2q2-D')"><span class="opt-letter">D</span> On ne peut rien dire sans la figure.</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb2q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question 3</div><div class="quiz-q">Le côté IN = 3 cm correspond au côté IL dans la figure de départ. Sachant que le rapport est k = MN/IJ = 4,5/2, quelle est la longueur IL (côté de la figure de départ correspondant à IN)&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb2q3-A')"><span class="opt-letter">A</span> 2 cm</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb2q3-B')"><span class="opt-letter">B</span> 6 cm</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb2q3-C')"><span class="opt-letter">C</span> <span class="frac"><span class="fnum">4</span><span class="fden">3</span></span> cm ≈ 1,33 cm</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb2q3-D')"><span class="opt-letter">D</span> 3 cm</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb2q3"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'pb1')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('pb2');go(null,'pb3')">Problème suivant →</button>
+  </div>
+</div>
+
+<!-- PB3 : Thalès en pratique -->
+<div class="page" id="page-pb3">
+  <div class="lesson-header">
+    <div class="lesson-tag" style="color:var(--yellow)">Problèmes · Problème 3</div>
+    <h1>📐 Thalès en pratique</h1>
+    <p class="lesson-intro">Un problème combinant théorème de Thalès et réciproque.</p>
+  </div>
+  <div class="callout c-yellow">
+    <div class="c-label">Énoncé – Sésamath Cahier Cycle 4, G2 Série 2, ex. 3 adapté</div>
+    <p>On considère la figure dans laquelle les droites (AB) et (CD) sont parallèles.</p>
+    <p>On donne SA = 3 cm, AB = 4 cm et CD = 5,5 cm.</p>
+    <p>On sait que <em class="var">C</em> est sur [SA] et <em class="var">D</em> est sur [SB], avec SC = 3 cm.</p>
+    <p>1. Calcule la longueur SC. (Vérification : est-ce cohérent avec les données ?)</p>
+    <p>2. Calcule la longueur SB.</p>
+    <p>3. Déduis-en la longueur RB (où R est tel que SR = 5 cm sur [SB]).</p>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question 1</div><div class="quiz-q">Dans le triangle SAB avec (CD) // (AB), C sur [SA] et D sur [SB]. On a SA = 3 cm, SC = 3 cm. Que peut-on dire de la position de C&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb3q1-A')"><span class="opt-letter">A</span> C est le milieu de [SA].</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb3q1-B')"><span class="opt-letter">B</span> C est confondu avec A car SC = SA = 3 cm.</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb3q1-C')"><span class="opt-letter">C</span> C est en dehors du segment [SA].</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb3q1"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question 2</div><div class="quiz-q">Dans le triangle SAB, avec les données corrigées SC/SA = 3/4 et (CD) // (AB). Par Thalès, SD/SB = SC/SA = 3/4. Si SD = 3 cm, quelle est la valeur de SB&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb3q2-A')"><span class="opt-letter">A</span> 3 cm</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb3q2-B')"><span class="opt-letter">B</span> 4 cm</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb3q2-C')"><span class="opt-letter">C</span> 5,5 cm</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb3q2-D')"><span class="opt-letter">D</span> 6 cm</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb3q2"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Question 3</div><div class="quiz-q">On a SA = 3 cm, AB = 4 cm, et par Thalès SC/SA = CD/AB donne SC = SA × CD/AB = 3 × 5,5/4. Quelle est la valeur approchée de SC au dixième&#160;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb3q3-A')"><span class="opt-letter">A</span> 3,8 cm</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb3q3-B')"><span class="opt-letter">B</span> 4,1 cm</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb3q3-C')"><span class="opt-letter">C</span> 4,5 cm</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb3q3-D')"><span class="opt-letter">D</span> 5,0 cm</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb3q3"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'pb2')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('pb3');go(null,'memo')">♥ Mémo →</button>
+  </div>
+</div>
+
+<!-- MÉMO -->
+<div class="page" id="page-memo">
+  <div class="lesson-header">
+    <div class="lesson-tag" style="color:var(--orange)">Mémo · ♥ À connaître par cœur</div>
+    <h1>À connaître par cœur</h1>
+    <p class="lesson-intro">Les définitions, propriétés et théorèmes essentiels du chapitre — à relire régulièrement avant l'évaluation.</p>
+  </div>
+  <div class="section-divider">Rappels – Triangles égaux</div>
+  <div class="callout c-yellow">
+    <div class="c-label">Définition · Triangles égaux</div>
+    <p>Deux triangles sont <strong>égaux</strong> lorsque leurs côtés sont deux à deux de même longueur. On dit aussi qu'ils sont <strong>isométriques</strong>.</p>
+  </div>
+  <div class="section-divider">Partie 1 – Agrandissement – Réduction</div>
+  <div class="callout c-blue">
+    <div class="c-label">Définition · Agrandissement et réduction</div>
+    <p>On appelle agrandissement ou réduction d'une figure, la figure obtenue en multipliant toutes les longueurs de la figure initiale par un nombre strictement positif <em class="var">k</em>.</p>
+    <p>Le nombre <em class="var">k</em> est appelé <strong>rapport d'agrandissement</strong> ou <strong>rapport de réduction</strong>.</p>
+    <p>• Si <em class="var">k</em> &gt; 1, il s'agit d'un <strong>agrandissement</strong>.</p>
+    <p>• Si 0 &lt; <em class="var">k</em> &lt; 1, il s'agit d'une <strong>réduction</strong>.</p>
+  </div>
+  <div class="callout c-blue">
+    <div class="c-label">Propriété (admise) · Angles conservés</div>
+    <p>Dans un agrandissement ou une réduction, les mesures des angles sont conservées.</p>
+  </div>
+  <div class="callout c-blue">
+    <div class="c-label">Propriété (admise) · Aires et volumes</div>
+    <p>Dans un agrandissement ou une réduction de rapport <em class="var">k</em>, l'aire d'une surface est multipliée par <em class="var">k</em>², et le volume d'un solide est multiplié par <em class="var">k</em>³.</p>
+  </div>
+  <div class="section-divider">Partie 2 – Similitude de triangles</div>
+  <div class="callout c-orange">
+    <div class="c-label">Définition · Triangles semblables</div>
+    <p>Deux triangles qui ont des <strong>angles deux à deux égaux</strong> sont dits <strong>semblables</strong>.</p>
+  </div>
+  <div class="callout c-orange">
+    <div class="c-label">Propriétés (admises) · Similitude et proportionnalité</div>
+    <p>• Si deux triangles sont semblables, alors les longueurs des côtés de ces triangles sont proportionnelles.</p>
+    <p>• Si les longueurs des côtés de deux triangles sont proportionnelles, alors ces triangles sont semblables.</p>
+  </div>
+  <div class="section-divider">Partie 3 – Théorème de Thalès</div>
+  <div class="callout c-purple">
+    <div class="c-label">Théorème de Thalès (configuration emboîtée)</div>
+    <p>Soient un triangle ABC, <em class="var">M</em> un point de [AB] et <em class="var">N</em> un point de [AC].</p>
+    <p>Si les droites (BC) et (MN) sont parallèles, alors</p>
+    <div class="formula" style="font-size:1.05rem;margin:0.6rem 0;">
+      <span class="frac"><span class="fnum">AM</span><span class="fden">AB</span></span> = <span class="frac"><span class="fnum">AN</span><span class="fden">AC</span></span> = <span class="frac"><span class="fnum">MN</span><span class="fden">BC</span></span>
+    </div>
+  </div>
+  <div class="callout c-purple">
+    <div class="c-label">Réciproque du théorème de Thalès (configuration emboîtée)</div>
+    <p>Soient un triangle ABC, <em class="var">M</em> un point de [AB] et <em class="var">N</em> un point de [AC].</p>
+    <p>Si <span class="frac"><span class="fnum">AM</span><span class="fden">AB</span></span> = <span class="frac"><span class="fnum">AN</span><span class="fden">AC</span></span>, alors les droites (BC) et (MN) sont parallèles.</p>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'pb3')">← Retour</button>
+    <button class="nav-btn primary" onclick="go(null,'home')">🏠 Sommaire</button>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<script>
+const TOTAL = 14;
+function ang(s){return "<span class='ang'>"+s+"</span>";}
+let done = {};
+
+function saveProgress(){try{localStorage.setItem('ch9_4e_done',JSON.stringify(done));}catch(e){}}
+function loadProgress(){try{const s=localStorage.getItem('ch9_4e_done');if(s)done=JSON.parse(s);}catch(e){}}
+function updateProgress(){
+  const n=Object.keys(done).length;
+  document.getElementById('prog-text').textContent=n+' / '+TOTAL;
+  document.getElementById('prog-fill').style.width=(n/TOTAL*100)+'%';
+  ['p0l1','p0l2','p1l1','p1l2','p1l3','p2l1','p2l2','p2l3','p3l1','p3l2','p3l3','pb1','pb2','pb3'].forEach(id=>{
+    const el=document.getElementById('chk-'+id);
+    if(el)el.textContent=done[id]?'✓':'';
+    const nav=document.querySelector('[data-page="'+id+'"]');
+    if(nav){done[id]?nav.classList.add('done'):nav.classList.remove('done');}
+  });
+}
+function markDone(id){done[id]=true;updateProgress();saveProgress();}
+function resetProgress(){
+  if(!confirm('Remettre la progression à zéro ?'))return;
+  done={};
+  try{localStorage.removeItem('ch9_4e_done');}catch(e){}
+  updateProgress();
+}
+function go(el,target){
+  const t=el?el.dataset.page:target;
+  if(!t)return;
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const page=document.getElementById('page-'+t);
+  if(page){
+    page.classList.add('active');
+    setTimeout(()=>{
+      const main=document.getElementById('main');
+      main.scrollTop=0;window.scrollTo(0,0);
+      document.documentElement.scrollTop=0;document.body.scrollTop=0;
+    },20);
+  }
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  const nav=document.querySelector('[data-page="'+t+'"]');
+  if(nav)nav.classList.add('active');
+  if(window.innerWidth<720)document.getElementById('sidebar').classList.remove('open');
+}
+function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');}
+
+// ── FB object ──
+const FB = {
+  // p0l1
+  "p0l1q2-A":"Exact ! Des triangles égaux ont les mêmes angles deux à deux.",
+  "p0l1q2-B":"Non. Des triangles égaux ont le même rapport k = 1, ce n'est pas un agrandissement (k > 1) ni une réduction (k < 1).",
+  "p0l1q2-C":"Non. Les côtés sont égaux deux à deux, donc proportionnels avec k = 1, mais ils sont bien égaux.",
+  "p0l1q2-D":"Non. Deux triangles égaux ont la même aire.",
+  "p0l1q3-A":"Non. Le critère CAC suffit ici.",
+  "p0l1q3-B":"Exact ! Le critère CAC s'applique : AB = A'B' = 5 cm, BC = B'C' = 4 cm, et les angles en B sont égaux (65°).",
+  "p0l1q3-C":"Non. Le critère CAC est bien côté-angle-côté : deux côtés égaux entourent un angle de même mesure.",
+  "p0l1q3-D":"Non. Le critère CAC ne demande pas le troisième côté.",
+  "p0l1q4-A":"Non. Des triangles qui ont les mêmes angles peuvent avoir des tailles différentes.",
+  "p0l1q4-B":"Exact ! Des triangles semblables ont des angles égaux mais pas forcément les mêmes côtés.",
+  // p0l2
+  "p0l2b-A":"Non. '+ang('ABC')+' = '+ang('ACB')+' = 35° (triangle isocèle en A). Cherche '+ang('BAC')+' = 180° − 35° − 35°.",
+  "p0l2b-B":"Non. 70° serait '+ang('ABC')+' + '+ang('ACB')+'. '+ang('BAC')+' = 180° − 35° − 35° = 110°.",
+  "p0l2b-C":"Exact ! '+ang('BAC')+' = 180° − 35° − 35° = 110°.",
+  "p0l2b-D":"Non. '+ang('BAC')+' = 180° − 35° − 35° = 110°, pas 145°.",
+  "p0l2d-A":"Non. L'ordre des lettres importe pour nommer le triangle, mais pas pour vérifier l'égalité.",
+  "p0l2d-B":"Exact ! AB = DE = 7 cm, BC = DF = 9 cm, AC = EF = 11 cm. Critère CCC, les triangles sont égaux.",
+  "p0l2d-C":"Non. La définition exige que les côtés soient deux à deux de même longueur, pas dans un ordre imposé.",
+  "p0l2d-D":"Non. Le critère CCC (trois côtés égaux) suffit pour conclure.",
+  // p1l1
+  "p1l1q3-A":"Non. Les longueurs sont multipliées par k, mais les angles sont conservés.",
+  "p1l1q3-B":"Non. Les angles ne sont jamais divisés.",
+  "p1l1q3-C":"Exact ! Dans tout agrandissement ou réduction, les angles sont conservés.",
+  "p1l1q3-D":"Non. k² s'applique aux aires, pas aux angles.",
+  // p1l2
+  "p1l2q3-A":"Non. 0,5 c'est le rapport sur les longueurs. L'aire est multipliée par k² = 0,5² = 0,25.",
+  "p1l2q3-B":"Exact ! L'aire est multipliée par k² = (0,5)² = 0,25. Donc 36 × 0,25 = 9 cm².",
+  "p1l2q3-C":"Non. 0,125 c'est k³, le facteur pour les volumes.",
+  "p1l2q3-D":"Non. La figure est réduite (k < 1), son aire diminue.",
+  "p1l2q4-A":"Non. 24 = 3 × 8, ce serait le facteur k = 3 sur le volume — mais il faut k³.",
+  "p1l2q4-B":"Non. 72 = 9 × 8 = k² × V. On a multiplié par k², pas par k³.",
+  "p1l2q4-C":"Exact ! k³ × V = 3³ × 8 = 27 × 8 = 216 cm³.",
+  "p1l2q4-D":"Non. 512 = 8³ = 2³ × 64, ce n'est pas le bon calcul ici.",
+  // p1l3
+  "p1l3d-A":"Non. Les angles ne se divisent pas par k.",
+  "p1l3d-B":"Exact ! Les angles sont toujours conservés dans un agrandissement ou une réduction.",
+  "p1l3d-C":"Non. Les angles ne se multiplient pas par k.",
+  "p1l3d-D":"Non. Rien n'indique un angle droit ici.",
+  // p2l1
+  "p2l1q2-A":"Non. Il suffit de deux paires, la troisième est automatiquement égale grâce à la somme des angles.",
+  "p2l1q2-B":"Exact ! Avec deux paires d'angles égaux, on déduit la troisième par 180° − α − β.",
+  "p2l1q2-C":"Non. Une seule paire ne suffit pas.",
+  "p2l1q2-D":"Non. Pour la similitude, seuls les angles comptent — pas les côtés.",
+  "p2l1q4-A":"Exact ! Deux triangles égaux ont les mêmes côtés, donc les mêmes angles, donc ils sont semblables.",
+  "p2l1q4-B":"Non. Triangles égaux ⟹ mêmes côtés ⟹ mêmes angles ⟹ semblables.",
+  // p2l2
+  "p2l2q2-A":"Non. 2,5 = 5/2, ce serait la longueur de la figure réduite, pas agrandie.",
+  "p2l2q2-B":"Exact ! DE = k × AB = 2 × 5 = 10 cm.",
+  "p2l2q2-C":"Non. 7 ≠ 2 × 5.",
+  "p2l2q2-D":"Non. 25 = 5², ce n'est pas le bon calcul.",
+  "p2l2q3-A":"Exact ! Les côtés rangés dans l'ordre sont proportionnels avec k = 2.",
+  "p2l2q3-B":"Non. Des côtés proportionnels (pas égaux) suffisent pour conclure à la similitude.",
+  "p2l2q3-C":"Non. La proportionnalité des côtés suffit pour conclure que les triangles sont semblables.",
+  // p2l3
+  "p2l3b-A":"Exact ! '+ang('BAC')+' = '+ang('AHB')+' = 90° et '+ang('ABC')+' est commun. Deux paires d'angles égaux suffisent.",
+  "p2l3b-B":"Non. Partager un côté ne suffit pas pour conclure à la similitude.",
+  "p2l3b-C":"Non. Deux triangles rectangles ne sont semblables que s'ils ont un autre angle en commun.",
+  "p2l3b-D":"Non. Le périmètre n'intervient pas dans la similitude.",
+  "p2l3d-A":"Non. 33,6 = 4 × 8,4 — tu as multiplié au lieu de diviser.",
+  "p2l3d-B":"Exact ! MO = (1/4) × LE = (1/4) × 8,4 = 2,1 cm.",
+  "p2l3d-C":"Non. 4,2 = (1/2) × 8,4. Le rapport est 1/4, pas 1/2.",
+  "p2l3d-D":"Non. k = 1/4 donc MO = LE/4 = 2,1 cm.",
+  // p3l1
+  "p3l1q3-A":"Non. AM/AB = 6/9 = 2/3 et AN/AC = 8/AC. Il faut AC = 8 ÷ (2/3) = 12.",
+  "p3l1q3-B":"Exact ! AM/AB = 6/9 = 2/3 = AN/AC, donc AC = 8 × 3/2 = 12.",
+  "p3l1q3-C":"Non. 11 ≠ 8 ÷ (6/9) = 12.",
+  "p3l1q3-D":"Non. 6 serait AN lui-même.",
+  // p3l2
+  "p3l2q2-A":"Exact ! AM/AB = 4/6 = 2/3 et AN/AC = 6/9 = 2/3. Les rapports sont égaux ⟹ (MN) // (BC).",
+  "p3l2q2-B":"Non. Ce n'est pas AM vs AN qu'on compare, mais les rapports AM/AB et AN/AC.",
+  "p3l2q2-C":"Non. La réciproque de Thalès ne nécessite pas de connaître MN.",
+  "p3l2q4-A":"Non. Ce ne sont pas les bons rapports pour la réciproque.",
+  "p3l2q4-B":"Exact ! La réciproque compare AM/AB et AN/AC.",
+  "p3l2q4-C":"Non. Les rapports AM/MN et AN/BC ne correspondent pas à la réciproque de Thalès.",
+  "p3l2q4-D":"Non. MB/AB et NC/AC ne sont pas les bons rapports.",
+  // p3l3
+  "p3l3d-A":"Exact ! AM/AB = 3/5 = 0,6 et AN/AC = 4,8/8 = 0,6. Les rapports sont égaux donc (MN) // (BC).",
+  "p3l3d-B":"Non. Ce n'est pas AM et AN qu'on compare directement, mais AM/AB et AN/AC.",
+  "p3l3d-C":"Non. La réciproque ne demande pas MN.",
+  // pb1
+  "pb1q1-A":"Non. 5 km serait k = 5 000 × 1 m. La longueur de la maquette est 1,60 m.",
+  "pb1q1-B":"Exact ! L = k × L_maquette = 5 000 × 1,60 m = 8 000 m = 8 km.",
+  "pb1q1-C":"Non. 800 m = 0,8 km ≠ 8 km.",
+  "pb1q1-D":"Non. 0,8 km = 800 m ≠ 8 000 m.",
+  "pb1q2-A":"Non. Pour les aires, on multiplie par k², pas par k.",
+  "pb1q2-B":"Exact ! A = k² × A_maquette = (5 000)² × 80 dm² = 25 000 000 × 80 dm² = 2 × 10⁹ dm². Or 1 km² = 10¹⁰ dm², donc A = 20 km².",
+  "pb1q2-C":"Non. La conversion est incorrecte. 2 × 10⁹ dm² = 20 km², pas 2 km².",
+  "pb1q2-D":"Non. k³ s'applique aux volumes, pas aux aires.",
+  "pb1q3-A":"Non. V = k³ × V_maquette = (5 000)³ × 5 L. Calcule (5 000)³ × 5 L en m³.",
+  "pb1q3-B":"Exact ! V = (5 000)³ × 5 L = 1,25 × 10¹¹ L = 1,25 × 10¹¹ ÷ 1 000 m³ = 1,25 × 10⁸ m³ = 625 000 000 m³.",
+  "pb1q3-C":"Non. Le calcul donne bien 625 000 000 m³.",
+  "pb1q3-D":"Non. On ne peut pas juste multiplier par k.",
+  // pb2
+  "pb2q1-A":"Non. k = MN/IJ = 4,5/2 = 2,25, pas 2.",
+  "pb2q1-B":"Exact ! k = MN/IJ = 4,5/2 = 2,25.",
+  "pb2q1-C":"Non. k = 4,5/2 = 2,25, pas 3.",
+  "pb2q1-D":"Non. k = 4,5/2 = 2,25, pas 1,5.",
+  "pb2q2-A":"Non. La conservation porte sur les angles, pas sur la perpendicularité.",
+  "pb2q2-B":"Exact ! Dans un agrandissement, les angles sont conservés, donc les directions (droites) correspondantes sont parallèles.",
+  "pb2q2-C":"Non. Les longueurs sont proportionnelles (multipliées par k), pas égales.",
+  "pb2q2-D":"Non. La conservation des angles est une propriété générale des agrandissements/réductions.",
+  "pb2q3-A":"Non. 2 cm serait IJ.",
+  "pb2q3-B":"Non. 6 serait IN × k = 3 × 2 — c'est la longueur dans la figure agrandie.",
+  "pb2q3-C":"Exact ! IL = IN/k = 3/2,25 = 4/3 ≈ 1,33 cm.",
+  "pb2q3-D":"Non. IN est déjà donné = 3 cm. IL = IN/k.",
+  // pb3
+  "pb3q1-A":"Non. SC = SA = 3 cm donc C est en A, pas au milieu.",
+  "pb3q1-B":"Exact ! Si SC = SA = 3 cm, alors C est confondu avec A, ce qui est incohérent avec la configuration. Cela signifie qu'il y a probablement une erreur dans les données de départ.",
+  "pb3q1-C":"Non. SC ≤ SA pour que C soit dans le segment [SA].",
+  "pb3q2-A":"Non. SD = 3 cm est donné, mais SB est à calculer.",
+  "pb3q2-B":"Exact ! SD/SB = SC/SA = 3/4, donc SB = SD × SA/SC = 3 × 4/3 = 4 cm.",
+  "pb3q2-C":"Non. 5,5 = CD, pas SB.",
+  "pb3q2-D":"Non. Vérifie le calcul SB = SD × SA/SC.",
+  "pb3q3-A":"Non. SC = 3 × 5,5/4 = 16,5/4 = 4,125 ≈ 4,1 cm.",
+  "pb3q3-B":"Exact ! SC = SA × CD/AB = 3 × 5,5/4 = 4,125 ≈ 4,1 cm (arrondi au dixième).",
+  "pb3q3-C":"Non. 4,5 = (4 + 5)/2, ce n'est pas le calcul correct.",
+  "pb3q3-D":"Non. 5,0 ≠ 4,125.",
+};
+
+function answer(btn,correct,fbKey){
+  const quiz=btn.closest('.quiz');
+  quiz.querySelectorAll('.quiz-opt').forEach(o=>{o.disabled=true;o.style.cursor='default';});
+  btn.classList.add(correct?'correct':'wrong');
+  const fb=quiz.querySelector('[id^="qfb-"]');
+  if(fb){
+    const text=FB[fbKey]||fbKey;
+    fb.className='quiz-feedback show '+(correct?'ok':'ko');
+    fb.innerHTML=(correct?'✓ ':'✗ ')+text+(correct?'':'<button class="retry-btn" onclick="retryQuiz(this)">↺ Réessayer</button>');
+  }
+}
+function retryQuiz(btn){
+  const quiz=btn.closest('.quiz');
+  quiz.querySelectorAll('.quiz-opt').forEach(o=>{o.disabled=false;o.style.cursor='pointer';o.classList.remove('correct','wrong');});
+  const fb=quiz.querySelector('[id^="qfb-"]');
+  if(fb){fb.className='quiz-feedback';fb.innerHTML='';}
+}
+
+// ── RANDOMISATION ──
+function rInt(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
+function shuffle(arr){let a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function fH(n,d){return '<span class="frac"><span class="fnum">'+n+'</span><span class="fden">'+d+'</span></span>';}
+function uniqueOpts(correct,candidates,fallbackStart){
+  const used=new Set([correct]);const result=[];
+  for(const c of candidates){if(!used.has(c)){used.add(c);result.push(c);}}
+  let fb=fallbackStart!==undefined?fallbackStart:correct+10;
+  while(result.length<3){if(!used.has(fb)){used.add(fb);result.push(fb);}fb++;}
+  return result;
+}
+function placeQuiz(qid,qHtml,opts){
+  const qq=document.getElementById('qq-'+qid);
+  const qo=document.getElementById('qo-'+qid);
+  if(!qq||!qo)return;
+  qq.innerHTML=qHtml;qo.innerHTML='';
+  'ABCDE'.split('').slice(0,opts.length).forEach((l,i)=>{
+    const btn=document.createElement('button');
+    btn.className='quiz-opt';
+    btn.innerHTML='<span class="opt-letter">'+l+'</span> '+opts[i].html;
+    const key='rq-'+qid+'-'+l;
+    FB[key]=opts[i].fb;
+    btn.onclick=function(){answer(this,opts[i].correct,key);};
+    qo.appendChild(btn);
+  });
+}
+
+// ── OUTIL RAPPORT K ──
+function doRapportK(){
+  // Arrondi au dixième pour éviter les artefacts flottants
+  const orig=Math.round(parseFloat(document.getElementById('k-orig').value)*10)||10;
+  const img =Math.round(parseFloat(document.getElementById('k-image').value)*10)||10;
+  // orig et img sont maintenant des entiers (×10)
+  function gcdInt(a,b){a=Math.abs(a);b=Math.abs(b);while(b){var t=b;b=a%b;a=t;}return a;}
+  const g=gcdInt(img,orig);
+  const num=img/g, den=orig/g;
+  // Fraction simplifiée : num/den
+  // Est-elle décimale ? → den = 2^a × 5^b uniquement
+  function isDecimalDen(d){while(d%2===0)d/=2;while(d%5===0)d/=5;return d===1;}
+  const origStr=(orig/10).toString().replace('.',',');
+  const imgStr =(img/10).toString().replace('.',',');
+  const type=img>orig?'agrandissement':img<orig?'réduction':'conservation (k = 1)';
+  let kStr;
+  if(den===1){
+    kStr=String(num);
+  } else if(isDecimalDen(den)){
+    // Fraction décimale : afficher la valeur exacte
+    const dec=(num/den);
+    kStr=String(num)+'/'+String(den)+' = '+dec.toString().replace('.',',');
+  } else {
+    // Fraction non décimale : afficher uniquement la fraction
+    kStr=String(num)+'/'+String(den)+' (fraction non décimale)';
+  }
+  document.getElementById('k-result').textContent='k = '+imgStr+' ÷ '+origStr+' = '+kStr+' → '+type;
+}
+
+// ══ P0L1 ══
+function initP0L1(){
+  const angles=[25,30,35,40,45,50,55,60];
+  const a=angles[rInt(0,7)];
+  const b=angles[rInt(0,7)];
+  while(a+b>=180){}
+  const a2=angles[rInt(0,7)];
+  const b2=a;
+  placeQuiz('p0l1','Le triangle ABC a '+ang("A")+' = '+a+'° et '+ang("B")+' = '+b+'°. Quelle est la mesure de '+ang("C")+'&#160;?',shuffle([
+    {html:String(180-a-b)+'°',correct:true,fb:'Exact ! '+ang("C")+' = 180° − '+a+'° − '+b+'° = '+(180-a-b)+'°.'},
+    {html:String(180-a-b+10)+'°',correct:false,fb:'Non. La somme des angles vaut 180°. '+ang("C")+' = 180° − '+a+'° − '+b+'°.'},
+    {html:String(a+b)+'°',correct:false,fb:'Non. Ce serait '+ang("A")+' + '+ang("B")+', pas '+ang("C")+'.'},
+    {html:String(180-a-b-10)+'°',correct:false,fb:'Non. '+ang("C")+' = 180° − '+a+'° − '+b+'° = '+(180-a-b)+'°.'},
+  ]));
+}
+
+// ══ P0L2 ══
+function initP0L2(){
+  // Ex1 : côtés d'un triangle, lequel est constructible
+  (function(){
+    const a=rInt(3,7);const b=rInt(3,7);const c=a+b-1;
+    placeQuiz('p0l2a','Peut-on construire un triangle avec les côtés '+a+' cm, '+b+' cm et '+(a+b)+' cm&#160;?',shuffle([
+      {html:'Non, car '+(a+b)+' = '+a+' + '+b+' : le plus grand côté n\'est pas strictement inférieur à la somme des deux autres.',correct:true,fb:'Exact ! Un triangle est constructible si chaque côté est strictement inférieur à la somme des deux autres.'},
+      {html:'Oui, car les côtés sont des entiers.',correct:false,fb:'Non. Il faut vérifier l\'inégalité triangulaire : chaque côté doit être strictement inférieur à la somme des deux autres.'},
+      {html:'Oui, car '+(a+b)+' &gt; '+a+' et '+(a+b)+' &gt; '+b+'.',correct:false,fb:'Non. Il faut que le plus grand côté soit strictement inférieur (pas seulement inférieur ou égal) à la somme des deux autres.'},
+    ]));
+  })();
+  // Ex3 : critère ACA
+  (function(){
+    const alpha=rInt(30,60);const beta=rInt(30,60);
+    const gamma=180-alpha-beta;
+    placeQuiz('p0l2c','Deux triangles ABC et DEF ont BC = EF = 6 cm, '+ang("ABC")+' = '+ang("DEF")+' = '+alpha+'° et '+ang("ACB")+' = '+ang("DFE")+' = '+beta+'°. Quel critère justifie qu\'ils sont égaux&#160;?',shuffle([
+      {html:'Critère ACA : côté [BC] = [EF] compris entre deux angles de même mesure.',correct:true,fb:'Exact ! [BC] est entre '+ang("ABC")+' = '+ang("DEF")+' et '+ang("ACB")+' = '+ang("DFE")+'. Critère ACA.'},
+      {html:'Critère CCC : trois côtés égaux.',correct:false,fb:'Non. On ne connaît qu\'un côté, pas les trois.'},
+      {html:'Critère CAC : angle compris entre deux côtés de même longueur.',correct:false,fb:'Non. CAC nécessite deux côtés égaux encadrant un angle — ici on a un côté et deux angles.'},
+    ]));
+  })();
+}
+
+// ══ P1L1 ══
+function initP1L1(){
+  (function(){
+    const vals=[{k:0.5,t:'réduction'},{k:2,t:'agrandissement'},{k:1,t:'conservation'},{k:3,t:'agrandissement'},{k:0.25,t:'réduction'}];
+    const v=vals[rInt(0,4)];
+    const kStr=v.k.toString().replace('.',',');
+    placeQuiz('p1l1','On effectue une transformation de rapport k = '+kStr+'. De quel type de transformation s\'agit-il&#160;?',shuffle([
+      {html:v.t,correct:true,fb:'Exact ! k = '+kStr+(v.k>1?' > 1 : agrandissement':v.k<1?' < 1 : réduction':' = 1 : conservation')+'.'},
+      {html:v.t==='agrandissement'?'réduction':v.t==='réduction'?'agrandissement':'agrandissement',correct:false,fb:'Non. Vérifie la valeur de k par rapport à 1.'},
+      {html:'rotation',correct:false,fb:'Non. Un rapport k agrandit ou réduit une figure, ce n\'est pas une rotation.'},
+    ]));
+  })();
+  (function(){
+    const L=rInt(3,12);
+    const kvals=[1.5,2,2.5,3,0.5];
+    const k=kvals[rInt(0,4)];
+    const res=L*k;
+    const [w1,w2]=uniqueOpts(res,[res+1,res-1,res+2,L],res+5);
+    const kStr=k.toString().replace('.',',');
+    const resStr=res.toString().replace('.',',');
+    placeQuiz('p1l1q2','Un segment mesure '+L+' cm. Après un agrandissement/réduction de rapport k = '+kStr+', sa nouvelle longueur est&#160;:',shuffle([
+      {html:resStr+' cm',correct:true,fb:'Exact ! '+L+' × '+kStr+' = '+resStr+' cm.'},
+      {html:w1.toString().replace('.',',')+' cm',correct:false,fb:'Non. On multiplie la longueur par k : '+L+' × '+kStr+' = '+resStr+' cm.'},
+      {html:w2.toString().replace('.',',')+' cm',correct:false,fb:'Non. On multiplie la longueur par k : '+L+' × '+kStr+' = '+resStr+' cm.'},
+    ]));
+  })();
+  (function(){
+    const L=rInt(4,12);const k=rInt(2,5);
+    const newL=L*k;
+    placeQuiz('p1l1q4','Un côté mesure '+L+' cm. Après un agrandissement de rapport k = '+k+', le périmètre d\'un triangle équilatéral est multiplié par&#160;:',shuffle([
+      {html:String(k),correct:true,fb:'Exact ! Le périmètre est une longueur : il est multiplié par k = '+k+'.'},
+      {html:String(k*k),correct:false,fb:'Non. k² s\'applique aux aires, pas aux longueurs. Le périmètre est multiplié par k = '+k+'.'},
+      {html:String(k*k*k),correct:false,fb:'Non. k³ s\'applique aux volumes. Le périmètre est multiplié par k = '+k+'.'},
+    ]));
+  })();
+}
+
+// ══ P1L2 ══
+function initP1L2(){
+  (function(){
+    const A=rInt(4,15);const k=rInt(2,4);
+    const newA=A*k*k;
+    const [w1,w2]=uniqueOpts(newA,[A*k,A*k*k*k],newA+5);
+    placeQuiz('p1l2','Une figure a une aire de '+A+' cm². Après un agrandissement de rapport k = '+k+', son aire vaut&#160;:',shuffle([
+      {html:newA+' cm²',correct:true,fb:'Exact ! Aire × k² = '+A+' × '+k+'² = '+A+' × '+k*k+' = '+newA+' cm².'},
+      {html:w1+' cm²',correct:false,fb:'Non. L\'aire est multipliée par k², pas par k. '+A+' × '+k*k+' = '+newA+' cm².'},
+      {html:w2+' cm²',correct:false,fb:'Non. L\'aire est multipliée par k², pas par k³. '+A+' × '+k*k+' = '+newA+' cm².'},
+    ]));
+  })();
+  (function(){
+    const V=rInt(2,8);const k=rInt(2,3);
+    const newV=V*k*k*k;
+    const [w1,w2]=uniqueOpts(newV,[V*k,V*k*k],newV+10);
+    placeQuiz('p1l2q2','Un solide a un volume de '+V+' cm³. Après un agrandissement de rapport k = '+k+', son volume vaut&#160;:',shuffle([
+      {html:newV+' cm³',correct:true,fb:'Exact ! Volume × k³ = '+V+' × '+k+'³ = '+V+' × '+(k*k*k)+' = '+newV+' cm³.'},
+      {html:w1+' cm³',correct:false,fb:'Non. Le volume est multiplié par k³, pas par k. '+V+' × '+(k*k*k)+' = '+newV+' cm³.'},
+      {html:w2+' cm³',correct:false,fb:'Non. Le volume est multiplié par k³, pas par k². '+V+' × '+(k*k*k)+' = '+newV+' cm³.'},
+    ]));
+  })();
+}
+
+// ══ P1L3 ══
+function initP1L3(){
+  (function(){
+    const L=rInt(3,10);const k=rInt(2,5);
+    const newL=L*k;
+    const [w1,w2]=uniqueOpts(newL,[newL+1,newL-1,newL+2],newL+5);
+    placeQuiz('p1l3a','Un segment AB mesure '+L+' cm. Dans un agrandissement de rapport k = '+k+', sa longueur image A\'B\' vaut&#160;:',shuffle([
+      {html:newL+' cm',correct:true,fb:'Exact ! A\'B\' = k × AB = '+k+' × '+L+' = '+newL+' cm.'},
+      {html:w1+' cm',correct:false,fb:'Non. A\'B\' = k × AB = '+k+' × '+L+' = '+newL+' cm.'},
+      {html:w2+' cm',correct:false,fb:'Non. A\'B\' = k × AB = '+k+' × '+L+' = '+newL+' cm.'},
+    ]));
+  })();
+  (function(){
+    const A=rInt(10,30);const k=2;
+    const newA=A*k*k;
+    const [w1,w2]=uniqueOpts(newA,[A*k,newA+5,newA-5],newA+10);
+    placeQuiz('p1l3b','Une figure de départ a une aire de '+A+' cm². Son agrandissement de rapport k = '+k+' a une aire de&#160;:',shuffle([
+      {html:newA+' cm²',correct:true,fb:'Exact ! '+A+' × k² = '+A+' × 4 = '+newA+' cm².'},
+      {html:w1+' cm²',correct:false,fb:'Non. L\'aire est multipliée par k², pas par k. '+A+' × 4 = '+newA+' cm².'},
+      {html:w2+' cm²',correct:false,fb:'Non. Aire × k² = '+A+' × 4 = '+newA+' cm².'},
+    ]));
+  })();
+  (function(){
+    const V=rInt(5,15);const k=3;
+    const newV=V*k*k*k;
+    const [w1,w2]=uniqueOpts(newV,[V*k,V*k*k],newV+10);
+    placeQuiz('p1l3c','Un solide a un volume de '+V+' cm³. Après un agrandissement de rapport k = '+k+', son volume vaut&#160;:',shuffle([
+      {html:newV+' cm³',correct:true,fb:'Exact ! '+V+' × k³ = '+V+' × 27 = '+newV+' cm³.'},
+      {html:w1+' cm³',correct:false,fb:'Non. Le volume est multiplié par k³ = 27. '+V+' × 27 = '+newV+' cm³.'},
+      {html:w2+' cm³',correct:false,fb:'Non. k² est pour les aires, k³ pour les volumes. '+V+' × 27 = '+newV+' cm³.'},
+    ]));
+  })();
+}
+
+// ══ P2L1 ══
+function initP2L1(){
+  (function(){
+    const a=rInt(30,60);const b=rInt(30,60);
+    while(a+b>=180){}
+    const c=180-a-b;
+    placeQuiz('p2l1','Les triangles ABC et DEF ont '+ang("A")+' = '+ang("D")+' = '+a+'° et '+ang("B")+' = '+ang("E")+' = '+b+'°. Quelle est la mesure de '+ang("C")+'&#160;?',shuffle([
+      {html:c+'°',correct:true,fb:'Exact ! '+ang("C")+' = 180° − '+a+'° − '+b+'° = '+c+'°. Ils sont semblables.'},
+      {html:(c+5)+'°',correct:false,fb:'Non. '+ang("C")+' = 180° − '+a+'° − '+b+'° = '+c+'°.'},
+      {html:(c-5)+'°',correct:false,fb:'Non. '+ang("C")+' = 180° − '+a+'° − '+b+'° = '+c+'°.'},
+    ]));
+  })();
+  (function(){
+    const a=rInt(25,55);const b=rInt(25,55);
+    while(a+b>=180){}
+    placeQuiz('p2l1q3','Deux triangles ont deux paires d\'angles égaux : '+a+'° = '+a+'° et '+b+'° = '+b+'°. Les troisièmes angles mesurent&#160;:',shuffle([
+      {html:(180-a-b)+'° dans les deux triangles',correct:true,fb:'Exact ! 180° − '+a+'° − '+b+'° = '+(180-a-b)+'°. Les deux triangles sont semblables.'},
+      {html:(180-a-b+5)+'° et '+(180-a-b-5)+'°',correct:false,fb:'Non. Les deux troisièmes angles se calculent chacun par 180° − '+a+'° − '+b+'° = '+(180-a-b)+'°.'},
+      {html:'On ne peut pas déterminer le troisième angle.',correct:false,fb:'Non. La somme des angles est 180°, donc le troisième vaut 180° − '+a+'° − '+b+'° = '+(180-a-b)+'°.'},
+    ]));
+  })();
+}
+
+// ══ P2L2 ══
+function initP2L2(){
+  (function(){
+    const k=rInt(2,5);
+    const a=rInt(3,8);const b=rInt(3,8);const c=rInt(3,8);
+    const a2=a*k;const b2=b*k;const c2=c*k;
+    placeQuiz('p2l2','Un triangle a les côtés '+a+', '+b+' et '+c+' cm. Un second triangle a les côtés '+a2+', '+b2+' et '+c2+' cm. Quel est le rapport de similitude k (du petit vers le grand)&#160;?',shuffle([
+      {html:String(k),correct:true,fb:'Exact ! '+a2+'/'+a+' = '+b2+'/'+b+' = '+c2+'/'+c+' = '+k+'.'},
+      {html:String(k+1),correct:false,fb:'Non. Calcule le rapport '+a2+'/'+a+' = '+(a2/a)+'.'},
+      {html:String(k-1)||'0,5',correct:false,fb:'Non. Calcule '+a2+'/'+a+' = '+k+'.'},
+    ]));
+  })();
+  (function(){
+    const k=[1.5,2,2.5,3][rInt(0,3)];
+    const ab=rInt(4,9);const ac=rInt(4,9);
+    const ab2=Math.round(ab*k*10)/10;const ac2=Math.round(ac*k*10)/10;
+    const bc=rInt(3,7);
+    const bc2=Math.round(bc*k*10)/10;
+    placeQuiz('p2l2q4','Les triangles ABC et A\'B\'C\' sont semblables. AB = '+ab+' cm, A\'B\' = '+ab2.toString().replace('.',',')+' cm, AC = '+ac+' cm. Quelle est la longueur A\'C\'&#160;?',shuffle([
+      {html:(ac2).toString().replace('.',',')+' cm',correct:true,fb:'Exact ! A\'C\' = AC × k = '+ac+' × '+k.toString().replace('.',',')+' = '+(ac2).toString().replace('.',',')+' cm.'},
+      {html:(ac2+1).toString().replace('.',',')+' cm',correct:false,fb:'Non. A\'C\' = AC × k = '+ac+' × '+k.toString().replace('.',',')+' = '+(ac2).toString().replace('.',',')+' cm.'},
+      {html:(ac2-1).toString().replace('.',',')+' cm',correct:false,fb:'Non. A\'C\' = AC × (A\'B\'/AB) = '+ac+' × '+k.toString().replace('.',',')+' = '+(ac2).toString().replace('.',',')+' cm.'},
+    ]));
+  })();
+}
+
+// ══ P2L3 ══
+function initP2L3(){
+  (function(){
+    const k=[2,3,4][rInt(0,2)];
+    const a=rInt(3,7);const b=rInt(3,7);const c=rInt(3,7);
+    placeQuiz('p2l3a','Un triangle a les côtés '+a+' cm, '+b+' cm, '+c+' cm. Un autre a les côtés '+(a*k)+' cm, '+(b*k)+' cm, '+(c*k)+' cm. Ces triangles sont-ils semblables&#160;?',shuffle([
+      {html:'Oui : '+(a*k)+'/'+a+' = '+(b*k)+'/'+b+' = '+(c*k)+'/'+c+' = '+k+'. Leurs côtés sont proportionnels.',correct:true,fb:'Exact ! Les côtés sont proportionnels de rapport k = '+k+'.'},
+      {html:'Non : leurs côtés ne sont pas égaux deux à deux.',correct:false,fb:'Non. Pour la similitude, il suffit que les côtés soient proportionnels, pas nécessairement égaux.'},
+      {html:'On ne peut pas conclure sans connaître les angles.',correct:false,fb:'Non. La proportionnalité des côtés suffit pour conclure à la similitude.'},
+    ]));
+  })();
+  (function(){
+    const k=[2,3][rInt(0,1)];
+    const ab=rInt(3,6);const ac=rInt(3,6);
+    const ab2=ab*k;const ac2=ac*k;
+    const bc=rInt(3,6);
+    const bc2=bc*k;
+    placeQuiz('p2l3c','Les triangles ABC et A\'B\'C\' sont semblables. A\'B\' = '+ab2+' cm, AB = '+ab+' cm, A\'C\' = '+ac2+' cm. Quelle est la longueur AC&#160;?',shuffle([
+      {html:ac+' cm',correct:true,fb:'Exact ! AC = A\'C\'/k = '+ac2+'/'+k+' = '+ac+' cm.'},
+      {html:(ac2)+' cm',correct:false,fb:'Non. '+ac2+' c\'est A\'C\'. AC = A\'C\'/k = '+ac2+'/'+k+' = '+ac+' cm.'},
+      {html:(ac+1)+' cm',correct:false,fb:'Non. AC = A\'C\'/(A\'B\'/AB) = '+ac2+'/'+k+' = '+ac+' cm.'},
+    ]));
+  })();
+}
+
+// ══ P3L1 ══
+function initP3L1(){
+  (function(){
+    const am=rInt(3,6);const ab=rInt(am+2,am+6);
+    const an=rInt(3,6);
+    const ac=Math.round(an*ab/am);
+    const mn=rInt(2,5);const bc=Math.round(mn*ab/am);
+    placeQuiz('p3l1','Dans le triangle ABC, M ∈ [AB] et N ∈ [AC] avec (MN) // (BC). AM = '+am+', AB = '+ab+', AN = '+an+'. Que vaut AC&#160;?',shuffle([
+      {html:String(ac),correct:true,fb:'Exact ! AM/AB = AN/AC ⟹ AC = AN × AB/AM = '+an+' × '+ab+'/'+am+' = '+ac+'.'},
+      {html:String(ac+1),correct:false,fb:'Non. AC = AN × AB/AM = '+an+' × '+ab+'/'+am+' = '+ac+'.'},
+      {html:String(ac-1),correct:false,fb:'Non. AC = AN × AB/AM = '+an+' × '+ab+'/'+am+' = '+ac+'.'},
+      {html:String(ac+2),correct:false,fb:'Non. AC = AN × AB/AM = '+an+' × '+ab+'/'+am+' = '+ac+'.'},
+    ]));
+  })();
+  (function(){
+    const am=rInt(2,5);const mb=rInt(2,5);const ab=am+mb;
+    const an=rInt(2,5);const ac=Math.round(an*ab/am);const nc=ac-an;
+    placeQuiz('p3l1q2','Dans le triangle ABC, (MN) // (BC) avec M ∈ [AB] et N ∈ [AC]. AM = '+am+', MB = '+mb+'. Quel est le rapport AM/AB&#160;?',shuffle([
+      {html:fH(am,ab),correct:true,fb:'Exact ! AB = AM + MB = '+am+' + '+mb+' = '+ab+'. Donc AM/AB = '+am+'/'+ab+'.'},
+      {html:fH(am,mb),correct:false,fb:'Non. AM/AB = '+am+'/('+am+'+'+mb+') = '+am+'/'+ab+', pas '+am+'/'+mb+'.'},
+      {html:fH(mb,ab),correct:false,fb:'Non. C\'est MB/AB, pas AM/AB. AM/AB = '+am+'/'+ab+'.'},
+    ]));
+  })();
+  (function(){
+    const am=rInt(2,4);const ab=am*rInt(2,4);
+    const mn=rInt(2,5);const bc=Math.round(mn*ab/am);
+    placeQuiz('p3l1q4','Dans le triangle ABC, (MN) // (BC), AM = '+am+', AB = '+ab+', MN = '+mn+'. Que vaut BC&#160;?',shuffle([
+      {html:String(bc),correct:true,fb:'Exact ! MN/BC = AM/AB ⟹ BC = MN × AB/AM = '+mn+' × '+ab+'/'+am+' = '+bc+'.'},
+      {html:String(bc+1),correct:false,fb:'Non. BC = MN × AB/AM = '+mn+' × '+ab+'/'+am+' = '+bc+'.'},
+      {html:String(bc-1),correct:false,fb:'Non. BC = MN × AB/AM = '+mn+' × '+ab+'/'+am+' = '+bc+'.'},
+    ]));
+  })();
+}
+
+// ══ P3L2 ══
+function initP3L2(){
+  (function(){
+    const am=rInt(2,5);const ab=am*rInt(2,4);
+    const an=rInt(2,5);const ac=an*ab/am;
+    const ok=Number.isInteger(ac);
+    const ra=am/ab;const rb=an/(ok?ac:Math.round(ac));
+    const equal=(Math.abs(ra-rb)<0.001);
+    placeQuiz('p3l2','Dans le triangle ABC, M ∈ [AB] et N ∈ [AC]. AM = '+am+', AB = '+ab+', AN = '+an+', AC = '+(ok?ac:Math.round(ac))+'. Les droites (MN) et (BC) sont-elles parallèles&#160;?',shuffle([
+      {html:equal?'Oui : AM/AB = AN/AC (les rapports sont égaux).':'Non : AM/AB ≠ AN/AC.',correct:true,fb:equal?'Exact ! '+am+'/'+ab+' = '+an+'/'+(ok?ac:Math.round(ac))+' = '+(am/ab).toFixed(2)+'. Réciproque de Thalès : (MN) // (BC).':'Exact ! '+am+'/'+ab+' = '+(am/ab).toFixed(2)+' ≠ '+an+'/'+(ok?ac:Math.round(ac))+' = '+(an/(ok?ac:Math.round(ac))).toFixed(2)+'. Les droites ne sont pas parallèles.'},
+      {html:equal?'Non : les côtés ne sont pas égaux.':'Oui : les rapports sont égaux.',correct:false,fb:equal?'Non. Ce ne sont pas les longueurs mais les rapports AM/AB et AN/AC qu\'il faut comparer.':'Non. Calcule AM/AB = '+(am/ab).toFixed(2)+' et AN/AC = '+(an/(ok?ac:Math.round(ac))).toFixed(2)+'. Ces rapports ne sont pas égaux.'},
+      {html:'On ne peut pas conclure sans MN.',correct:false,fb:'Non. La réciproque de Thalès ne demande pas MN.'},
+    ]));
+  })();
+  (function(){
+    const am=rInt(3,6);const ab=am+rInt(1,4);
+    const an=rInt(3,6);const ac=Math.round(an*ab/am);
+    const mn=rInt(2,5);const bc=Math.round(mn*ab/am);
+    placeQuiz('p3l2q3','Dans le triangle ABC, (MN) // (BC). AM = '+am+', AB = '+ab+', MN = '+mn+'. Quelle longueur peut-on calculer par Thalès&#160;?',shuffle([
+      {html:'BC = '+bc,correct:true,fb:'Exact ! MN/BC = AM/AB ⟹ BC = MN × AB/AM = '+mn+' × '+ab+'/'+am+' = '+bc+'.'},
+      {html:'BC = '+(bc+1),correct:false,fb:'Non. BC = MN × AB/AM = '+mn+' × '+ab+'/'+am+' ≈ '+bc+'.'},
+      {html:'BC = '+(bc-1),correct:false,fb:'Non. BC = MN × AB/AM = '+mn+' × '+ab+'/'+am+' ≈ '+bc+'.'},
+    ]));
+  })();
+}
+
+// ══ P3L3 ══
+function initP3L3(){
+  (function(){
+    const am=rInt(2,5);const ab=am*rInt(2,4);
+    const an=rInt(2,5);const ac=Math.round(an*ab/am);
+    placeQuiz('p3l3a','Dans le triangle ARS, la droite (CT) est parallèle à (RS) avec C ∈ [AS] et T ∈ [AR]. AT = '+am+', AR = '+ab+', AC = '+an+'. Que vaut AS&#160;?',shuffle([
+      {html:String(ac),correct:true,fb:'Exact ! AT/AR = AC/AS ⟹ AS = AC × AR/AT = '+an+' × '+ab+'/'+am+' = '+ac+'.'},
+      {html:String(ac+1),correct:false,fb:'Non. AS = AC × AR/AT = '+an+' × '+ab+'/'+am+' = '+ac+'.'},
+      {html:String(ac-1),correct:false,fb:'Non. AS = AC × AR/AT = '+an+' × '+ab+'/'+am+' = '+ac+'.'},
+      {html:String(ac+2),correct:false,fb:'Non. AS = AC × AR/AT = '+an+' × '+ab+'/'+am+' = '+ac+'.'},
+    ]));
+  })();
+  (function(){
+    const am=rInt(2,5);const ab=am*rInt(2,3);
+    const an=rInt(2,5);const ac=an*ab/am;
+    const ok=Number.isInteger(ac);
+    const acr=ok?ac:parseFloat(ac.toFixed(1));
+    placeQuiz('p3l3b','Dans le triangle ABC, M ∈ [AB] et N ∈ [AC]. AM = '+am+', AB = '+ab+', AN = '+an+', AC = '+acr.toString().replace('.',',')+'. (MN) est-elle parallèle à (BC)&#160;?',shuffle([
+      {html:'Oui : AM/AB = AN/AC.',correct:ok,fb:ok?'Exact ! '+am+'/'+ab+' = '+an+'/'+acr+' = '+(am/ab).toFixed(2)+'. Réciproque de Thalès : (MN) // (BC).':'Non. '+am+'/'+ab+' = '+(am/ab).toFixed(2)+' mais '+an+'/'+acr+' = '+(an/acr).toFixed(2)+'.'},
+      {html:'Non : AM/AB ≠ AN/AC.',correct:!ok,fb:!ok?'Exact ! '+(am/ab).toFixed(2)+' ≠ '+(an/acr).toFixed(2)+'. Les droites ne sont pas parallèles.':'Non. Calcule les rapports : AM/AB = '+am+'/'+ab+' = '+(am/ab).toFixed(2)+' et AN/AC = '+an+'/'+acr+' = '+(an/acr).toFixed(2)+'.'},
+      {html:'On ne peut pas conclure.',correct:false,fb:'Non. La réciproque de Thalès permet de conclure en comparant AM/AB et AN/AC.'},
+    ]));
+  })();
+  (function(){
+    const am=rInt(2,5);const ab=am+rInt(1,4);
+    const an=rInt(3,7);const ac=rInt(4,9);
+    const mn=rInt(2,6);
+    const bc=Math.round(mn*ab/am);
+    placeQuiz('p3l3c','Dans le triangle ABC, (MN) // (BC). AM = '+am+', MB = '+(ab-am)+', MN = '+mn+'. Quelle est la longueur BC&#160;?',shuffle([
+      {html:String(bc),correct:true,fb:'Exact ! AB = '+ab+'. MN/BC = AM/AB ⟹ BC = '+mn+' × '+ab+'/'+am+' = '+bc+'.'},
+      {html:String(bc+1),correct:false,fb:'Non. BC = MN × AB/AM = '+mn+' × '+ab+'/'+am+' = '+bc+'. N\'oublie pas AB = AM + MB = '+am+' + '+(ab-am)+' = '+ab+'.'},
+      {html:String(bc-1),correct:false,fb:'Non. BC = MN × AB/AM = '+mn+' × '+ab+'/'+am+' = '+bc+'.'},
+    ]));
+  })();
+}
+
+
+// ══════════════════════════════════════════════════════════════
+// OUTILS INTERACTIFS
+// ══════════════════════════════════════════════════════════════
+
+// Utilitaire : fraction exacte avec GCD (entiers en dixièmes)
+function fracExact(num10, den10){
+  function gcdI(a,b){a=Math.abs(a);b=Math.abs(b);while(b){var t=b;b=a%b;a=t;}return a;}
+  function isDecDen(d){while(d%2===0)d/=2;while(d%5===0)d/=5;return d===1;}
+  var g=gcdI(num10,den10), n=num10/g, d=den10/g;
+  if(d===1) return String(n);
+  if(isDecDen(d)){
+    var dec=parseFloat((n/d).toFixed(6));
+    return n+'/'+d+' = '+String(dec).replace('.',',');
+  }
+  return n+'/'+d;
+}
+
+// ── OUTIL 1 : Effet de k sur aire et volume ──
+function doKViz(){
+  var k=Math.round(parseFloat(document.getElementById('kv-k').value)*10)/10||1;
+  var k2=Math.round(k*k*100)/100, k3=Math.round(k*k*k*1000)/1000;
+  var kStr=String(k).replace('.',',');
+  var k2Str=String(k2).replace('.',',');
+  var k3Str=String(k3).replace('.',',');
+  var color=k>1?'var(--teal)':k<1?'var(--orange)':'var(--dim)';
+  var type=k>1?'Agrandissement':k<1?'Réduction':'Conservation';
+  var el=document.getElementById('kv-result');
+  el.innerHTML=
+    '<div style="background:var(--surface2);border:1px solid var(--border2);border-radius:4px;padding:0.6rem 0.4rem;">'+
+      '<div style="font-size:0.62rem;color:var(--dim);margin-bottom:0.3rem;text-transform:uppercase;letter-spacing:0.1em;">Longueurs</div>'+
+      '<div style="font-size:1.2rem;font-weight:600;color:'+color+'">× '+kStr+'</div>'+
+    '</div>'+
+    '<div style="background:var(--surface2);border:1px solid var(--border2);border-radius:4px;padding:0.6rem 0.4rem;">'+
+      '<div style="font-size:0.62rem;color:var(--dim);margin-bottom:0.3rem;text-transform:uppercase;letter-spacing:0.1em;">Aires</div>'+
+      '<div style="font-size:1.2rem;font-weight:600;color:'+color+'">× '+k2Str+'</div>'+
+      '<div style="font-size:0.65rem;color:var(--dim);">k² = '+kStr+'²</div>'+
+    '</div>'+
+    '<div style="background:var(--surface2);border:1px solid var(--border2);border-radius:4px;padding:0.6rem 0.4rem;">'+
+      '<div style="font-size:0.62rem;color:var(--dim);margin-bottom:0.3rem;text-transform:uppercase;letter-spacing:0.1em;">Volumes</div>'+
+      '<div style="font-size:1.2rem;font-weight:600;color:'+color+'">× '+k3Str+'</div>'+
+      '<div style="font-size:0.65rem;color:var(--dim);">k³ = '+kStr+'³</div>'+
+    '</div>';
+}
+
+// ── OUTIL 2 : Vérificateur de similitude ──
+function doSimilitude(){
+  var a1=Math.round(parseFloat(document.getElementById('sim-a1').value)*10)/10||1;
+  var b1=Math.round(parseFloat(document.getElementById('sim-b1').value)*10)/10||1;
+  var c1=Math.round(parseFloat(document.getElementById('sim-c1').value)*10)/10||1;
+  var a2=Math.round(parseFloat(document.getElementById('sim-a2').value)*10)/10||1;
+  var b2=Math.round(parseFloat(document.getElementById('sim-b2').value)*10)/10||1;
+  var c2=Math.round(parseFloat(document.getElementById('sim-c2').value)*10)/10||1;
+  // Trier chaque triangle
+  var t1=[a1,b1,c1].sort((a,b)=>a-b);
+  var t2=[a2,b2,c2].sort((a,b)=>a-b);
+  // Rapports en entiers (×10)
+  var r1=fracExact(Math.round(t2[0]*10),Math.round(t1[0]*10));
+  var r2=fracExact(Math.round(t2[1]*10),Math.round(t1[1]*10));
+  var r3=fracExact(Math.round(t2[2]*10),Math.round(t1[2]*10));
+  // Comparer les valeurs flottantes avec tolérance
+  var v1=t2[0]/t1[0], v2=t2[1]/t1[1], v3=t2[2]/t1[2];
+  var eps=0.0001;
+  var equal=(Math.abs(v1-v2)<eps && Math.abs(v2-v3)<eps);
+  var strT1=t1.map(x=>String(x).replace('.',',')).join(' ; ');
+  var strT2=t2.map(x=>String(x).replace('.',',')).join(' ; ');
+  var color=equal?'var(--green)':'var(--red)';
+  var icon=equal?'✓':'✗';
+  var verdict=equal
+    ? 'Les côtés sont proportionnels : les triangles sont <strong>semblables</strong> (k = '+r1+').'
+    : 'Les rapports sont différents : les triangles <strong>ne sont pas semblables</strong>.';
+  document.getElementById('sim-result').innerHTML=
+    '<div style="color:var(--dim);margin-bottom:0.4rem;">Côtés triés — △1 : '+strT1+' | △2 : '+strT2+'</div>'+
+    '<div>'+t2[0]+'/'+t1[0]+' = <strong>'+r1+'</strong> &nbsp;; &nbsp; '+t2[1]+'/'+t1[1]+' = <strong>'+r2+'</strong> &nbsp;; &nbsp; '+t2[2]+'/'+t1[2]+' = <strong>'+r3+'</strong></div>'+
+    '<div style="margin-top:0.5rem;color:'+color+';">'+icon+' '+verdict+'</div>';
+}
+
+// ── OUTIL 3 : Calculateur Thalès ──
+function doThales(){
+  var am=Math.round(parseFloat(document.getElementById('th-am').value)*10)||1;
+  var ab=Math.round(parseFloat(document.getElementById('th-ab').value)*10)||1;
+  var an=Math.round(parseFloat(document.getElementById('th-an').value)*10)||1;
+  // AC = AN × AB / AM  (en dixièmes : ac10 = an*ab/am)
+  // Exact: AC/10 = (an/10)×(ab/10) / (am/10) = an×ab/(am×10)
+  // Fraction: num = an×ab, den = am×10 — mais on veut AC en unités
+  // AC = an × ab / am  (tous en dixièmes, résultat en dixièmes)
+  var ac_num = an * ab; // numérateur ×100
+  var ac_den = am * 10; // dénominateur ×100 → donne dixièmes
+  // Simplify
+  function gcdI(a,b){while(b){var t=b;b=a%b;a=t;}return a;}
+  var g=gcdI(ac_num, ac_den);
+  var n=ac_num/g, d=ac_den/g;
+  // Display AC
+  var acStr;
+  if(d===1){ acStr=String(n/10).replace('.',','); }
+  else{
+    // n/d in real units
+    function isDecDen(dd){while(dd%2===0)dd/=2;while(dd%5===0)dd/=5;return dd===1;}
+    if(isDecDen(d)){
+      var dec=parseFloat((n/d).toFixed(6));
+      acStr=String(dec).replace('.',',');
+    } else {
+      // Display as fraction n/d cm (where n/d is the actual value in cm)
+      // Actually: AC = ac_num/(ac_den) cm. Simplify as fraction of cm
+      acStr=n+'/'+d+' cm';
+    }
+  }
+  document.getElementById('th-ac').textContent=acStr+(d!==1 && !acStr.includes('/')?' cm':'');
+  var amStr=String(am/10).replace('.',',');
+  var abStr=String(ab/10).replace('.',',');
+  var anStr=String(an/10).replace('.',',');
+  document.getElementById('th-result').innerHTML=
+    'AM/AB = '+amStr+'/'+abStr+' → AN/AC = '+anStr+'/AC → AC = '+anStr+' × '+abStr+' ÷ '+amStr+' = '+acStr;
+}
+
+// ── OUTIL 4 : Testeur réciproque Thalès ──
+function doReciproque(){
+  var am=Math.round(parseFloat(document.getElementById('rec-am').value)*10)||1;
+  var ab=Math.round(parseFloat(document.getElementById('rec-ab').value)*10)||1;
+  var an=Math.round(parseFloat(document.getElementById('rec-an').value)*10)||1;
+  var ac=Math.round(parseFloat(document.getElementById('rec-ac').value)*10)||1;
+  function gcdI(a,b){while(b){var t=b;b=a%b;a=t;}return t=0,a;}
+  // r1 = AM/AB, r2 = AN/AC (fraction exacte)
+  var r1=fracExact(am,ab);
+  var r2=fracExact(an,ac);
+  var v1=am/ab, v2=an/ac;
+  var equal=Math.abs(v1-v2)<0.0001;
+  var amStr=String(am/10).replace('.',','), abStr=String(ab/10).replace('.',',');
+  var anStr=String(an/10).replace('.',','), acStr=String(ac/10).replace('.',',');
+  var color=equal?'var(--green)':'var(--red)';
+  var verdict=equal
+    ? '(MN) <strong>est parallèle</strong> à (BC) — réciproque de Thalès.'
+    : '(MN) <strong>n\'est pas parallèle</strong> à (BC).';
+  document.getElementById('rec-result').innerHTML=
+    'AM/AB = '+amStr+'/'+abStr+' = <strong>'+r1+'</strong>'+
+    ' &nbsp;; &nbsp; AN/AC = '+anStr+'/'+acStr+' = <strong>'+r2+'</strong>'+
+    '<br><span style="color:'+color+';">'+(equal?'✓ ':'✗ ')+verdict+'</span>';
+}
+
+
+function toggleDemo(btn){
+  btn.classList.toggle('open');
+  var body=btn.nextElementSibling;
+  body.classList.toggle('open');
+  var arrow=btn.querySelector('.demo-arrow');
+  btn.querySelector('.demo-label').textContent=
+    body.classList.contains('open')?'Cliquer ici pour masquer la démonstration':'Cliquer ici pour voir la démonstration';
+}
+
+function initAllQuizzes(){
+  initP0L1();initP0L2();
+  initP1L1();initP1L2();initP1L3();
+  initP2L1();initP2L2();initP2L3();
+  initP3L1();initP3L2();initP3L3();
+  doRapportK();
+}
+
+loadProgress();
+updateProgress();
+initAllQuizzes();
+doKViz();
+doThales();
+doReciproque();
+doSimilitude();
+</script>
+</body>
+</html>

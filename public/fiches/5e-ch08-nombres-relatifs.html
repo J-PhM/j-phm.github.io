@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapitre 8 — Nombres relatifs · 5e · J.-Ph. Mouton</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<script src="fiche-theme.js"></script>
+<link rel="stylesheet" href="fiche-theme.css?v=1777411759831">
+<script src="fiche-pdf-viewer.js" defer></script>
+</head>
+<body>
+
+<button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+<div id="sidebar">
+  <a class="sb-back" href="../../Site personnel.html#/teaching"><span class="arrow">←</span> Retour à Enseignement</a>
+  <div class="sb-header">
+    <div class="sb-eyebrow">Chapitre 8 · Maths 5<sup>e</sup></div>
+    <div class="sb-title">Nombres relatifs</div>
+    <div class="sb-meta">
+      <div class="sb-author">Jean-Philippe Mouton</div>
+      <div class="sb-institution">Collège Jean Rostand – Capbreton</div>
+      <div class="sb-date">Version 1.1.1 – Bêta – Mars 2026</div>
+      <div class="sb-section-title">Références</div>
+      <span class="sb-ref">• Mouton, J.-Ph. (2025–2026). <em>Nombres relatifs – Chapitre 8</em>. Fiche de cours, classe de 5<sup>e</sup>, Collège Jean Rostand, Capbreton.</span>
+      <span class="sb-ref">• Barnet, C. et al. (2016). <em>Mission Indigo Maths Cycle 4, 5<sup>e</sup></em>. Hachette Éducation. Ch. 4, pp. 68–82.</span>
+      <div class="sb-section-title">Assistance</div>
+      <span class="sb-assist">• Anthropic. <em>Claude Sonnet 4.6</em> [grand modèle de langue]. https://www.anthropic.com</span>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-label"><span>Progression</span><span id="prog-text">0 / 15</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="prog-fill" style="width:0%"></div></div>
+  </div>
+  <div style="padding:0.4rem 1.25rem 0.7rem;border-bottom:1px solid var(--border);">
+    <button onclick="resetProgress()" style="font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;color:var(--dim);background:none;border:none;cursor:pointer;padding:0;text-transform:uppercase;">↺ Réinitialiser</button>
+  </div>
+  <button class="sb-course" type="button" onclick="openPdf('../cours/5e-ch08-nombres-relatifs.pdf', 'Chapitre 8 — Nombres relatifs · Cours complet')">📄 Lire le cours complet (PDF)</button>
+  <nav>
+    <div class="nav-section">Accueil</div>
+    <div class="nav-item nav-home active" data-page="home" onclick="go(this)">🏠 Sommaire</div>
+    <div class="nav-section">1. Définition</div>
+    <div class="nav-item" data-page="p1l1" onclick="go(this)"><span class="nav-check" id="chk-p1l1"></span>Définition des nombres relatifs</div>
+    <div class="nav-item" data-page="p1l2" onclick="go(this)"><span class="nav-check" id="chk-p1l2"></span>Opposé d'un nombre</div>
+    <div class="nav-item" data-page="p1l3" onclick="go(this)"><span class="nav-check" id="chk-p1l3"></span>Exercices</div>
+    <div class="nav-section">2. Droite graduée</div>
+    <div class="nav-item" data-page="p2l1" onclick="go(this)"><span class="nav-check" id="chk-p2l1"></span>Repérage sur une droite graduée</div>
+    <div class="nav-item" data-page="p2l2" onclick="go(this)"><span class="nav-check" id="chk-p2l2"></span>Distance à zéro</div>
+    <div class="nav-item" data-page="p2l3" onclick="go(this)"><span class="nav-check" id="chk-p2l3"></span>Exercices</div>
+    <div class="nav-section">3. Comparaison</div>
+    <div class="nav-item" data-page="p3l1" onclick="go(this)"><span class="nav-check" id="chk-p3l1"></span>Comparaison de nombres relatifs</div>
+    <div class="nav-item" data-page="p3l2" onclick="go(this)"><span class="nav-check" id="chk-p3l2"></span>Ranger des nombres</div>
+    <div class="nav-item" data-page="p3l3" onclick="go(this)"><span class="nav-check" id="chk-p3l3"></span>Exercices</div>
+    <div class="nav-section">4. Repère orthogonal</div>
+    <div class="nav-item" data-page="p4l1" onclick="go(this)"><span class="nav-check" id="chk-p4l1"></span>Coordonnées dans un repère</div>
+    <div class="nav-item" data-page="p4l2" onclick="go(this)"><span class="nav-check" id="chk-p4l2"></span>Coordonnées d'un point</div>
+    <div class="nav-item" data-page="p4l3" onclick="go(this)"><span class="nav-check" id="chk-p4l3"></span>Exercices</div>
+    <div class="nav-section">5. Problèmes</div>
+    <div class="nav-item" data-page="pb1" onclick="go(this)"><span class="nav-check" id="chk-pb1"></span>🏔️ Le puits</div>
+    <div class="nav-item" data-page="pb2" onclick="go(this)"><span class="nav-check" id="chk-pb2"></span>🌍 Décalage horaire</div>
+    <div class="nav-item" data-page="pb3" onclick="go(this)"><span class="nav-check" id="chk-pb3"></span>📍 Coordonnées GPS</div>
+    <div class="nav-section" style="margin-top:0.8rem">Mémo</div>
+    <div class="nav-item" data-page="memo" onclick="go(this)" style="color:var(--orange)"><span class="nav-check"></span>♥ À connaître par cœur</div>
+  </nav>
+</div>
+
+<div id="main">
+
+<!-- HOME -->
+<div class="page active" id="page-home">
+  <div class="home-hero">
+    <div class="home-eyebrow">Fiche de révision · Chapitre 8</div>
+    <h1>Les <strong>Nombres relatifs</strong></h1>
+    <p>Positifs, négatifs, opposés, droite graduée et repère — tout le chapitre en huit leçons interactives et trois problèmes, pour réviser seul avant l'évaluation.</p>
+  </div>
+  <div class="objectives-box">
+    <div class="ob-label">Connaissances et compétences</div>
+    <ul>
+      <li>Nombres rationnels (positifs ou négatifs)</li>
+      <li>Notion d'opposé</li>
+      <li>Comparer, ranger, encadrer des nombres rationnels</li>
+      <li>Se repérer sur une droite graduée, dans le plan muni d'un repère orthogonal</li>
+    </ul>
+  </div>
+  <div class="section-cards">
+    <div class="section-card sc-1" onclick="go(null,'p1l1')">
+      <div class="sc-tag">Partie 1</div>
+      <h3>Définition des nombres relatifs</h3>
+      <p>Nombres positifs, négatifs, notion d'opposé.</p>
+      <div class="sc-count">2 leçons + exercices</div>
+    </div>
+    <div class="section-card sc-2" onclick="go(null,'p2l1')">
+      <div class="sc-tag">Partie 2</div>
+      <h3>Repérage sur une droite graduée</h3>
+      <p>Origine, sens, unité, abscisse, distance à zéro.</p>
+      <div class="sc-count">2 leçons + exercices</div>
+    </div>
+    <div class="section-card sc-3" onclick="go(null,'p3l1')">
+      <div class="sc-tag">Partie 3</div>
+      <h3>Comparaison de nombres relatifs</h3>
+      <p>Règles de comparaison, ranger dans l'ordre.</p>
+      <div class="sc-count">2 leçons + exercices</div>
+    </div>
+    <div class="section-card sc-4" onclick="go(null,'p4l1')">
+      <div class="sc-tag">Partie 4</div>
+      <h3>Coordonnées dans un repère orthogonal</h3>
+      <p>Axe des abscisses, axe des ordonnées, coordonnées.</p>
+      <div class="sc-count">2 leçons + exercices</div>
+    </div>
+    <div class="section-card" style="border-left:3px solid var(--yellow)" onclick="go(null,'pb1')">
+      <div class="sc-tag" style="color:var(--yellow)">Partie 5</div>
+      <h3>Problèmes</h3>
+      <p>Trois problèmes concrets tirés du manuel pour mettre en pratique tout le chapitre.</p>
+      <div class="sc-count">3 problèmes</div>
+    </div>
+    <div class="section-card" style="border-left:3px solid var(--orange)" onclick="go(null,'memo')">
+      <div class="sc-tag" style="color:var(--orange)">♥ Mémo</div>
+      <h3>À connaître par cœur</h3>
+      <p>Les définitions et propriétés essentielles — pour une révision rapide avant l'évaluation.</p>
+      <div class="sc-count" style="color:var(--orange)">5 encadrés</div>
+    </div>
+  </div>
+</div>
+
+<!-- P1L1 -->
+<div class="page" id="page-p1l1">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-blue">Partie 1 · Leçon 1</div>
+    <h1>Définition des nombres relatifs</h1>
+    <p class="lesson-intro">Les nombres que tu connais déjà (1, 2, 3…) ne suffisent pas pour tout mesurer. Comment noter une température négative ou une profondeur sous l'eau ?</p>
+  </div>
+  <div class="section-divider">L'idée de départ</div>
+  <p>Jusqu'à présent, tu as surtout utilisé des nombres <strong>positifs</strong> : 5, 12, 0,7… Mais certaines situations nécessitent de nouveaux nombres :</p>
+  <p>• Une température de <strong>−3 °C</strong> est en dessous de zéro.</p>
+  <p>• Un sous-marin à <strong>−200 m</strong> est sous le niveau de la mer.</p>
+  <p>• Un compte bancaire à <strong>−50 €</strong> est à découvert.</p>
+  <p>Ces nombres avec un signe « − » s'appellent les <strong>nombres négatifs</strong>.</p>
+  <div class="section-divider">Définitions</div>
+  <div class="callout c-blue">
+    <div class="c-label">Définitions</div>
+    <p>• Les <strong>nombres positifs</strong> sont les nombres <strong>supérieurs ou égaux à 0</strong>.<br>Un nombre positif s'écrit avec le <strong>signe +</strong> (« plus ») ou s'écrit sans signe.</p>
+    <p>• Les <strong>nombres négatifs</strong> sont les nombres <strong>inférieurs ou égaux à 0</strong>.<br>Un nombre négatif s'écrit avec le <strong>signe −</strong> (« moins »).</p>
+    <p>• Nombres positifs et nombres négatifs constituent les <strong>nombres relatifs</strong>.</p>
+    <p>• Le seul nombre relatif à la fois positif et négatif est le nombre <strong>0</strong>. Ainsi <strong>0 = +0 = −0</strong>.</p>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemples</div>
+    <p>• <strong>+7</strong> ou <strong>7</strong> : nombre positif (supérieur à 0)</p>
+    <p>• <strong>−3</strong> : nombre négatif (inférieur à 0)</p>
+    <p>• <strong>0</strong> : ni positif non nul, ni négatif non nul — c'est le seul nombre à la fois positif et négatif</p>
+  </div>
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content"><strong>À retenir :</strong> un nombre relatif s'écrit avec un <strong>signe</strong> (+ ou −) suivi d'une <strong>partie numérique</strong>. Pour les nombres positifs, le signe + peut ne pas être écrit : 7 et +7 désignent le même nombre. La partie numérique s'appelle aussi <strong>valeur absolue</strong>.</div>
+  </div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p1l1"></div></div><div class="quiz-options" id="qo-p1l1"></div><div class="quiz-feedback" id="qfb-p1l1"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p1l1q2"></div></div><div class="quiz-options" id="qo-p1l1q2"></div><div class="quiz-feedback" id="qfb-p1l1q2"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q" id="qq-p1l1q3"></div></div><div class="quiz-options" id="qo-p1l1q3"></div><div class="quiz-feedback" id="qfb-p1l1q3"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p1l1q4"></div></div><div class="quiz-options" id="qo-p1l1q4"></div><div class="quiz-feedback" id="qfb-p1l1q4"></div></div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'home')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p1l1');go(null,'p1l2')">Suivant →</button>
+  </div>
+</div>
+
+<!-- P1L2 -->
+<div class="page" id="page-p1l2">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-blue">Partie 1 · Leçon 2</div>
+    <h1>Opposé d'un nombre</h1>
+    <p class="lesson-intro">Chaque nombre relatif a un « jumeau » de l'autre côté de zéro. On l'appelle son opposé.</p>
+  </div>
+  <div class="section-divider">L'idée de l'opposé</div>
+  <p>Imagine une droite graduée avec le zéro pour origine. Les nombres <strong>+3</strong> et <strong>−3</strong> sont à égale distance de zéro, mais de part et d'autre. Ce sont des <strong>opposés</strong>.</p>
+  <p>Si tu additionnes un nombre et son opposé, tu retombes toujours sur zéro : <strong>3 + (−3) = 0</strong>.</p>
+  <div class="section-divider">Définition</div>
+  <div class="callout c-blue">
+    <div class="c-label">Définition : opposé d'un nombre</div>
+    <p>Deux nombres relatifs sont dits <strong>opposés</strong> si leur somme est nulle.</p>
+    <p>Pour tout nombre relatif <em class="var">a</em>, l'opposé de <em class="var">a</em> est noté <strong>opp(<em class="var">a</em>)</strong> ou <strong>−<em class="var">a</em></strong>.</p>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemples</div>
+    <p>• L'opposé de <strong>+5</strong> est <strong>−5</strong>, car 5 + (−5) = 0.</p>
+    <p>• L'opposé de <strong>−7</strong> est <strong>+7</strong>, car (−7) + 7 = 0.</p>
+    <p>• L'opposé de <strong>0</strong> est <strong>0</strong>, car 0 + 0 = 0.</p>
+  </div>
+  <div class="section-divider">Propriété importante</div>
+  <div class="callout c-orange">
+    <div class="c-label">Remarque</div>
+    <p>Pour tout nombre <em class="var">a</em>, l'opposé de l'opposé de <em class="var">a</em> est <em class="var">a</em>, donc : <strong>−(−<em class="var">a</em>) = <em class="var">a</em></strong></p>
+  </div>
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content"><strong>À retenir :</strong> l'opposé de l'opposé d'un nombre, c'est le nombre lui-même. Exemple : −(−5) = 5.</div>
+  </div>
+  <div class="fraction-builder">
+    <div class="tool-label">Outil · Visualise les opposés sur la droite</div>
+    <div class="tool-hint">Clique sur les boutons pour changer le nombre et observer son opposé.</div>
+    <div class="number-line">
+      <svg width="500" height="70" viewBox="0 0 500 70" id="opp-svg">
+        <line x1="20" y1="35" x2="480" y2="35" stroke="#30363d" stroke-width="2"/>
+        <polygon points="480,30 490,35 480,40" fill="#30363d"/>
+        <line x1="250" y1="25" x2="250" y2="45" stroke="#7d8590" stroke-width="2"/>
+        <text x="250" y="60" text-anchor="middle" font-family="IBM Plex Mono" font-size="11" fill="#7d8590">0</text>
+        <circle id="opp-pos" cx="365" cy="35" r="8" fill="#56d364"/>
+        <text id="opp-pos-label" x="365" y="20" text-anchor="middle" font-family="IBM Plex Mono" font-size="11" fill="#56d364">+5</text>
+        <circle id="opp-neg" cx="135" cy="35" r="8" fill="#e05c5c"/>
+        <text id="opp-neg-label" x="135" y="20" text-anchor="middle" font-family="IBM Plex Mono" font-size="11" fill="#e05c5c">−5</text>
+      </svg>
+    </div>
+    <div class="fb-controls">
+      <button class="tool-btn" onclick="oppChange(-1)">−</button>
+      <button class="tool-btn" onclick="oppChange(1)">+</button>
+    </div>
+    <div class="fb-info" id="opp-info">+5 et −5 sont opposés : leur somme est 0 ✓</div>
+  </div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p1l2"></div></div><div class="quiz-options" id="qo-p1l2"></div><div class="quiz-feedback" id="qfb-p1l2"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p1l2q2"></div></div><div class="quiz-options" id="qo-p1l2q2"></div><div class="quiz-feedback" id="qfb-p1l2q2"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q" id="qq-p1l2q3"></div></div><div class="quiz-options" id="qo-p1l2q3"></div><div class="quiz-feedback" id="qfb-p1l2q3"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p1l2q4"></div></div><div class="quiz-options" id="qo-p1l2q4"></div><div class="quiz-feedback" id="qfb-p1l2q4"></div></div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p1l1')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p1l2');go(null,'p1l3')">Suivant →</button>
+  </div>
+</div>
+
+<!-- P1L3 -->
+<div class="page" id="page-p1l3">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-blue">Partie 1 · Exercices</div>
+    <h1>Exercices — Définition</h1>
+    <p class="lesson-intro">Quatre exercices pour vérifier que tu maîtrises les notions de nombre positif, négatif et d'opposé.</p>
+  </div>
+  <div class="section-divider">Entraîne-toi</div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Ex 1</div><div class="quiz-q" id="qq-p1l3a"></div></div><div class="quiz-options" id="qo-p1l3a"></div><div class="quiz-feedback" id="qfb-p1l3a"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Ex 2</div><div class="quiz-q" id="qq-p1l3b"></div></div><div class="quiz-options" id="qo-p1l3b"></div><div class="quiz-feedback" id="qfb-p1l3b"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Ex 3</div><div class="quiz-q" id="qq-p1l3c"></div></div><div class="quiz-options" id="qo-p1l3c"></div><div class="quiz-feedback" id="qfb-p1l3c"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Ex 4</div><div class="quiz-q" id="qq-p1l3d"></div></div><div class="quiz-options" id="qo-p1l3d"></div><div class="quiz-feedback" id="qfb-p1l3d"></div></div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p1l2')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p1l3');go(null,'p2l1')">Partie suivante →</button>
+  </div>
+</div>
+
+<!-- P2L1 -->
+<div class="page" id="page-p2l1">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-orange">Partie 2 · Leçon 1</div>
+    <h1>Repérage sur une droite graduée</h1>
+    <p class="lesson-intro">Pour visualiser les nombres relatifs, on les place sur une droite. Chaque nombre correspond à un point unique.</p>
+  </div>
+  <div class="section-divider">L'idée de départ</div>
+  <p>Imagine une règle infinie, avec le zéro au milieu. À droite du zéro, on place les nombres positifs (+1, +2, +3…). À gauche, les nombres négatifs (−1, −2, −3…).</p>
+  <p>Cette « règle infinie » s'appelle une <strong>droite graduée</strong>.</p>
+  <div class="section-divider">Définition</div>
+  <div class="callout c-orange">
+    <div class="c-label">Définition</div>
+    <p>Une <strong>droite graduée</strong> est une droite sur laquelle on fixe :</p>
+    <p>• un point appelé <strong>origine</strong> de la droite graduée ;</p>
+    <p>• un <strong>sens</strong>, indiqué par une flèche ;</p>
+    <p>• une <strong>unité de longueur</strong> que l'on reporte régulièrement de part et d'autre de l'origine.</p>
+  </div>
+  <div class="number-line">
+    <svg width="500" height="58" viewBox="0 0 500 58">
+      <line x1="20" y1="33" x2="480" y2="33" stroke="#30363d" stroke-width="2"/>
+      <polygon points="480,28 490,33 480,38" fill="#f0883e"/>
+      <line x1="250" y1="26" x2="250" y2="40" stroke="#56d364" stroke-width="2.5"/>
+      <text x="250" y="52" text-anchor="middle" font-family="IBM Plex Mono" font-size="11" fill="#56d364">0</text>
+      <text x="250" y="18" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#56d364">O</text>
+      <line x1="135" y1="28" x2="135" y2="38" stroke="#79c0ff" stroke-width="1.5"/>
+      <text x="135" y="52" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#79c0ff">−5</text>
+      <line x1="365" y1="28" x2="365" y2="38" stroke="#79c0ff" stroke-width="1.5"/>
+      <text x="365" y="52" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#79c0ff">+5</text>
+      <line x1="192" y1="28" x2="192" y2="38" stroke="#4d5562" stroke-width="1"/>
+      <line x1="308" y1="28" x2="308" y2="38" stroke="#4d5562" stroke-width="1"/>
+      <text x="30" y="18" font-family="IBM Plex Mono" font-size="9" fill="#7d8590">négatifs</text>
+      <text x="420" y="18" font-family="IBM Plex Mono" font-size="9" fill="#7d8590">positifs</text>
+    </svg>
+  </div>
+  <div class="section-divider">Propriété</div>
+  <div class="callout c-blue">
+    <div class="c-label">Propriété</div>
+    <p>Sur une droite graduée, chaque point de la droite est repéré par un nombre relatif appelé <strong>abscisse</strong> du point, à chaque nombre relatif correspond un point de la droite.</p>
+    <p>Le point origine (en général nommé <em class="var">O</em>) a toujours pour abscisse le nombre <strong>0</strong>.</p>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemples</div>
+    <p>• Le point A d'abscisse <strong>+3</strong> est situé à 3 unités à droite de l'origine.</p>
+    <p>• Le point B d'abscisse <strong>−2</strong> est situé à 2 unités à gauche de l'origine.</p>
+    <p>• L'origine O a pour abscisse <strong>0</strong>.</p>
+  </div>
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content"><strong>À retenir :</strong> sur une droite graduée, les nombres positifs sont à <strong>droite</strong> de l'origine, les nombres négatifs sont à <strong>gauche</strong>.</div>
+  </div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p2l1"></div></div><div class="quiz-options" id="qo-p2l1"></div><div class="quiz-feedback" id="qfb-p2l1"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p2l1q2"></div></div><div class="quiz-options" id="qo-p2l1q2"></div><div class="quiz-feedback" id="qfb-p2l1q2"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q" id="qq-p2l1q3"></div></div><div class="quiz-options" id="qo-p2l1q3"></div><div class="quiz-feedback" id="qfb-p2l1q3"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p2l1q4"></div></div><div class="quiz-options" id="qo-p2l1q4"></div><div class="quiz-feedback" id="qfb-p2l1q4"></div></div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p1l3')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p2l1');go(null,'p2l2')">Suivant →</button>
+  </div>
+</div>
+
+<!-- P2L2 -->
+<div class="page" id="page-p2l2">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-orange">Partie 2 · Leçon 2</div>
+    <h1>Distance à zéro</h1>
+    <p class="lesson-intro">La distance à zéro mesure l'écart entre un nombre et l'origine — elle est toujours positive.</p>
+  </div>
+  <div class="section-divider">L'idée de distance</div>
+  <p>Sur une droite graduée, le nombre <strong>−5</strong> est à 5 unités de l'origine. Le nombre <strong>+5</strong> aussi ! La <strong>distance à zéro</strong> ne tient pas compte du signe : elle mesure uniquement « combien de pas » séparent le nombre de l'origine.</p>
+  <div class="section-divider">Propriété</div>
+  <div class="callout c-orange">
+    <div class="c-label">Propriété</div>
+    <p>Les nombres <strong>opposés</strong> ont la même <strong>distance à zéro</strong>.</p>
+  </div>
+  <div class="callout c-blue">
+    <div class="c-label">Remarque</div>
+    <p>La distance à zéro d'un nombre est égale à sa <strong>valeur absolue</strong>, c'est-à-dire sa partie numérique (voir Partie 1).</p>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemples</div>
+    <p>• Les nombres opposés <strong>+2</strong> et <strong>−2</strong> ont la même distance à zéro (égale à 2).</p>
+    <p>• La distance à zéro de <strong>−7</strong> est <strong>7</strong>.</p>
+    <p>• La distance à zéro de <strong>+3,5</strong> est <strong>3,5</strong>.</p>
+  </div>
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content"><strong>À retenir :</strong> la distance à zéro est toujours <strong>positive</strong>. Pour la trouver, on « enlève » le signe − s'il y en a un.</div>
+  </div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p2l2"></div></div><div class="quiz-options" id="qo-p2l2"></div><div class="quiz-feedback" id="qfb-p2l2"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p2l2q2"></div></div><div class="quiz-options" id="qo-p2l2q2"></div><div class="quiz-feedback" id="qfb-p2l2q2"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q" id="qq-p2l2q3"></div></div><div class="quiz-options" id="qo-p2l2q3"></div><div class="quiz-feedback" id="qfb-p2l2q3"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p2l2q4"></div></div><div class="quiz-options" id="qo-p2l2q4"></div><div class="quiz-feedback" id="qfb-p2l2q4"></div></div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p2l1')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p2l2');go(null,'p2l3')">Suivant →</button>
+  </div>
+</div>
+
+<!-- P2L3 -->
+<div class="page" id="page-p2l3">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-orange">Partie 2 · Exercices</div>
+    <h1>Exercices — Droite graduée</h1>
+    <p class="lesson-intro">Quatre exercices sur le repérage et la distance à zéro.</p>
+  </div>
+  <div class="section-divider">Entraîne-toi</div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Ex 1</div><div class="quiz-q" id="qq-p2l3a"></div></div><div class="quiz-options" id="qo-p2l3a"></div><div class="quiz-feedback" id="qfb-p2l3a"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Ex 2</div><div class="quiz-q" id="qq-p2l3b"></div></div><div class="quiz-options" id="qo-p2l3b"></div><div class="quiz-feedback" id="qfb-p2l3b"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Ex 3</div><div class="quiz-q" id="qq-p2l3c"></div></div><div class="quiz-options" id="qo-p2l3c"></div><div class="quiz-feedback" id="qfb-p2l3c"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Ex 4</div><div class="quiz-q" id="qq-p2l3d"></div></div><div class="quiz-options" id="qo-p2l3d"></div><div class="quiz-feedback" id="qfb-p2l3d"></div></div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p2l2')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p2l3');go(null,'p3l1')">Partie suivante →</button>
+  </div>
+</div>
+
+<!-- P3L1 -->
+<div class="page" id="page-p3l1">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-purple">Partie 3 · Leçon 1</div>
+    <h1>Comparaison de nombres relatifs</h1>
+    <p class="lesson-intro">Comparer deux nombres relatifs, c'est déterminer lequel est le plus grand. Trois règles simples suffisent.</p>
+  </div>
+  <div class="section-divider">L'idée de base</div>
+  <p>Sur une droite graduée, le nombre le plus grand est toujours <strong>le plus à droite</strong>. C'est le point de départ pour comparer des nombres relatifs.</p>
+  <p>Mais attention aux nombres négatifs : <strong>−1</strong> est plus grand que <strong>−5</strong>, même si 1 &lt; 5 !</p>
+  <div class="section-divider">Les trois règles</div>
+  <div class="callout c-purple">
+    <div class="c-label">Règles</div>
+    <p>• Un nombre positif non nul est toujours <strong>supérieur</strong> à un nombre négatif non nul.</p>
+    <p>• <strong>Si deux nombres sont positifs</strong> alors le plus éloigné de zéro est le plus grand.</p>
+    <p>• <strong>Si deux nombres sont négatifs</strong> alors le plus près de zéro est le plus grand.</p>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemples</div>
+    <p>• −1,7 est négatif non nul et 0,4 est positif non nul. Donc <strong>0,4 > −1,7</strong>.</p>
+    <p>• −1,8 et −2,4 sont négatifs. −1,8 est le plus près de 0. Donc <strong>−1,8 > −2,4</strong>.</p>
+    <p>• +3 et +7 sont positifs. 7 est le plus éloigné de 0. Donc <strong>+7 > +3</strong>.</p>
+  </div>
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content"><strong>À retenir :</strong> pour les négatifs, c'est « l'inverse » de ce qu'on pourrait croire : <strong>−1 > −100</strong> car −1 est plus proche de zéro.</div>
+  </div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p3l1"></div></div><div class="quiz-options" id="qo-p3l1"></div><div class="quiz-feedback" id="qfb-p3l1"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p3l1q2"></div></div><div class="quiz-options" id="qo-p3l1q2"></div><div class="quiz-feedback" id="qfb-p3l1q2"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q" id="qq-p3l1q3"></div></div><div class="quiz-options" id="qo-p3l1q3"></div><div class="quiz-feedback" id="qfb-p3l1q3"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p3l1q4"></div></div><div class="quiz-options" id="qo-p3l1q4"></div><div class="quiz-feedback" id="qfb-p3l1q4"></div></div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p2l3')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p3l1');go(null,'p3l2')">Suivant →</button>
+  </div>
+</div>
+
+<!-- P3L2 -->
+<div class="page" id="page-p3l2">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-purple">Partie 3 · Leçon 2</div>
+    <h1>Ranger des nombres relatifs</h1>
+    <p class="lesson-intro">Ranger des nombres, c'est les mettre dans l'ordre — croissant ou décroissant. Avec les nombres négatifs, il faut être vigilant !</p>
+  </div>
+  <div class="section-divider">Rappel</div>
+  <div class="callout c-purple">
+    <div class="c-label">Rappel</div>
+    <p>• <strong>Ordre croissant</strong> : du plus petit au plus grand.</p>
+    <p>• <strong>Ordre décroissant</strong> : du plus grand au plus petit.</p>
+  </div>
+  <div class="section-divider">Méthode</div>
+  <p>Pour ranger des nombres relatifs, on peut les placer mentalement sur une droite graduée. Le plus à gauche est le plus petit, le plus à droite est le plus grand.</p>
+  <div class="example">
+    <div class="ex-label">Exemple</div>
+    <p>Ranger dans l'ordre croissant : −3, +1, −7, +4, 0</p>
+    <p>Sur la droite : −7 est le plus à gauche, puis −3, puis 0, puis +1, puis +4.</p>
+    <p>Ordre croissant : <strong>−7 &lt; −3 &lt; 0 &lt; +1 &lt; +4</strong></p>
+  </div>
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content"><strong>À retenir :</strong> tous les nombres négatifs sont plus petits que tous les nombres positifs. Le plus petit est le négatif « le plus grand en valeur absolue ».</div>
+  </div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p3l2"></div></div><div class="quiz-options" id="qo-p3l2"></div><div class="quiz-feedback" id="qfb-p3l2"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p3l2q2"></div></div><div class="quiz-options" id="qo-p3l2q2"></div><div class="quiz-feedback" id="qfb-p3l2q2"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q" id="qq-p3l2q3"></div></div><div class="quiz-options" id="qo-p3l2q3"></div><div class="quiz-feedback" id="qfb-p3l2q3"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p3l2q4"></div></div><div class="quiz-options" id="qo-p3l2q4"></div><div class="quiz-feedback" id="qfb-p3l2q4"></div></div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p3l1')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p3l2');go(null,'p3l3')">Suivant →</button>
+  </div>
+</div>
+
+<!-- P3L3 -->
+<div class="page" id="page-p3l3">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-purple">Partie 3 · Exercices</div>
+    <h1>Exercices — Comparaison</h1>
+    <p class="lesson-intro">Quatre exercices pour maîtriser la comparaison et le rangement des nombres relatifs.</p>
+  </div>
+  <div class="section-divider">Entraîne-toi</div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Ex 1</div><div class="quiz-q" id="qq-p3l3a"></div></div><div class="quiz-options" id="qo-p3l3a"></div><div class="quiz-feedback" id="qfb-p3l3a"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Ex 2</div><div class="quiz-q" id="qq-p3l3b"></div></div><div class="quiz-options" id="qo-p3l3b"></div><div class="quiz-feedback" id="qfb-p3l3b"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Ex 3</div><div class="quiz-q" id="qq-p3l3c"></div></div><div class="quiz-options" id="qo-p3l3c"></div><div class="quiz-feedback" id="qfb-p3l3c"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Ex 4</div><div class="quiz-q" id="qq-p3l3d"></div></div><div class="quiz-options" id="qo-p3l3d"></div><div class="quiz-feedback" id="qfb-p3l3d"></div></div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p3l2')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p3l3');go(null,'p4l1')">Partie suivante →</button>
+  </div>
+</div>
+
+<!-- P4L1 -->
+<div class="page" id="page-p4l1">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-teal">Partie 4 · Leçon 1</div>
+    <h1>Coordonnées dans un repère orthogonal</h1>
+    <p class="lesson-intro">Pour repérer un point dans le plan (et non plus sur une droite), il faut deux droites graduées perpendiculaires.</p>
+  </div>
+  <div class="section-divider">L'idée de départ</div>
+  <p>Une seule droite graduée permet de repérer des points <strong>sur une ligne</strong>. Mais comment repérer un point n'importe où dans le plan, comme sur une carte ?</p>
+  <p>Il faut <strong>deux informations</strong> : la position horizontale et la position verticale. On utilise donc deux droites perpendiculaires.</p>
+  <div class="section-divider">Définitions</div>
+  <div class="callout c-teal">
+    <div class="c-label">Définitions</div>
+    <p>Un <strong>repère orthogonal</strong> du plan est formé par deux droites graduées <strong>perpendiculaires</strong>, et dont l'intersection est l'origine commune, appelée <strong>origine du repère</strong>.</p>
+    <p>• La droite horizontale s'appelle l'<strong>axe des abscisses</strong>.</p>
+    <p>• La droite verticale s'appelle l'<strong>axe des ordonnées</strong>.</p>
+  </div>
+  <div class="number-line">
+    <svg width="340" height="220" viewBox="0 0 340 220">
+      <line x1="30" y1="110" x2="310" y2="110" stroke="#39d5b0" stroke-width="2"/>
+      <polygon points="310,105 320,110 310,115" fill="#39d5b0"/>
+      <line x1="150" y1="200" x2="150" y2="20" stroke="#79c0ff" stroke-width="2"/>
+      <polygon points="145,20 150,10 155,20" fill="#79c0ff"/>
+      <circle cx="150" cy="110" r="4" fill="#56d364"/>
+      <text x="160" y="125" font-family="IBM Plex Mono" font-size="11" fill="#56d364">O</text>
+      <text x="295" y="100" font-family="IBM Plex Mono" font-size="9" fill="#39d5b0">abscisses</text>
+      <text x="160" y="25" font-family="IBM Plex Mono" font-size="9" fill="#79c0ff">ordonnées</text>
+      <line x1="190" y1="106" x2="190" y2="114" stroke="#e05c5c" stroke-width="1.5"/>
+      <line x1="230" y1="106" x2="230" y2="114" stroke="#e05c5c" stroke-width="1.5"/>
+      <line x1="270" y1="106" x2="270" y2="114" stroke="#e05c5c" stroke-width="1.5"/>
+      <line x1="110" y1="106" x2="110" y2="114" stroke="#e05c5c" stroke-width="1.5"/>
+      <line x1="70" y1="106" x2="70" y2="114" stroke="#e05c5c" stroke-width="1.5"/>
+      <line x1="146" y1="70" x2="154" y2="70" stroke="#e05c5c" stroke-width="1.5"/>
+      <line x1="146" y1="150" x2="154" y2="150" stroke="#e05c5c" stroke-width="1.5"/>
+      <text x="190" y="132" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#e05c5c">1</text>
+      <text x="230" y="132" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#e05c5c">2</text>
+      <text x="110" y="132" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#e05c5c">−1</text>
+      <text x="70" y="132" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#e05c5c">−2</text>
+      <text x="130" y="73" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#e05c5c">1</text>
+      <text x="130" y="153" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#e05c5c">−1</text>
+    </svg>
+  </div>
+  <div class="example">
+    <div class="ex-label">Vocabulaire</div>
+    <p>• <strong>Orthogonal</strong> = perpendiculaire (les deux axes forment un angle droit).</p>
+    <p>• L'<strong>origine O</strong> est le point d'intersection des deux axes.</p>
+  </div>
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content"><strong>À retenir :</strong> l'axe <strong>horizontal</strong> = abscisses, l'axe <strong>vertical</strong> = ordonnées. L'origine O est au croisement des deux.</div>
+  </div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p4l1"></div></div><div class="quiz-options" id="qo-p4l1"></div><div class="quiz-feedback" id="qfb-p4l1"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p4l1q2"></div></div><div class="quiz-options" id="qo-p4l1q2"></div><div class="quiz-feedback" id="qfb-p4l1q2"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q" id="qq-p4l1q3"></div></div><div class="quiz-options" id="qo-p4l1q3"></div><div class="quiz-feedback" id="qfb-p4l1q3"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p4l1q4"></div></div><div class="quiz-options" id="qo-p4l1q4"></div><div class="quiz-feedback" id="qfb-p4l1q4"></div></div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p3l3')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p4l1');go(null,'p4l2')">Suivant →</button>
+  </div>
+</div>
+
+<!-- P4L2 -->
+<div class="page" id="page-p4l2">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-teal">Partie 4 · Leçon 2</div>
+    <h1>Coordonnées d'un point</h1>
+    <p class="lesson-intro">Pour repérer un point dans un repère, on lit deux nombres : son abscisse (horizontal) et son ordonnée (vertical).</p>
+  </div>
+  <div class="section-divider">Propriété</div>
+  <div class="callout c-teal">
+    <div class="c-label">Propriété</div>
+    <p>Dans un repère orthogonal, tout point du plan est repéré par deux nombres relatifs :</p>
+    <p>• son <strong>abscisse</strong> est lue sur l'axe des abscisses ;</p>
+    <p>• son <strong>ordonnée</strong> est lue sur l'axe des ordonnées.</p>
+    <p>Ces deux nombres s'appellent les <strong>coordonnées</strong> du point.</p>
+  </div>
+  <div class="section-divider">Notation</div>
+  <div class="callout c-orange">
+    <div class="c-label">Notation</div>
+    <p><em class="var">A</em>(−4 ; 1) signifie « les coordonnées du point <em class="var">A</em> sont (−4 ; 1) ».</p>
+    <p>L'<strong>abscisse est toujours citée en premier</strong>.</p>
+  </div>
+  <div class="example">
+    <div class="ex-label">Exemples</div>
+    <p>• Le point <strong>A(3 ; 2)</strong> a pour abscisse 3 et pour ordonnée 2.</p>
+    <p>• Le point <strong>B(−1 ; 4)</strong> a pour abscisse −1 et pour ordonnée 4.</p>
+    <p>• L'origine <strong>O(0 ; 0)</strong> a pour coordonnées (0 ; 0).</p>
+  </div>
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content"><strong>À retenir :</strong> dans les coordonnées (<em class="var">x</em> ; <em class="var">y</em>), l'abscisse <em class="var">x</em> vient <strong>toujours en premier</strong>, l'ordonnée <em class="var">y</em> en second.</div>
+  </div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p4l2"></div></div><div class="quiz-options" id="qo-p4l2"></div><div class="quiz-feedback" id="qfb-p4l2"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p4l2q2"></div></div><div class="quiz-options" id="qo-p4l2q2"></div><div class="quiz-feedback" id="qfb-p4l2q2"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q" id="qq-p4l2q3"></div></div><div class="quiz-options" id="qo-p4l2q3"></div><div class="quiz-feedback" id="qfb-p4l2q3"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p4l2q4"></div></div><div class="quiz-options" id="qo-p4l2q4"></div><div class="quiz-feedback" id="qfb-p4l2q4"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p4l2q4"></div></div><div class="quiz-options" id="qo-p4l2q4"></div><div class="quiz-feedback" id="qfb-p4l2q4"></div></div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p4l1')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p4l2');go(null,'p4l3')">Suivant →</button>
+  </div>
+</div>
+
+<!-- P4L3 -->
+<div class="page" id="page-p4l3">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-teal">Partie 4 · Exercices</div>
+    <h1>Exercices — Repère</h1>
+    <p class="lesson-intro">Quatre exercices sur les coordonnées dans un repère orthogonal.</p>
+  </div>
+  <div class="section-divider">Entraîne-toi</div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Ex 1</div><div class="quiz-q" id="qq-p4l3a"></div></div><div class="quiz-options" id="qo-p4l3a"></div><div class="quiz-feedback" id="qfb-p4l3a"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Ex 2</div><div class="quiz-q" id="qq-p4l3b"></div></div><div class="quiz-options" id="qo-p4l3b"></div><div class="quiz-feedback" id="qfb-p4l3b"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Ex 3</div><div class="quiz-q" id="qq-p4l3c"></div></div><div class="quiz-options" id="qo-p4l3c"></div><div class="quiz-feedback" id="qfb-p4l3c"></div></div>
+  <div class="quiz"><div class="quiz-header"><div class="quiz-badge">Ex 4</div><div class="quiz-q" id="qq-p4l3d"></div></div><div class="quiz-options" id="qo-p4l3d"></div><div class="quiz-feedback" id="qfb-p4l3d"></div></div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p4l2')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p4l3');go(null,'pb1')">Problèmes →</button>
+  </div>
+</div>
+
+<!-- PB1 -->
+<div class="page" id="page-pb1">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-yellow">Problème 1</div>
+    <h1>🏔️ Le puits</h1>
+  </div>
+  <div class="callout c-yellow">
+    <div class="c-label">Énoncé</div>
+    <p>Un puits de <strong>15 m de profondeur</strong> avec <strong>3 m d'eau</strong> au fond.</p>
+    <p>Une barrière de <strong>1,5 m de hauteur</strong> autour. Le sol est à l'altitude 0 m.</p>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Q1</div><div class="quiz-q">Altitude du fond du puits ?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,true,'pb1a-A')"><span class="opt-letter">A</span> −15 m</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb1a-B')"><span class="opt-letter">B</span> +15 m</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb1a-C')"><span class="opt-letter">C</span> −12 m</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb1a"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Q2</div><div class="quiz-q">Altitude de la surface de l'eau ?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb1b-A')"><span class="opt-letter">A</span> −15 m</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb1b-B')"><span class="opt-letter">B</span> −12 m</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb1b-C')"><span class="opt-letter">C</span> −3 m</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb1b"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Q3</div><div class="quiz-q">Altitude du haut de la barrière ?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb1c-A')"><span class="opt-letter">A</span> 0 m</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb1c-B')"><span class="opt-letter">B</span> +1,5 m</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb1c-C')"><span class="opt-letter">C</span> −1,5 m</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb1c"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p4l3')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('pb1');go(null,'pb2')">Suivant →</button>
+  </div>
+</div>
+
+<!-- PB2 -->
+<div class="page" id="page-pb2">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-yellow">Problème 2</div>
+    <h1>🌍 Décalage horaire</h1>
+  </div>
+  <div class="callout c-yellow">
+    <div class="c-label">Énoncé</div>
+    <p>Décalages par rapport à Paris : Fort-de-France <strong>−5 h</strong>, Cayenne <strong>−4 h</strong>, Papeete <strong>−11 h</strong>, Nouméa <strong>+10 h</strong>.</p>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Q1</div><div class="quiz-q">10 h à Paris → heure à Fort-de-France ?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,true,'pb2a-A')"><span class="opt-letter">A</span> 5 h</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb2a-B')"><span class="opt-letter">B</span> 15 h</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb2a-C')"><span class="opt-letter">C</span> 6 h</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb2a"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Q2</div><div class="quiz-q">Décalage entre Fort-de-France et Cayenne ?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb2b-A')"><span class="opt-letter">A</span> −9 h</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb2b-B')"><span class="opt-letter">B</span> +1 h</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb2b-C')"><span class="opt-letter">C</span> −1 h</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb2b"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Q3</div><div class="quiz-q">Décalage entre Papeete et Nouméa ?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb2c-A')"><span class="opt-letter">A</span> −1 h</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb2c-B')"><span class="opt-letter">B</span> +1 h</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb2c-C')"><span class="opt-letter">C</span> +21 h</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb2c"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'pb1')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('pb2');go(null,'pb3')">Suivant →</button>
+  </div>
+</div>
+
+<!-- PB3 -->
+<div class="page" id="page-pb3">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-yellow">Problème 3</div>
+    <h1>📍 Coordonnées GPS</h1>
+  </div>
+  <div class="callout c-yellow">
+    <div class="c-label">Énoncé (d'après Mission Indigo p. 80)</div>
+    <p>Coordonnées (longitude ; latitude) de quelques villes :</p>
+    <p>Londres <strong>(0 ; 50)</strong> · Le Cap <strong>(20 ; −30)</strong> · Rio <strong>(−40 ; −20)</strong></p>
+    <p>New York <strong>(−80 ; 40)</strong> · Moscou <strong>(40 ; 60)</strong> · Sydney <strong>(150 ; −30)</strong></p>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Q1</div><div class="quiz-q">Quelle ville est sur l'axe des ordonnées ?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,true,'pb3a-A')"><span class="opt-letter">A</span> Londres</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb3a-B')"><span class="opt-letter">B</span> Le Cap</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb3a-C')"><span class="opt-letter">C</span> New York</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb3a"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Q2</div><div class="quiz-q">Villes dans l'hémisphère sud (ordonnée négative) ?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb3b-A')"><span class="opt-letter">A</span> Londres, Moscou</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb3b-B')"><span class="opt-letter">B</span> Le Cap, Rio, Sydney</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb3b-C')"><span class="opt-letter">C</span> Rio, New York</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb3b"></div>
+  </div>
+  <div class="quiz">
+    <div class="quiz-header"><div class="quiz-badge">Q3</div><div class="quiz-q">Quelle(s) ville(s) a (ont) les deux coordonnées négatives ?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb3c-A')"><span class="opt-letter">A</span> Le Cap et Sydney</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb3c-B')"><span class="opt-letter">B</span> Rio de Janeiro</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb3c-C')"><span class="opt-letter">C</span> New York</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb3c"></div>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'pb2')">← Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">🏠 Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('pb3');go(null,'memo')">Mémo →</button>
+  </div>
+</div>
+
+<!-- MEMO -->
+<div class="page" id="page-memo">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-orange">♥ Mémo</div>
+    <h1>À connaître par cœur</h1>
+  </div>
+  <div class="callout c-blue">
+    <div class="c-label">Définitions</div>
+    <p>• Les <strong>nombres positifs</strong> sont les nombres <strong>supérieurs ou égaux à 0</strong>.<br>Un nombre positif s'écrit avec le <strong>signe +</strong> (« plus ») ou s'écrit sans signe.</p>
+    <p>• Les <strong>nombres négatifs</strong> sont les nombres <strong>inférieurs ou égaux à 0</strong>.<br>Un nombre négatif s'écrit avec le <strong>signe −</strong> (« moins »).</p>
+    <p>• Nombres positifs et nombres négatifs constituent les <strong>nombres relatifs</strong>.</p>
+    <p>• Le seul nombre relatif à la fois positif et négatif est le nombre <strong>0</strong>. Ainsi <strong>0 = +0 = −0</strong>.</p>
+  </div>
+  <div class="callout c-blue">
+    <div class="c-label">Définition : opposé d'un nombre</div>
+    <p>Deux nombres relatifs sont dits <strong>opposés</strong> si leur somme est nulle.</p>
+    <p>Pour tout nombre relatif <em class="var">a</em>, l'opposé de <em class="var">a</em> est noté <strong>opp(<em class="var">a</em>)</strong> ou <strong>−<em class="var">a</em></strong>.</p>
+    <p>Pour tout nombre <em class="var">a</em>, l'opposé de l'opposé de <em class="var">a</em> est <em class="var">a</em>, donc : <strong>−(−<em class="var">a</em>) = <em class="var">a</em></strong></p>
+  </div>
+  <div class="callout c-orange">
+    <div class="c-label">Définition et propriété : droite graduée</div>
+    <p>Une <strong>droite graduée</strong> est une droite sur laquelle on fixe : un point appelé <strong>origine</strong>, un <strong>sens</strong> indiqué par une flèche, une <strong>unité de longueur</strong> que l'on reporte régulièrement de part et d'autre de l'origine.</p>
+    <p>Sur une droite graduée, chaque point est repéré par un nombre relatif appelé <strong>abscisse</strong> du point.</p>
+    <p>Les nombres <strong>opposés</strong> ont la même <strong>distance à zéro</strong>.</p>
+  </div>
+  <div class="callout c-purple">
+    <div class="c-label">Règles</div>
+    <p>• Un nombre positif non nul est toujours <strong>supérieur</strong> à un nombre négatif non nul.</p>
+    <p>• <strong>Si deux nombres sont positifs</strong> alors le plus éloigné de zéro est le plus grand.</p>
+    <p>• <strong>Si deux nombres sont négatifs</strong> alors le plus près de zéro est le plus grand.</p>
+  </div>
+  <div class="callout c-teal">
+    <div class="c-label">Définitions et propriété : repère orthogonal</div>
+    <p>Un <strong>repère orthogonal</strong> du plan est formé par deux droites graduées <strong>perpendiculaires</strong>, et dont l'intersection est l'origine commune, appelée <strong>origine du repère</strong>.</p>
+    <p>• La droite horizontale s'appelle l'<strong>axe des abscisses</strong>.</p>
+    <p>• La droite verticale s'appelle l'<strong>axe des ordonnées</strong>.</p>
+    <p>Dans un repère orthogonal, tout point du plan est repéré par deux nombres relatifs : son <strong>abscisse</strong> (lue sur l'axe des abscisses) et son <strong>ordonnée</strong> (lue sur l'axe des ordonnées). Ces deux nombres s'appellent les <strong>coordonnées</strong> du point.</p>
+    <p>L'<strong>abscisse est toujours citée en premier</strong>.</p>
+  </div>
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'pb3')">← Précédent</button>
+    <button class="nav-btn primary" onclick="go(null,'home')">🏠 Sommaire</button>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<script>
+var TOTAL = 15;
+var done = {};
+var FB = {
+  "pb1a-A": "Exact ! Le fond est à −15 m.",
+  "pb1a-B": "Non. Sous le sol = négatif.",
+  "pb1a-C": "Non. −12 m = surface de l'eau.",
+  "pb1b-A": "Non. −15 m = fond du puits.",
+  "pb1b-B": "Exact ! −15 + 3 = −12 m.",
+  "pb1b-C": "Non. Calcule : −15 + 3.",
+  "pb1c-A": "Non. 0 m = niveau du sol.",
+  "pb1c-B": "Exact ! 0 + 1,5 = +1,5 m.",
+  "pb1c-C": "Non. Au-dessus du sol = positif.",
+  "pb2a-A": "Exact ! 10 + (−5) = 5 h.",
+  "pb2a-B": "Non. Le décalage est −5 h.",
+  "pb2a-C": "Non. 10 − 5 = 5.",
+  "pb2b-A": "Non. Calcule la différence.",
+  "pb2b-B": "Exact ! −4 − (−5) = +1 h.",
+  "pb2b-C": "Non. Cayenne est en avance.",
+  "pb2c-A": "Non. Écart bien plus grand.",
+  "pb2c-B": "Non. +10 − (−11) = +21 h.",
+  "pb2c-C": "Exact ! +10 − (−11) = +21 h.",
+  "pb3a-A": "Exact ! Londres a pour abscisse 0.",
+  "pb3a-B": "Non. Le Cap a pour abscisse 20.",
+  "pb3a-C": "Non. New York a pour abscisse −80.",
+  "pb3b-A": "Non. Londres et Moscou ont des ordonnées positives.",
+  "pb3b-B": "Exact ! Le Cap (−30), Rio (−20), Sydney (−30).",
+  "pb3b-C": "Non. Le Cap et Sydney aussi.",
+  "pb3c-A": "Non. Le Cap (20 ; −30) et Sydney (150 ; −30) ont une abscisse positive.",
+  "pb3c-B": "Exact ! Rio (−40 ; −20) a les deux coordonnées négatives.",
+  "pb3c-C": "Non. New York (−80 ; 40) a une ordonnée positive."
+};
+
+function saveProgress() { try { localStorage.setItem('relatifs5e', JSON.stringify(done)); } catch(e) {} }
+function loadProgress() { try { var s = localStorage.getItem('relatifs5e'); if (s) done = JSON.parse(s); } catch(e) {} }
+
+function updateProgress() {
+  var ids = ['p1l1','p1l2','p1l3','p2l1','p2l2','p2l3','p3l1','p3l2','p3l3','p4l1','p4l2','p4l3','pb1','pb2','pb3'];
+  var n = ids.filter(function(id) { return done[id]; }).length;
+  document.getElementById('prog-text').textContent = n + ' / ' + TOTAL;
+  document.getElementById('prog-fill').style.width = (n / TOTAL * 100) + '%';
+  ids.forEach(function(id) {
+    var el = document.getElementById('chk-' + id);
+    if (el) el.textContent = done[id] ? '✓' : '';
+    var navEl = document.querySelector('[data-page="' + id + '"]');
+    if (navEl) { if (done[id]) navEl.classList.add('done'); else navEl.classList.remove('done'); }
+  });
+}
+
+function markDone(id) { done[id] = true; updateProgress(); saveProgress(); }
+
+function go(el, targetId) {
+  var id = targetId || (el ? el.dataset.page : 'home');
+  document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+  var target = document.getElementById('page-' + id);
+  if (target) target.classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(function(n) { n.classList.remove('active'); });
+  var navTarget = document.querySelector('[data-page="' + id + '"]');
+  if (navTarget) navTarget.classList.add('active');
+  document.getElementById('main').scrollTop = 0;
+  if (window.innerWidth <= 720) document.getElementById('sidebar').classList.remove('open');
+}
+
+function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
+
+function resetProgress() {
+  if (confirm('Remettre la progression à zéro ?')) {
+    done = {}; localStorage.removeItem('relatifs5e'); updateProgress(); go(null, 'home');
+  }
+}
+
+function answer(btn, correct, fbKey) {
+  var quiz = btn.closest('.quiz');
+  quiz.querySelectorAll('.quiz-opt').forEach(function(o) { o.disabled = true; o.style.cursor = 'default'; });
+  btn.classList.add(correct ? 'correct' : 'wrong');
+  var fb = quiz.querySelector('[id^="qfb-"]');
+  if (fb) {
+    var text = FB[fbKey] || fbKey;
+    fb.className = 'quiz-feedback show ' + (correct ? 'ok' : 'ko');
+    fb.innerHTML = (correct ? '✓ ' : '✗ ') + text + (correct ? '' : '<button class="retry-btn" onclick="retryQuiz(this)">↺ Réessayer</button>');
+  }
+}
+
+function retryQuiz(btn) {
+  var quiz = btn.closest('.quiz');
+  quiz.querySelectorAll('.quiz-opt').forEach(function(o) { o.disabled = false; o.style.cursor = 'pointer'; o.classList.remove('correct', 'wrong'); });
+  var fb = quiz.querySelector('[id^="qfb-"]'); if (fb) { fb.className = 'quiz-feedback'; fb.innerHTML = ''; }
+}
+
+loadProgress();
+updateProgress();
+
+// Outil interactif : opposés sur droite graduée
+var oppVal = 5;
+function oppChange(delta) {
+  oppVal = Math.max(1, Math.min(9, oppVal + delta));
+  var posX = 250 + oppVal * 23;
+  var negX = 250 - oppVal * 23;
+  document.getElementById('opp-pos').setAttribute('cx', posX);
+  document.getElementById('opp-pos-label').setAttribute('x', posX);
+  document.getElementById('opp-pos-label').textContent = '+' + oppVal;
+  document.getElementById('opp-neg').setAttribute('cx', negX);
+  document.getElementById('opp-neg-label').setAttribute('x', negX);
+  document.getElementById('opp-neg-label').textContent = '−' + oppVal;
+  document.getElementById('opp-info').textContent = '+' + oppVal + ' et −' + oppVal + ' sont opposés : leur somme est 0 ✓';
+}
+
+// Randomisation
+function rInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+function rDec(min, max) { return Math.round((Math.random() * (max - min) + min) * 10) / 10; }
+function shuffle(arr) { var a = arr.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+function fN(n) { return n.toString().replace('.', ',').replace(/^-/, '−'); }
+
+function placeQuiz(qid, qHtml, opts) {
+  var qq = document.getElementById('qq-' + qid);
+  var qo = document.getElementById('qo-' + qid);
+  if (!qq || !qo) return;
+  qq.innerHTML = qHtml;
+  qo.innerHTML = '';
+  var letters = ['A','B','C','D'];
+  for (var i = 0; i < opts.length && i < 4; i++) {
+    var btn = document.createElement('button');
+    btn.className = 'quiz-opt';
+    btn.innerHTML = '<span class="opt-letter">' + letters[i] + '</span> ' + opts[i].html;
+    var key = 'rq-' + qid + '-' + letters[i];
+    FB[key] = opts[i].fb;
+    (function(opt, k) {
+      btn.onclick = function() { answer(this, opt.correct, k); };
+    })(opts[i], key);
+    qo.appendChild(btn);
+  }
+}
+
+// PARTIE 1
+function initP1L1() {
+  var n = rInt(1, 20);
+  var isNeg = Math.random() < 0.5;
+  var num = isNeg ? -n : n;
+  placeQuiz('p1l1', 'Le nombre <strong>' + fN(num) + '</strong> est :', shuffle([
+    { html: 'positif', correct: !isNeg, fb: !isNeg ? 'Exact ! ' + fN(num) + ' ≥ 0.' : 'Non. ' + fN(num) + ' < 0.' },
+    { html: 'négatif', correct: isNeg, fb: isNeg ? 'Exact !' : 'Non. ' + fN(num) + ' ≥ 0.' },
+    { html: 'ni l\'un ni l\'autre', correct: false, fb: 'Seul 0 est les deux.' }
+  ]));
+
+  var a = rInt(3, 12), b = rInt(a + 2, a + 10);
+  placeQuiz('p1l1q2', 'Calcule : <strong>' + a + ' − ' + b + '</strong>', shuffle([
+    { html: fN(a - b), correct: true, fb: 'Exact !' },
+    { html: fN(b - a), correct: false, fb: 'Non. ' + a + ' < ' + b + ' → négatif.' },
+    { html: '0', correct: false, fb: 'Non. ' + a + ' ≠ ' + b + '.' }
+  ]));
+
+  placeQuiz('p1l1q3', 'Quel nombre est à la fois positif ET négatif ?', shuffle([
+    { html: '0', correct: true, fb: 'Exact ! 0 ≥ 0 et 0 ≤ 0.' },
+    { html: '1', correct: false, fb: 'Non. 1 est strictement positif.' },
+    { html: '−1', correct: false, fb: 'Non. −1 est strictement négatif.' }
+  ]));
+
+  var signs = shuffle(['positif', 'négatif']);
+  var c = rInt(2, 15);
+  placeQuiz('p1l1q4', 'Comment écrit-on +' + c + ' sans le signe ?', shuffle([
+    { html: String(c), correct: true, fb: 'Exact ! Le signe + peut être omis pour les nombres positifs.' },
+    { html: '−' + c, correct: false, fb: 'Non. −' + c + ' est l\'opposé de +' + c + '.' },
+    { html: '0', correct: false, fb: 'Non.' }
+  ]));
+}
+
+function initP1L2() {
+  var n = rInt(2, 15);
+  var isNeg = Math.random() < 0.5;
+  var num = isNeg ? -n : n;
+  placeQuiz('p1l2', 'Quel est l\'opposé de <strong>' + fN(num) + '</strong> ?', shuffle([
+    { html: fN(-num), correct: true, fb: 'Exact !' },
+    { html: fN(num), correct: false, fb: 'Non. L\'opposé est différent du nombre.' },
+    { html: '0', correct: false, fb: 'Non. L\'opposé de 0 est 0, mais ici ce n\'est pas 0.' }
+  ]));
+
+  var m = rInt(3, 20);
+  placeQuiz('p1l2q2', 'Calcule : <strong>(+' + m + ') + (−' + m + ')</strong>', shuffle([
+    { html: '0', correct: true, fb: 'Exact ! La somme de deux opposés est nulle.' },
+    { html: fN(2 * m), correct: false, fb: 'Non. Ce sont des opposés, pas une addition.' },
+    { html: fN(m), correct: false, fb: 'Non. Réfléchis à la définition d\'opposé.' }
+  ]));
+
+  var p = rInt(2, 12);
+  placeQuiz('p1l2q3', 'Que vaut <strong>−(−' + p + ')</strong> ?', shuffle([
+    { html: '+' + p, correct: true, fb: 'Exact ! L\'opposé de l\'opposé redonne le nombre.' },
+    { html: '−' + p, correct: false, fb: 'Non. −(−a) = a.' },
+    { html: '0', correct: false, fb: 'Non.' }
+  ]));
+
+  var q = rInt(3, 15);
+  placeQuiz('p1l2q4', 'Si <em class="var">a</em> + <em class="var">b</em> = 0, alors <em class="var">a</em> et <em class="var">b</em> sont :', shuffle([
+    { html: 'opposés', correct: true, fb: 'Exact ! Par définition, deux nombres opposés ont une somme nulle.' },
+    { html: 'égaux', correct: false, fb: 'Non. Si a = b et a + b = 0, alors 2a = 0 donc a = 0.' },
+    { html: 'nuls', correct: false, fb: 'Non. Par exemple, 5 + (−5) = 0 mais ni 5 ni −5 n\'est nul.' }
+  ]));
+}
+
+function initP1L3() {
+  var temp = rInt(2, 15);
+  placeQuiz('p1l3a', 'Il fait 0°C, puis la température baisse de ' + temp + '°C. Quelle est la nouvelle température ?', shuffle([
+    { html: '−' + temp + '°C', correct: true, fb: 'Exact ! Une baisse donne une température négative.' },
+    { html: '+' + temp + '°C', correct: false, fb: 'Non. Une baisse de température donne un nombre négatif.' },
+    { html: '0°C', correct: false, fb: 'Non. La température a changé.' }
+  ]));
+
+  var nums = shuffle([rInt(1, 10), -rInt(1, 10), rInt(11, 20), -rInt(11, 20)]);
+  var negatifs = nums.filter(function(x) { return x < 0; });
+  var nbNeg = negatifs.length;
+  var faux1 = nbNeg === 2 ? 0 : (4 - nbNeg);
+  var faux2 = nbNeg === 2 ? 3 : (nbNeg === 0 ? 1 : 4);
+  placeQuiz('p1l3b', 'Parmi ' + nums.map(fN).join(' ; ') + ', combien de négatifs ?', shuffle([
+    { html: String(nbNeg), correct: true, fb: 'Exact !' },
+    { html: String(faux1), correct: false, fb: 'Non. Recompte les nombres avec un signe −.' },
+    { html: String(faux2), correct: false, fb: 'Non.' }
+  ]));
+
+  var c = rInt(5, 15), d = rInt(c + 3, c + 12);
+  placeQuiz('p1l3c', 'Calcule : <strong>' + c + ' − ' + d + '</strong>', shuffle([
+    { html: fN(c - d), correct: true, fb: 'Exact !' },
+    { html: fN(d - c), correct: false, fb: 'Non. ' + c + ' < ' + d + '.' },
+    { html: '0', correct: false, fb: 'Non.' }
+  ]));
+
+  var e = rDec(1, 10);
+  var isNeg2 = Math.random() < 0.5;
+  var num2 = isNeg2 ? -e : e;
+  placeQuiz('p1l3d', 'Opposé de <strong>' + fN(num2) + '</strong> ?', shuffle([
+    { html: fN(-num2), correct: true, fb: 'Exact !' },
+    { html: fN(num2), correct: false, fb: 'Non.' },
+    { html: '0', correct: false, fb: 'Non.' }
+  ]));
+}
+
+// PARTIE 2
+function initP2L1() {
+  var abs = rInt(1, 5) * (Math.random() < 0.5 ? 1 : -1);
+  var side = abs < 0 ? 'gauche' : 'droite';
+  placeQuiz('p2l1', 'Le point A est situé à ' + Math.abs(abs) + ' unités à ' + side + ' de l\'origine O. Quelle est son abscisse ?', shuffle([
+    { html: fN(abs), correct: true, fb: 'Exact !' },
+    { html: fN(-abs), correct: false, fb: 'Non. À ' + side + ' de l\'origine, l\'abscisse est ' + (abs < 0 ? 'négative' : 'positive') + '.' },
+    { html: '0', correct: false, fb: 'Non. Le point n\'est pas sur l\'origine.' }
+  ]));
+
+  var abs2 = rInt(2, 8) * (Math.random() < 0.5 ? 1 : -1);
+  var pos = abs2 < 0 ? 'à gauche de' : 'à droite de';
+  placeQuiz('p2l1q2', 'Le point B a pour abscisse ' + fN(abs2) + '. Où est-il situé ?', shuffle([
+    { html: pos + ' l\'origine', correct: true, fb: 'Exact !' },
+    { html: (abs2 < 0 ? 'à droite de' : 'à gauche de') + ' l\'origine', correct: false, fb: 'Non.' },
+    { html: 'sur l\'origine', correct: false, fb: 'Non.' }
+  ]));
+
+  placeQuiz('p2l1q3', 'Quelle est l\'abscisse de l\'origine O d\'une droite graduée ?', shuffle([
+    { html: '0', correct: true, fb: 'Exact ! L\'origine a toujours pour abscisse 0.' },
+    { html: '1', correct: false, fb: 'Non. L\'origine est le point de référence, son abscisse est 0.' },
+    { html: '−1', correct: false, fb: 'Non. L\'origine a pour abscisse 0.' }
+  ]));
+
+  var d = rInt(2, 6);
+  placeQuiz('p2l1q4', 'Sur une droite graduée, où sont les nombres négatifs ?', shuffle([
+    { html: 'à gauche de l\'origine', correct: true, fb: 'Exact ! Les négatifs sont à gauche, les positifs à droite.' },
+    { html: 'à droite de l\'origine', correct: false, fb: 'Non. À droite se trouvent les nombres positifs.' },
+    { html: 'sur l\'origine', correct: false, fb: 'Non. L\'origine correspond à 0.' }
+  ]));
+}
+
+function initP2L2() {
+  var n = rInt(2, 15);
+  var num = -n; // Toujours négatif pour éviter les doublons
+  placeQuiz('p2l2', 'Quelle est la distance à zéro de <strong>' + fN(num) + '</strong> ?', shuffle([
+    { html: String(n), correct: true, fb: 'Exact ! La distance à zéro est toujours positive.' },
+    { html: fN(num), correct: false, fb: 'Non. La distance est une valeur positive.' },
+    { html: '0', correct: false, fb: 'Non.' }
+  ]));
+
+  var m = rInt(3, 12);
+  placeQuiz('p2l2q2', 'Quel nombre a la même distance à zéro que <strong>' + m + '</strong> ?', shuffle([
+    { html: '−' + m, correct: true, fb: 'Exact ! Deux opposés ont la même distance à zéro.' },
+    { html: String(m * 2), correct: false, fb: 'Non. Pense aux nombres opposés.' },
+    { html: '0', correct: false, fb: 'Non.' }
+  ]));
+
+  var p = rInt(2, 10);
+  var q = rInt(p + 1, p + 5);
+  placeQuiz('p2l2q3', 'Lequel est le plus proche de zéro : <strong>−' + p + '</strong> ou <strong>−' + q + '</strong> ?', shuffle([
+    { html: '−' + p, correct: true, fb: 'Exact ! ' + p + ' < ' + q + ', donc −' + p + ' est plus proche de zéro.' },
+    { html: '−' + q, correct: false, fb: 'Non. La distance à zéro de −' + q + ' est ' + q + ', qui est plus grande que ' + p + '.' },
+    { html: 'Ils sont à égale distance', correct: false, fb: 'Non. ' + p + ' ≠ ' + q + '.' }
+  ]));
+
+  var r = rDec(1, 10);
+  placeQuiz('p2l2q4', 'La distance à zéro de <strong>' + fN(r) + '</strong> est :', shuffle([
+    { html: fN(r), correct: true, fb: 'Exact ! Pour un nombre positif, la distance à zéro est le nombre lui-même.' },
+    { html: fN(-r), correct: false, fb: 'Non. La distance est toujours positive.' },
+    { html: '0', correct: false, fb: 'Non.' }
+  ]));
+}
+
+function initP2L3() {
+  var absA = -rInt(1, 5);
+  placeQuiz('p2l3a', 'Le point M est situé à ' + Math.abs(absA) + ' unités à gauche de l\'origine. Quelle est son abscisse ?', shuffle([
+    { html: fN(absA), correct: true, fb: 'Exact ! À gauche de l\'origine, l\'abscisse est négative.' },
+    { html: fN(-absA), correct: false, fb: 'Non. À gauche de l\'origine, l\'abscisse est négative.' },
+    { html: '0', correct: false, fb: 'Non. Le point n\'est pas sur l\'origine.' }
+  ]));
+
+  var n = rDec(1, 8);
+  placeQuiz('p2l3b', 'Quelle est la distance à zéro de <strong>' + fN(-n) + '</strong> ?', shuffle([
+    { html: fN(n), correct: true, fb: 'Exact ! La distance à zéro est toujours positive.' },
+    { html: fN(-n), correct: false, fb: 'Non. La distance est une valeur positive.' },
+    { html: '0', correct: false, fb: 'Non.' }
+  ]));
+
+  var a = rInt(3, 10), b = rInt(a + 2, a + 8);
+  placeQuiz('p2l3c', 'Lequel est le plus éloigné de zéro : <strong>' + a + '</strong> ou <strong>−' + b + '</strong> ?', shuffle([
+    { html: '−' + b, correct: true, fb: 'Exact ! La distance à zéro de −' + b + ' est ' + b + ', qui est supérieure à ' + a + '.' },
+    { html: String(a), correct: false, fb: 'Non. Compare les distances à zéro : ' + b + ' > ' + a + '.' },
+    { html: 'Ils sont à égale distance', correct: false, fb: 'Non. ' + b + ' ≠ ' + a + '.' }
+  ]));
+
+  var c = rInt(2, 9);
+  placeQuiz('p2l3d', 'Les nombres <strong>+' + c + '</strong> et <strong>−' + c + '</strong> ont-ils la même distance à zéro ?', shuffle([
+    { html: 'Oui, car ils sont opposés', correct: true, fb: 'Exact ! Les opposés ont toujours la même distance à zéro.' },
+    { html: 'Non, car l\'un est positif et l\'autre négatif', correct: false, fb: 'Non. La distance à zéro ne tient pas compte du signe.' },
+    { html: 'Non, car +' + c + ' est plus grand', correct: false, fb: 'Non. La distance à zéro est la même pour les opposés.' }
+  ]));
+}
+
+// PARTIE 3
+function initP3L1() {
+  var a = rInt(1, 10), b = rInt(1, 10);
+  placeQuiz('p3l1', 'Compare : <strong>−' + a + '</strong> et <strong>' + b + '</strong>', shuffle([
+    { html: '−' + a + ' < ' + b, correct: true, fb: 'Exact ! Négatif < positif.' },
+    { html: '−' + a + ' > ' + b, correct: false, fb: 'Non.' },
+    { html: '−' + a + ' = ' + b, correct: false, fb: 'Non.' }
+  ]));
+
+  var c = rInt(2, 8), d = rInt(c + 2, c + 6);
+  placeQuiz('p3l1q2', 'Compare : <strong>−' + c + '</strong> et <strong>−' + d + '</strong>', shuffle([
+    { html: '−' + c + ' > −' + d, correct: true, fb: 'Exact ! Plus proche de 0.' },
+    { html: '−' + c + ' < −' + d, correct: false, fb: 'Non.' },
+    { html: '−' + c + ' = −' + d, correct: false, fb: 'Non.' }
+  ]));
+
+  var e = rDec(1, 5), f = rDec(e + 0.5, e + 3);
+  placeQuiz('p3l1q3', 'Compare : <strong>' + fN(e) + '</strong> et <strong>' + fN(f) + '</strong>', shuffle([
+    { html: fN(e) + ' < ' + fN(f), correct: true, fb: 'Exact !' },
+    { html: fN(e) + ' > ' + fN(f), correct: false, fb: 'Non.' },
+    { html: fN(e) + ' = ' + fN(f), correct: false, fb: 'Non.' }
+  ]));
+
+  var g = rInt(1, 15), h = rInt(g + 2, g + 10);
+  placeQuiz('p3l1q4', 'Quel nombre est le plus grand : <strong>−' + h + '</strong> ou <strong>−' + g + '</strong> ?', shuffle([
+    { html: '−' + g, correct: true, fb: 'Exact ! −' + g + ' est plus proche de 0, donc plus grand.' },
+    { html: '−' + h, correct: false, fb: 'Non. Pour les négatifs, le plus proche de 0 est le plus grand.' },
+    { html: 'Ils sont égaux', correct: false, fb: 'Non. ' + g + ' ≠ ' + h + '.' }
+  ]));
+}
+
+function initP3L2() {
+  var nums = [rInt(1, 8), -rInt(2, 10), -rInt(1, 5)];
+  var sorted = nums.slice().sort(function(x, y) { return x - y; });
+  placeQuiz('p3l2', 'Ordre croissant : <strong>' + nums.map(fN).join(' ; ') + '</strong>', shuffle([
+    { html: sorted.map(fN).join(' < '), correct: true, fb: 'Exact !' },
+    { html: nums.slice().sort(function(x, y) { return y - x; }).map(fN).join(' < '), correct: false, fb: 'Non. C\'est décroissant.' },
+    { html: nums.map(fN).join(' < '), correct: false, fb: 'Non.' }
+  ]));
+
+  var nums2 = [rInt(2, 10), -rInt(1, 8), 0, -rInt(9, 15)];
+  var sortedDesc = nums2.slice().sort(function(x, y) { return y - x; });
+  placeQuiz('p3l2q2', 'Ordre décroissant : <strong>' + nums2.map(fN).join(' ; ') + '</strong>', shuffle([
+    { html: sortedDesc.map(fN).join(' > '), correct: true, fb: 'Exact !' },
+    { html: nums2.slice().sort(function(x, y) { return x - y; }).map(fN).join(' > '), correct: false, fb: 'Non.' },
+    { html: nums2.map(fN).join(' > '), correct: false, fb: 'Non.' }
+  ]));
+
+  var a = -rInt(3, 8), b = -rInt(1, 2);
+  placeQuiz('p3l2q3', 'Un nombre entre <strong>' + fN(a) + '</strong> et <strong>' + fN(b) + '</strong> ?', shuffle([
+    { html: fN(a + 1), correct: true, fb: 'Exact ! ' + fN(a) + ' < ' + fN(a + 1) + ' < ' + fN(b) + '.' },
+    { html: fN(a - 1), correct: false, fb: 'Non. ' + fN(a - 1) + ' < ' + fN(a) + '.' },
+    { html: '0', correct: false, fb: 'Non. 0 > ' + fN(b) + '.' }
+  ]));
+
+  var nums3 = [-rInt(10, 20), -rInt(3, 9), rInt(1, 8), -rInt(1, 2)];
+  var min3 = Math.min.apply(null, nums3);
+  placeQuiz('p3l2q4', 'Le plus petit parmi <strong>' + nums3.map(fN).join(' ; ') + '</strong> ?', shuffle([
+    { html: fN(min3), correct: true, fb: 'Exact ! C\'est le négatif avec la plus grande distance à zéro.' },
+    { html: fN(Math.max.apply(null, nums3)), correct: false, fb: 'Non. C\'est le plus grand, pas le plus petit.' },
+    { html: '0', correct: false, fb: 'Non. 0 n\'est pas dans la liste.' }
+  ]));
+}
+
+function initP3L3() {
+  var a = -rDec(1, 5), b = -rDec(6, 12);
+  var cmp = a > b ? '>' : '<';
+  placeQuiz('p3l3a', 'Complète : <strong>' + fN(a) + ' … ' + fN(b) + '</strong>', shuffle([
+    { html: fN(a) + ' > ' + fN(b), correct: a > b, fb: a > b ? 'Exact !' : 'Non.' },
+    { html: fN(a) + ' < ' + fN(b), correct: a < b, fb: a < b ? 'Exact !' : 'Non.' },
+    { html: fN(a) + ' = ' + fN(b), correct: false, fb: 'Non.' }
+  ]));
+
+  var n = -rDec(2, 8);
+  var floor = Math.floor(n), ceil = Math.ceil(n);
+  placeQuiz('p3l3b', 'Encadre <strong>' + fN(n) + '</strong> par deux entiers.', shuffle([
+    { html: fN(floor) + ' < ' + fN(n) + ' < ' + fN(ceil), correct: true, fb: 'Exact !' },
+    { html: fN(ceil) + ' < ' + fN(n) + ' < ' + fN(floor), correct: false, fb: 'Non.' },
+    { html: fN(floor - 1) + ' < ' + fN(n) + ' < ' + fN(ceil + 1), correct: false, fb: 'Non.' }
+  ]));
+
+  var nums = [-rInt(5, 15), rInt(1, 5), -rInt(1, 4)];
+  var max = Math.max.apply(null, nums);
+  placeQuiz('p3l3c', 'Le plus grand : <strong>' + nums.map(fN).join(' ; ') + '</strong> ?', shuffle([
+    { html: fN(max), correct: true, fb: 'Exact !' },
+    { html: fN(Math.min.apply(null, nums)), correct: false, fb: 'Non. C\'est le plus petit.' },
+    { html: '0', correct: false, fb: 'Non.' }
+  ]));
+
+  var p = -rInt(8, 12), q = -rInt(2, 6);
+  var between = -rInt(Math.abs(q) + 1, Math.abs(p) - 1);
+  placeQuiz('p3l3d', 'Un entier entre <strong>' + fN(p) + '</strong> et <strong>' + fN(q) + '</strong> ?', shuffle([
+    { html: fN(between), correct: true, fb: 'Exact !' },
+    { html: fN(p - 1), correct: false, fb: 'Non.' },
+    { html: '0', correct: false, fb: 'Non. 0 > ' + fN(q) + '.' }
+  ]));
+}
+
+// PARTIE 4
+function initP4L1() {
+  placeQuiz('p4l1', 'L\'axe des abscisses est :', shuffle([
+    { html: 'l\'axe horizontal', correct: true, fb: 'Exact !' },
+    { html: 'l\'axe vertical', correct: false, fb: 'Non. Vertical = ordonnées.' },
+    { html: 'l\'origine', correct: false, fb: 'Non.' }
+  ]));
+
+  placeQuiz('p4l1q2', 'Coordonnées de l\'origine O ?', shuffle([
+    { html: '(0 ; 0)', correct: true, fb: 'Exact !' },
+    { html: '(1 ; 1)', correct: false, fb: 'Non.' },
+    { html: '(0 ; 1)', correct: false, fb: 'Non.' }
+  ]));
+
+  placeQuiz('p4l1q3', 'Que signifie « repère orthogonal » ?', shuffle([
+    { html: 'Les deux axes sont perpendiculaires', correct: true, fb: 'Exact ! Orthogonal = perpendiculaire.' },
+    { html: 'Les deux axes ont la même unité', correct: false, fb: 'Non. Ça c\'est un repère orthonormé.' },
+    { html: 'Les axes sont parallèles', correct: false, fb: 'Non. Les axes se croisent à l\'origine.' }
+  ]));
+
+  placeQuiz('p4l1q4', 'L\'axe des ordonnées est :', shuffle([
+    { html: 'l\'axe vertical', correct: true, fb: 'Exact ! L\'axe vertical est l\'axe des ordonnées.' },
+    { html: 'l\'axe horizontal', correct: false, fb: 'Non. L\'axe horizontal est l\'axe des abscisses.' },
+    { html: 'la droite d\'origine', correct: false, fb: 'Non. L\'origine est un point, pas une droite.' }
+  ]));
+}
+
+function initP4L2() {
+  var x = rInt(-4, 4), y = rInt(-4, 4);
+  while (x === y) { y = rInt(-4, 4); } // Éviter x = y pour ne pas avoir de doublons
+  if (x === 0 && y === 0) x = rInt(1, 4);
+  placeQuiz('p4l2', 'Point M : abscisse ' + fN(x) + ', ordonnée ' + fN(y) + '. Coordonnées ?', shuffle([
+    { html: '(' + fN(x) + ' ; ' + fN(y) + ')', correct: true, fb: 'Exact !' },
+    { html: '(' + fN(y) + ' ; ' + fN(x) + ')', correct: false, fb: 'Non. Abscisse en premier.' },
+    { html: fN(x) + ' et ' + fN(y), correct: false, fb: 'Non. Notation (x ; y).' }
+  ]));
+
+  var x2 = rInt(-5, 5), y2 = rInt(-5, 5);
+  while (x2 === y2 || x2 === 0 || y2 === 0) { y2 = rInt(-5, 5); } // Éviter doublons et 0
+  var askX = Math.random() < 0.5;
+  placeQuiz('p4l2q2', (askX ? 'Abscisse' : 'Ordonnée') + ' de A(' + fN(x2) + ' ; ' + fN(y2) + ') ?', shuffle([
+    { html: fN(askX ? x2 : y2), correct: true, fb: 'Exact !' },
+    { html: fN(askX ? y2 : x2), correct: false, fb: 'Non.' },
+    { html: '0', correct: false, fb: 'Non.' }
+  ]));
+
+  var onX = Math.random() < 0.5;
+  var x3 = onX ? rInt(-4, 4) : 0;
+  var y3 = onX ? 0 : rInt(-4, 4);
+  if (x3 === 0 && y3 === 0) { x3 = rInt(1, 4); y3 = 0; }
+  placeQuiz('p4l2q3', 'B(' + fN(x3) + ' ; ' + fN(y3) + ') est sur :', shuffle([
+    { html: 'l\'axe des ' + (onX ? 'abscisses' : 'ordonnées'), correct: true, fb: 'Exact !' },
+    { html: 'l\'axe des ' + (onX ? 'ordonnées' : 'abscisses'), correct: false, fb: 'Non.' },
+    { html: 'l\'origine', correct: false, fb: 'Non.' }
+  ]));
+
+  var x4 = rInt(-4, 4), y4 = rInt(-4, 4);
+  while (x4 === 0 || y4 === 0 || x4 === y4) { x4 = rInt(-4, 4); y4 = rInt(-4, 4); }
+  placeQuiz('p4l2q4', 'Le point C(' + fN(x4) + ' ; ' + fN(y4) + ') est-il sur un axe ?', shuffle([
+    { html: 'Non, il n\'est sur aucun axe', correct: true, fb: 'Exact ! Ni l\'abscisse ni l\'ordonnée ne sont nulles.' },
+    { html: 'Oui, sur l\'axe des abscisses', correct: false, fb: 'Non. Sur l\'axe des abscisses, l\'ordonnée serait 0.' },
+    { html: 'Oui, sur l\'axe des ordonnées', correct: false, fb: 'Non. Sur l\'axe des ordonnées, l\'abscisse serait 0.' }
+  ]));
+}
+
+function initP4L3() {
+  var x = rInt(-3, 3), y = rInt(-3, 3);
+  if (x === 0 && y === 0) x = 2;
+  placeQuiz('p4l3a', 'Point P : abscisse ' + fN(x) + ', ordonnée ' + fN(y) + '. Notation ?', shuffle([
+    { html: 'P(' + fN(x) + ' ; ' + fN(y) + ')', correct: true, fb: 'Exact !' },
+    { html: 'P(' + fN(y) + ' ; ' + fN(x) + ')', correct: false, fb: 'Non.' },
+    { html: 'P = ' + fN(x) + ', ' + fN(y), correct: false, fb: 'Non.' }
+  ]));
+
+  var x2 = rInt(1, 5) * (Math.random() < 0.5 ? 1 : -1);
+  var y2 = rInt(1, 5) * (Math.random() < 0.5 ? 1 : -1);
+  var sX = x2 > 0 ? 'positive' : 'négative';
+  var sY = y2 > 0 ? 'positive' : 'négative';
+  placeQuiz('p4l3b', 'Q(' + fN(x2) + ' ; ' + fN(y2) + ') a :', shuffle([
+    { html: 'abscisse ' + sX + ', ordonnée ' + sY, correct: true, fb: 'Exact !' },
+    { html: 'abscisse ' + (x2 > 0 ? 'négative' : 'positive') + ', ordonnée ' + sY, correct: false, fb: 'Non.' },
+    { html: 'abscisse ' + sX + ', ordonnée ' + (y2 > 0 ? 'négative' : 'positive'), correct: false, fb: 'Non.' }
+  ]));
+
+  var x3 = rInt(-4, 4), y3 = rInt(-4, 4);
+  if (x3 === y3) y3 = x3 + 2;
+  placeQuiz('p4l3c', 'A(' + fN(x3) + ' ; ' + fN(y3) + '). On échange. Coordonnées de B ?', shuffle([
+    { html: 'B(' + fN(y3) + ' ; ' + fN(x3) + ')', correct: true, fb: 'Exact !' },
+    { html: 'B(' + fN(x3) + ' ; ' + fN(y3) + ')', correct: false, fb: 'Non.' },
+    { html: 'B(' + fN(-x3) + ' ; ' + fN(-y3) + ')', correct: false, fb: 'Non.' }
+  ]));
+
+  var x4 = rInt(-5, 5);
+  if (x4 === 0) x4 = 3;
+  placeQuiz('p4l3d', 'C sur l\'axe des abscisses, abscisse ' + fN(x4) + '. Coordonnées ?', shuffle([
+    { html: 'C(' + fN(x4) + ' ; 0)', correct: true, fb: 'Exact ! Ordonnée = 0.' },
+    { html: 'C(0 ; ' + fN(x4) + ')', correct: false, fb: 'Non.' },
+    { html: 'C(' + fN(x4) + ' ; ' + fN(x4) + ')', correct: false, fb: 'Non.' }
+  ]));
+}
+
+// Init all
+initP1L1(); initP1L2(); initP1L3();
+initP2L1(); initP2L2(); initP2L3();
+initP3L1(); initP3L2(); initP3L3();
+initP4L1(); initP4L2(); initP4L3();
+</script>
+</body>
+</html>

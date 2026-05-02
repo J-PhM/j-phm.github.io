@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lemniscate — Jean-Philippe Mouton · Mathématiques & Manuscrit de Voynich</title>
+<meta name="description" content="Lemniscate, site personnel de Jean-Philippe Mouton, professeur certifié de mathématiques (Collège Jean Rostand, Capbreton), chercheur indépendant : études du manuscrit de Voynich (EMV), Théorie Générale des Structures Émergentes, opérateur de résonance arithmétique." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous" />
+<style>
+  /* keep inline math from wrapping away from adjacent punctuation */
+  .katex { white-space: nowrap; }
+</style>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+
+<style>
+  html, body { margin: 0; padding: 0; }
+  #root { min-height: 100vh; }
+  /* initial paint */
+  body { background: #faf6ee; color: #1a1815; font-family: "EB Garamond", Georgia, serif; }
+  html[data-theme="dark"] body { background: #15120d; color: #f3ead6; }
+
+  @media (max-width: 900px) {
+    header { padding: 16px 24px !important; flex-wrap: wrap !important; gap: 12px !important; }
+    header nav { width: 100%; flex-wrap: wrap !important; gap: 18px !important; font-size: 13.5px !important; }
+    main { padding: 40px 24px !important; }
+    footer { padding: 32px 24px 40px !important; grid-template-columns: 1fr 1fr !important; gap: 24px !important; }
+    h1 { font-size: clamp(36px, 8vw, 56px) !important; }
+  }
+  @media (max-width: 600px) {
+    footer { grid-template-columns: 1fr !important; }
+    main section { padding: 40px 0 !important; }
+    .jpm-fadein, .jpm-fadein-2, .jpm-fadein-3 { animation-duration: .4s !important; }
+  }
+
+  /* Loading splash */
+  #splash {
+    position: fixed; inset: 0; background: var(--paper, #faf6ee);
+    display: grid; place-items: center; z-index: 100;
+    transition: opacity .35s ease;
+  }
+  #splash.hide { opacity: 0; pointer-events: none; }
+  #splash .mark {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px; font-style: italic; color: #8a7b5e;
+    letter-spacing: .01em;
+  }
+  #splash .rule { width: 60px; height: 1px; background: #d8cfbc; margin: 18px auto; }
+  #splash .sub {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px; letter-spacing: .2em;
+    color: #8a7b5e; text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div id="splash">
+  <div style="text-align:center">
+    <div class="mark">J.-Ph. M.</div>
+    <div class="rule"></div>
+    <div class="sub">Chargement · loading</div>
+  </div>
+</div>
+
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="data.jsx"></script>
+<script type="text/babel" src="src/common.jsx"></script>
+<script type="text/babel" src="src/chrome.jsx"></script>
+<script type="text/babel" src="src/pdf-viewer.jsx"></script>
+<script type="text/babel" src="src/paper-card.jsx"></script>
+<script type="text/babel" src="src/page-home.jsx"></script>
+<script type="text/babel" src="src/page-research.jsx"></script>
+<script type="text/babel" src="src/page-emv.jsx"></script>
+<script type="text/babel" src="src/page-tgse.jsx"></script>
+<script type="text/babel" src="src/page-ora.jsx"></script>
+<script type="text/babel" src="src/page-other.jsx"></script>
+<script type="text/babel" src="src/app.jsx"></script>
+
+<script>
+  // hide splash once React has mounted
+  const splash = document.getElementById('splash');
+  const check = () => {
+    if (document.getElementById('root').children.length > 0) {
+      splash.classList.add('hide');
+      setTimeout(() => splash.remove(), 400);
+      // typeset math after mount and on route/expand changes
+      const typeset = () => {
+        if (window.renderMathInElement) {
+          try {
+            window.renderMathInElement(document.body, {
+              delimiters: [
+                { left: '$$', right: '$$', display: true },
+                { left: '$', right: '$', display: false },
+              ],
+              throwOnError: false,
+            });
+            // Glue trailing punctuation (. , ; : ) ] !) to the preceding KaTeX span
+            // so it never wraps to a new line on its own.
+            document.querySelectorAll('.katex').forEach(el => {
+              if (el.dataset._glued) return;
+              const next = el.nextSibling;
+              if (next && next.nodeType === 3) {
+                const m = next.nodeValue.match(/^([.,;:!?)\]])/);
+                if (m) {
+                  const punct = m[1];
+                  next.nodeValue = next.nodeValue.slice(1);
+                  const glue = document.createElement('span');
+                  glue.style.whiteSpace = 'nowrap';
+                  el.parentNode.insertBefore(glue, el);
+                  glue.appendChild(el);
+                  glue.appendChild(document.createTextNode(punct));
+                  el.dataset._glued = '1';
+                }
+              }
+            });
+          } catch (e) {}
+        }
+      };
+      typeset();
+      // Typographie française : insère une espace fine insécable avant : ; ! ? »
+      // et après «, uniquement dans le contenu français.
+      const NBSP = '\u202F'; // narrow no-break space
+      const frTypo = (root) => {
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+          acceptNode(n) {
+            // skip script/style/katex/mono/code
+            let p = n.parentElement;
+            while (p) {
+              const tag = p.tagName;
+              if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'CODE' || tag === 'PRE') return NodeFilter.FILTER_REJECT;
+              if (p.classList && (p.classList.contains('katex') || p.classList.contains('katex-html') || p.classList.contains('jpm-mono'))) return NodeFilter.FILTER_REJECT;
+              p = p.parentElement;
+            }
+            return NodeFilter.FILTER_ACCEPT;
+          }
+        });
+        const nodes = [];
+        let n; while ((n = walker.nextNode())) nodes.push(n);
+        nodes.forEach(n => {
+          const v = n.nodeValue;
+          if (!v) return;
+          // collapse any whitespace before : ; ! ? » to a NBSP (but leave URLs alone: skip if preceded by letter+colon like http:)
+          let out = v
+            .replace(/[ \u00A0\u202F]+([:;!?»])/g, NBSP + '$1')
+            .replace(/(«)[ \u00A0\u202F]+/g, '$1' + NBSP);
+          // avoid touching URL-like "http://" "doi:" patterns by restoring them
+          out = out.replace(/(https?)\u202F:/g, '$1:').replace(/(doi)\u202F:/gi, '$1:').replace(/(isbn)\u202F:/gi, '$1:');
+          if (out !== v) n.nodeValue = out;
+        });
+      };
+      frTypo(document.getElementById('root'));
+      // re-typeset whenever the DOM changes (abstract expand, route change)
+      const mo = new MutationObserver(() => {
+        clearTimeout(window.__mjTimer);
+        window.__mjTimer = setTimeout(() => { typeset(); frTypo(document.getElementById('root')); }, 80);
+      });
+      mo.observe(document.getElementById('root'), { childList: true, subtree: true });
+    } else setTimeout(check, 120);
+  };
+  check();
+</script>
+
+</body>
+</html>
