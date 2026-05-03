@@ -16,6 +16,12 @@
     cv: 'Curriculum vitæ — Jean-Philippe Mouton',
     contact: 'Correspondance — Jean-Philippe Mouton',
   };
+  // Route → favicon stem (cv reuses home's accueil shell).
+  const FAVICONS = {
+    home: 'home', research: 'research', emv: 'emv',
+    'tgse-series': 'tgse-series', 'ora-series': 'ora-series',
+    teaching: 'teaching', cv: 'home', contact: 'contact',
+  };
 
   function App() {
     const [theme, setTheme] = jpmUseTheme();
@@ -24,6 +30,13 @@
 
     React.useEffect(() => {
       document.title = TITLES[route] || TITLES.home;
+      const stem = FAVICONS[route] || 'home';
+      const ico = document.querySelector('link[rel="icon"][href$=".ico"]');
+      if (ico) ico.href = `/favicons/${stem}.ico`;
+      const png = document.querySelector('link[rel="icon"][type="image/png"]');
+      if (png) png.href = `/favicons/${stem}-32.png`;
+      const apple = document.querySelector('link[rel="apple-touch-icon"]');
+      if (apple) apple.href = `/favicons/${stem}-180.png`;
     }, [route]);
 
     let Page;
