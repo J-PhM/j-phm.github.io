@@ -1,0 +1,40 @@
+/* keep inline math from wrapping away from adjacent punctuation */
+.katex { white-space: nowrap; }
+
+html, body { margin: 0; padding: 0; }
+#root { min-height: 100vh; }
+/* initial paint */
+body { background: #faf6ee; color: #1a1815; font-family: "EB Garamond", Georgia, serif; }
+html[data-theme="dark"] body { background: #15120d; color: #f3ead6; }
+
+@media (max-width: 900px) {
+  header { padding: 16px 24px !important; flex-wrap: wrap !important; gap: 12px !important; }
+  header nav { width: 100%; flex-wrap: wrap !important; gap: 18px !important; font-size: 13.5px !important; }
+  main { padding: 40px 24px !important; }
+  footer { padding: 32px 24px 40px !important; grid-template-columns: 1fr 1fr !important; gap: 24px !important; }
+  h1 { font-size: clamp(36px, 8vw, 56px) !important; }
+}
+@media (max-width: 600px) {
+  footer { grid-template-columns: 1fr !important; }
+  main section { padding: 40px 0 !important; }
+  .jpm-fadein, .jpm-fadein-2, .jpm-fadein-3 { animation-duration: .4s !important; }
+}
+
+/* Loading splash */
+#splash {
+  position: fixed; inset: 0; background: var(--paper, #faf6ee);
+  display: grid; place-items: center; z-index: 100;
+  transition: opacity .35s ease;
+}
+#splash.hide { opacity: 0; pointer-events: none; }
+#splash .mark {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px; font-style: italic; color: #8a7b5e;
+  letter-spacing: .01em;
+}
+#splash .rule { width: 60px; height: 1px; background: #d8cfbc; margin: 18px auto; }
+#splash .sub {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10.5px; letter-spacing: .2em;
+  color: #8a7b5e; text-transform: uppercase;
+}

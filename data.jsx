@@ -164,10 +164,10 @@ const SITE = {
           { num: 4,  title: "Symétrie centrale" },
           { num: 5,  title: "Expressions littérales" },
           { num: 6,  title: "Angles et triangles" },
-          { num: 7,  title: "Fractions", fiche: 'public/fiches/5e-ch07-fractions.html' },
-          { num: 8,  title: "Nombres relatifs", fiche: 'public/fiches/5e-ch08-nombres-relatifs.html' },
+          { num: 7,  title: "Fractions", fiche: '/public/fiches/5e-ch07-fractions.html' },
+          { num: 8,  title: "Nombres relatifs", fiche: '/public/fiches/5e-ch08-nombres-relatifs.html' },
           { num: 9,  title: "Parallélogrammes" },
-          { num: 10, title: "Opérations sur les fractions", fiche: 'public/fiches/5e-ch10-operations-fractions.html' },
+          { num: 10, title: "Opérations sur les fractions", fiche: '/public/fiches/5e-ch10-operations-fractions.html' },
           { num: 11, title: "Proportionnalité" },
           { num: 12, title: "Additionner, soustraire des nombres relatifs" },
           { num: 13, title: "Solides et volumes" },
@@ -176,8 +176,8 @@ const SITE = {
       {
         key: '4e', labelFR: 'Quatrième', labelEN: 'Year 9',
         chapters: [
-          { num: 8, title: "Puissances", fiche: 'public/fiches/4e-ch08-puissances.html' },
-          { num: 9, title: "Triangles et droites parallèles", fiche: 'public/fiches/4e-ch09-triangles-droites-paralleles.html' },
+          { num: 8, title: "Puissances", fiche: '/public/fiches/4e-ch08-puissances.html' },
+          { num: 9, title: "Triangles et droites parallèles", fiche: '/public/fiches/4e-ch09-triangles-droites-paralleles.html' },
         ],
         partial: true,  // pas de programmation complète affichée
       },

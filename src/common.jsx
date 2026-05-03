@@ -26,14 +26,28 @@
     return [lang, setLang];
   }
   function useRoute() {
-    const parse = () => (location.hash.replace(/^#\/?/, '') || 'home').split('/')[0];
+    const parse = () => {
+      const path = location.pathname.replace(/^\/+|\/+$/g, '');
+      return path || 'home';
+    };
     const [route, setRouteState] = React.useState(parse);
     React.useEffect(() => {
       const on = () => setRouteState(parse());
-      window.addEventListener('hashchange', on);
-      return () => window.removeEventListener('hashchange', on);
+      window.addEventListener('popstate', on);
+      window.addEventListener('jpmnav', on);
+      return () => {
+        window.removeEventListener('popstate', on);
+        window.removeEventListener('jpmnav', on);
+      };
     }, []);
-    const nav = (r) => { location.hash = '#/' + r; window.scrollTo({ top: 0, behavior: 'smooth' }); };
+    const nav = (r) => {
+      const path = (!r || r === 'home') ? '/' : '/' + r;
+      if (location.pathname !== path) {
+        history.pushState({}, '', path);
+        window.dispatchEvent(new Event('jpmnav'));
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
     return [route, nav];
   }
 

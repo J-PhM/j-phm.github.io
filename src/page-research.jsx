@@ -45,7 +45,7 @@
 
     return (
       <main>
-        <PageHero fossil="public/fossils/recherche.jpg">
+        <PageHero fossil="/public/fossils/recherche.jpg">
           <Reveal>
             <div className="jpm-kicker">{rFR ? 'Recherche' : 'Research'}</div>
             <h1 className="jpm-serif-display" style={{ fontSize: 56, margin: '12px 0 8px', fontWeight: 400, letterSpacing: '-.01em' }}>

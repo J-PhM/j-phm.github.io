@@ -17,7 +17,7 @@
 
     return (
       <main>
-        <PageHero fossil="public/fossils/seconde.jpg">
+        <PageHero fossil="/public/fossils/seconde.jpg">
           <Reveal>
             <div className="jpm-kicker">{rFR ? 'Série en cours · depuis 2025' : 'Ongoing series · since 2025'}</div>
             <h1 className="jpm-serif-display" style={{

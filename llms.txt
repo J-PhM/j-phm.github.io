@@ -1,0 +1,28 @@
+# Lemniscate — Jean-Philippe Mouton
+
+> Site personnel de Jean-Philippe Mouton, professeur certifié de mathématiques au collège Jean Rostand (Capbreton, France) et chercheur indépendant. Recherche en théorie de l'émergence, analyse harmonique des nombres premiers, étude statistique du manuscrit de Voynich, et ressources pédagogiques.
+
+## Recherche
+
+- [Articles & publications](https://j-phm.github.io/research): index complet des travaux, déposés en accès libre principalement sur Zenodo. Filtrage par série, tri, recherche par titre, DOI ou mot-clé.
+
+- [TGSE — Théorie Générale des Structures Émergentes](https://j-phm.github.io/tgse-series): programme de mathématique poursuivi depuis 1998, publié à partir de 2025. Formalise l'émergence à l'aide d'un degré d'existence α ∈ (0, 1] et d'un élément ∅ pour l'inexistence. Refonte v2 en cours depuis avril 2026 (Propédeutique mathématique). Articles v1 disponibles : TGSE I à X (arithmétique graduée, extension hyperréelle, structure non standard, structure causale, extension complexe, systèmes gradués généralisés ; émergence de l'atome d'hydrogène et de l'espace-temps gravitationnel ; cohomologie graduée et topos élémentaire ; cascades ∞-catégoriques).
+
+- [ORA — Opérateur de Résonance Arithmétique](https://j-phm.github.io/ora-series): programme d'analyse harmonique et de géométrie arithmétique, ouvert à la publication en 2025. Étudie la distribution des nombres premiers à travers les phases logarithmiques θ_p = log p mod 2π. Articles : ORA I (introduction de l'opérateur), ORA II (fondements théoriques, structures quasi-cristallines), ORA ∩ TGSE (approche variationnelle de l'hypothèse de Riemann).
+
+- [EMV — Études du Manuscrit de Voynich](https://j-phm.github.io/emv): exploration statistique systématique du manuscrit de Voynich (Beinecke MS 408, XVᵉ siècle), conduite sur la transcription EVA. Établit douze contraintes formelles (entropie, morphologie, grammaire syllabique, prosodie, etc.) qu'un déchiffrement futur devrait reproduire.
+
+## Enseignement
+
+- [Enseignement](https://j-phm.github.io/teaching): collège Jean Rostand de Capbreton depuis 2011. Fiches de révision interactives en HTML pour les classes de 5ᵉ (Fractions, Nombres relatifs, Opérations sur les fractions) et 4ᵉ (Puissances, Triangles et droites parallèles). Inclut également l'Herbier de courbes mathématiques (GeoGebra) et le livre IREM « Les fonctions : du collège jusqu'en seconde ».
+
+## À propos
+
+- [Curriculum vitæ](https://j-phm.github.io/cv): parcours, formation et publications.
+- [Correspondance](https://j-phm.github.io/contact): pour échanger autour des travaux.
+
+## Profils externes
+
+- ORCID: https://orcid.org/0009-0000-2844-0962
+- Zenodo: https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Mouton%2C%20Jean-Philippe%22
+- ResearchGate: https://www.researchgate.net/profile/Jean-Philippe-Mouton

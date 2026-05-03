@@ -66,7 +66,7 @@
             </div>
 
             {/* FOSSIL HERO */}
-            <FossilHero src="public/fossils/accueil.jpg" />
+            <FossilHero src="/public/fossils/accueil.jpg" />
           </div>
         </section>
 

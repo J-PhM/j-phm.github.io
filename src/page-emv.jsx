@@ -8,7 +8,7 @@
     return (
       <figure style={{ margin: 0 }}>
         <img
-          src="public/voynich-folio.jpg"
+          src="/public/voynich-folio.jpg"
           alt={rFR
             ? 'Folio de la section herbier du manuscrit de Voynich (Beinecke MS 408), plante imaginaire à grande feuille ronde accompagnée de texte en voynichois.'
             : 'Folio from the herbal section of the Voynich manuscript (Beinecke MS 408), showing an imaginary round-leafed plant with Voynichese text.'}
@@ -37,7 +37,7 @@
 
     return (
       <main>
-        <PageHero fossil="public/fossils/autre.jpg">
+        <PageHero fossil="/public/fossils/autre.jpg">
           <Reveal>
             <div className="jpm-kicker">{rFR ? 'Série en cours · depuis 2026' : 'Ongoing series · since 2026'}</div>
             <h1 className="jpm-serif-display" style={{

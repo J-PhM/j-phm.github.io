@@ -10,7 +10,7 @@
     const pdf = window.jpmUsePdfViewer();
     return (
       <main>
-        <PageHero fossil="public/fossils/enseignement.jpg">
+        <PageHero fossil="/public/fossils/enseignement.jpg">
           <Reveal>
             <div className="jpm-kicker">{rFR ? 'Enseignement' : 'Teaching'}</div>
             <h1 className="jpm-serif-display" style={{ fontSize: 56, margin: '12px 0 20px', fontWeight: 400, letterSpacing: '-.01em' }}>
@@ -159,7 +159,7 @@
     const cv = rFR ? D.cv.fr : D.cv.en;
     return (
       <main>
-        <PageHero fossil="public/portrait-square.jpg" alt="Portrait de l'auteur">
+        <PageHero fossil="/public/portrait-square.jpg" alt="Portrait de l'auteur">
           <Reveal>
             <div className="jpm-kicker">{rFR ? 'Curriculum vitæ' : 'Curriculum vitae'}</div>
             <h1 className="jpm-serif-display" style={{ fontSize: 56, margin: '12px 0 20px', fontWeight: 400, letterSpacing: '-.01em' }}>
@@ -228,7 +228,7 @@
     const rFR = lang === 'fr';
     return (
       <main>
-        <PageHero fossil="public/fossils/contact.jpg">
+        <PageHero fossil="/public/fossils/contact.jpg">
           <Reveal>
             <div className="jpm-kicker">{rFR ? 'Correspondance' : 'Correspondence'}</div>
             <h1 className="jpm-serif-display" style={{ fontSize: 56, margin: '12px 0 24px', fontWeight: 400, letterSpacing: '-.01em' }}>

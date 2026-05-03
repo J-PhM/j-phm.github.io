@@ -6,10 +6,25 @@
   const Header = window.jpmHeader;
   const Footer = window.jpmFooter;
 
+  const TITLES = {
+    home: 'Lemniscate — Jean-Philippe Mouton · Mathématiques & Manuscrit de Voynich',
+    research: 'Articles & publications — Jean-Philippe Mouton',
+    emv: 'EMV — Études du Manuscrit de Voynich · Jean-Philippe Mouton',
+    'tgse-series': 'TGSE — Théorie Générale des Structures Émergentes · Jean-Philippe Mouton',
+    'ora-series': 'ORA — Opérateur de Résonance Arithmétique · Jean-Philippe Mouton',
+    teaching: 'Enseignement — Jean-Philippe Mouton · Collège Jean Rostand, Capbreton',
+    cv: 'Curriculum vitæ — Jean-Philippe Mouton',
+    contact: 'Correspondance — Jean-Philippe Mouton',
+  };
+
   function App() {
     const [theme, setTheme] = jpmUseTheme();
     const [lang, setLang] = jpmUseLang();
     const [route, nav] = jpmUseRoute();
+
+    React.useEffect(() => {
+      document.title = TITLES[route] || TITLES.home;
+    }, [route]);
 
     let Page;
     switch (route) {
@@ -20,13 +35,6 @@
       case 'teaching': Page = jpmTeaching; break;
       case 'cv':       Page = jpmCV; break;
       case 'contact':  Page = jpmContact; break;
-      case 'ora':
-      case 'tgse':
-      case 'peda':
-      case 'these':
-        // Series hash redirects to research page.
-        Page = jpmResearch;
-        break;
       default: Page = jpmHome;
     }
 
