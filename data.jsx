@@ -114,7 +114,7 @@ const SITE = {
     orcid: "0009-0000-2844-0962",
     links: [
       { label: "ORCID",        href: "https://orcid.org/0009-0000-2844-0962" },
-      { label: "Zenodo",       href: "https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Mouton%2C%20Jean-Philippe%22&l=list&p=1&s=10&sort=bestmatch" },
+      { label: "Zenodo",       href: "https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Mouton%2C%20Jean-Philippe%22&l=list&p=1&s=25&sort=newest" },
       { label: "ResearchGate", href: "https://www.researchgate.net/profile/Jean-Philippe-Mouton" },
     ],
   },
