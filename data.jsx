@@ -93,9 +93,9 @@ const PAPERS = [
 ];
 
 const SERIES = {
-  emv:   { fr:"EMV — Études du Manuscrit de Voynich", en:"EMV — Studies on the Voynich Manuscript", order:1 },
-  tgse:  { fr:"TGSE — Théorie Générale des Structures Émergentes", en:"TGSE — General Theory of Emergent Structures", order:2 },
-  ora:   { fr:"ORA — Opérateur de Résonance Arithmétique", en:"ORA — Arithmetic Resonance Operator", order:3 },
+  tgse:  { fr:"TGSE — Théorie Générale des Structures Émergentes", en:"TGSE — General Theory of Emergent Structures", order:1 },
+  ora:   { fr:"ORA — Opérateur de Résonance Arithmétique", en:"ORA — Arithmetic Resonance Operator", order:2 },
+  emv:   { fr:"EMV — Études du Manuscrit de Voynich", en:"EMV — Studies on the Voynich Manuscript", order:3 },
   peda:  { fr:"Pédagogie & ressources", en:"Teaching & resources", order:6 },
   these: { fr:"Travaux antérieurs", en:"Earlier work", order:7 },
 };

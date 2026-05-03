@@ -26,9 +26,9 @@
       { k:'contact', fr:'Correspondance', en:'Correspondence' },
     ];
     const seriesItems = [
-      { k:'emv', fr:'Série EMV', en:'EMV series', subFR:'Études du Manuscrit de Voynich', subEN:'Studies on the Voynich Manuscript' },
       { k:'tgse-series', fr:'Série TGSE', en:'TGSE series', subFR:'Théorie Générale des Structures Émergentes', subEN:'General Theory of Emergent Structures' },
       { k:'ora-series', fr:'Série ORA', en:'ORA series', subFR:'Opérateur de Résonance Arithmétique', subEN:'Arithmetic Resonance Operator' },
+      { k:'emv', fr:'Série EMV', en:'EMV series', subFR:'Études du Manuscrit de Voynich', subEN:'Studies on the Voynich Manuscript' },
     ];
     const seriesActive = ['emv','tgse-series','ora-series'].includes(route);
     return (
