@@ -3,6 +3,20 @@
 (function(){
   const { jpmReveal: Reveal } = window;
 
+  // Convert simple inline math like "T^K" or "x^2" into <sup>-rendered React nodes.
+  function renderInlineMath(text) {
+    const out = [];
+    const re = /([A-Za-z])\^([A-Za-z0-9]+)/g;
+    let last = 0, m, key = 0;
+    while ((m = re.exec(text)) !== null) {
+      if (m.index > last) out.push(text.slice(last, m.index));
+      out.push(<React.Fragment key={key++}>{m[1]}<sup>{m[2]}</sup></React.Fragment>);
+      last = m.index + m[0].length;
+    }
+    if (last < text.length) out.push(text.slice(last));
+    return out;
+  }
+
   function PaperCard({ p, rFR, seriesLabel, forceOpen, toggleToken }) {
     const pdf = window.jpmUsePdfViewer();
     const [localOpen, setLocalOpen] = React.useState(true);
@@ -120,7 +134,7 @@
                           fontSize: 15.5, lineHeight: 1.65, color: 'var(--ink)',
                           fontStyle:'italic', margin: pi === 0 ? 0 : '14px 0 0', textWrap:'pretty',
                         }}>
-                          {para}
+                          {renderInlineMath(para)}
                         </p>
                       ))}
                     </div>

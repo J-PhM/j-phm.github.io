@@ -230,7 +230,7 @@
       <main>
         <PageHero fossil="public/fossils/contact.jpg">
           <Reveal>
-            <div className="jpm-kicker">Contact</div>
+            <div className="jpm-kicker">{rFR ? 'Correspondance' : 'Correspondence'}</div>
             <h1 className="jpm-serif-display" style={{ fontSize: 56, margin: '12px 0 24px', fontWeight: 400, letterSpacing: '-.01em' }}>
               {rFR ? 'Correspondance.' : 'Correspondence.'}
             </h1>

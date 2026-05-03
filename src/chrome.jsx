@@ -19,11 +19,11 @@
 
     const items = [
       { k:'home', fr:'Accueil', en:'Home' },
-      { k:'research', fr:'Recherche', en:'Research' },
-      { k:'__series', fr:'Séries', en:'Series' },
       { k:'teaching', fr:'Enseignement', en:'Teaching' },
+      { k:'__series', fr:'Séries', en:'Series' },
+      { k:'research', fr:'Recherche', en:'Research' },
       { k:'cv', fr:'CV', en:'CV' },
-      { k:'contact', fr:'Contact', en:'Contact' },
+      { k:'contact', fr:'Correspondance', en:'Correspondence' },
     ];
     const seriesItems = [
       { k:'emv', fr:'Série EMV', en:'EMV series', subFR:'Études du Manuscrit de Voynich', subEN:'Studies on the Voynich Manuscript' },
