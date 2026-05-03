@@ -11,18 +11,18 @@
       .slice(0, 6);
 
     const chantiers = [
-      { k:'emv', route:'emv', active:true, fr:'Série EMV — Études du Manuscrit de Voynich', en:'EMV Series — Studies on the Voynich Manuscript',
-        frDesc:"Exploration statistique systématique : contraintes formelles, tests d'hypothèses, cartographie des régularités.",
-        enDesc:"Systematic statistical exploration: formal constraints, hypothesis testing, mapping of regularities." },
+      { k:'peda', route:'teaching', fr:'Pédagogie & ressources', en:'Teaching & resources',
+        frDesc:"Ressources pour l'enseignement des mathématiques : herbier de courbes avec GeoGebra, brochure collective IREM sur les fonctions, travaux didactiques.",
+        enDesc:"Resources for mathematics teaching: herbarium of curves with GeoGebra, collective IREM brochure on functions, didactic work." },
       { k:'tgse', route:'tgse-series', active:true, fr:'Série TGSE — Théorie Générale des Structures Émergentes', en:'TGSE Series — General Theory of Emergent Structures',
         frDesc:"Refonte en cours : une Propédeutique mathématique qui remplace progressivement la série initiale (v1, 2025).",
         enDesc:"Ongoing rewrite: a mathematical preparatory volume progressively replacing the initial series (v1, 2025)." },
       { k:'ora', route:'ora-series', fr:'Série ORA — Opérateur de Résonance Arithmétique', en:'ORA Series — Arithmetic Resonance Operator',
         frDesc:"Un opérateur géométrique pour l'étude des nombres premiers et des structures quasi-cristallines logarithmiques. Comprend l'approche variationnelle de l'hypothèse de Riemann (ORA ∩ TGSE).",
         enDesc:"A geometric operator for the study of prime numbers and logarithmic quasi-crystalline structures. Includes the variational approach to the Riemann hypothesis (ORA ∩ TGSE)." },
-      { k:'peda', route:'teaching', fr:'Pédagogie & ressources', en:'Teaching & resources',
-        frDesc:"Ressources pour l'enseignement des mathématiques : herbier de courbes avec GeoGebra, brochure collective IREM sur les fonctions, travaux didactiques.",
-        enDesc:"Resources for mathematics teaching: herbarium of curves with GeoGebra, collective IREM brochure on functions, didactic work." },
+      { k:'emv', route:'emv', active:true, fr:'Série EMV — Études du Manuscrit de Voynich', en:'EMV Series — Studies on the Voynich Manuscript',
+        frDesc:"Exploration statistique systématique : contraintes formelles, tests d'hypothèses, cartographie des régularités.",
+        enDesc:"Systematic statistical exploration: formal constraints, hypothesis testing, mapping of regularities." },
     ];
 
     return (
