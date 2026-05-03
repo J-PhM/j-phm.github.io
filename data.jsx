@@ -94,7 +94,7 @@ const PAPERS = [
 
 const SERIES = {
   emv:   { fr:"EMV — Études du Manuscrit de Voynich", en:"EMV — Studies on the Voynich Manuscript", order:1 },
-  tgse:  { fr:"TGSE — Théorie générale des structures Émergentes", en:"TGSE — General Theory of Emergent Structures", order:2 },
+  tgse:  { fr:"TGSE — Théorie Générale des Structures Émergentes", en:"TGSE — General Theory of Emergent Structures", order:2 },
   ora:   { fr:"ORA — Opérateur de Résonance Arithmétique", en:"ORA — Arithmetic Resonance Operator", order:3 },
   peda:  { fr:"Pédagogie & ressources", en:"Teaching & resources", order:6 },
   these: { fr:"Travaux antérieurs", en:"Earlier work", order:7 },
@@ -122,7 +122,7 @@ const SITE = {
   bio: {
     fr: [
       "Je suis professeur certifié de mathématiques au collège Jean Rostand, à Capbreton (Landes), et chercheur indépendant. J'enseigne dans le second degré depuis 2010 après un parcours varié d'enseignant contractuel et vacataire en lycée, collège et CFA.",
-      "Ma recherche explore plusieurs fronts connexes : une Théorie générale des structures Émergentes (TGSE), des arithmétiques non standard à graduation hyperréelle, un Opérateur de Résonance Arithmétique appliqué à l'étude des nombres premiers, et — plus récemment — une analyse statistique systématique du manuscrit de Voynich. Les articles sont déposés en libre accès sur Zenodo.",
+      "Ma recherche explore plusieurs fronts connexes : une Théorie Générale des Structures Émergentes (TGSE), des arithmétiques non standard à graduation hyperréelle, un Opérateur de Résonance Arithmétique appliqué à l'étude des nombres premiers, et — plus récemment — une analyse statistique systématique du manuscrit de Voynich. Les articles sont déposés en libre accès sur Zenodo.",
       "Ce site rassemble mes publications, mes travaux pédagogiques (Herbier de courbes GeoGebra, livre de fonctions) et mon parcours. Il est conçu comme un cabinet de lecture : stable, lisible, indexé.",
     ],
     en: [

@@ -25,7 +25,7 @@
               lineHeight: 1.05, textWrap: 'balance',
             }}>
               {rFR
-                ? <>TGSE — <em style={{color:'var(--accent)'}}>Théorie générale des structures Émergentes</em></>
+                ? <>TGSE — <em style={{color:'var(--accent)'}}>Théorie Générale des Structures Émergentes</em></>
                 : <>TGSE — <em style={{color:'var(--accent)'}}>General Theory of Emergent Structures</em></>}
             </h1>
             <p style={{ maxWidth: 760, fontSize: 19, color: 'var(--inkSoft)', fontStyle: 'italic', textWrap:'pretty', lineHeight: 1.55 }}>
