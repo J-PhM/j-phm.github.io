@@ -178,6 +178,7 @@ const SITE = {
         chapters: [
           { num: 8, title: "Puissances", fiche: '/public/fiches/4e-ch08-puissances.html' },
           { num: 9, title: "Triangles et droites parallèles", fiche: '/public/fiches/4e-ch09-triangles-droites-paralleles.html' },
+          { num: 10, title: "Équations & Inéquations", fiche: '/public/fiches/4e-ch10-equations-inequations.html' },
         ],
         partial: true,  // pas de programmation complète affichée
       },

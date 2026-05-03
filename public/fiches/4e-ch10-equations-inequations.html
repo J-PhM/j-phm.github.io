@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapitre 10 — Équations &amp; Inéquations · 4e · J.-Ph. Mouton</title>
+<link rel="icon" href="/favicons/teaching.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/teaching-32.png" />
+<link rel="apple-touch-icon" href="/favicons/teaching-180.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<script src="fiche-theme.js"></script>
+<link rel="stylesheet" href="fiche-theme.css?v=1777411759831">
+<style>
+  /* Classes spécifiques à ce chapitre */
+  .eq-line { font-size: 1rem; display: flex; justify-content: center; align-items: center; gap: 0.4em; }
+  .numline { display: block; margin: 0.6rem auto; width: 100%; max-width: 480px; }
+</style>
+</head>
+<body>
+
+<button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+<div id="sidebar">
+  <a class="sb-back" href="/teaching"><span class="arrow">←</span> Retour à Enseignement</a>
+  <div class="sb-header">
+    <div class="sb-eyebrow">Chapitre 10 · Maths 4<sup>e</sup></div>
+    <div class="sb-title">Équations &amp; Inéquations</div>
+    <div class="sb-meta">
+      <div class="sb-author">Jean-Philippe Mouton</div>
+      <div class="sb-institution">Collège Jean Rostand – Capbreton</div>
+      <div class="sb-date">Version 1.0.0 – Bêta – Mai 2026</div>
+      <div class="sb-section-title">Références</div>
+      <span class="sb-ref">• Mouton, J.-Ph. (2025–2026). <em>Équations &amp; Inéquations – Chapitre 10</em>. Fiche de cours, classe de 4<sup>e</sup>, Collège Jean Rostand, Capbreton.</span>
+      <span class="sb-ref">• Magnard (2022). <em>Manuel de mathématiques – 4<sup>e</sup>, collection Delta</em>.</span>
+      <div class="sb-section-title">Assistance</div>
+      <div class="sb-assist">• Anthropic. <em>Claude Opus 4.7</em> [grand modèle de langue]. https://www.anthropic.com</div>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-label"><span>Progression</span><span id="prog-text">0 / 11</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="prog-fill" style="width:0%"></div></div>
+  </div>
+  <div style="padding:0.4rem 1.25rem 0.7rem;border-bottom:1px solid var(--border);">
+    <button onclick="resetProgress()" style="font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;color:var(--dim);background:none;border:none;cursor:pointer;padding:0;text-transform:uppercase;" title="Remettre à zéro">↺ Réinitialiser</button>
+  </div>
+  <nav>
+    <div class="nav-section">Accueil</div>
+    <div class="nav-item nav-home active" data-page="home" onclick="go(this)">🏠 Sommaire</div>
+    <div class="nav-section">1. Équations</div>
+    <div class="nav-item" data-page="p1l1" onclick="go(this)"><span class="nav-check" id="chk-p1l1"></span>Notion d&#8217;équation</div>
+    <div class="nav-item" data-page="p1l2" onclick="go(this)"><span class="nav-check" id="chk-p1l2"></span>Vérifier &amp; principes</div>
+    <div class="nav-item" data-page="p1l3" onclick="go(this)"><span class="nav-check" id="chk-p1l3"></span>Résoudre une équation</div>
+    <div class="nav-item" data-page="p1l4" onclick="go(this)"><span class="nav-check" id="chk-p1l4"></span>Exercices</div>
+    <div class="nav-section">2. Inéquations</div>
+    <div class="nav-item" data-page="p2l1" onclick="go(this)"><span class="nav-check" id="chk-p2l1"></span>Notion d&#8217;inéquation</div>
+    <div class="nav-item" data-page="p2l2" onclick="go(this)"><span class="nav-check" id="chk-p2l2"></span>Résoudre une inéquation</div>
+    <div class="nav-item" data-page="p2l3" onclick="go(this)"><span class="nav-check" id="chk-p2l3"></span>Exercices</div>
+    <div class="nav-section">3. Mise en équation</div>
+    <div class="nav-item" data-page="p3l1" onclick="go(this)"><span class="nav-check" id="chk-p3l1"></span>Méthode</div>
+    <div class="nav-item" data-page="pb1" onclick="go(this)"><span class="nav-check" id="chk-pb1"></span>Nombres consécutifs</div>
+    <div class="nav-item" data-page="pb2" onclick="go(this)"><span class="nav-check" id="chk-pb2"></span>Le rectangle</div>
+    <div class="nav-item" data-page="pb3" onclick="go(this)"><span class="nav-check" id="chk-pb3"></span>La rentrée d&#8217;Ewan</div>
+    <div class="nav-section" style="margin-top:0.8rem">Mémo</div>
+    <div class="nav-item" data-page="memo" onclick="go(this)" style="color:var(--orange)"><span class="nav-check"></span>♥ À connaître par cœur</div>
+  </nav>
+</div>
+
+<div id="main">
+
+<!-- HOME -->
+<div class="page active" id="page-home">
+  <div class="home-hero">
+    <div class="home-eyebrow">Fiche de révision · Chapitre 10</div>
+    <h1>Équations &amp; <strong>Inéquations</strong></h1>
+    <p>Reconnaître une équation, la résoudre étape par étape, comprendre la subtilité du sens d&#8217;une inéquation, modéliser un problème — tout le chapitre en sept leçons interactives et trois problèmes.</p>
+  </div>
+  <div class="objectives-box">
+    <div class="ob-label">Connaissances et compétences associées</div>
+    <ul>
+      <li>Résoudre des équations et inéquations du premier degré à une inconnue</li>
+      <li>Vérifier les solutions et les justifier</li>
+      <li>Représenter graphiquement les solutions sur une droite graduée</li>
+      <li>Appliquer les propriétés des opérations pour manipuler équations et inéquations</li>
+      <li>Résoudre des problèmes de la vie courante impliquant équations et inéquations</li>
+    </ul>
+  </div>
+  <div class="section-cards">
+    <div class="section-card sc-1" onclick="go(null,'p1l1')">
+      <div class="sc-tag">Partie 1</div>
+      <h3>Équations</h3>
+      <p>Définition, vocabulaire, principes d&#8217;équivalence et résolution.</p>
+      <div class="sc-count">3 leçons + exercices</div>
+    </div>
+    <div class="section-card sc-2" onclick="go(null,'p2l1')">
+      <div class="sc-tag">Partie 2</div>
+      <h3>Inéquations</h3>
+      <p>Définition, propriétés, et le piège du sens à l&#8217;inversion.</p>
+      <div class="sc-count">2 leçons + exercices</div>
+    </div>
+    <div class="section-card sc-3" onclick="go(null,'p3l1')">
+      <div class="sc-tag">Partie 3</div>
+      <h3>Mise en équation</h3>
+      <p>Méthode pour traduire un problème en équation, suivie de problèmes concrets.</p>
+      <div class="sc-count">1 leçon + 3 problèmes</div>
+    </div>
+    <div class="section-card" style="border-left:3px solid var(--orange)" onclick="go(null,'memo')">
+      <div class="sc-tag" style="color:var(--orange)">♥ Mémo</div>
+      <h3>À connaître par cœur</h3>
+      <p>Les huit propriétés essentielles du chapitre — pour une révision rapide avant l&#8217;évaluation.</p>
+      <div class="sc-count" style="color:var(--orange)">8 encadrés</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PARTIE 1 — ÉQUATIONS ============ -->
+
+<!-- P1L1 — Notion d'équation -->
+<div class="page" id="page-p1l1">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-blue">Partie 1 · Leçon 1</div>
+    <h1>Notion d&#8217;équation</h1>
+    <p class="lesson-intro">Une équation, c&#8217;est une question : « pour quelles valeurs cette égalité est-elle vraie ? » Avant d&#8217;apprendre à y répondre, il faut bien comprendre de quoi on parle.</p>
+  </div>
+
+  <div class="section-divider">L&#8217;idée de départ</div>
+  <p>Imagine ce petit jeu : <em>« Je pense à un nombre. Je le multiplie par 3, puis j&#8217;ajoute 5. Je trouve 17. À quel nombre ai-je pensé&nbsp;? »</em></p>
+  <p>On peut chercher au tâtonnement : si je prends 2, alors 3 × 2 + 5 = 11, c&#8217;est trop petit. Si je prends 5, alors 3 × 5 + 5 = 20, c&#8217;est trop grand. La bonne réponse semble être entre 2 et 5…</p>
+  <p>Au lieu de tâtonner, on appelle <em class="var">x</em> le nombre cherché et on traduit l&#8217;énoncé par une <strong>égalité</strong> où <em class="var">x</em> joue le rôle d&#8217;une <strong>inconnue</strong>&nbsp;:</p>
+  <div class="formula">3<em class="var">x</em> + 5 = 17</div>
+  <p>Cette écriture s&#8217;appelle une <strong>équation</strong>. Trouver la valeur de <em class="var">x</em> qui rend l&#8217;égalité vraie, c&#8217;est <strong>résoudre l&#8217;équation</strong>.</p>
+
+  <div class="section-divider">Définition</div>
+  <div class="callout c-blue">
+    <div class="c-label">♥ Définition · Équation du premier degré à une inconnue</div>
+    <p>Une <strong>équation du premier degré à une inconnue</strong> est une égalité dans laquelle intervient une seule inconnue, et où la plus grande puissance de cette inconnue est 1.</p>
+  </div>
+
+  <div class="example">
+    <div class="ex-label">Exemple — verbatim du cours</div>
+    <p>3 + 5<em class="var">x</em> = 7 est une équation d&#8217;inconnue <em class="var">x</em>.</p>
+    <p>5<em class="var">x</em> est le seul terme avec inconnue, d&#8217;exposant 1. Donc cette équation est du premier degré.</p>
+    <p style="text-align:center;margin-top:0.6em">
+      <span style="border-bottom:1px solid currentColor;padding-bottom:2px">3 + 5<em class="var">x</em></span>
+      <span style="font-size:0.7em;color:var(--dim)">premier membre</span>
+      &nbsp;=&nbsp;
+      <span style="border-bottom:1px solid currentColor;padding-bottom:2px">7</span>
+      <span style="font-size:0.7em;color:var(--dim)">second membre</span>
+    </p>
+  </div>
+
+  <div class="section-divider">Le vocabulaire à connaître</div>
+  <div class="callout c-blue">
+    <div class="c-label">♥ Vocabulaire · Résoudre une équation</div>
+    <p>• <strong>Résoudre</strong> une équation d&#8217;inconnue <em class="var">x</em>, c&#8217;est trouver toutes les valeurs possibles du nombre <em class="var">x</em> qui vérifient l&#8217;égalité.</p>
+    <p>• Une <strong>solution de l&#8217;équation</strong> est un nombre qui vérifie l&#8217;égalité.</p>
+  </div>
+
+  <div class="example">
+    <div class="ex-label">Exemple — verbatim du cours</div>
+    <p>Soit l&#8217;équation 5<em class="var">x</em> + 3 = 3<em class="var">x</em> + 1. Le nombre −1 est-il solution de l&#8217;équation ?</p>
+    <p>• Calcul du premier membre pour <em class="var">x</em> = −1 : 5 × (−1) + 3 = −2</p>
+    <p>• Calcul du second membre pour <em class="var">x</em> = −1 : 3 × (−1) + 1 = −2</p>
+    <p>L&#8217;égalité est vérifiée pour <em class="var">x</em> = −1 donc le nombre −1 est une solution de cette équation.</p>
+  </div>
+
+  <div class="section-divider">Combien de solutions&nbsp;?</div>
+  <p>Toutes les équations n&#8217;ont pas le même nombre de solutions. Certaines en ont une seule, d&#8217;autres aucune, et quelques-unes en ont une infinité&nbsp;:</p>
+
+  <div class="callout c-orange">
+    <div class="c-label">♥ Propriété (admise) · Nombre de solutions</div>
+    <p>Une équation du premier degré à une inconnue admet une <strong>solution unique</strong>, <strong>aucune solution</strong>, ou une <strong>infinité de solutions</strong>.</p>
+  </div>
+
+  <div class="example">
+    <div class="ex-label">Exemples — verbatim du cours</div>
+    <p>• L&#8217;équation 2<em class="var">x</em> = 6 admet une solution unique, le nombre 3.</p>
+    <p>• L&#8217;équation <em class="var">x</em> + 1 = <em class="var">x</em> n&#8217;admet aucune solution.</p>
+    <p>• L&#8217;équation 0 × <em class="var">x</em> = 0 admet une infinité de solutions <em>(quel que soit le nombre <em class="var">x</em> choisi, 0 × <em class="var">x</em> vaut toujours 0)</em>.</p>
+  </div>
+
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content"><strong>À retenir&nbsp;:</strong> dans une équation, repère le <strong>premier membre</strong> (à gauche du =), le <strong>second membre</strong> (à droite), et l&#8217;<strong>inconnue</strong>. Pour <strong>tester</strong> si un nombre est solution, on calcule chaque membre séparément et on regarde s&#8217;ils sont égaux.</div>
+  </div>
+
+  <div class="quiz" id="quiz-p1l1">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p1l1">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l1"></div>
+    <div class="quiz-feedback" id="qfb-p1l1"></div>
+  </div>
+  <div class="quiz" id="quiz-p1l1q2">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p1l1q2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l1q2"></div>
+    <div class="quiz-feedback" id="qfb-p1l1q2"></div>
+  </div>
+  <div class="quiz" id="quiz-p1l1q3">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q" id="qq-p1l1q3">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l1q3"></div>
+    <div class="quiz-feedback" id="qfb-p1l1q3"></div>
+  </div>
+  <div class="quiz" id="quiz-p1l1q4">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p1l1q4">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l1q4"></div>
+    <div class="quiz-feedback" id="qfb-p1l1q4"></div>
+  </div>
+
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'home')">&#8592; Sommaire</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p1l1');go(null,'p1l2')">Leçon suivante &#8594;</button>
+  </div>
+</div>
+
+<!-- P1L2 — Vérifier & principes -->
+<div class="page" id="page-p1l2">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-blue">Partie 1 · Leçon 2</div>
+    <h1>Vérifier &amp; principes d&#8217;équivalence</h1>
+    <p class="lesson-intro">On entraîne d&#8217;abord la vérification — la base —, puis on apprend les deux outils qui permettent de transformer une équation sans changer ses solutions.</p>
+  </div>
+
+  <div class="section-divider">Tester un nombre</div>
+  <p>La toute première chose qu&#8217;on apprend à faire avec une équation, c&#8217;est de <strong>vérifier</strong> qu&#8217;un nombre donné en est solution.</p>
+  <p>La méthode est mécanique&nbsp;: on remplace <em class="var">x</em> par la valeur à tester dans <strong>chaque membre séparément</strong>, on calcule, et on compare les deux résultats. S&#8217;ils sont égaux, le nombre est solution&nbsp;; sinon, ce n&#8217;est pas une solution.</p>
+  <p>Tu peux t&#8217;entraîner avec l&#8217;outil ci-dessous&nbsp;: choisis une des quatre équations, puis fais varier <em class="var">x</em> jusqu&#8217;à ce que les deux membres soient égaux.</p>
+
+  <div class="fraction-builder">
+    <div class="tool-label">Outil · tester une valeur</div>
+    <div class="tool-hint">Choisis une équation, puis fais varier <em class="var">x</em> jusqu&#8217;à trouver la solution.</div>
+    <div class="fb-controls" style="margin-bottom:1rem">
+      <button class="tool-btn test-eq-btn" onclick="testPickEq(0)"><em class="var">x</em> + 5 = 12</button>
+      <button class="tool-btn test-eq-btn" onclick="testPickEq(1)">3<em class="var">x</em> = 9</button>
+      <button class="tool-btn test-eq-btn" onclick="testPickEq(2)">2<em class="var">x</em> + 1 = 7</button>
+      <button class="tool-btn test-eq-btn" onclick="testPickEq(3)">5<em class="var">x</em> + 3 = 3<em class="var">x</em> + 1</button>
+    </div>
+    <div class="tool-display" id="test1-display"></div>
+    <div class="fb-controls">
+      <button class="tool-btn" onclick="testStepX(-1)" style="border-color:var(--orange-border);color:var(--orange)"><em class="var">x</em> −</button>
+      <button class="tool-btn" onclick="testStepX(1)" style="border-color:var(--orange-border);color:var(--orange)"><em class="var">x</em> +</button>
+    </div>
+  </div>
+
+  <div class="section-divider">Transformer sans changer les solutions</div>
+  <p>Tester une à une toutes les valeurs serait très long, surtout quand la solution est négative ou fractionnaire. On a besoin d&#8217;<strong>outils</strong> qui transforment une équation en une autre <em>équivalente</em> (avec les mêmes solutions), mais plus simple à lire.</p>
+  <p>Ces deux outils sont les <strong>principes d&#8217;équivalence</strong>. Ils s&#8217;énoncent comme une règle d&#8217;or&nbsp;: <em>tout ce qu&#8217;on fait à un membre, on doit le faire à l&#8217;autre.</em></p>
+
+  <div class="callout c-orange">
+    <div class="c-label">♥ Propriété · Principe d&#8217;équivalence (addition et soustraction)</div>
+    <p>Une égalité vraie reste vraie lorsque l&#8217;on ajoute ou l&#8217;on soustrait un même nombre à chacun de ses deux membres.</p>
+    <p><em class="var">a</em>, <em class="var">b</em> et <em class="var">c</em> désignent des nombres relatifs.</p>
+    <p>• Si <em class="var">a</em> = <em class="var">b</em>, alors <em class="var">a</em> + <em class="var">c</em> = <em class="var">b</em> + <em class="var">c</em></p>
+    <p>• Si <em class="var">a</em> = <em class="var">b</em>, alors <em class="var">a</em> − <em class="var">c</em> = <em class="var">b</em> − <em class="var">c</em></p>
+  </div>
+
+  <div class="example">
+    <div class="ex-label">Exemple — verbatim du cours</div>
+    <p>On considère l&#8217;égalité : 6 + <em class="var">x</em> = −2</p>
+    <p>On soustrait 6 à chacun de ses membres : 6 + <em class="var">x</em> − 6 = −2 − 6</p>
+    <p>On obtient l&#8217;égalité : <em class="var">x</em> = −8</p>
+  </div>
+
+  <p>Le premier principe permet d&#8217;éliminer les termes <strong>ajoutés</strong> ou <strong>soustraits</strong>. Mais que faire d&#8217;un coefficient devant <em class="var">x</em> (par exemple le 3 dans 3<em class="var">x</em> = 12)&nbsp;? On a besoin d&#8217;un second principe.</p>
+
+  <div class="callout c-orange">
+    <div class="c-label">♥ Propriété · Principe d&#8217;équivalence (multiplication et division)</div>
+    <p>Une égalité vraie reste vraie lorsque l&#8217;on multiplie ou l&#8217;on divise chacun de ses deux membres par un même nombre <strong>non nul</strong>.</p>
+    <p><em class="var">a</em>, <em class="var">b</em> et <em class="var">c</em> désignent des nombres relatifs, avec <em class="var">c</em> ≠ 0.</p>
+    <p>• Si <em class="var">a</em> = <em class="var">b</em>, alors <em class="var">a</em> × <em class="var">c</em> = <em class="var">b</em> × <em class="var">c</em></p>
+    <p>• Si <em class="var">a</em> = <em class="var">b</em>, alors <span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">c</em></span></span> = <span class="frac"><span class="fnum"><em class="var">b</em></span><span class="fden"><em class="var">c</em></span></span></p>
+  </div>
+
+  <div class="example">
+    <div class="ex-label">Exemples — verbatim du cours</div>
+    <p>• On considère l&#8217;égalité : <span class="frac"><span class="fnum"><em class="var">x</em></span><span class="fden">4</span></span> = −6</p>
+    <p>&nbsp;&nbsp;On multiplie par 4 chacun de ses membres : <span class="frac"><span class="fnum"><em class="var">x</em></span><span class="fden">4</span></span> × 4 = −6 × 4</p>
+    <p>&nbsp;&nbsp;On obtient l&#8217;égalité : <em class="var">x</em> = −24</p>
+    <p>• On considère l&#8217;égalité : −3<em class="var">x</em> = 8</p>
+    <p>&nbsp;&nbsp;On divise par −3 chacun de ses membres : <span class="frac"><span class="fnum">−3<em class="var">x</em></span><span class="fden">−3</span></span> = <span class="frac"><span class="fnum">8</span><span class="fden">−3</span></span></p>
+    <p>&nbsp;&nbsp;On obtient l&#8217;égalité : <em class="var">x</em> = −<span class="frac"><span class="fnum">8</span><span class="fden">3</span></span></p>
+  </div>
+
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content"><strong>À retenir&nbsp;:</strong> ces deux principes sont les <strong>seuls outils</strong> pour résoudre une équation. La règle d&#8217;or : <em>ce qu&#8217;on fait à un membre, on le fait aussi à l&#8217;autre</em>.</div>
+  </div>
+
+  <div class="quiz" id="quiz-p1l2">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p1l2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l2"></div>
+    <div class="quiz-feedback" id="qfb-p1l2"></div>
+  </div>
+  <div class="quiz" id="quiz-p1l2q2">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p1l2q2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l2q2"></div>
+    <div class="quiz-feedback" id="qfb-p1l2q2"></div>
+  </div>
+  <div class="quiz" id="quiz-p1l2q3">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q" id="qq-p1l2q3">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l2q3"></div>
+    <div class="quiz-feedback" id="qfb-p1l2q3"></div>
+  </div>
+  <div class="quiz" id="quiz-p1l2q4">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p1l2q4">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l2q4"></div>
+    <div class="quiz-feedback" id="qfb-p1l2q4"></div>
+  </div>
+
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p1l1')">&#8592; Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p1l2');go(null,'p1l3')">Leçon suivante &#8594;</button>
+  </div>
+</div>
+
+<!-- P1L3 — Résoudre une équation -->
+<div class="page" id="page-p1l3">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-blue">Partie 1 · Leçon 3</div>
+    <h1>Résoudre une équation</h1>
+    <p class="lesson-intro">On combine maintenant les deux principes pour résoudre les équations classiques de 4<sup>e</sup> : <em class="var">ax</em>+<em class="var">b</em>=<em class="var">c</em> puis <em class="var">ax</em>+<em class="var">b</em>=<em class="var">cx</em>+<em class="var">d</em>.</p>
+  </div>
+
+  <div class="section-divider">L&#8217;idée de départ</div>
+  <p>Les deux principes d&#8217;équivalence vus à la leçon précédente sont des <strong>outils</strong>. À quoi servent-ils&nbsp;? À transformer une équation compliquée en une équation plus simple, jusqu&#8217;à arriver à <em class="var">x</em> = quelque chose.</p>
+  <p>L&#8217;idée centrale est l&#8217;<strong>opération inverse</strong>&nbsp;: pour faire disparaître un « + 5 », on soustrait 5. Pour faire disparaître un « × 3 », on divise par 3. À chaque étape, on rapproche <em class="var">x</em> de la solution.</p>
+  <p>Pour résoudre n&#8217;importe quelle équation du type <em class="var">ax</em>&nbsp;+&nbsp;<em class="var">b</em>&nbsp;=&nbsp;<em class="var">c</em>, on suit toujours les <strong>mêmes deux étapes dans le même ordre</strong>.</p>
+
+  <div class="section-divider">Méthode</div>
+  <div class="callout c-purple">
+    <div class="c-label">Méthode · Résoudre <em class="var">ax</em> + <em class="var">b</em> = <em class="var">c</em></div>
+    <div class="steps" style="margin-top:0.5rem">
+      <div class="step"><div class="step-num" style="background:var(--purple);color:var(--bg)">1</div><div>Faire « disparaître » la constante <em class="var">b</em> en <strong>ajoutant ou soustrayant</strong> aux deux membres pour que les <em class="var">x</em> restent seuls à gauche.</div></div>
+      <div class="step"><div class="step-num" style="background:var(--purple);color:var(--bg)">2</div><div>Faire « disparaître » le coefficient <em class="var">a</em> en <strong>divisant</strong> les deux membres par <em class="var">a</em>.</div></div>
+      <div class="step"><div class="step-num" style="background:var(--purple);color:var(--bg)">3</div><div>Si le résultat est une fraction, la <strong>garder telle quelle</strong> (sans arrondir).</div></div>
+    </div>
+  </div>
+
+  <div class="fraction-builder">
+    <div class="tool-label">Outil · résolveur guidé</div>
+    <div class="tool-hint">Modifie les coefficients de <em class="var">a</em><em class="var">x</em> + <em class="var">b</em> = <em class="var">c</em> pour observer les deux étapes.</div>
+    <div class="tool-display" id="solv1-display"></div>
+    <div class="fb-controls">
+      <button class="tool-btn" onclick="solvChange('a',-1)"><em class="var">a</em> −</button>
+      <button class="tool-btn" onclick="solvChange('a',1)"><em class="var">a</em> +</button>
+      <button class="tool-btn" onclick="solvChange('b',-1)"><em class="var">b</em> −</button>
+      <button class="tool-btn" onclick="solvChange('b',1)"><em class="var">b</em> +</button>
+      <button class="tool-btn" onclick="solvChange('c',-1)"><em class="var">c</em> −</button>
+      <button class="tool-btn" onclick="solvChange('c',1)"><em class="var">c</em> +</button>
+    </div>
+  </div>
+
+  <div class="example">
+    <div class="ex-label">Exemple — résolution complète</div>
+    <p>Résoudre 4<em class="var">x</em> − 5 = 19 :</p>
+    <p>4<em class="var">x</em> − 5 + 5 = 19 + 5 &nbsp;<em>(on ajoute 5 aux deux membres)</em></p>
+    <p>4<em class="var">x</em> = 24</p>
+    <p><span class="frac"><span class="fnum">4<em class="var">x</em></span><span class="fden">4</span></span> = <span class="frac"><span class="fnum">24</span><span class="fden">4</span></span> &nbsp;<em>(on divise par 4)</em></p>
+    <p><em class="var">x</em> = 6. <strong>La solution est 6.</strong></p>
+  </div>
+
+  <div class="callout c-yellow">
+    <div class="c-label">Cas particulier · <em class="var">ax</em> + <em class="var">b</em> = <em class="var">cx</em> + <em class="var">d</em></div>
+    <p>Quand l&#8217;inconnue apparaît dans <strong>les deux membres</strong>, on commence par <strong>regrouper les <em class="var">x</em></strong> du même côté (et les constantes de l&#8217;autre), puis on applique la méthode précédente.</p>
+  </div>
+
+  <div class="example">
+    <div class="ex-label">Exemple</div>
+    <p>Résoudre 5<em class="var">x</em> + 3 = 3<em class="var">x</em> + 1 :</p>
+    <p>5<em class="var">x</em> + 3 − 3<em class="var">x</em> = 3<em class="var">x</em> + 1 − 3<em class="var">x</em> &nbsp;<em>(on soustrait 3<em class="var">x</em> aux deux membres)</em></p>
+    <p>2<em class="var">x</em> + 3 = 1</p>
+    <p>2<em class="var">x</em> = 1 − 3 = −2 &nbsp;<em>(on soustrait 3)</em></p>
+    <p><em class="var">x</em> = <span class="frac"><span class="fnum">−2</span><span class="fden">2</span></span> = −1. <strong>La solution est −1.</strong></p>
+  </div>
+
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content"><strong>À retenir&nbsp;:</strong> on isole d&#8217;abord les <em class="var">x</em> d&#8217;un seul côté, on isole les constantes de l&#8217;autre, puis on divise par le coefficient. Une équation peut avoir une solution fractionnaire — on la <strong>garde sous forme exacte</strong>.</div>
+  </div>
+
+  <div class="quiz" id="quiz-p1l3">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p1l3">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l3"></div>
+    <div class="quiz-feedback" id="qfb-p1l3"></div>
+  </div>
+  <div class="quiz" id="quiz-p1l3q2">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p1l3q2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l3q2"></div>
+    <div class="quiz-feedback" id="qfb-p1l3q2"></div>
+  </div>
+  <div class="quiz" id="quiz-p1l3q3">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q" id="qq-p1l3q3">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l3q3"></div>
+    <div class="quiz-feedback" id="qfb-p1l3q3"></div>
+  </div>
+  <div class="quiz" id="quiz-p1l3q4">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p1l3q4">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l3q4"></div>
+    <div class="quiz-feedback" id="qfb-p1l3q4"></div>
+  </div>
+
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p1l2')">&#8592; Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p1l3');go(null,'p1l4')">Leçon suivante &#8594;</button>
+  </div>
+</div>
+
+<!-- P1L4 — Exercices Partie 1 -->
+<div class="page" id="page-p1l4">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-blue">Partie 1 · Exercices</div>
+    <h1>Exercices — Équations</h1>
+    <p class="lesson-intro">Quatre exercices d&#8217;entraînement, du plus simple au plus combiné.</p>
+  </div>
+
+  <div class="quiz" id="quiz-p1l4a">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 1</div><div class="quiz-q" id="qq-p1l4a">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l4a"></div>
+    <div class="quiz-feedback" id="qfb-p1l4a"></div>
+  </div>
+  <div class="quiz" id="quiz-p1l4b">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 2</div><div class="quiz-q" id="qq-p1l4b">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l4b"></div>
+    <div class="quiz-feedback" id="qfb-p1l4b"></div>
+  </div>
+  <div class="quiz" id="quiz-p1l4c">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 3</div><div class="quiz-q" id="qq-p1l4c">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l4c"></div>
+    <div class="quiz-feedback" id="qfb-p1l4c"></div>
+  </div>
+  <div class="quiz" id="quiz-p1l4d">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 4</div><div class="quiz-q" id="qq-p1l4d">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p1l4d"></div>
+    <div class="quiz-feedback" id="qfb-p1l4d"></div>
+  </div>
+
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p1l3')">&#8592; Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p1l4');go(null,'p2l1')">Partie 2 &#8594;</button>
+  </div>
+</div>
+
+<!-- ============ PARTIE 2 — INÉQUATIONS ============ -->
+
+<!-- P2L1 — Notion d'inéquation -->
+<div class="page" id="page-p2l1">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-orange">Partie 2 · Leçon 1</div>
+    <h1>Notion d&#8217;inéquation</h1>
+    <p class="lesson-intro">Quand l&#8217;égalité laisse place à une inégalité, le vocabulaire change un peu, mais la démarche reste familière. Une grosse différence cependant : il y a souvent une <strong>infinité</strong> de solutions.</p>
+  </div>
+
+  <div class="section-divider">L&#8217;idée de départ</div>
+  <p>Toutes les questions ne se posent pas avec un signe « = ». Bien souvent, on cherche à savoir si une quantité dépasse un seuil, ou reste en dessous d&#8217;une limite&nbsp;:</p>
+  <p>• Pour passer en classe supérieure, il faut <strong>au moins 10 de moyenne</strong>.</p>
+  <p>• Pour entrer dans un manège, il faut <strong>mesurer plus de 1,30 m</strong>.</p>
+  <p>• Pour rester dans le budget, la facture doit <strong>rester inférieure à 50 €</strong>.</p>
+  <p>Ces situations s&#8217;écrivent avec des signes d&#8217;inégalité (≤, ≥, &lt;, &gt;) au lieu du signe =. On obtient alors une <strong>inéquation</strong>.</p>
+
+  <div class="section-divider">Définition</div>
+  <div class="callout c-blue">
+    <div class="c-label">♥ Définition · Inéquations</div>
+    <p>Une <strong>inéquation</strong> est une relation entre deux expressions qui compare leur valeur à l&#8217;aide d&#8217;un signe d&#8217;inégalité. Les inéquations peuvent prendre différentes formes, telles que :</p>
+    <p>• <em class="var">ax</em> + <em class="var">b</em> ≤ <em class="var">c</em> &nbsp;«&nbsp;inférieur ou égal&nbsp;»</p>
+    <p>• <em class="var">ax</em> + <em class="var">b</em> ≥ <em class="var">c</em> &nbsp;«&nbsp;supérieur ou égal&nbsp;»</p>
+    <p>• <em class="var">ax</em> + <em class="var">b</em> &lt; <em class="var">c</em> &nbsp;«&nbsp;strictement inférieur&nbsp;»</p>
+    <p>• <em class="var">ax</em> + <em class="var">b</em> &gt; <em class="var">c</em> &nbsp;«&nbsp;strictement supérieur&nbsp;»</p>
+  </div>
+
+  <div class="section-divider">Le vocabulaire à connaître</div>
+  <div class="callout c-blue">
+    <div class="c-label">♥ Vocabulaire · Solution d&#8217;une inéquation</div>
+    <p>Une <strong>solution d&#8217;une inéquation</strong> est une valeur de l&#8217;inconnue pour laquelle l&#8217;inégalité est vraie.</p>
+  </div>
+
+  <div class="example">
+    <div class="ex-label">Exemple — verbatim du cours</div>
+    <p>Soit l&#8217;inéquation 2<em class="var">x</em> + 3 ≥ 7.</p>
+    <p>Toute valeur de <em class="var">x</em> supérieure ou égale à 2 est solution de l&#8217;inéquation.</p>
+    <p>On peut le vérifier&nbsp;: pour <em class="var">x</em> = 2, on a 2 × 2 + 3 = 7, l&#8217;inégalité 7 ≥ 7 est vraie. Pour <em class="var">x</em> = 5, on a 2 × 5 + 3 = 13, et 13 ≥ 7 est vraie aussi. Mais pour <em class="var">x</em> = 1, on a 2 × 1 + 3 = 5, et 5 ≥ 7 est faux&nbsp;: 1 n&#8217;est pas solution.</p>
+  </div>
+
+  <div class="callout c-yellow">
+    <div class="c-label">Différence importante avec une équation</div>
+    <p>Une équation a généralement <strong>une seule solution</strong> (ou aucune, ou une infinité). Une inéquation, elle, a très souvent une <strong>infinité de solutions</strong> — toutes les valeurs de <em class="var">x</em> situées dans un intervalle. C&#8217;est pourquoi on les représente sur une <strong>droite graduée</strong>.</p>
+  </div>
+
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content"><strong>À retenir&nbsp;:</strong> les 4 symboles ≤, ≥, &lt; et &gt; ont des sens précis. Attention à <strong>strictement</strong> (sans le « ou égal ») : la valeur frontière elle-même n&#8217;est <em>pas</em> solution.</div>
+  </div>
+
+  <div class="quiz" id="quiz-p2l1">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p2l1">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l1"></div>
+    <div class="quiz-feedback" id="qfb-p2l1"></div>
+  </div>
+  <div class="quiz" id="quiz-p2l1q2">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p2l1q2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l1q2"></div>
+    <div class="quiz-feedback" id="qfb-p2l1q2"></div>
+  </div>
+  <div class="quiz" id="quiz-p2l1q3">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q" id="qq-p2l1q3">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l1q3"></div>
+    <div class="quiz-feedback" id="qfb-p2l1q3"></div>
+  </div>
+  <div class="quiz" id="quiz-p2l1q4">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p2l1q4">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l1q4"></div>
+    <div class="quiz-feedback" id="qfb-p2l1q4"></div>
+  </div>
+
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p1l4')">&#8592; Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p2l1');go(null,'p2l2')">Leçon suivante &#8594;</button>
+  </div>
+</div>
+
+<!-- P2L2 — Résoudre une inéquation -->
+<div class="page" id="page-p2l2">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-orange">Partie 2 · Leçon 2</div>
+    <h1>Résoudre une inéquation</h1>
+    <p class="lesson-intro">Les principes ressemblent à ceux des équations… avec un piège qui change tout : <strong>multiplier ou diviser par un nombre négatif inverse le sens</strong>.</p>
+  </div>
+
+  <div class="section-divider">L&#8217;idée de départ</div>
+  <p>Pour résoudre une inéquation, on aimerait reprendre les mêmes recettes que pour les équations&nbsp;: ajouter, soustraire, multiplier, diviser des deux côtés. Mais une petite expérience montre qu&#8217;on doit faire attention.</p>
+  <p>Partons d&#8217;une inégalité <strong>vraie</strong>, par exemple&nbsp;:</p>
+  <div class="formula">2 &lt; 5</div>
+  <p>Que se passe-t-il si on multiplie les deux membres par <strong>3</strong> (un nombre positif)&nbsp;?</p>
+  <p>2 × 3 = 6 et 5 × 3 = 15. On obtient 6 &lt; 15. <strong>Toujours vrai.</strong> Le sens est conservé.</p>
+  <p>Mais que se passe-t-il maintenant si on multiplie par <strong>−1</strong> (un nombre négatif)&nbsp;?</p>
+  <p>2 × (−1) = −2 et 5 × (−1) = −5. On obtient −2 &lt; −5… <strong>c&#8217;est faux&nbsp;!</strong> En réalité, −2 est <strong>plus grand</strong> que −5. Pour rendre l&#8217;inégalité vraie, il faut <strong>inverser le sens</strong>&nbsp;: −2 &gt; −5.</p>
+  <p>Cette observation se généralise et donne la règle suivante.</p>
+
+  <div class="section-divider">Propriétés</div>
+  <div class="callout c-orange">
+    <div class="c-label">♥ Propriétés des inéquations (admises)</div>
+    <p>• <strong>Addition et soustraction</strong></p>
+    <p>&nbsp;&nbsp;Si l&#8217;on ajoute ou soustrait le même nombre aux deux membres, l&#8217;inéquation reste vraie.</p>
+    <p>• <strong>Multiplication ou division par un nombre positif</strong></p>
+    <p>&nbsp;&nbsp;L&#8217;inégalité garde son sens.</p>
+    <p>• <strong>Multiplication ou division par un nombre négatif</strong></p>
+    <p>&nbsp;&nbsp;Il faut <strong>inverser</strong> le sens de l&#8217;inégalité.</p>
+  </div>
+
+  <div class="callout c-red">
+    <div class="c-label">⚠️ Le piège du chapitre</div>
+    <p>L&#8217;<strong>inversion du sens</strong> est l&#8217;erreur la plus fréquente. À chaque fois que tu divises (ou multiplies) une inéquation par un nombre, demande-toi : <em>ce nombre est-il positif ou négatif ?</em></p>
+  </div>
+
+  <div class="example">
+    <div class="ex-label">Exemples — verbatim du cours</div>
+    <p>• Si <em class="var">x</em> + 3 &gt; 5 alors <em class="var">x</em> &gt; 5 − 3 = 2 &nbsp;<em>(soustraction → pas d&#8217;inversion)</em></p>
+    <p>• Si 3<em class="var">x</em> ≥ 12 alors <em class="var">x</em> ≥ 12 ÷ 3 = 4 &nbsp;<em>(division par 3 positif → pas d&#8217;inversion)</em></p>
+    <p>• Si −2<em class="var">x</em> &gt; 6 alors <em class="var">x</em> &lt; 6 ÷ (−2) = −3 &nbsp;<em>(division par −2 négatif → on inverse &gt; en &lt;)</em></p>
+  </div>
+
+  <div class="fraction-builder">
+    <div class="tool-label">Outil · résoudre &amp; représenter une inéquation</div>
+    <div class="tool-hint">Modifie <em class="var">a</em>, <em class="var">b</em>, <em class="var">c</em> et le symbole. Observe la résolution étape par étape, puis la solution sur la droite graduée.</div>
+    <div class="tool-display" id="ineq1-display"></div>
+    <svg id="ineq1-numline" class="numline" viewBox="0 0 460 70" xmlns="http://www.w3.org/2000/svg"></svg>
+    <div class="fb-controls">
+      <button class="tool-btn" onclick="ineqChange('a',-1)"><em class="var">a</em> −</button>
+      <button class="tool-btn" onclick="ineqChange('a',1)"><em class="var">a</em> +</button>
+      <button class="tool-btn" onclick="ineqChange('b',-1)"><em class="var">b</em> −</button>
+      <button class="tool-btn" onclick="ineqChange('b',1)"><em class="var">b</em> +</button>
+      <button class="tool-btn" onclick="ineqChange('c',-1)"><em class="var">c</em> −</button>
+      <button class="tool-btn" onclick="ineqChange('c',1)"><em class="var">c</em> +</button>
+    </div>
+    <div class="fb-controls" style="margin-top:0.6rem">
+      <button class="tool-btn" onclick="ineqSetOp('&lt;=')">≤</button>
+      <button class="tool-btn" onclick="ineqSetOp('&gt;=')">≥</button>
+      <button class="tool-btn" onclick="ineqSetOp('&lt;')">&lt;</button>
+      <button class="tool-btn" onclick="ineqSetOp('&gt;')">&gt;</button>
+    </div>
+  </div>
+
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content"><strong>À retenir&nbsp;:</strong> sur la droite graduée, on utilise un <strong>point plein</strong> ● pour ≤ et ≥ (la valeur frontière est solution), et un <strong>cercle vide</strong> ○ pour &lt; et &gt; (la valeur frontière n&#8217;est <em>pas</em> solution).</div>
+  </div>
+
+  <div class="quiz" id="quiz-p2l2">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p2l2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l2"></div>
+    <div class="quiz-feedback" id="qfb-p2l2"></div>
+  </div>
+  <div class="quiz" id="quiz-p2l2q2">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p2l2q2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l2q2"></div>
+    <div class="quiz-feedback" id="qfb-p2l2q2"></div>
+  </div>
+  <div class="quiz" id="quiz-p2l2q3">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q" id="qq-p2l2q3">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l2q3"></div>
+    <div class="quiz-feedback" id="qfb-p2l2q3"></div>
+  </div>
+  <div class="quiz" id="quiz-p2l2q4">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p2l2q4">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l2q4"></div>
+    <div class="quiz-feedback" id="qfb-p2l2q4"></div>
+  </div>
+
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p2l1')">&#8592; Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p2l2');go(null,'p2l3')">Leçon suivante &#8594;</button>
+  </div>
+</div>
+
+<!-- P2L3 — Exercices Partie 2 -->
+<div class="page" id="page-p2l3">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-orange">Partie 2 · Exercices</div>
+    <h1>Exercices — Inéquations</h1>
+    <p class="lesson-intro">Quatre exercices de difficulté croissante. Au moins l&#8217;un d&#8217;eux te demandera d&#8217;<strong>inverser le sens</strong> — sois vigilant !</p>
+  </div>
+
+  <div class="quiz" id="quiz-p2l3a">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 1</div><div class="quiz-q" id="qq-p2l3a">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l3a"></div>
+    <div class="quiz-feedback" id="qfb-p2l3a"></div>
+  </div>
+  <div class="quiz" id="quiz-p2l3b">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 2</div><div class="quiz-q" id="qq-p2l3b">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l3b"></div>
+    <div class="quiz-feedback" id="qfb-p2l3b"></div>
+  </div>
+  <div class="quiz" id="quiz-p2l3c">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 3</div><div class="quiz-q" id="qq-p2l3c">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l3c"></div>
+    <div class="quiz-feedback" id="qfb-p2l3c"></div>
+  </div>
+  <div class="quiz" id="quiz-p2l3d">
+    <div class="quiz-header"><div class="quiz-badge">Exercice 4</div><div class="quiz-q" id="qq-p2l3d">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p2l3d"></div>
+    <div class="quiz-feedback" id="qfb-p2l3d"></div>
+  </div>
+
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p2l2')">&#8592; Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p2l3');go(null,'p3l1')">Partie 3 &#8594;</button>
+  </div>
+</div>
+
+<!-- ============ PARTIE 3 — MISE EN ÉQUATION ============ -->
+
+<!-- P3L1 — Méthode -->
+<div class="page" id="page-p3l1">
+  <div class="lesson-header">
+    <div class="lesson-tag tag-purple">Partie 3 · Leçon 1</div>
+    <h1>Mise en équation</h1>
+    <p class="lesson-intro">Comment passer d&#8217;un énoncé en français à une équation ? La clé : choisir une inconnue, exprimer chaque grandeur en fonction de cette inconnue, et traduire la relation de l&#8217;énoncé.</p>
+  </div>
+
+  <div class="section-divider">Méthode</div>
+  <div class="callout c-purple">
+    <div class="c-label">Méthode · Résoudre un problème par mise en équation</div>
+    <div class="steps" style="margin-top:0.5rem">
+      <div class="step"><div class="step-num" style="background:var(--purple);color:var(--bg)">1</div><div><strong>Choisir l&#8217;inconnue</strong> et la nommer (souvent <em class="var">x</em>). Bien préciser ce qu&#8217;elle représente avec son unité.</div></div>
+      <div class="step"><div class="step-num" style="background:var(--purple);color:var(--bg)">2</div><div><strong>Exprimer en fonction de <em class="var">x</em></strong> les autres grandeurs de l&#8217;énoncé (le double, le triple, la longueur en fonction de la largeur, etc.).</div></div>
+      <div class="step"><div class="step-num" style="background:var(--purple);color:var(--bg)">3</div><div><strong>Écrire l&#8217;équation</strong> qui traduit la relation donnée par l&#8217;énoncé.</div></div>
+      <div class="step"><div class="step-num" style="background:var(--purple);color:var(--bg)">4</div><div><strong>Résoudre</strong> l&#8217;équation.</div></div>
+      <div class="step"><div class="step-num" style="background:var(--purple);color:var(--bg)">5</div><div><strong>Conclure</strong> par une phrase qui répond à la question, en vérifiant que la solution a un sens dans le contexte.</div></div>
+    </div>
+  </div>
+
+  <div class="section-divider">Vocabulaire courant</div>
+  <div class="callout c-yellow">
+    <div class="c-label">Vocabulaire courant · Traduire un énoncé</div>
+    <p>• «&nbsp;<em class="var">a</em> de plus que <em class="var">x</em>&nbsp;» → <em class="var">x</em> + <em class="var">a</em></p>
+    <p>• «&nbsp;<em class="var">a</em> de moins que <em class="var">x</em>&nbsp;» → <em class="var">x</em> − <em class="var">a</em></p>
+    <p>• «&nbsp;<em class="var">a</em> fois plus que <em class="var">x</em>&nbsp;» → <em class="var">a</em><em class="var">x</em></p>
+    <p>• «&nbsp;<em class="var">a</em> fois moins que <em class="var">x</em>&nbsp;» → <span class="frac"><span class="fnum"><em class="var">x</em></span><span class="fden"><em class="var">a</em></span></span></p>
+    <p>• «&nbsp;le double de <em class="var">x</em>&nbsp;» → 2<em class="var">x</em>&nbsp;&nbsp;&nbsp;«&nbsp;le triple&nbsp;» → 3<em class="var">x</em>&nbsp;&nbsp;&nbsp;«&nbsp;le tiers&nbsp;» → <span class="frac"><span class="fnum"><em class="var">x</em></span><span class="fden">3</span></span></p>
+  </div>
+
+  <div class="example">
+    <div class="ex-label">Exemple — programme de calcul</div>
+    <p>«&nbsp;Choisir un nombre, le multiplier par 5, ajouter 9.&nbsp;»</p>
+    <p>Si <em class="var">x</em> est le nombre choisi, le résultat du programme est&nbsp;: <strong>5<em class="var">x</em> + 9</strong>.</p>
+    <p>Pour obtenir 18 comme résultat, on résout 5<em class="var">x</em> + 9 = 18, soit 5<em class="var">x</em> = 9, donc <em class="var">x</em> = <span class="frac"><span class="fnum">9</span><span class="fden">5</span></span> = 1,8.</p>
+  </div>
+
+  <div class="retenir">
+    <div class="r-icon">⭐</div>
+    <div class="r-content"><strong>À retenir&nbsp;:</strong> bien <strong>nommer l&#8217;inconnue avec son unité</strong> dès le début (« soit <em class="var">x</em> la largeur en mètres »). Toujours <strong>conclure par une phrase</strong> qui répond à la question posée.</div>
+  </div>
+
+  <div class="quiz" id="quiz-p3l1">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 1</div><div class="quiz-q" id="qq-p3l1">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p3l1"></div>
+    <div class="quiz-feedback" id="qfb-p3l1"></div>
+  </div>
+  <div class="quiz" id="quiz-p3l1q2">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 2</div><div class="quiz-q" id="qq-p3l1q2">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p3l1q2"></div>
+    <div class="quiz-feedback" id="qfb-p3l1q2"></div>
+  </div>
+  <div class="quiz" id="quiz-p3l1q3">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 3</div><div class="quiz-q" id="qq-p3l1q3">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p3l1q3"></div>
+    <div class="quiz-feedback" id="qfb-p3l1q3"></div>
+  </div>
+  <div class="quiz" id="quiz-p3l1q4">
+    <div class="quiz-header"><div class="quiz-badge">Quiz 4</div><div class="quiz-q" id="qq-p3l1q4">&#8230;</div></div>
+    <div class="quiz-options" id="qo-p3l1q4"></div>
+    <div class="quiz-feedback" id="qfb-p3l1q4"></div>
+  </div>
+
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p2l3')">&#8592; Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('p3l1');go(null,'pb1')">Premier problème &#8594;</button>
+  </div>
+</div>
+
+<!-- PB1 — Trois entiers consécutifs -->
+<div class="page" id="page-pb1">
+  <div class="lesson-header">
+    <div class="lesson-tag" style="color:var(--yellow)">Partie 3 · Problème 1</div>
+    <h1>Nombres consécutifs</h1>
+    <p class="lesson-intro">Premier problème classique : la somme de trois nombres entiers consécutifs vaut 129. Quels sont ces trois nombres&nbsp;?</p>
+  </div>
+
+  <div class="callout c-yellow">
+    <div class="c-label">Énoncé</div>
+    <p>La somme de trois nombres entiers consécutifs est 129.</p>
+    <p>• Quels sont ces trois nombres&nbsp;?</p>
+  </div>
+
+  <div class="section-divider">Étape 1 · Choisir l&#8217;inconnue et exprimer en fonction de <em class="var">x</em></div>
+
+  <div class="quiz" id="quiz-pb1a">
+    <div class="quiz-header"><div class="quiz-badge">Question 1</div><div class="quiz-q">On note <em class="var">x</em> le plus petit des trois nombres entiers consécutifs. Comment exprimer les deux suivants ?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,true,'pb1a-A')"><span class="opt-letter">A</span> <em class="var">x</em>&nbsp;; <em class="var">x</em>+1&nbsp;; <em class="var">x</em>+2</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb1a-B')"><span class="opt-letter">B</span> <em class="var">x</em>&nbsp;; <em class="var">x</em>&nbsp;; <em class="var">x</em></button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb1a-C')"><span class="opt-letter">C</span> <em class="var">x</em>&nbsp;; <em class="var">x</em>+2&nbsp;; <em class="var">x</em>+4</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb1a-D')"><span class="opt-letter">D</span> <em class="var">x</em>&nbsp;; 2<em class="var">x</em>&nbsp;; 3<em class="var">x</em></button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb1a"></div>
+  </div>
+
+  <div class="section-divider">Étape 2 · Écrire et résoudre l&#8217;équation</div>
+  <p>La somme des trois entiers vaut 129, donc&nbsp;: <em class="var">x</em> + (<em class="var">x</em>+1) + (<em class="var">x</em>+2) = 129, soit <strong>3<em class="var">x</em> + 3 = 129</strong>.</p>
+
+  <div class="quiz" id="quiz-pb1b">
+    <div class="quiz-header"><div class="quiz-badge">Question 2</div><div class="quiz-q">Résous l&#8217;équation 3<em class="var">x</em> + 3 = 129. Quels sont les trois nombres&nbsp;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb1b-A')"><span class="opt-letter">A</span> 43&nbsp;; 44&nbsp;; 45</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb1b-B')"><span class="opt-letter">B</span> 42&nbsp;; 43&nbsp;; 44</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb1b-C')"><span class="opt-letter">C</span> 41&nbsp;; 42&nbsp;; 43</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb1b-D')"><span class="opt-letter">D</span> 44&nbsp;; 45&nbsp;; 46</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb1b"></div>
+  </div>
+
+  <div class="completion-box" id="conclusion-pb1" style="display:none">
+    <div class="co-label">Conclusion</div>
+    <p>Les trois nombres entiers consécutifs dont la somme vaut 129 sont <strong>42, 43 et 44</strong>.</p>
+    <p style="font-size:0.82rem;color:var(--dim);margin-top:0.3rem">Vérification&nbsp;: 42 + 43 + 44 = 129. ✓</p>
+  </div>
+
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'p3l1')">&#8592; Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('pb1');go(null,'pb2')">Problème suivant &#8594;</button>
+  </div>
+</div>
+
+<!-- PB2 — Le rectangle -->
+<div class="page" id="page-pb2">
+  <div class="lesson-header">
+    <div class="lesson-tag" style="color:var(--yellow)">Partie 3 · Problème 2</div>
+    <h1>Le rectangle</h1>
+    <p class="lesson-intro">Un rectangle dont la longueur dépasse la largeur de 14&nbsp;m a un périmètre de 378&nbsp;m. Quelles sont ses dimensions&nbsp;?</p>
+  </div>
+
+  <div class="callout c-yellow">
+    <div class="c-label">Énoncé</div>
+    <p>La longueur d&#8217;un rectangle fait 14&nbsp;m de plus que sa largeur. Le périmètre de ce rectangle mesure 378&nbsp;m.</p>
+    <p>• Quelles sont les dimensions du rectangle&nbsp;?</p>
+  </div>
+
+  <div class="section-divider">Étape 1 · Choisir l&#8217;inconnue et écrire le périmètre</div>
+  <p>On note <em class="var">x</em> la <strong>largeur</strong> du rectangle (en mètres). Alors la <strong>longueur</strong> est <em class="var">x</em>+14 (en mètres).</p>
+
+  <div class="quiz" id="quiz-pb2a">
+    <div class="quiz-header"><div class="quiz-badge">Question 1</div><div class="quiz-q">Quelle expression correspond au <strong>périmètre</strong> du rectangle&nbsp;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb2a-A')"><span class="opt-letter">A</span> <em class="var">x</em> + (<em class="var">x</em>+14) = 2<em class="var">x</em>+14</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb2a-B')"><span class="opt-letter">B</span> 2(<em class="var">x</em> + (<em class="var">x</em>+14)) = 4<em class="var">x</em>+28</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb2a-C')"><span class="opt-letter">C</span> <em class="var">x</em> + <em class="var">x</em>+14 = 2<em class="var">x</em>+14</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb2a-D')"><span class="opt-letter">D</span> <em class="var">x</em>(<em class="var">x</em>+14) = <em class="var">x</em><sup>2</sup>+14<em class="var">x</em></button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb2a"></div>
+  </div>
+
+  <div class="section-divider">Étape 2 · Écrire et résoudre l&#8217;équation</div>
+  <p>Le périmètre vaut 378&nbsp;m, donc&nbsp;: <strong>4<em class="var">x</em> + 28 = 378</strong>.</p>
+
+  <div class="quiz" id="quiz-pb2b">
+    <div class="quiz-header"><div class="quiz-badge">Question 2</div><div class="quiz-q">Résous l&#8217;équation 4<em class="var">x</em> + 28 = 378. Quelle est la <strong>largeur</strong> du rectangle&nbsp;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb2b-A')"><span class="opt-letter">A</span> 95&nbsp;m</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb2b-B')"><span class="opt-letter">B</span> 87,5&nbsp;m</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb2b-C')"><span class="opt-letter">C</span> 101,5&nbsp;m</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb2b-D')"><span class="opt-letter">D</span> 89,5&nbsp;m</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb2b"></div>
+  </div>
+
+  <div class="completion-box" id="conclusion-pb2" style="display:none">
+    <div class="co-label">Conclusion</div>
+    <p>La largeur du rectangle est <strong>87,5&nbsp;m</strong> et sa longueur est <strong>87,5 + 14 = 101,5&nbsp;m</strong>.</p>
+    <p style="font-size:0.82rem;color:var(--dim);margin-top:0.3rem">Vérification du périmètre&nbsp;: 2 × (87,5 + 101,5) = 2 × 189 = 378&nbsp;m. ✓</p>
+  </div>
+
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'pb1')">&#8592; Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('pb2');go(null,'pb3')">Problème suivant &#8594;</button>
+  </div>
+</div>
+
+<!-- PB3 — La rentrée d'Ewan -->
+<div class="page" id="page-pb3">
+  <div class="lesson-header">
+    <div class="lesson-tag" style="color:var(--yellow)">Partie 3 · Problème 3</div>
+    <h1>La rentrée d&#8217;Ewan</h1>
+    <p class="lesson-intro">Pour la rentrée scolaire, Ewan achète 7 cahiers, 5 classeurs et un livre. Le ticket de caisse total vaut 44,60&nbsp;€. Le livre coûte 11,25&nbsp;€ et le classeur coûte 1,5&nbsp;fois plus que le cahier. Quel est le prix d&#8217;un cahier&nbsp;? Et celui d&#8217;un classeur&nbsp;?</p>
+  </div>
+
+  <div class="callout c-yellow">
+    <div class="c-label">Énoncé</div>
+    <p>Pour la rentrée scolaire, Ewan achète 7 cahiers, 5 classeurs et un livre. Il paie au total 44,60&nbsp;€.</p>
+    <p>• Sachant que le livre coûte 11,25&nbsp;€, et que le classeur est 1,5&nbsp;fois plus cher que le cahier, quel est le prix d&#8217;un cahier&nbsp;? En déduire le prix d&#8217;un classeur.</p>
+  </div>
+
+  <div class="section-divider">Étape 1 · Mise en équation</div>
+  <p>On note <em class="var">c</em> le <strong>prix d&#8217;un cahier</strong> en euros. Alors le prix d&#8217;un classeur est 1,5<em class="var">c</em> (en euros).</p>
+
+  <div class="quiz" id="quiz-pb3a">
+    <div class="quiz-header"><div class="quiz-badge">Question 1</div><div class="quiz-q">Quelle expression correspond au <strong>coût total</strong> des achats d&#8217;Ewan&nbsp;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,true,'pb3a-A')"><span class="opt-letter">A</span> 7<em class="var">c</em> + 5×1,5<em class="var">c</em> + 11,25 = 14,5<em class="var">c</em> + 11,25</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb3a-B')"><span class="opt-letter">B</span> 7<em class="var">c</em> + 1,5<em class="var">c</em> + 11,25 = 8,5<em class="var">c</em> + 11,25</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb3a-C')"><span class="opt-letter">C</span> 7<em class="var">c</em> + 5×1,5<em class="var">c</em> = 14,5<em class="var">c</em></button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb3a-D')"><span class="opt-letter">D</span> 7<em class="var">c</em> + 5(<em class="var">c</em>+1,5) + 11,25 = 12<em class="var">c</em> + 18,75</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb3a"></div>
+  </div>
+
+  <div class="section-divider">Étape 2 · Résoudre</div>
+  <p>L&#8217;équation à résoudre est&nbsp;: <strong>14,5<em class="var">c</em> + 11,25 = 44,60</strong>.</p>
+
+  <div class="quiz" id="quiz-pb3b">
+    <div class="quiz-header"><div class="quiz-badge">Question 2</div><div class="quiz-q">Résous cette équation. Quel est le prix d&#8217;un cahier&nbsp;? Et d&#8217;un classeur&nbsp;?</div></div>
+    <div class="quiz-options">
+      <button class="quiz-opt" onclick="answer(this,false,'pb3b-A')"><span class="opt-letter">A</span> Cahier&nbsp;: 3,45&nbsp;€&nbsp;; classeur&nbsp;: 5,18&nbsp;€</button>
+      <button class="quiz-opt" onclick="answer(this,true,'pb3b-B')"><span class="opt-letter">B</span> Cahier&nbsp;: 2,30&nbsp;€&nbsp;; classeur&nbsp;: 3,45&nbsp;€</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb3b-C')"><span class="opt-letter">C</span> Cahier&nbsp;: 3,45&nbsp;€&nbsp;; classeur&nbsp;: 2,30&nbsp;€</button>
+      <button class="quiz-opt" onclick="answer(this,false,'pb3b-D')"><span class="opt-letter">D</span> Cahier&nbsp;: 3,08&nbsp;€&nbsp;; classeur&nbsp;: 4,62&nbsp;€</button>
+    </div>
+    <div class="quiz-feedback" id="qfb-pb3b"></div>
+  </div>
+
+  <div class="completion-box" id="conclusion-pb3" style="display:none">
+    <div class="co-label">Conclusion</div>
+    <p>Le cahier coûte <strong>2,30&nbsp;€</strong> et le classeur coûte <strong>3,45&nbsp;€</strong>.</p>
+    <p style="font-size:0.82rem;color:var(--dim);margin-top:0.3rem">Vérification&nbsp;: 7 × 2,30 + 5 × 3,45 + 11,25 = 16,10 + 17,25 + 11,25 = 44,60&nbsp;€. ✓</p>
+  </div>
+
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'pb2')">&#8592; Précédent</button>
+    <button class="nav-btn" onclick="go(null,'home')">&#127968; Sommaire</button>
+    <button class="nav-btn primary" onclick="markDone('pb3');go(null,'memo')">♥ Mémo &#8594;</button>
+  </div>
+</div>
+
+<!-- ============ MÉMO ============ -->
+<div class="page" id="page-memo">
+  <div class="lesson-header">
+    <div class="lesson-tag" style="color:var(--orange)">♥ Mémo</div>
+    <h1>À connaître par cœur</h1>
+    <p class="lesson-intro">Les huit propriétés essentielles du chapitre, reproduites <strong>verbatim</strong> du cours. À relire avant chaque évaluation.</p>
+  </div>
+
+  <div class="callout c-blue">
+    <div class="c-label">♥ 1 · Définition · Équation du premier degré à une inconnue</div>
+    <p>Une <strong>équation du premier degré à une inconnue</strong> est une égalité dans laquelle intervient une seule inconnue, et où la plus grande puissance de cette inconnue est 1.</p>
+  </div>
+
+  <div class="callout c-blue">
+    <div class="c-label">♥ 2 · Vocabulaire · Résoudre une équation</div>
+    <p>• <strong>Résoudre</strong> une équation d&#8217;inconnue <em class="var">x</em>, c&#8217;est trouver toutes les valeurs possibles du nombre <em class="var">x</em> qui vérifient l&#8217;égalité.</p>
+    <p>• Une <strong>solution de l&#8217;équation</strong> est un nombre qui vérifie l&#8217;égalité.</p>
+  </div>
+
+  <div class="callout c-orange">
+    <div class="c-label">♥ 3 · Propriété (admise) · Nombre de solutions</div>
+    <p>Une équation du premier degré à une inconnue admet une <strong>solution unique</strong>, <strong>aucune solution</strong>, ou une <strong>infinité de solutions</strong>.</p>
+  </div>
+
+  <div class="callout c-orange">
+    <div class="c-label">♥ 4 · Principe d&#8217;équivalence · Addition et soustraction</div>
+    <p>Une égalité vraie reste vraie lorsque l&#8217;on ajoute ou l&#8217;on soustrait un même nombre à chacun de ses deux membres.</p>
+    <p><em class="var">a</em>, <em class="var">b</em> et <em class="var">c</em> désignent des nombres relatifs.</p>
+    <p>• Si <em class="var">a</em> = <em class="var">b</em>, alors <em class="var">a</em> + <em class="var">c</em> = <em class="var">b</em> + <em class="var">c</em></p>
+    <p>• Si <em class="var">a</em> = <em class="var">b</em>, alors <em class="var">a</em> − <em class="var">c</em> = <em class="var">b</em> − <em class="var">c</em></p>
+  </div>
+
+  <div class="callout c-orange">
+    <div class="c-label">♥ 5 · Principe d&#8217;équivalence · Multiplication et division</div>
+    <p>Une égalité vraie reste vraie lorsque l&#8217;on multiplie ou l&#8217;on divise chacun de ses deux membres par un même nombre <strong>non nul</strong>.</p>
+    <p><em class="var">a</em>, <em class="var">b</em> et <em class="var">c</em> désignent des nombres relatifs, avec <em class="var">c</em> ≠ 0.</p>
+    <p>• Si <em class="var">a</em> = <em class="var">b</em>, alors <em class="var">a</em> × <em class="var">c</em> = <em class="var">b</em> × <em class="var">c</em></p>
+    <p>• Si <em class="var">a</em> = <em class="var">b</em>, alors <span class="frac"><span class="fnum"><em class="var">a</em></span><span class="fden"><em class="var">c</em></span></span> = <span class="frac"><span class="fnum"><em class="var">b</em></span><span class="fden"><em class="var">c</em></span></span></p>
+  </div>
+
+  <div class="callout c-blue">
+    <div class="c-label">♥ 6 · Définition · Inéquations</div>
+    <p>Une <strong>inéquation</strong> est une relation entre deux expressions qui compare leur valeur à l&#8217;aide d&#8217;un signe d&#8217;inégalité. Les inéquations peuvent prendre différentes formes, telles que :</p>
+    <p>• <em class="var">ax</em> + <em class="var">b</em> ≤ <em class="var">c</em>&nbsp;«&nbsp;inférieur ou égal&nbsp;»</p>
+    <p>• <em class="var">ax</em> + <em class="var">b</em> ≥ <em class="var">c</em>&nbsp;«&nbsp;supérieur ou égal&nbsp;»</p>
+    <p>• <em class="var">ax</em> + <em class="var">b</em> &lt; <em class="var">c</em>&nbsp;«&nbsp;strictement inférieur&nbsp;»</p>
+    <p>• <em class="var">ax</em> + <em class="var">b</em> &gt; <em class="var">c</em>&nbsp;«&nbsp;strictement supérieur&nbsp;»</p>
+  </div>
+
+  <div class="callout c-blue">
+    <div class="c-label">♥ 7 · Vocabulaire · Solution d&#8217;une inéquation</div>
+    <p>Une <strong>solution d&#8217;une inéquation</strong> est une valeur de l&#8217;inconnue pour laquelle l&#8217;inégalité est vraie.</p>
+  </div>
+
+  <div class="callout c-orange">
+    <div class="c-label">♥ 8 · Propriétés des inéquations (admises)</div>
+    <p>• <strong>Addition et soustraction</strong></p>
+    <p>&nbsp;&nbsp;Si l&#8217;on ajoute ou soustrait le même nombre aux deux membres, l&#8217;inéquation reste vraie.</p>
+    <p>• <strong>Multiplication ou division par un nombre positif</strong></p>
+    <p>&nbsp;&nbsp;L&#8217;inégalité garde son sens.</p>
+    <p>• <strong>Multiplication ou division par un nombre négatif</strong></p>
+    <p>&nbsp;&nbsp;Il faut <strong>inverser</strong> le sens de l&#8217;inégalité.</p>
+  </div>
+
+  <div class="lesson-nav">
+    <button class="nav-btn" onclick="go(null,'pb3')">&#8592; Retour</button>
+    <button class="nav-btn primary" onclick="go(null,'home')">&#127968; Sommaire</button>
+  </div>
+</div>
+
+
+</div><!-- /main -->
+
+<script>
+const TOTAL = 11;
+let done = {};
+
+function saveProgress() {
+  try { localStorage.setItem('eq4e_done', JSON.stringify(done)); } catch(e) {}
+}
+function loadProgress() {
+  try {
+    const saved = localStorage.getItem('eq4e_done');
+    if (saved) done = JSON.parse(saved);
+  } catch(e) {}
+}
+function updateProgress() {
+  const n = Object.keys(done).length;
+  document.getElementById('prog-text').textContent = n + ' / ' + TOTAL;
+  document.getElementById('prog-fill').style.width = (n / TOTAL * 100) + '%';
+  ['p1l1','p1l2','p1l3','p1l4','p2l1','p2l2','p2l3','p3l1','pb1','pb2','pb3'].forEach(id => {
+    const el = document.getElementById('chk-' + id);
+    if (el) el.textContent = done[id] ? '✓' : '';
+    const navEl = document.querySelector('[data-page="' + id + '"]');
+    if (navEl) { done[id] ? navEl.classList.add('done') : navEl.classList.remove('done'); }
+  });
+}
+function markDone(id) { done[id] = true; updateProgress(); saveProgress(); }
+function resetProgress() {
+  if (!confirm('Remettre la progression à zéro ?')) return;
+  done = {};
+  try { localStorage.removeItem('eq4e_done'); } catch(e) {}
+  updateProgress();
+}
+function go(el, target) {
+  const t = el ? el.dataset.page : target;
+  if (!t) return;
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const page = document.getElementById('page-' + t);
+  if (page) {
+    page.classList.add('active');
+    setTimeout(() => {
+      const main = document.getElementById('main');
+      main.scrollTop = 0;
+      window.scrollTo(0,0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }, 20);
+  }
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  const nav = document.querySelector('[data-page="' + t + '"]');
+  if (nav) nav.classList.add('active');
+  if (window.innerWidth < 720) document.getElementById('sidebar').classList.remove('open');
+}
+function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
+
+const FB = {
+  // PB1 — Trois entiers consécutifs (somme = 129)
+  "pb1a-A": `Bravo ! Si <em class="var">x</em> est le plus petit, les trois entiers sont <em class="var">x</em>, <em class="var">x</em>+1 et <em class="var">x</em>+2.`,
+  "pb1a-B": `Non. <em class="var">x</em> + <em class="var">x</em> + <em class="var">x</em> = 3<em class="var">x</em> ne traduit pas trois entiers <strong>consécutifs</strong> (chacun augmenté de 1).`,
+  "pb1a-C": `Non. Cette expression correspond à des entiers espacés de 2 (donc deux pairs ou deux impairs), pas à des consécutifs.`,
+  "pb1a-D": `Non. Cette expression revient à 3<em class="var">x</em>+5, ce qui ne donne aucun lien clair avec trois entiers consécutifs.`,
+  "pb1b-A": `Non. 3<em class="var">x</em> + 3 = 129 conduit à <em class="var">x</em> = 42, donc 42, 43 et 44 — leur somme vaut bien 129.`,
+  "pb1b-B": `Bravo ! 3<em class="var">x</em> + 3 = 129, donc 3<em class="var">x</em> = 126 et <em class="var">x</em> = 42. Les trois entiers sont 42, 43 et 44.`,
+  "pb1b-C": `Non. Recompte 41+42+43 = 126, ce n&#8217;est pas 129.`,
+  "pb1b-D": `Non. 43+44+45 = 132, ce n&#8217;est pas 129.`,
+
+  // PB2 — Rectangle (longueur = largeur + 14, périmètre = 378)
+  "pb2a-A": `Non. Le périmètre d&#8217;un rectangle est 2 × (longueur + largeur), pas seulement longueur + largeur.`,
+  "pb2a-B": `Bravo ! Si <em class="var">x</em> est la largeur, la longueur est <em class="var">x</em>+14, donc le périmètre est 2(<em class="var">x</em>+(<em class="var">x</em>+14)) = 4<em class="var">x</em>+28.`,
+  "pb2a-C": `Non. La longueur est <em class="var">x</em>+14, mais il faut multiplier par 2 le total (longueur + largeur).`,
+  "pb2a-D": `Non. C&#8217;est l&#8217;aire (longueur × largeur), pas le périmètre.`,
+  "pb2b-A": `Non. 4<em class="var">x</em> + 28 = 378 donne <em class="var">x</em> = 87,5, ce n&#8217;est pas un entier raisonnable ici. Vérifie ton calcul.`,
+  "pb2b-B": `Bravo ! 4<em class="var">x</em>+28 = 378, donc 4<em class="var">x</em> = 350 et <em class="var">x</em> = 87,5. La largeur mesure 87,5 m.`,
+  "pb2b-C": `Non. C&#8217;est la longueur (largeur + 14), pas la largeur elle-même.`,
+  "pb2b-D": `Non. Recompte : 4<em class="var">x</em> = 378 − 28 = 350, donc <em class="var">x</em> = 350 ÷ 4.`,
+
+  // PB3 — La rentrée d'Ewan (cahier = c, classeur = 1,5c, livre = 11,25, total 44,60 €)
+  "pb3a-A": `Bravo ! 7 cahiers à <em class="var">c</em> €, 5 classeurs à 1,5<em class="var">c</em> € et 1 livre à 11,25 €, soit 7<em class="var">c</em> + 5 × 1,5<em class="var">c</em> + 11,25 = 14,5<em class="var">c</em> + 11,25.`,
+  "pb3a-B": `Non. Le classeur coûte 1,5<em class="var">c</em>, et il y en a 5 (donc 5 × 1,5<em class="var">c</em> = 7,5<em class="var">c</em>), pas seulement 1,5<em class="var">c</em>.`,
+  "pb3a-C": `Non. Tu as oublié le prix du livre (11,25 €) dans ton total.`,
+  "pb3a-D": `Non. Le prix du classeur est 1,5 fois celui du cahier, soit 1,5<em class="var">c</em>, pas <em class="var">c</em> + 1,5.`,
+  "pb3b-A": `Non. 14,5<em class="var">c</em> + 11,25 = 44,60 donne 14,5<em class="var">c</em> = 33,35, donc <em class="var">c</em> = 2,30. Le cahier coûte 2,30 €.`,
+  "pb3b-B": `Bravo ! 14,5<em class="var">c</em> = 44,60 − 11,25 = 33,35, donc <em class="var">c</em> = 33,35 ÷ 14,5 = 2,30. Le cahier coûte 2,30 € et le classeur 1,5 × 2,30 = 3,45 €.`,
+  "pb3b-C": `Non. Recompte : 44,60 − 11,25 = 33,35, et 33,35 ÷ 14,5 = 2,30 (pas 3,45).`,
+  "pb3b-D": `Non. Tu as oublié de soustraire 11,25 € (le livre) avant de diviser.`,
+};
+
+function answer(btn, correct, fbKey) {
+  const quiz = btn.closest('.quiz');
+  quiz.querySelectorAll('.quiz-opt').forEach(o => { o.disabled = true; o.style.cursor = 'default'; });
+  btn.classList.add(correct ? 'correct' : 'wrong');
+  const fb = quiz.querySelector('[id^="qfb-"]');
+  if (fb) {
+    const text = FB[fbKey] || fbKey;
+    fb.className = 'quiz-feedback show ' + (correct ? 'ok' : 'ko');
+    fb.innerHTML = (correct ? '✓ ' : '✗ ') + text
+      + (correct ? '' : '<button class="retry-btn" onclick="retryQuiz(this)">↺ Réessayer</button>');
+  }
+  if (correct) checkProblemConclusion(btn);
+}
+function checkProblemConclusion(btn) {
+  const page = btn.closest('.page');
+  if (!page) return;
+  const pageId = page.id;
+  const m = pageId.match(/^page-(pb\d)$/);
+  if (!m) return;
+  const pbId = m[1];
+  const quizes = page.querySelectorAll('.quiz');
+  let allCorrect = true;
+  quizes.forEach(q => {
+    const hasCorrect = q.querySelector('.quiz-opt.correct');
+    if (!hasCorrect) allCorrect = false;
+  });
+  if (allCorrect) {
+    const conclusion = document.getElementById('conclusion-' + pbId);
+    if (conclusion) conclusion.style.display = '';
+  }
+}
+function retryQuiz(btn) {
+  const quiz = btn.closest('.quiz');
+  quiz.querySelectorAll('.quiz-opt').forEach(o => {
+    o.disabled = false;
+    o.style.cursor = 'pointer';
+    o.classList.remove('correct', 'wrong');
+  });
+  const fb = quiz.querySelector('[id^="qfb-"]');
+  if (fb) { fb.className = 'quiz-feedback'; fb.innerHTML = ''; }
+}
+
+// ══════════════════════════════════════════════════════════════
+// HELPERS
+// ══════════════════════════════════════════════════════════════
+function gcdR(a,b){a=Math.abs(a);b=Math.abs(b);return b===0?a:gcdR(b,a%b);}
+function rInt(min,max){return Math.floor(Math.random()*(max-min+1))+min;}
+function rIntNonZero(min,max){let v;do{v=rInt(min,max);}while(v===0);return v;}
+function shuffle(arr){let a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function fH(n,d){return '<span class="frac"><span class="fnum">'+n+'</span><span class="fden">'+d+'</span></span>';}
+function fS(n,d){if(d===1||d==='1')return String(n);if(d===-1||d==='-1')return String(-n);if(n===0)return '0';return fH(n,d);}
+function rat(n,d){
+  if(d===0)return 'indéfini';
+  if(d<0){n=-n;d=-d;}
+  const g=gcdR(Math.abs(n),Math.abs(d));
+  n/=g;d/=g;
+  if(d===1)return String(n);
+  if(n<0)return '−'+fH(-n,d);
+  return fH(n,d);
+}
+function ratExact(n,d){
+  if(d===0)return 'indéfini';
+  if(d<0){n=-n;d=-d;}
+  const g=gcdR(Math.abs(n),Math.abs(d));
+  n/=g;d/=g;
+  if(d===1)return String(n);
+  if(n<0)return '−'+fH(-n,d);
+  return fH(n,d);
+}
+function placeQuiz(qid, qHtml, opts){
+  const qq=document.getElementById('qq-'+qid);
+  const qo=document.getElementById('qo-'+qid);
+  if(!qq||!qo)return;
+  qq.innerHTML=qHtml;
+  qo.innerHTML='';
+  'ABCDE'.split('').slice(0,opts.length).forEach((l,i)=>{
+    const btn=document.createElement('button');
+    btn.className='quiz-opt';
+    btn.innerHTML='<span class="opt-letter">'+l+'</span> '+opts[i].html;
+    const key='rq-'+qid+'-'+l;
+    FB[key]=opts[i].fb;
+    btn.onclick=function(){answer(this,opts[i].correct,key);};
+    qo.appendChild(btn);
+  });
+}
+function distinctOpts(correct, candidates){
+  const key=(p)=>{const g=gcdR(Math.abs(p[0]),Math.abs(p[1]||1));let nn=p[0]/g,dd=(p[1]||1)/g;if(dd<0){nn=-nn;dd=-dd;}return nn+'/'+dd;};
+  const used=new Set([key(correct)]);
+  const out=[];
+  for(const c of candidates){
+    if(!used.has(key(c))){used.add(key(c));out.push(c);if(out.length===3)return out;}
+  }
+  let bump=1;
+  while(out.length<3 && bump<50){
+    const cand=[correct[0]+bump,correct[1]];
+    if(!used.has(key(cand))){used.add(key(cand));out.push(cand);}
+    bump++;
+  }
+  return out;
+}
+
+// ══════════════════════════════════════════════════════════════
+// OUTILS INTERACTIFS
+// ══════════════════════════════════════════════════════════════
+const TEST_EQS = [
+  {a1:1, b1:5, a2:0, b2:12, sol:7,  label:'<em class="var">x</em> + 5 = 12'},
+  {a1:3, b1:0, a2:0, b2:9,  sol:3,  label:'3<em class="var">x</em> = 9'},
+  {a1:2, b1:1, a2:0, b2:7,  sol:3,  label:'2<em class="var">x</em> + 1 = 7'},
+  {a1:5, b1:3, a2:3, b2:1,  sol:-1, label:'5<em class="var">x</em> + 3 = 3<em class="var">x</em> + 1'},
+];
+let test1 = {idx:3, x:-1};
+function testPickEq(i){test1.idx=i;test1.x=0;test1Update();}
+function testStepX(delta){test1.x=Math.max(-15,Math.min(15,test1.x+delta));test1Update();}
+function fmtMember(a,b,x){
+  if(a===0)return String(b);
+  let parts=[];
+  if(a===1)parts.push(x<0?'('+x+')':String(x));
+  else if(a===-1)parts.push('−('+(x<0?'('+x+')':String(x))+')');
+  else parts.push(a+' × '+(x<0?'('+x+')':String(x)));
+  if(b!==0)parts.push((b>0?'+ ':'− ')+Math.abs(b));
+  return parts.join(' ');
+}
+function fmtMemberWithEquals(a,b,x,result){
+  if(a===0)return '<strong>'+b+'</strong>';
+  return fmtMember(a,b,x)+' = <strong>'+result+'</strong>';
+}
+function test1Update(){
+  const eq=TEST_EQS[test1.idx];
+  const x=test1.x;
+  const m1=eq.a1*x+eq.b1;
+  const m2=eq.a2*x+eq.b2;
+  const isEq=(m1===m2);
+  let h='<div>Équation : <strong>'+eq.label+'</strong></div>';
+  h+='<div style="font-size:0.9em;margin-top:0.3em">Je teste <em class="var">x</em> = '+x+' :</div>';
+  h+='<div>1<sup>er</sup> membre : '+fmtMemberWithEquals(eq.a1,eq.b1,x,m1)+'</div>';
+  h+='<div>2<sup>e</sup> membre : '+fmtMemberWithEquals(eq.a2,eq.b2,x,m2)+'</div>';
+  h+='<div style="margin-top:0.4em;color:'+(isEq?'var(--green)':'var(--red)')+';font-weight:600">'+(isEq?'✓ Les deux membres sont égaux : '+x+' est solution.':'✗ Les deux membres sont différents : '+x+' n&#8217;est pas solution.')+'</div>';
+  document.getElementById('test1-display').innerHTML=h;
+  const btns=document.querySelectorAll('.test-eq-btn');
+  btns.forEach((b,i)=>{
+    if(i===test1.idx){b.style.borderColor='var(--orange)';b.style.color='var(--orange)';b.style.background='var(--orange-dim)';}
+    else {b.style.borderColor='var(--border)';b.style.color='var(--dim)';b.style.background='var(--bg)';}
+  });
+}
+
+let solv1 = {a:3, b:5, c:14};
+function solvChange(k,delta){
+  if(k==='a'){let v=solv1.a+delta;if(v===0)v+=delta;solv1.a=Math.max(-9,Math.min(9,v));}
+  else {solv1[k]=Math.max(-20,Math.min(30,solv1[k]+delta));}
+  solv1Update();
+}
+function solv1Update(){
+  const {a,b,c}=solv1;
+  const cmb=c-b;
+  let h='';
+  h+='<div>'+a+'<em class="var">x</em>'+(b>=0?' + ':' − ')+Math.abs(b)+' = '+c+'</div>';
+  h+='<div style="font-size:0.82em;color:var(--dim);font-style:italic">↓ '+(b>=0?'soustraire '+b:'ajouter '+Math.abs(b))+' aux deux membres</div>';
+  h+='<div>'+a+'<em class="var">x</em> = '+cmb+'</div>';
+  h+='<div style="font-size:0.82em;color:var(--dim);font-style:italic">↓ diviser les deux membres par '+a+'</div>';
+  h+='<div><em class="var">x</em> = <strong style="color:var(--teal)">'+ratExact(cmb,a)+'</strong></div>';
+  document.getElementById('solv1-display').innerHTML=h;
+}
+
+let ineq1 = {a:2, b:3, c:7, op:'>='};
+function ineqChange(k,delta){
+  if(k==='a'){let v=ineq1.a+delta;if(v===0)v+=delta;ineq1.a=Math.max(-5,Math.min(5,v));}
+  else if(k==='b'||k==='c'){ineq1[k]=Math.max(-10,Math.min(15,ineq1[k]+delta));}
+  ineq1Update();
+}
+function ineqSetOp(op){ineq1.op=op;ineq1Update();}
+function ineq1Update(){
+  const {a,b,c,op}=ineq1;
+  const opSym={'<=':'≤','>=':'≥','<':'<','>':'>'};
+  const cmb=c-b;
+  let opAfter=op;
+  if(a<0){
+    const flip={'<=':'>=','>=':'<=','<':'>','>':'<'};
+    opAfter=flip[op];
+  }
+  const num=cmb, den=a;
+  const g=gcdR(Math.abs(num),Math.abs(den));
+  let nn=num/g, dd=den/g;
+  if(dd<0){nn=-nn;dd=-dd;}
+  const valStr=(dd===1)?String(nn):(nn<0?'−'+fH(-nn,dd):fH(nn,dd));
+  const valNum=num/den;
+
+  let h='';
+  h+='<div>'+a+'<em class="var">x</em>'+(b>=0?' + ':' − ')+Math.abs(b)+' '+opSym[op]+' '+c+'</div>';
+  h+='<div style="font-size:0.82em;color:var(--dim);font-style:italic">↓ '+(b>=0?'soustraire '+b:'ajouter '+Math.abs(b))+' aux deux membres</div>';
+  h+='<div>'+a+'<em class="var">x</em> '+opSym[op]+' '+cmb+'</div>';
+  h+='<div style="font-size:0.82em;color:var(--dim);font-style:italic">↓ diviser par '+a+(a<0?' <strong style="color:var(--red)">→ on inverse le sens !</strong>':'')+'</div>';
+  h+='<div><em class="var">x</em> '+opSym[opAfter]+' <strong style="color:var(--teal)">'+valStr+'</strong></div>';
+  document.getElementById('ineq1-display').innerHTML=h;
+
+  drawNumLine(valNum, opAfter);
+}
+function drawNumLine(val, op){
+  const svg=document.getElementById('ineq1-numline');
+  if(!svg)return;
+  const W=460, H=70;
+  const range=Math.max(6, Math.abs(val)*1.5+3);
+  const xMin=val-range, xMax=val+range;
+  const xToPx=(x)=>40+((x-xMin)/(xMax-xMin))*(W-80);
+  const valPx=xToPx(val);
+  const open = (op==='<'||op==='>');
+  const right = (op==='>'||op==='>=');
+  let svgInner='';
+  // Axe (couleur = encre douce du thème courant)
+  svgInner+='<line x1="20" y1="35" x2="'+(W-20)+'" y2="35" stroke="var(--dim)" stroke-width="1.2"/>';
+  svgInner+='<polygon points="'+(W-20)+',35 '+(W-28)+',31 '+(W-28)+',39" fill="var(--dim)"/>';
+  for(let k=Math.ceil(xMin);k<=Math.floor(xMax);k++){
+    const px=xToPx(k);
+    svgInner+='<line x1="'+px+'" y1="32" x2="'+px+'" y2="38" stroke="var(--dim)" stroke-width="0.8"/>';
+    if(k%Math.max(1,Math.round(range/4))===0||Math.abs(k)<=2){
+      svgInner+='<text x="'+px+'" y="52" fill="var(--dim)" font-size="11" text-anchor="middle" font-family="IBM Plex Mono,monospace">'+k+'</text>';
+    }
+  }
+  if(right){
+    svgInner+='<line x1="'+valPx+'" y1="35" x2="'+(W-22)+'" y2="35" stroke="var(--teal)" stroke-width="3"/>';
+  } else {
+    svgInner+='<line x1="22" y1="35" x2="'+valPx+'" y2="35" stroke="var(--teal)" stroke-width="3"/>';
+  }
+  if(open){
+    svgInner+='<circle cx="'+valPx+'" cy="35" r="5" fill="var(--bg)" stroke="var(--teal)" stroke-width="2"/>';
+  } else {
+    svgInner+='<circle cx="'+valPx+'" cy="35" r="5" fill="var(--teal)" stroke="var(--teal)" stroke-width="2"/>';
+  }
+  svgInner+='<text x="'+valPx+'" y="20" fill="var(--teal)" font-size="11" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-weight="600">'+(Math.round(val*100)/100)+'</text>';
+  svg.innerHTML=svgInner;
+}
+
+// ══════════════════════════════════════════════════════════════
+// QUIZZES RANDOMISÉS
+// ══════════════════════════════════════════════════════════════
+
+function initP1L1(){
+  (function(){
+    const cases=[
+      {h:'3<em class="var">x</em> + 2 = 5', good:true, why:'Une seule inconnue (<em class="var">x</em>), exposant 1.'},
+      {h:'5<em class="var">y</em> − 7 = <em class="var">y</em> + 13', good:true, why:'Une seule inconnue (<em class="var">y</em>), exposant 1.'},
+      {h:'<em class="var">z</em> + 4 = <em class="var">z</em><sup>2</sup>', good:false, why:'L&#8217;exposant maximal de <em class="var">z</em> est 2 (à cause de <em class="var">z</em><sup>2</sup>), pas 1.'},
+      {h:'7 + 3 = 10', good:false, why:'Il n&#8217;y a aucune inconnue : ce n&#8217;est pas une équation.'},
+      {h:'<em class="var">x</em> + <em class="var">y</em> = 4', good:false, why:'Il y a deux inconnues différentes (<em class="var">x</em> et <em class="var">y</em>).'},
+    ];
+    const correct=cases.find(x=>x.good===true);
+    const wrongs=shuffle(cases.filter(x=>x.good===false)).slice(0,3);
+    const opts=shuffle([
+      {html:correct.h, correct:true, fb:'Bravo ! '+correct.why},
+      ...wrongs.map(w=>({html:w.h, correct:false, fb:'Non. '+w.why})),
+    ]);
+    placeQuiz('p1l1', 'Parmi ces écritures, laquelle est une équation du <strong>premier</strong> degré à <strong>une</strong> inconnue ?', opts);
+  })();
+
+  (function(){
+    let a, b, c;
+    do {
+      a=rIntNonZero(2,7); b=rIntNonZero(-9,9); c=rIntNonZero(-7,7);
+    } while(Math.abs(c)===1);
+    const correctHtml=c+'<em class="var">x</em>';
+    const distract=[
+      a+'<em class="var">x</em>'+(b>=0?' + ':' − ')+Math.abs(b),
+      a+'<em class="var">x</em>',
+      String(b),
+    ];
+    placeQuiz('p1l1q2', 'Dans l&#8217;équation '+a+'<em class="var">x</em>'+(b>=0?' + ':' − ')+Math.abs(b)+' = '+c+'<em class="var">x</em>, quel est le <strong>second membre</strong> ?', shuffle([
+      {html:correctHtml, correct:true, fb:'Bravo ! Le second membre est ce qui est <strong>à droite</strong> du signe =.'},
+      {html:distract[0], correct:false, fb:'Non. C&#8217;est le <strong>premier</strong> membre (à gauche du =).'},
+      {html:distract[1], correct:false, fb:'Non. C&#8217;est le terme avec inconnue du premier membre, pas le second membre entier.'},
+      {html:distract[2], correct:false, fb:'Non. C&#8217;est le terme constant du premier membre.'},
+    ]));
+  })();
+
+  (function(){
+    placeQuiz('p1l1q3', 'Vrai ou faux : toute équation du premier degré à une inconnue admet exactement <strong>une</strong> solution.', [
+      {html:'Vrai', correct:false, fb:'Non. Une équation du premier degré peut admettre une <strong>solution unique</strong>, <strong>aucune solution</strong>, ou une <strong>infinité de solutions</strong>.'},
+      {html:'Faux', correct:true, fb:'Exact ! Trois cas possibles : une solution unique (ex. 2<em class="var">x</em>=6), aucune (ex. <em class="var">x</em>+1=<em class="var">x</em>), ou une infinité (ex. 0×<em class="var">x</em>=0).'},
+    ]);
+  })();
+
+  (function(){
+    placeQuiz('p1l1q4', 'Parmi ces équations, laquelle n&#8217;admet <strong>aucune</strong> solution ?', shuffle([
+      {html:'2<em class="var">x</em> = 6', correct:false, fb:'Non. Cette équation admet la solution unique <em class="var">x</em>=3.'},
+      {html:'<em class="var">x</em> + 1 = <em class="var">x</em>', correct:true, fb:'Bravo ! Aucun nombre n&#8217;est égal à lui-même plus 1, donc aucune solution.'},
+      {html:'0 × <em class="var">x</em> = 0', correct:false, fb:'Non. Tout nombre vérifie cette égalité (0 × n&#8217;importe quoi = 0), donc une <strong>infinité</strong> de solutions.'},
+      {html:'5<em class="var">x</em> = 0', correct:false, fb:'Non. Cette équation admet la solution unique <em class="var">x</em>=0.'},
+    ]));
+  })();
+}
+
+function initP1L2(){
+  (function(){
+    let a, b, c, x, target;
+    do {
+      a=rIntNonZero(2,7); b=rIntNonZero(-5,5); c=rInt(-5,5);
+      x=rInt(-5,5);
+      target=a*x+b;
+    } while(x===0||target===c+1*x);
+    const isSol = (target===c+0);
+    placeQuiz('p1l2', 'Le nombre '+x+' est-il solution de l&#8217;équation '+a+'<em class="var">x</em>'+(b>=0?' + ':' − ')+Math.abs(b)+' = '+c+' ?', [
+      {html:'Oui', correct:isSol, fb:isSol
+        ? 'Bravo ! Pour <em class="var">x</em>='+x+' : '+a+'×'+(x<0?'('+x+')':x)+(b>=0?'+'+b:b)+' = '+target+' = '+c+'. L&#8217;égalité est vérifiée.'
+        : 'Non. Pour <em class="var">x</em>='+x+' : '+a+'×'+(x<0?'('+x+')':x)+(b>=0?'+'+b:b)+' = '+target+', et '+target+' ≠ '+c+'.'},
+      {html:'Non', correct:!isSol, fb:isSol
+        ? 'Non. Pour <em class="var">x</em>='+x+' : '+a+'×'+(x<0?'('+x+')':x)+(b>=0?'+'+b:b)+' = '+target+' = '+c+'. C&#8217;est bien une solution.'
+        : 'Bravo ! Pour <em class="var">x</em>='+x+' : '+a+'×'+(x<0?'('+x+')':x)+(b>=0?'+'+b:b)+' = '+target+' ≠ '+c+'.'},
+    ]);
+  })();
+
+  (function(){
+    const xVal=rInt(-4,5);
+    const a1=rIntNonZero(2,5), a2=rIntNonZero(2,5);
+    const b1=rIntNonZero(-6,6), b2=rIntNonZero(-6,6);
+    const m1=a1*xVal+b1, m2=a2*xVal+b2;
+    const isSol=(m1===m2);
+    placeQuiz('p1l2q2', 'Le nombre '+xVal+' est-il solution de l&#8217;équation '+a1+'<em class="var">x</em>'+(b1>=0?' + ':' − ')+Math.abs(b1)+' = '+a2+'<em class="var">x</em>'+(b2>=0?' + ':' − ')+Math.abs(b2)+' ?', [
+      {html:'Oui', correct:isSol, fb:isSol
+        ? 'Bravo ! 1<sup>er</sup> membre : '+m1+'&nbsp;; 2<sup>e</sup> membre : '+m2+'. Les deux sont égaux, donc '+xVal+' est solution.'
+        : 'Non. 1<sup>er</sup> membre : '+m1+'&nbsp;; 2<sup>e</sup> membre : '+m2+'. '+m1+' ≠ '+m2+', donc '+xVal+' n&#8217;est pas solution.'},
+      {html:'Non', correct:!isSol, fb:isSol
+        ? 'Non. 1<sup>er</sup> membre : '+m1+'&nbsp;; 2<sup>e</sup> membre : '+m2+'. Les deux sont égaux, donc '+xVal+' <strong>est</strong> solution.'
+        : 'Bravo ! 1<sup>er</sup> membre : '+m1+'&nbsp;; 2<sup>e</sup> membre : '+m2+'. '+m1+' ≠ '+m2+', donc '+xVal+' n&#8217;est pas solution.'},
+    ]);
+  })();
+
+  (function(){
+    const a=rIntNonZero(-9,9);
+    const b=rIntNonZero(-9,9);
+    const sol=b-a;
+    const distract=distinctOpts([sol,1], [
+      [b+a,1],
+      [a-b,1],
+      [b,1],
+    ]);
+    placeQuiz('p1l2q3', 'Quelle est la solution de l&#8217;équation <em class="var">x</em>'+(a>=0?' + ':' − ')+Math.abs(a)+' = '+b+' ?', shuffle([
+      {html:fS(sol,1), correct:true, fb:'Bravo ! On '+(a>=0?'soustrait '+a:'ajoute '+Math.abs(a))+' aux deux membres, donc <em class="var">x</em> = '+b+(a>=0?' − '+a:' + '+Math.abs(a))+' = '+sol+'.'},
+      {html:fS(distract[0][0],distract[0][1]), correct:false, fb:'Non. C&#8217;est l&#8217;opération <strong>opposée</strong> qu&#8217;il faut faire pour isoler <em class="var">x</em>.'},
+      {html:fS(distract[1][0],distract[1][1]), correct:false, fb:'Non. Vérifie : on doit faire la <strong>même</strong> opération aux deux membres, pas inverser.'},
+      {html:fS(distract[2][0],distract[2][1]), correct:false, fb:'Non. <em class="var">x</em> n&#8217;est pas tout seul : il faut éliminer le terme constant.'},
+    ]));
+  })();
+
+  (function(){
+    const a=rIntNonZero(2,6);
+    const b=rIntNonZero(-6,6);
+    const sol=a*b;
+    const distract=distinctOpts([sol,1], [
+      [b+a,1],
+      [b,a],
+      [b-a,1],
+    ]);
+    placeQuiz('p1l2q4', 'Quelle est la solution de l&#8217;équation '+fH('<em class="var">x</em>',a)+' = '+b+' ?', shuffle([
+      {html:fS(sol,1), correct:true, fb:'Bravo ! On multiplie par '+a+' aux deux membres : <em class="var">x</em> = '+b+' × '+a+' = '+sol+'.'},
+      {html:fS(distract[0][0],distract[0][1]), correct:false, fb:'Non. Pour isoler <em class="var">x</em>, il faut <strong>multiplier</strong> par '+a+', pas additionner.'},
+      {html:fS(distract[1][0],distract[1][1]), correct:false, fb:'Non. Au contraire, on multiplie : <em class="var">x</em>/'+a+' × '+a+' = <em class="var">x</em>.'},
+      {html:fS(distract[2][0],distract[2][1]), correct:false, fb:'Non. C&#8217;est une multiplication, pas une soustraction.'},
+    ]));
+  })();
+}
+
+function initP1L3(){
+  (function(){
+    let a, b;
+    do { a=rIntNonZero(2,9); b=rIntNonZero(-15,15); } while(b%a===0);
+    const correct=[b,a];
+    const distract=distinctOpts(correct, [
+      [a,b],
+      [b+a,1],
+      [b-a,1],
+    ]);
+    placeQuiz('p1l3', 'Résous l&#8217;équation '+a+'<em class="var">x</em> = '+b+'.', shuffle([
+      {html:'<em class="var">x</em> = '+rat(correct[0],correct[1]), correct:true, fb:'Bravo ! On divise les deux membres par '+a+' : <em class="var">x</em> = '+rat(b,a)+'. La fraction se garde sans arrondir.'},
+      {html:'<em class="var">x</em> = '+rat(distract[0][0],distract[0][1]), correct:false, fb:'Non. On divise '+b+' par '+a+', pas l&#8217;inverse.'},
+      {html:'<em class="var">x</em> = '+rat(distract[1][0],distract[1][1]), correct:false, fb:'Non. C&#8217;est une <strong>division</strong> par '+a+', pas une addition.'},
+      {html:'<em class="var">x</em> = '+rat(distract[2][0],distract[2][1]), correct:false, fb:'Non. C&#8217;est une <strong>division</strong> par '+a+', pas une soustraction.'},
+    ]));
+  })();
+
+  (function(){
+    let a, b, c, sol;
+    do {
+      a=rIntNonZero(2,7); b=rIntNonZero(-9,9);
+      sol=rInt(-6,6);
+      c=a*sol+b;
+    } while(sol===0);
+    const correct=[sol,1];
+    const distract=distinctOpts(correct, [
+      [c-b,1],
+      [c+b,a],
+      [c,a],
+    ]);
+    placeQuiz('p1l3q2', 'Résous l&#8217;équation '+a+'<em class="var">x</em>'+(b>=0?' + ':' − ')+Math.abs(b)+' = '+c+'.', shuffle([
+      {html:'<em class="var">x</em> = '+rat(correct[0],correct[1]), correct:true, fb:'Bravo ! On '+(b>=0?'soustrait '+b:'ajoute '+Math.abs(b))+' aux deux membres : '+a+'<em class="var">x</em> = '+(c-b)+'. Puis on divise par '+a+' : <em class="var">x</em> = '+sol+'.'},
+      {html:'<em class="var">x</em> = '+rat(distract[0][0],distract[0][1]), correct:false, fb:'Non. Tu as oublié de diviser par '+a+'.'},
+      {html:'<em class="var">x</em> = '+rat(distract[1][0],distract[1][1]), correct:false, fb:'Non. '+(b>=0?'On soustrait '+b:'On ajoute '+Math.abs(b))+', pas l&#8217;inverse.'},
+      {html:'<em class="var">x</em> = '+rat(distract[2][0],distract[2][1]), correct:false, fb:'Non. Tu n&#8217;as pas '+(b>=0?'soustrait '+b:'ajouté '+Math.abs(b))+' avant de diviser.'},
+    ]));
+  })();
+
+  (function(){
+    let a, b, c, d, sol;
+    do {
+      a=rIntNonZero(2,7); c=rIntNonZero(-5,5);
+      while(a===c){c=rIntNonZero(-5,5);}
+      sol=rInt(-5,5);
+      b=rIntNonZero(-9,9);
+      d=(a-c)*sol+b;
+    } while(sol===0||a-c===0);
+    const correct=[sol,1];
+    const distract=distinctOpts(correct, [
+      [d-b,a-c+1],
+      [d+b,a],
+      [d,a],
+    ]);
+    placeQuiz('p1l3q3', 'Résous l&#8217;équation '+a+'<em class="var">x</em>'+(b>=0?' + ':' − ')+Math.abs(b)+' = '+c+'<em class="var">x</em>'+(d>=0?' + ':' − ')+Math.abs(d)+'.', shuffle([
+      {html:'<em class="var">x</em> = '+rat(correct[0],correct[1]), correct:true, fb:'Bravo ! On '+(c>=0?'soustrait '+c+'<em class="var">x</em>':'ajoute '+Math.abs(c)+'<em class="var">x</em>')+' et '+(b>=0?'on soustrait '+b:'on ajoute '+Math.abs(b))+' aux deux membres, puis on divise par '+(a-c)+'.'},
+      {html:'<em class="var">x</em> = '+rat(distract[0][0],distract[0][1]), correct:false, fb:'Non. Au coefficient de <em class="var">x</em> : '+a+' − '+c+' = '+(a-c)+', pas '+(a-c+1)+'.'},
+      {html:'<em class="var">x</em> = '+rat(distract[1][0],distract[1][1]), correct:false, fb:'Non. Vérifie le signe : '+(b>=0?'on soustrait '+b:'on ajoute '+Math.abs(b))+' aux deux membres.'},
+      {html:'<em class="var">x</em> = '+rat(distract[2][0],distract[2][1]), correct:false, fb:'Non. Tu as oublié de '+(b>=0?'soustraire '+b:'ajouter '+Math.abs(b))+' avant de diviser.'},
+    ]));
+  })();
+
+  (function(){
+    const cases=[
+      {h:'Pour résoudre <em class="var">x</em> + 8 = 3, on ajoute 8 à chacun des deux membres.', good:false, why:'Faux. Pour faire disparaître +8, il faut <strong>soustraire</strong> 8.'},
+      {h:'Pour résoudre <em class="var">x</em> − 3 = 5, on ajoute 3 à chacun des deux membres.', good:true, why:'Vrai. On ajoute 3 pour faire disparaître −3.'},
+      {h:'Pour résoudre 4<em class="var">x</em> = 5, on soustrait 4 à chacun des deux membres.', good:false, why:'Faux. Il faut <strong>diviser</strong> par 4, pas soustraire 4.'},
+      {h:'Pour résoudre 7<em class="var">x</em> = 2, on divise par 7 chacun des deux membres.', good:true, why:'Vrai. On divise par 7 pour isoler <em class="var">x</em>.'},
+    ];
+    const c=cases[rInt(0,cases.length-1)];
+    placeQuiz('p1l3q4', 'Vrai ou faux : « '+c.h+' »', [
+      {html:'Vrai', correct:c.good, fb:c.why},
+      {html:'Faux', correct:!c.good, fb:c.why},
+    ]);
+  })();
+}
+
+function initP1L4(){
+  (function(){
+    const a=rIntNonZero(-9,9);
+    const b=rIntNonZero(-9,9);
+    const sol=b-a;
+    const distract=distinctOpts([sol,1], [[b+a,1],[a-b,1],[b,1]]);
+    placeQuiz('p1l4a', 'Résous l&#8217;équation <em class="var">x</em>'+(a>=0?' + ':' − ')+Math.abs(a)+' = '+b+'.', shuffle([
+      {html:'<em class="var">x</em> = '+rat(sol,1), correct:true, fb:'Exact ! <em class="var">x</em> = '+b+(a>=0?' − '+a:' + '+Math.abs(a))+' = '+sol+'.'},
+      {html:'<em class="var">x</em> = '+rat(distract[0][0],distract[0][1]), correct:false, fb:'Non. C&#8217;est l&#8217;opération <strong>opposée</strong> qu&#8217;il faut faire.'},
+      {html:'<em class="var">x</em> = '+rat(distract[1][0],distract[1][1]), correct:false, fb:'Non. On fait la même opération aux deux membres, sans inverser.'},
+      {html:'<em class="var">x</em> = '+rat(distract[2][0],distract[2][1]), correct:false, fb:'Non. <em class="var">x</em> n&#8217;est pas isolé : il faut éliminer la constante.'},
+    ]));
+  })();
+
+  (function(){
+    let a, b;
+    do { a=rIntNonZero(2,11); b=rIntNonZero(-30,30); } while(b%a===0||Math.abs(b)<2);
+    const correct=[b,a];
+    const distract=distinctOpts(correct, [[a,b],[b+a,1],[b-a,1]]);
+    placeQuiz('p1l4b', 'Résous l&#8217;équation '+a+'<em class="var">x</em> = '+b+' (donne le résultat exact).', shuffle([
+      {html:'<em class="var">x</em> = '+rat(correct[0],correct[1]), correct:true, fb:'Bravo ! On divise par '+a+' : <em class="var">x</em> = '+rat(b,a)+'. On garde la fraction sans arrondir.'},
+      {html:'<em class="var">x</em> = '+rat(distract[0][0],distract[0][1]), correct:false, fb:'Non. Tu as inversé : on divise '+b+' par '+a+', pas l&#8217;inverse.'},
+      {html:'<em class="var">x</em> = '+rat(distract[1][0],distract[1][1]), correct:false, fb:'Non. C&#8217;est une division, pas une addition.'},
+      {html:'<em class="var">x</em> = '+rat(distract[2][0],distract[2][1]), correct:false, fb:'Non. C&#8217;est une division, pas une soustraction.'},
+    ]));
+  })();
+
+  (function(){
+    let a, b, c, sol;
+    do {
+      a=rIntNonZero(2,9);
+      sol=rIntNonZero(-7,7);
+      b=rIntNonZero(-9,9);
+      c=a*sol+b;
+    } while(false);
+    const correct=[sol,1];
+    const distract=distinctOpts(correct, [[c-b,1],[c,a],[c+b,a]]);
+    placeQuiz('p1l4c', 'Résous l&#8217;équation '+a+'<em class="var">x</em>'+(b>=0?' + ':' − ')+Math.abs(b)+' = '+c+'.', shuffle([
+      {html:'<em class="var">x</em> = '+rat(correct[0],correct[1]), correct:true, fb:'Bravo ! '+(b>=0?'On soustrait '+b:'On ajoute '+Math.abs(b))+' aux deux membres : '+a+'<em class="var">x</em> = '+(c-b)+', puis on divise par '+a+'.'},
+      {html:'<em class="var">x</em> = '+rat(distract[0][0],distract[0][1]), correct:false, fb:'Non. Tu as oublié de diviser par '+a+'.'},
+      {html:'<em class="var">x</em> = '+rat(distract[1][0],distract[1][1]), correct:false, fb:'Non. Tu as oublié l&#8217;étape constante : il faut '+(b>=0?'soustraire '+b:'ajouter '+Math.abs(b))+' avant de diviser.'},
+      {html:'<em class="var">x</em> = '+rat(distract[2][0],distract[2][1]), correct:false, fb:'Non. Vérifie le signe de la constante.'},
+    ]));
+  })();
+
+  (function(){
+    let a, b, c, d, sol;
+    do {
+      a=rIntNonZero(2,8); c=rIntNonZero(-6,6);
+      while(a===c){c=rIntNonZero(-6,6);}
+      sol=rIntNonZero(-6,6);
+      b=rIntNonZero(-9,9);
+      d=(a-c)*sol+b;
+    } while(a-c===0);
+    const correct=[sol,1];
+    const distract=distinctOpts(correct, [[d-b,a],[d+b,a-c],[d,a-c]]);
+    placeQuiz('p1l4d', 'Résous l&#8217;équation '+a+'<em class="var">x</em>'+(b>=0?' + ':' − ')+Math.abs(b)+' = '+c+'<em class="var">x</em>'+(d>=0?' + ':' − ')+Math.abs(d)+'.', shuffle([
+      {html:'<em class="var">x</em> = '+rat(correct[0],correct[1]), correct:true, fb:'Bravo ! On regroupe les <em class="var">x</em> à gauche, les constantes à droite, puis on divise.'},
+      {html:'<em class="var">x</em> = '+rat(distract[0][0],distract[0][1]), correct:false, fb:'Non. Tu as oublié de regrouper les termes en <em class="var">x</em> avant de diviser.'},
+      {html:'<em class="var">x</em> = '+rat(distract[1][0],distract[1][1]), correct:false, fb:'Non. Vérifie le signe de la constante <em class="var">b</em>.'},
+      {html:'<em class="var">x</em> = '+rat(distract[2][0],distract[2][1]), correct:false, fb:'Non. Tu n&#8217;as pas '+(b>=0?'soustrait '+b:'ajouté '+Math.abs(b))+' avant de diviser.'},
+    ]));
+  })();
+}
+
+function initP2L1(){
+  (function(){
+    placeQuiz('p2l1', 'Parmi ces écritures, laquelle est une <strong>inéquation</strong> du premier degré à une inconnue ?', shuffle([
+      {html:'2<em class="var">x</em> + 8 &gt; 11', correct:true, fb:'Bravo ! Une inconnue (<em class="var">x</em>), exposant 1, signe d&#8217;inégalité.'},
+      {html:'3<em class="var">x</em> − 5 = 7', correct:false, fb:'Non. C&#8217;est une <strong>équation</strong> (signe =), pas une inéquation.'},
+      {html:'<em class="var">y</em><sup>2</sup> + 1 &gt; 0', correct:false, fb:'Non. L&#8217;exposant maximal de <em class="var">y</em> est 2, donc ce n&#8217;est pas du premier degré.'},
+      {html:'5 &lt; 7', correct:false, fb:'Non. Il n&#8217;y a aucune inconnue.'},
+    ]));
+  })();
+
+  (function(){
+    const symbols=[
+      {sym:'≤', name:'inférieur ou égal'},
+      {sym:'≥', name:'supérieur ou égal'},
+      {sym:'&lt;', name:'strictement inférieur'},
+      {sym:'&gt;', name:'strictement supérieur'},
+    ];
+    const c=symbols[rInt(0,3)];
+    const wrongs=symbols.filter(s=>s.sym!==c.sym);
+    placeQuiz('p2l1q2', 'Que signifie le symbole « '+c.sym+' » dans une inéquation ?', shuffle([
+      {html:c.name, correct:true, fb:'Bravo !'},
+      ...wrongs.map(w=>({html:w.name, correct:false, fb:'Non. C&#8217;est le symbole « '+w.sym+' » qui signifie « '+w.name+' ».'})),
+    ]));
+  })();
+
+  (function(){
+    const a=rIntNonZero(2,5);
+    const b=rIntNonZero(-5,5);
+    const x=rInt(-5,8);
+    const c=rInt(-3,15);
+    const lhs=a*x+b;
+    const ops=[
+      {s:'≥',f:(p,q)=>p>=q,name:'supérieur ou égal à'},
+      {s:'≤',f:(p,q)=>p<=q,name:'inférieur ou égal à'},
+      {s:'&gt;',f:(p,q)=>p>q,name:'strictement supérieur à'},
+      {s:'&lt;',f:(p,q)=>p<q,name:'strictement inférieur à'},
+    ];
+    const op=ops[rInt(0,3)];
+    const isSol=op.f(lhs,c);
+    placeQuiz('p2l1q3', 'Le nombre '+x+' est-il solution de l&#8217;inéquation '+a+'<em class="var">x</em>'+(b>=0?' + ':' − ')+Math.abs(b)+' '+op.s+' '+c+' ?', [
+      {html:'Oui', correct:isSol, fb:isSol
+        ? 'Bravo ! Pour <em class="var">x</em>='+x+' : '+a+'×'+(x<0?'('+x+')':x)+(b>=0?'+'+b:b)+' = '+lhs+', et '+lhs+' '+op.s+' '+c+' est vrai.'
+        : 'Non. Pour <em class="var">x</em>='+x+' : '+a+'×'+(x<0?'('+x+')':x)+(b>=0?'+'+b:b)+' = '+lhs+', et '+lhs+' '+op.s+' '+c+' est faux.'},
+      {html:'Non', correct:!isSol, fb:isSol
+        ? 'Non. Pour <em class="var">x</em>='+x+' : '+a+'×'+(x<0?'('+x+')':x)+(b>=0?'+'+b:b)+' = '+lhs+', et '+lhs+' '+op.s+' '+c+' est vrai. C&#8217;est donc une solution.'
+        : 'Bravo ! Pour <em class="var">x</em>='+x+' : '+a+'×'+(x<0?'('+x+')':x)+(b>=0?'+'+b:b)+' = '+lhs+', et '+lhs+' '+op.s+' '+c+' est faux.'},
+    ]);
+  })();
+
+  (function(){
+    placeQuiz('p2l1q4', 'Vrai ou faux : une inéquation du premier degré n&#8217;admet en général qu&#8217;<strong>une seule</strong> solution.', [
+      {html:'Vrai', correct:false, fb:'Non. Une inéquation admet en général une <strong>infinité</strong> de solutions (par exemple 2<em class="var">x</em>+3 ≥ 7 a pour solutions tous les <em class="var">x</em> ≥ 2).'},
+      {html:'Faux', correct:true, fb:'Exact ! Une inéquation admet généralement une infinité de solutions, qu&#8217;on représente sur une droite graduée.'},
+    ]);
+  })();
+}
+
+function initP2L2(){
+  (function(){
+    let a, b, c, sol;
+    do {
+      a=rInt(2,6); b=rIntNonZero(-6,6);
+      sol=rIntNonZero(-5,5);
+      c=a*sol+b;
+    } while(false);
+    const ops=['≥','≤','&gt;','&lt;'];
+    const op=ops[rInt(0,3)];
+    placeQuiz('p2l2', 'Résous l&#8217;inéquation '+a+'<em class="var">x</em>'+(b>=0?' + ':' − ')+Math.abs(b)+' '+op+' '+c+'.', shuffle([
+      {html:'<em class="var">x</em> '+op+' '+rat(sol,1), correct:true, fb:'Bravo ! On '+(b>=0?'soustrait '+b:'ajoute '+Math.abs(b))+', puis on divise par '+a+' (positif, donc le sens ne change pas).'},
+      {html:'<em class="var">x</em> '+({'≥':'≤','≤':'≥','&gt;':'&lt;','&lt;':'&gt;'}[op])+' '+rat(sol,1), correct:false, fb:'Non. Le sens ne change <strong>pas</strong> quand on divise par un nombre <strong>positif</strong> ('+a+').'},
+      {html:'<em class="var">x</em> '+op+' '+rat(c-b,1), correct:false, fb:'Non. Tu as oublié de diviser par '+a+'.'},
+      {html:'<em class="var">x</em> '+op+' '+rat(c+b,a), correct:false, fb:'Non. Vérifie le signe : '+(b>=0?'on soustrait '+b:'on ajoute '+Math.abs(b))+', pas l&#8217;inverse.'},
+    ]));
+  })();
+
+  (function(){
+    let a, b, c, sol;
+    do {
+      a=-rInt(2,5); b=rIntNonZero(-6,6);
+      sol=rIntNonZero(-5,5);
+      c=a*sol+b;
+    } while(false);
+    const ops=['≥','≤','&gt;','&lt;'];
+    const op=ops[rInt(0,3)];
+    const flipped={'≥':'≤','≤':'≥','&gt;':'&lt;','&lt;':'&gt;'}[op];
+    placeQuiz('p2l2q2', '⚠️ Attention au signe ! Résous l&#8217;inéquation '+(a<0?'−'+Math.abs(a):a)+'<em class="var">x</em>'+(b>=0?' + ':' − ')+Math.abs(b)+' '+op+' '+c+'.', shuffle([
+      {html:'<em class="var">x</em> '+flipped+' '+rat(sol,1), correct:true, fb:'Bravo ! Quand on divise par un nombre <strong>négatif</strong> ('+a+'), il faut <strong>inverser le sens</strong> de l&#8217;inégalité.'},
+      {html:'<em class="var">x</em> '+op+' '+rat(sol,1), correct:false, fb:'Non. Le coefficient '+a+' est <strong>négatif</strong> : il faut <strong>inverser le sens</strong> de l&#8217;inégalité quand on divise.'},
+      {html:'<em class="var">x</em> '+flipped+' '+rat(c-b,1), correct:false, fb:'Non. Tu as bien pensé à inverser, mais tu as oublié de diviser par '+a+'.'},
+      {html:'<em class="var">x</em> '+op+' '+rat(c-b,1), correct:false, fb:'Non. Deux erreurs : il faut diviser par '+a+' <strong>et</strong> inverser le sens.'},
+    ]));
+  })();
+
+  (function(){
+    const cases=[
+      {h:'Si on ajoute le même nombre aux deux membres, l&#8217;inéquation reste vraie sans changer de sens.', good:true, why:'Vrai. L&#8217;addition (et la soustraction) ne changent jamais le sens d&#8217;une inéquation.'},
+      {h:'Si on multiplie les deux membres par 5, le sens de l&#8217;inégalité change.', good:false, why:'Faux. 5 est <strong>positif</strong>, donc le sens ne change pas.'},
+      {h:'Si on divise les deux membres par −2, le sens de l&#8217;inégalité change.', good:true, why:'Vrai. −2 est <strong>négatif</strong>, donc on inverse le sens.'},
+      {h:'Si on multiplie les deux membres par −1, le sens de l&#8217;inégalité ne change pas.', good:false, why:'Faux. −1 est <strong>négatif</strong>, donc le sens s&#8217;inverse.'},
+    ];
+    const c=cases[rInt(0,cases.length-1)];
+    placeQuiz('p2l2q3', 'Vrai ou faux : « '+c.h+' »', [
+      {html:'Vrai', correct:c.good, fb:c.why},
+      {html:'Faux', correct:!c.good, fb:c.why},
+    ]);
+  })();
+
+  (function(){
+    let a, c;
+    do { a=rInt(2,9); c=rIntNonZero(-15,15); } while(c%a===0);
+    const ops=['≥','≤','&gt;','&lt;'];
+    const op=ops[rInt(0,3)];
+    placeQuiz('p2l2q4', 'Résous l&#8217;inéquation '+a+'<em class="var">x</em> '+op+' '+c+'.', shuffle([
+      {html:'<em class="var">x</em> '+op+' '+rat(c,a), correct:true, fb:'Bravo ! On divise par '+a+' (positif), le sens ne change pas. La fraction se garde sans arrondir.'},
+      {html:'<em class="var">x</em> '+({'≥':'≤','≤':'≥','&gt;':'&lt;','&lt;':'&gt;'}[op])+' '+rat(c,a), correct:false, fb:'Non. Le sens ne change <strong>pas</strong> ici car '+a+' est positif.'},
+      {html:'<em class="var">x</em> '+op+' '+rat(a,c), correct:false, fb:'Non. On divise '+c+' par '+a+', pas l&#8217;inverse.'},
+      {html:'<em class="var">x</em> '+op+' '+rat(c-a,1), correct:false, fb:'Non. C&#8217;est une <strong>division</strong> par '+a+', pas une soustraction.'},
+    ]));
+  })();
+}
+
+function initP2L3(){
+  (function(){
+    const a=rIntNonZero(-9,9);
+    const b=rIntNonZero(-9,9);
+    const sol=b-a;
+    const ops=['≥','≤','&gt;','&lt;'];
+    const op=ops[rInt(0,3)];
+    placeQuiz('p2l3a', 'Résous l&#8217;inéquation <em class="var">x</em>'+(a>=0?' + ':' − ')+Math.abs(a)+' '+op+' '+b+'.', shuffle([
+      {html:'<em class="var">x</em> '+op+' '+rat(sol,1), correct:true, fb:'Bravo ! On '+(a>=0?'soustrait '+a:'ajoute '+Math.abs(a))+' aux deux membres. Pas de changement de sens (addition).'},
+      {html:'<em class="var">x</em> '+({'≥':'≤','≤':'≥','&gt;':'&lt;','&lt;':'&gt;'}[op])+' '+rat(sol,1), correct:false, fb:'Non. Le sens ne change <strong>pas</strong> quand on ajoute ou soustrait.'},
+      {html:'<em class="var">x</em> '+op+' '+rat(b+a,1), correct:false, fb:'Non. C&#8217;est l&#8217;opération opposée qu&#8217;il faut faire.'},
+      {html:'<em class="var">x</em> '+op+' '+rat(b,1), correct:false, fb:'Non. <em class="var">x</em> n&#8217;est pas isolé.'},
+    ]));
+  })();
+
+  (function(){
+    let a, c;
+    do { a=rInt(2,9); c=rIntNonZero(-25,25); } while(false);
+    const ops=['≥','≤','&gt;','&lt;'];
+    const op=ops[rInt(0,3)];
+    placeQuiz('p2l3b', 'Résous l&#8217;inéquation '+a+'<em class="var">x</em> '+op+' '+c+'.', shuffle([
+      {html:'<em class="var">x</em> '+op+' '+rat(c,a), correct:true, fb:'Bravo ! On divise par '+a+' (positif), donc le sens ne change pas.'},
+      {html:'<em class="var">x</em> '+({'≥':'≤','≤':'≥','&gt;':'&lt;','&lt;':'&gt;'}[op])+' '+rat(c,a), correct:false, fb:'Non. '+a+' est <strong>positif</strong>, le sens ne change pas.'},
+      {html:'<em class="var">x</em> '+op+' '+rat(c-a,1), correct:false, fb:'Non. C&#8217;est une division par '+a+', pas une soustraction.'},
+      {html:'<em class="var">x</em> '+op+' '+rat(a,c), correct:false, fb:'Non. On divise '+c+' par '+a+', pas l&#8217;inverse.'},
+    ]));
+  })();
+
+  (function(){
+    let a, c;
+    do { a=-rInt(2,7); c=rIntNonZero(-20,20); } while(false);
+    const ops=['≥','≤','&gt;','&lt;'];
+    const op=ops[rInt(0,3)];
+    const flipped={'≥':'≤','≤':'≥','&gt;':'&lt;','&lt;':'&gt;'}[op];
+    placeQuiz('p2l3c', '⚠️ Attention ! Résous l&#8217;inéquation '+a+'<em class="var">x</em> '+op+' '+c+'.', shuffle([
+      {html:'<em class="var">x</em> '+flipped+' '+rat(c,a), correct:true, fb:'Bravo ! '+a+' est <strong>négatif</strong> : on inverse le sens en divisant.'},
+      {html:'<em class="var">x</em> '+op+' '+rat(c,a), correct:false, fb:'Non. '+a+' est <strong>négatif</strong> : il faut <strong>inverser</strong> le sens en divisant.'},
+      {html:'<em class="var">x</em> '+flipped+' '+rat(-c,-a), correct:false, fb:'Non. Le résultat est correct en valeur, mais regarde bien le signe.'},
+      {html:'<em class="var">x</em> '+op+' '+rat(c+a,1), correct:false, fb:'Non. C&#8217;est une division, pas une addition.'},
+    ]));
+  })();
+
+  (function(){
+    let a, b, c, sol;
+    do {
+      a=rIntNonZero(-7,7);
+      while(a===0){a=rIntNonZero(-7,7);}
+      b=rIntNonZero(-9,9);
+      sol=rIntNonZero(-5,5);
+      c=a*sol+b;
+    } while(false);
+    const ops=['≥','≤','&gt;','&lt;'];
+    const op=ops[rInt(0,3)];
+    const flipped={'≥':'≤','≤':'≥','&gt;':'&lt;','&lt;':'&gt;'}[op];
+    const finalOp = (a<0)?flipped:op;
+    const wrongOp = (a<0)?op:flipped;
+    placeQuiz('p2l3d', 'Résous l&#8217;inéquation '+(a<0?'−'+Math.abs(a):a)+'<em class="var">x</em>'+(b>=0?' + ':' − ')+Math.abs(b)+' '+op+' '+c+'.', shuffle([
+      {html:'<em class="var">x</em> '+finalOp+' '+rat(sol,1), correct:true, fb:'Bravo ! '+(b>=0?'On soustrait '+b:'On ajoute '+Math.abs(b))+', puis on divise par '+a+(a<0?' (négatif → on <strong>inverse</strong> le sens)':' (positif → le sens ne change pas)')+'.'},
+      {html:'<em class="var">x</em> '+wrongOp+' '+rat(sol,1), correct:false, fb:'Non. '+(a<0?'Le coefficient '+a+' est négatif, il faut inverser le sens.':'Le coefficient '+a+' est positif, le sens ne change pas.')},
+      {html:'<em class="var">x</em> '+finalOp+' '+rat(c-b,1), correct:false, fb:'Non. Tu as oublié de diviser par '+a+'.'},
+      {html:'<em class="var">x</em> '+finalOp+' '+rat(c+b,a), correct:false, fb:'Non. Vérifie le signe : '+(b>=0?'on soustrait '+b:'on ajoute '+Math.abs(b))+'.'},
+    ]));
+  })();
+}
+
+function initP3L1(){
+  (function(){
+    placeQuiz('p3l1', '<em class="var">x</em> désigne un nombre quelconque. Comment exprimer « 5 fois plus que <em class="var">x</em> » ?', shuffle([
+      {html:'5<em class="var">x</em>', correct:true, fb:'Bravo ! 5 fois plus signifie 5 multiplié par <em class="var">x</em>.'},
+      {html:'<em class="var">x</em> + 5', correct:false, fb:'Non. <em class="var">x</em>+5 signifie « 5 de plus que <em class="var">x</em> » (addition), pas « 5 fois plus ».'},
+      {html:fH('<em class="var">x</em>',5), correct:false, fb:'Non. <em class="var">x</em>/5 signifie « 5 fois moins » (division).'},
+      {html:'<em class="var">x</em> − 5', correct:false, fb:'Non. <em class="var">x</em>−5 signifie « 5 de moins ».'},
+    ]));
+  })();
+
+  (function(){
+    placeQuiz('p3l1q2', '<em class="var">x</em> désigne un nombre quelconque. Comment exprimer « 7 de moins que <em class="var">x</em> » ?', shuffle([
+      {html:'<em class="var">x</em> − 7', correct:true, fb:'Bravo ! 7 de moins que <em class="var">x</em> = <em class="var">x</em>−7.'},
+      {html:'7 − <em class="var">x</em>', correct:false, fb:'Non. 7−<em class="var">x</em> signifie « <em class="var">x</em> de moins que 7 », pas l&#8217;inverse.'},
+      {html:'7<em class="var">x</em>', correct:false, fb:'Non. 7<em class="var">x</em> signifie « 7 fois <em class="var">x</em> » (multiplication).'},
+      {html:fH('<em class="var">x</em>',7), correct:false, fb:'Non. <em class="var">x</em>/7 signifie « 7 fois moins » (division).'},
+    ]));
+  })();
+
+  (function(){
+    const a=rInt(2,7), b=rInt(2,12);
+    placeQuiz('p3l1q3', 'Programme de calcul : choisir un nombre, le <strong>multiplier par '+a+'</strong>, puis <strong>ajouter '+b+'</strong>. Si <em class="var">x</em> est le nombre choisi, quelle expression représente le résultat ?', shuffle([
+      {html:a+'<em class="var">x</em> + '+b, correct:true, fb:'Bravo ! On multiplie d&#8217;abord par '+a+' (cela donne '+a+'<em class="var">x</em>), puis on ajoute '+b+'.'},
+      {html:'<em class="var">x</em> × '+(a+b), correct:false, fb:'Non. On ne mélange pas les opérations : multiplier par '+a+' puis ajouter '+b+' n&#8217;est pas multiplier par '+(a+b)+'.'},
+      {html:'('+a+' + '+b+')<em class="var">x</em>', correct:false, fb:'Non. On ajoute '+b+' au résultat de '+a+'<em class="var">x</em>, pas à '+a+' avant la multiplication.'},
+      {html:a+'(<em class="var">x</em> + '+b+')', correct:false, fb:'Non. Cette expression revient à ajouter '+b+' <em>avant</em> de multiplier, pas après.'},
+    ]));
+  })();
+
+  (function(){
+    const cases=[
+      {h:'Pour résoudre un problème par mise en équation, la première étape est de choisir l&#8217;inconnue (souvent <em class="var">x</em>).', good:true, why:'Vrai. Choisir l&#8217;inconnue est la première étape de toute mise en équation.'},
+      {h:'Pour résoudre un problème, on peut utiliser deux inconnues différentes <em class="var">x</em> et <em class="var">y</em> dans une seule équation du premier degré.', good:false, why:'Faux. Une équation du premier degré à <strong>une</strong> inconnue ne contient qu&#8217;une seule lettre. On doit exprimer toutes les autres grandeurs en fonction de cette unique inconnue.'},
+      {h:'Une fois la solution trouvée, il faut toujours vérifier qu&#8217;elle a un sens dans le contexte du problème.', good:true, why:'Vrai. Par exemple, on ne peut pas avoir un nombre de personnes négatif ou décimal.'},
+    ];
+    const c=cases[rInt(0,cases.length-1)];
+    placeQuiz('p3l1q4', 'Vrai ou faux : « '+c.h+' »', [
+      {html:'Vrai', correct:c.good, fb:c.why},
+      {html:'Faux', correct:!c.good, fb:c.why},
+    ]);
+  })();
+}
+
+function initAllQuizzes(){
+  initP1L1(); initP1L2(); initP1L3(); initP1L4();
+  initP2L1(); initP2L2(); initP2L3();
+  initP3L1();
+}
+
+loadProgress();
+updateProgress();
+test1Update();
+solv1Update();
+ineq1Update();
+initAllQuizzes();
+</script>
+</body>
+</html>
