@@ -22,7 +22,11 @@
           style={{
           border: '1px solid var(--rule)', padding: '28px 32px',
           background: 'var(--paperAlt)', marginBottom: 16,
-        }}>
+          filter: p.supersededBy ? 'grayscale(1) opacity(0.55)' : 'none',
+          transition: 'filter .2s',
+        }}
+          onMouseEnter={p.supersededBy ? e => { e.currentTarget.style.filter = 'none'; } : undefined}
+          onMouseLeave={p.supersededBy ? e => { e.currentTarget.style.filter = 'grayscale(1) opacity(0.55)'; } : undefined}>
           <div style={{
             display: 'grid', gridTemplateColumns: '1fr auto', gap: 24, alignItems: 'start',
           }}>
@@ -65,7 +69,7 @@
 
               {p.supersededBy ? (
                 <div style={{ marginTop: 10, fontSize: 12.5, color: 'var(--inkSoft)', fontStyle:'italic' }}>
-                  → {rFR ? 'Version révisée :' : 'Revised version:'}{' '}
+                  → {rFR ? 'Version 2 publiée :' : 'Version 2 published:'}{' '}
                   <a href={`#paper-${p.supersededBy.doi.replace(/[^a-z0-9]/gi,'-')}`}
                     onClick={(e) => {
                       e.preventDefault();
