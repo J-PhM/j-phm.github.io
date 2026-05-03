@@ -211,6 +211,12 @@ nav { flex: 1; padding: 0.6rem 0 1rem; }
 em.var { font-style: italic; color: var(--orange); text-transform: none; }
 
 /* ─── EXPOSANTS ─────────────────────────────────────────────── */
+/* Default styling for plain <sup> elements (e.g. z², 4ᵉ, MS 408ᵉ, etc.) */
+sup {
+  font-size: 0.7em;
+  vertical-align: 0.55em;
+  line-height: 0;
+}
 .sup-var {
   font-size: 0.7em;
   vertical-align: 0.55em;
@@ -228,9 +234,9 @@ em.var { font-style: italic; color: var(--orange); text-transform: none; }
 .sup-exp.orange { color: var(--orange); }
 .sup-exp.red    { color: var(--red, #b54a3a); }
 /* Reset vertical jitter inside one-line targets like nav-items / quiz options */
-.nav-item .sup-var, .nav-item .sup-exp,
-.quiz-opt .sup-var, .quiz-opt .sup-exp,
-.sb-eyebrow .sup-var, .sb-eyebrow .sup-exp {
+.nav-item .sup-var, .nav-item .sup-exp, .nav-item sup,
+.quiz-opt .sup-var, .quiz-opt .sup-exp, .quiz-opt sup,
+.sb-eyebrow .sup-var, .sb-eyebrow .sup-exp, .sb-eyebrow sup {
   position: relative;
   top: -0.45em;
   vertical-align: baseline;
