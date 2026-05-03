@@ -41,15 +41,14 @@
         justifyContent: 'space-between', gap: 24,
       }}>
         <a onClick={() => nav('home')} style={{ cursor: 'pointer', textDecoration: 'none', color: 'inherit' }}>
-          <div className="jpm-mono" style={{ fontSize: 10.5, letterSpacing: '.22em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 4, display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+          <div className="jpm-mono" style={{ fontSize: 11, letterSpacing: '.22em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 4, display: 'inline-flex', alignItems: 'center', gap: 8 }}>
             <svg width="22" height="11" viewBox="0 0 44 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
               <path d="M2 11 C 2 4, 10 4, 16 8.5 C 20 11.5, 24 11.5, 28 8.5 C 34 4, 42 4, 42 11 C 42 18, 34 18, 28 13.5 C 24 10.5, 20 10.5, 16 13.5 C 10 18, 2 18, 2 11 Z"/>
             </svg>
             Lemniscate
           </div>
-          <div className="jpm-serif-display" style={{ fontSize: 22, lineHeight: 1.1, letterSpacing: '.005em' }}>{D.author.name}</div>
-          <div className="jpm-mono" style={{ fontSize: 10.5, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--inkSoft)', marginTop: 4 }}>
-            {rFR ? D.author.roleFR : D.author.roleEN} · {D.author.location}
+          <div className="jpm-mono" style={{ fontSize: 10, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--ruleStrong)' }}>
+            © MMXXVI · J.-Ph. Mouton
           </div>
         </a>
         <nav className="jpm-nav" style={{ display: 'flex', gap: 26, fontSize: 14.5, fontStyle: 'italic', alignItems: 'center' }}>
@@ -120,49 +119,12 @@
   }
 
   function Footer({ lang }) {
-    const D = window.SITE;
     const rFR = lang === 'fr';
     return (
-      <React.Fragment>
-      <footer style={{
-        borderTop: '1px solid var(--rule)',
-        padding: '40px 56px 48px',
-        display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 36,
-        marginTop: 100,
-      }}>
-        <div>
-          <div className="jpm-mono" style={{ fontSize: 10.5, letterSpacing: '.22em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 6, display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-            <svg width="22" height="11" viewBox="0 0 44 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
-              <path d="M2 11 C 2 4, 10 4, 16 8.5 C 20 11.5, 24 11.5, 28 8.5 C 34 4, 42 4, 42 11 C 42 18, 34 18, 28 13.5 C 24 10.5, 20 10.5, 16 13.5 C 10 18, 2 18, 2 11 Z"/>
-            </svg>
-            Lemniscate
-          </div>
-          <div className="jpm-serif-display" style={{ fontSize: 18, marginBottom: 6 }}>{D.author.name}</div>
-          <div className="jpm-mono" style={{ fontSize: 11, color: 'var(--inkSoft)', letterSpacing: '.08em', lineHeight: 1.8 }}>
-            {rFR ? D.author.affilFR : D.author.affilEN}<br/>{D.author.location}
-          </div>
-        </div>
-        <div>
-          <div className="jpm-kicker" style={{ marginBottom: 10 }}>Contact</div>
-          <a href={`mailto:${D.author.email}`} className="jpm-link" style={{ fontSize: 14 }}>{D.author.email}</a>
-        </div>
-        <div>
-          <div className="jpm-kicker" style={{ marginBottom: 10 }}>{rFR ? 'Profils' : 'Profiles'}</div>
-          {D.author.links.map(l => (
-            <div key={l.label}><a href={l.href} target="_blank" rel="noopener" className="jpm-link" style={{ fontSize: 14 }}>{l.label}</a></div>
-          ))}
-        </div>
-        <div>
-          <div className="jpm-kicker" style={{ marginBottom: 10 }}>ORCID</div>
-          <div className="jpm-mono" style={{ fontSize: 12, color: 'var(--inkSoft)' }}>{D.author.orcid}</div>
-          <div className="jpm-mono" style={{ fontSize: 10.5, color: 'var(--ruleStrong)', marginTop: 18, letterSpacing: '.1em' }}>
-            © MMXXVI · {rFR ? 'Tous droits réservés' : 'All rights reserved'}
-          </div>
-        </div>
-      </footer>
       <div style={{
         borderTop: '1px solid var(--rule)',
-        padding: '18px 56px 24px',
+        marginTop: 100,
+        padding: '20px 56px 28px',
         fontSize: 11.5, fontStyle: 'italic',
         color: 'var(--ruleStrong)', textAlign: 'center',
         textWrap: 'pretty', lineHeight: 1.6,
@@ -171,7 +133,6 @@
           ? <>Photographies des fossiles : <em>Saint-Martin-d'Oney, 2024</em>, par l'auteur. Site conçu et codé par l'auteur, avec l'assistance de Claude (Anthropic), 2025–2026.</>
           : <>Fossil photographs: <em>Saint-Martin-d'Oney, 2024</em>, by the author. Site designed and coded by the author, with the assistance of Claude (Anthropic), 2025–2026.</>}
       </div>
-      </React.Fragment>
     );
   }
 

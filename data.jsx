@@ -110,7 +110,7 @@ const SITE = {
     postFR: "Collège Jean Rostand — Capbreton",
     postEN: "Collège Jean Rostand — Capbreton",
     location: "Capbreton, France",
-    email: "jean-philippe.mouton@ac-bordeaux.fr",
+    email: "contact@lemniscate.pub",
     orcid: "0009-0000-2844-0962",
     links: [
       { label: "ORCID",        href: "https://orcid.org/0009-0000-2844-0962" },

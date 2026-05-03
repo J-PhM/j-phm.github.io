@@ -249,7 +249,7 @@
         <Reveal delay={140}>
           <div style={{ marginTop: 56, border: '1px solid var(--rule)', background: 'var(--paperAlt)' }}>
             <div style={{ padding: '20px 28px', borderBottom: '1px solid var(--rule)' }}>
-              <div className="jpm-kicker">{rFR ? 'Courriel professionnel' : 'Professional email'}</div>
+              <div className="jpm-kicker">{rFR ? 'Courriel' : 'Email'}</div>
               <a href={`mailto:${D.author.email}`} className="jpm-serif-display" style={{
                 fontSize: 26, color: 'var(--accent)', textDecoration: 'none', display: 'inline-block', marginTop: 8,
                 borderBottom: '1px solid currentColor', paddingBottom: 2,
@@ -258,18 +258,26 @@
               </a>
             </div>
             <div style={{ padding: '20px 28px', borderBottom: '1px solid var(--rule)' }}>
-              <div className="jpm-kicker">{rFR ? 'Adresse postale' : 'Postal address'}</div>
-              <div style={{ marginTop: 8, fontSize: 16, lineHeight: 1.55, fontStyle:'italic' }}>
-                {D.author.name}<br/>
-                {rFR ? D.author.postFR : D.author.postEN}<br/>
-                Capbreton, France
+              <div className="jpm-kicker">Open Researcher and Contributor ID</div>
+              <a href={`https://orcid.org/${D.author.orcid}`} target="_blank" rel="noopener" className="jpm-mono" style={{
+                fontSize: 18, color: 'var(--accent)', textDecoration: 'none', display: 'inline-block', marginTop: 8,
+                borderBottom: '1px solid currentColor', paddingBottom: 2, letterSpacing: '.06em',
+              }}>
+                {D.author.orcid}
+              </a>
+            </div>
+            <div style={{ padding: '20px 28px', borderBottom: '1px solid var(--rule)' }}>
+              <div className="jpm-kicker">Affiliation</div>
+              <div style={{ display:'flex', gap: 10, flexWrap: 'wrap', marginTop: 10 }}>
+                <a href="https://www.education.gouv.fr/" target="_blank" rel="noopener" className="jpm-btn ghost">{rFR ? "Ministère de l'Éducation nationale" : 'French Ministry of National Education'}</a>
+                <a href="https://www.ac-bordeaux.fr/" target="_blank" rel="noopener" className="jpm-btn ghost">{rFR ? 'Académie de Bordeaux' : 'Bordeaux Academy'}</a>
+                <a href="https://www.collegejeanrostandcapbreton.fr/" target="_blank" rel="noopener" className="jpm-btn ghost">Collège Jean Rostand — Capbreton</a>
               </div>
             </div>
             <div style={{ padding: '20px 28px' }}>
               <div className="jpm-kicker">{rFR ? 'Profils en ligne' : 'Online profiles'}</div>
               <div style={{ display:'flex', gap: 10, flexWrap: 'wrap', marginTop: 10 }}>
-                <a href={`https://orcid.org/${D.author.orcid}`} target="_blank" rel="noopener" className="jpm-btn ghost">ORCID</a>
-                {D.author.links.filter(l => l.label !== 'ORCID').map(l => (
+                {D.author.links.map(l => (
                   <a key={l.label} href={l.href} target="_blank" rel="noopener" className="jpm-btn ghost">{l.label}</a>
                 ))}
               </div>
