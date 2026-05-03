@@ -181,10 +181,9 @@
         </div>
 
         <Reveal>
-          <div style={{ marginTop: 80, paddingTop: 40, borderTop: '1px solid var(--rule)', display:'flex', gap: 14, flexWrap:'wrap' }}>
-            <a href={`https://orcid.org/${D.author.orcid}`} target="_blank" rel="noopener" className="jpm-btn ghost">ORCID ↗</a>
-            {D.author.links.filter(l => l.label !== 'ORCID').map(l => (
-              <a key={l.label} href={l.href} target="_blank" rel="noopener" className="jpm-btn ghost">{l.label} ↗</a>
+          <div style={{ marginTop: 80, paddingTop: 40, borderTop: '1px solid var(--rule)', display:'flex', gap: 10, flexWrap:'wrap' }}>
+            {D.author.links.map(l => (
+              <a key={l.label} href={l.href} target="_blank" rel="noopener" className="jpm-btn ghost">{l.label}</a>
             ))}
           </div>
         </Reveal>
