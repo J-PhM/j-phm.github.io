@@ -4,22 +4,22 @@
 
 ## Recherche
 
-- [Articles & publications](https://j-phm.github.io/research): index complet des travaux, déposés en accès libre principalement sur Zenodo. Filtrage par série, tri, recherche par titre, DOI ou mot-clé.
+- [Articles & publications](https://lemniscate.pub/research): index complet des travaux, déposés en accès libre principalement sur Zenodo. Filtrage par série, tri, recherche par titre, DOI ou mot-clé.
 
-- [TGSE — Théorie Générale des Structures Émergentes](https://j-phm.github.io/tgse-series): programme de mathématique poursuivi depuis 1998, publié à partir de 2025. Formalise l'émergence à l'aide d'un degré d'existence α ∈ (0, 1] et d'un élément ∅ pour l'inexistence. Refonte v2 en cours depuis avril 2026 (Propédeutique mathématique). Articles v1 disponibles : TGSE I à X (arithmétique graduée, extension hyperréelle, structure non standard, structure causale, extension complexe, systèmes gradués généralisés ; émergence de l'atome d'hydrogène et de l'espace-temps gravitationnel ; cohomologie graduée et topos élémentaire ; cascades ∞-catégoriques).
+- [TGSE — Théorie Générale des Structures Émergentes](https://lemniscate.pub/tgse-series): programme de mathématique poursuivi depuis 1998, publié à partir de 2025. Formalise l'émergence à l'aide d'un degré d'existence α ∈ (0, 1] et d'un élément ∅ pour l'inexistence. Refonte v2 en cours depuis avril 2026 (Propédeutique mathématique). Articles v1 disponibles : TGSE I à X (arithmétique graduée, extension hyperréelle, structure non standard, structure causale, extension complexe, systèmes gradués généralisés ; émergence de l'atome d'hydrogène et de l'espace-temps gravitationnel ; cohomologie graduée et topos élémentaire ; cascades ∞-catégoriques).
 
-- [ORA — Opérateur de Résonance Arithmétique](https://j-phm.github.io/ora-series): programme d'analyse harmonique et de géométrie arithmétique, ouvert à la publication en 2025. Étudie la distribution des nombres premiers à travers les phases logarithmiques θ_p = log p mod 2π. Articles : ORA I (introduction de l'opérateur), ORA II (fondements théoriques, structures quasi-cristallines), ORA ∩ TGSE (approche variationnelle de l'hypothèse de Riemann).
+- [ORA — Opérateur de Résonance Arithmétique](https://lemniscate.pub/ora-series): programme d'analyse harmonique et de géométrie arithmétique, ouvert à la publication en 2025. Étudie la distribution des nombres premiers à travers les phases logarithmiques θ_p = log p mod 2π. Articles : ORA I (introduction de l'opérateur), ORA II (fondements théoriques, structures quasi-cristallines), ORA ∩ TGSE (approche variationnelle de l'hypothèse de Riemann).
 
-- [EMV — Études du Manuscrit de Voynich](https://j-phm.github.io/emv): exploration statistique systématique du manuscrit de Voynich (Beinecke MS 408, XVᵉ siècle), conduite sur la transcription EVA. Établit douze contraintes formelles (entropie, morphologie, grammaire syllabique, prosodie, etc.) qu'un déchiffrement futur devrait reproduire.
+- [EMV — Études du Manuscrit de Voynich](https://lemniscate.pub/emv): exploration statistique systématique du manuscrit de Voynich (Beinecke MS 408, XVᵉ siècle), conduite sur la transcription EVA. Établit douze contraintes formelles (entropie, morphologie, grammaire syllabique, prosodie, etc.) qu'un déchiffrement futur devrait reproduire.
 
 ## Enseignement
 
-- [Enseignement](https://j-phm.github.io/teaching): collège Jean Rostand de Capbreton depuis 2011. Fiches de révision interactives en HTML pour les classes de 5ᵉ (Fractions, Nombres relatifs, Opérations sur les fractions) et 4ᵉ (Puissances, Triangles et droites parallèles). Inclut également l'Herbier de courbes mathématiques (GeoGebra) et le livre IREM « Les fonctions : du collège jusqu'en seconde ».
+- [Enseignement](https://lemniscate.pub/teaching): collège Jean Rostand de Capbreton depuis 2011. Fiches de révision interactives en HTML pour les classes de 5ᵉ (Fractions, Nombres relatifs, Opérations sur les fractions) et 4ᵉ (Puissances, Triangles et droites parallèles). Inclut également l'Herbier de courbes mathématiques (GeoGebra) et le livre IREM « Les fonctions : du collège jusqu'en seconde ».
 
 ## À propos
 
-- [Curriculum vitæ](https://j-phm.github.io/cv): parcours, formation et publications.
-- [Correspondance](https://j-phm.github.io/contact): pour échanger autour des travaux.
+- [Curriculum vitæ](https://lemniscate.pub/cv): parcours, formation et publications.
+- [Correspondance](https://lemniscate.pub/contact): pour échanger autour des travaux.
 
 ## Profils externes
 
