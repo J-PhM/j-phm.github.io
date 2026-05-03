@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <script src="fiche-theme.js"></script>
 <link rel="stylesheet" href="fiche-theme.css?v=1777411759831">
+<script src="fiche-pdf-viewer.js" defer></script>
 <style>
   /* Classes spécifiques à ce chapitre */
   .eq-line { font-size: 1rem; display: flex; justify-content: center; align-items: center; gap: 0.4em; }
@@ -45,6 +46,7 @@
   <div style="padding:0.4rem 1.25rem 0.7rem;border-bottom:1px solid var(--border);">
     <button onclick="resetProgress()" style="font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;color:var(--dim);background:none;border:none;cursor:pointer;padding:0;text-transform:uppercase;" title="Remettre à zéro">↺ Réinitialiser</button>
   </div>
+  <button class="sb-course" type="button" onclick="openPdf('../cours/4e-ch10-equations-inequations.pdf', 'Chapitre 10 — Équations &amp; Inéquations · Cours complet')">📄 Lire le cours complet (PDF)</button>
   <nav>
     <div class="nav-section">Accueil</div>
     <div class="nav-item nav-home active" data-page="home" onclick="go(this)">🏠 Sommaire</div>
